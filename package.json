@@ -1,0 +1,54 @@
+{
+  "name": "@dxcli/command",
+  "description": "dxcli base command",
+  "version": "0.0.0",
+  "author": "Jeff Dickey @jdxcode",
+  "dependencies": {},
+  "devDependencies": {
+    "@dxcli/dev": "^1.1.0",
+    "@dxcli/dev-semantic-release": "^0.0.3",
+    "@dxcli/dev-test": "^0.0.1",
+    "@dxcli/dev-tslint": "^0.0.6",
+    "@types/node": "^9.3.0",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.15.0",
+    "eslint-config-dxcli": "^1.1.3",
+    "husky": "^0.14.3",
+    "mocha": "^4.1.0",
+    "nyc": "^11.4.1",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2"
+  },
+  "dxcli": {
+    "workflows": {
+      "test": [
+        "eslint .",
+        "tsc",
+        "tslint -p .",
+        "commitlint --from master",
+        "mocha \"test/**/*.ts\""
+      ],
+      "lint": [
+        "eslint .",
+        "tsc",
+        "tslint -p .",
+        "commitlint --from master"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/lib"
+  ],
+  "license": "MIT",
+  "repository": "dxcli/command",
+  "scripts": {
+    "commitmsg": "dxcli-dev-commitmsg",
+    "lint": "dxcli-dev lint",
+    "precommit": "dxcli-dev lint",
+    "prepare": "del-cli ./lib && tsc",
+    "test": "dxcli-dev test"
+  }
+}
