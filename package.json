@@ -7,7 +7,7 @@
   "devDependencies": {
     "@dxcli/dev": "^1.1.0",
     "@dxcli/dev-semantic-release": "^0.0.3",
-    "@dxcli/dev-test": "^0.0.1",
+    "@dxcli/dev-test": "^0.1.0",
     "@dxcli/dev-tslint": "^0.0.6",
     "@types/node": "^9.3.0",
     "del-cli": "^1.1.0",
