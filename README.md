@@ -1,6 +1,8 @@
 @dxcli/command
 ==============
 
+dxcli base command
+
 [![Version](https://img.shields.io/npm/v/@dxcli/command.svg)](https://npmjs.org/package/@dxcli/command)
 [![CircleCI](https://circleci.com/gh/dxcli/command/tree/master.svg?style=svg)](https://circleci.com/gh/dxcli/command/tree/master)
 [![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/dxcli/command?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/command/branch/master)

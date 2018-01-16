@@ -4,6 +4,7 @@
     "rootDir": ".."
   },
   "include": [
+    "../examples/**/*",
     "../src/**/*",
     "../test/**/*"
   ]

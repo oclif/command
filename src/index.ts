@@ -1,1 +1,7 @@
-export const add = (a: number, b: number) => a + b
+import Command from './command'
+import * as flags from './flags'
+
+export * from './errors'
+
+export default Command
+export {Command, flags}
