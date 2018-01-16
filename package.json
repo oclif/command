@@ -8,7 +8,7 @@
     "@dxcli/config": "^0.1.1",
     "@dxcli/parser": "^0.0.2",
     "@dxcli/screen": "^0.0.0",
-    "cli-ux": "^3.0.0-alpha.1",
+    "cli-ux": "^3.0.0-alpha.2",
     "debug": "^3.1.0",
     "http-call": "^5.0.0"
   },

@@ -900,23 +900,21 @@ cli-ux@^2.0.21:
     supports-color "^5.1.0"
     ts-lodash "^4.0.8"
 
-cli-ux@^3.0.0-alpha.1:
-  version "3.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.0.0-alpha.1.tgz#066a09d9a33416eb6113a14c5b0393abe885fef9"
+cli-ux@^3.0.0-alpha.2:
+  version "3.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.0.0-alpha.2.tgz#b77b56700331101966dfb90d6298c30d2c1c119f"
   dependencies:
-    "@cli-engine/screen" "^0.0.0"
-    "@heroku-cli/color" "^1.0.4"
+    "@dxcli/screen" "^0.0.0"
     "@heroku/linewrap" "^1.0.0"
-    ansi-escapes "^3.0.0"
     ansi-styles "^3.2.0"
-    cardinal "^1.0.0"
     chalk "^2.3.0"
+    fs-extra "^5.0.0"
     lodash "^4.17.4"
-    moment "^2.20.1"
     password-prompt "^1.0.3"
+    rxjs "^5.5.6"
+    semver "^5.4.1"
     strip-ansi "^4.0.0"
     supports-color "^5.1.0"
-    ts-lodash "^4.0.8"
 
 cli-width@^2.0.0:
   version "2.2.0"
@@ -3696,6 +3694,12 @@ rx@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
+rxjs@^5.5.6:
+  version "5.5.6"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
+  dependencies:
+    symbol-observable "1.0.1"
+
 safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
@@ -4084,6 +4088,10 @@ supports-color@^5.1.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.1.0.tgz#058a021d1b619f7ddf3980d712ea3590ce7de3d5"
   dependencies:
     has-flag "^2.0.0"
+
+symbol-observable@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
 
 table@^4.0.1:
   version "4.0.2"
