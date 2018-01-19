@@ -1,3 +1,11 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/dxcli/command/compare/7a4f576ecb4a24debb1b1d1554d9c7918e2ee235...v0.1.1) (2018-01-19)
+
+
+### Bug Fixes
+
+* updated dependencies ([1f7deb2](https://github.com/dxcli/command/commit/1f7deb2))
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/dxcli/command/compare/v0.0.0...v0.1.0) (2018-01-16)
 
