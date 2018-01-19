@@ -70,6 +70,7 @@ export default abstract class Command {
       await this.run()
       await this.done()
     } catch (err) {
+      if (err.code === 'EEXIT') throw err
       if (this.config && this.config.engine) {
         await this.config.engine.runHook('error', err)
       }
