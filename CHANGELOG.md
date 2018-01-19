@@ -1,3 +1,11 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/dxcli/command/compare/5a1172301bd5b9cb2c6c5d8acdd55de70169e87c...v0.1.5) (2018-01-19)
+
+
+### Bug Fixes
+
+* added load function ([1aeeb61](https://github.com/dxcli/command/commit/1aeeb61))
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/dxcli/command/compare/9c9cecf61278ad5b8d863ddc68c76c24a6768c97...v0.1.4) (2018-01-19)
 
