@@ -106,9 +106,9 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.13.tgz#72af2450f106d60d0a1c9989c1d66cb7f5c73e3b"
+"@dxcli/config@^0.1.15":
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.15.tgz#ec22a4340806c0c528bfbc86b020b46bd7f2e404"
   dependencies:
     debug "^3.1.0"
     fs-extra "^5.0.0"
@@ -916,9 +916,9 @@ cli-ux@^2.0.21:
     supports-color "^5.1.0"
     ts-lodash "^4.0.8"
 
-cli-ux@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.0.0.tgz#2dcd032c7e944f77b8d7b4d533f8c75443ac88fd"
+cli-ux@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.1.0.tgz#b9a7e7a30012bfc2bb20dc322044b5c0da8493ae"
   dependencies:
     "@dxcli/screen" "^0.0.0"
     "@heroku/linewrap" "^1.0.0"

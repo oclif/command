@@ -26,6 +26,16 @@ describe.stdout.stderr('run', () => {
     await expect(Command.run([])).to.eventually.be.rejectedWith(/new x error/)
   })
 
+  it('exits', async () => {
+    const Command: Config.ICommand = class extends Base {
+      async run() {
+        cli.exit(0)
+      }
+    }
+
+    await expect(Command.run([])).to.eventually.be.rejectedWith(/EEXIT: 0/)
+  })
+
   describe('help error', () => {
     ['-h', '--help', 'help'].forEach(arg => {
       it(`throws help error when passed "${arg}"`, async () => {
