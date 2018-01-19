@@ -1,3 +1,11 @@
+<a name="0.1.7"></a>
+## [0.1.7](https://github.com/dxcli/command/compare/72798f58f713b0986470e10590b84354938b2fd2...v0.1.7) (2018-01-19)
+
+
+### Bug Fixes
+
+* yarn upgrade ([5a790b9](https://github.com/dxcli/command/commit/5a790b9))
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/dxcli/command/compare/1aeeb6191eb81f8addc9bbad185a67a93d745937...v0.1.6) (2018-01-19)
 
