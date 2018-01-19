@@ -5,7 +5,7 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/dxcli/command/issues",
   "dependencies": {
-    "@dxcli/config": "^0.1.11",
+    "@dxcli/config": "^0.1.13",
     "@dxcli/parser": "^0.0.2",
     "@dxcli/screen": "^0.0.0",
     "cli-ux": "^3.0.0-alpha.4",

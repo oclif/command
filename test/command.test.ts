@@ -1,3 +1,4 @@
+import * as Config from '@dxcli/config'
 import {describe, expect, it, output} from '@dxcli/dev-test'
 import cli from 'cli-ux'
 
@@ -16,7 +17,7 @@ describe.stdout.stderr('run', () => {
   })
 
   it('errors out', async () => {
-    class Command extends Base {
+    const Command: Config.ICommand = class extends Base {
       async run() {
         throw new Error('new x error')
       }

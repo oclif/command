@@ -6,11 +6,7 @@ import {HTTP} from 'http-call'
 import deps from './deps'
 import * as flags from './flags'
 
-export interface Options {
-  root?: string
-}
-
-export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Options) => Promise<T>
+export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Config.ICommandOptions) => Promise<void>
 
 export interface ICommandClass<T extends Command> {
   run: CommandRunFn
@@ -20,7 +16,8 @@ export interface ICommandClass<T extends Command> {
 const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
 export default abstract class Command {
-  static id?: string
+  static _base = `${pjson.name}@${pjson.version}`
+  static id: string
   static description: string | undefined
   static hidden: boolean
   static usage: string | undefined
@@ -29,16 +26,16 @@ export default abstract class Command {
   static variableArgs = false
   static flags: flags.Input
   static args: args.IArg[] = []
-  static _base = `${pjson.name}@${pjson.version}`
   static plugin: Config.IPlugin | undefined
 
   /**
    * instantiate and run the command
    */
-  static run: CommandRunFn = function (argv: string[] = process.argv.slice(2), opts: Options = {}) {
+  static run: CommandRunFn = function (argv: string[] = process.argv.slice(2), opts: Config.ICommandOptions = {}) {
     const cmd = new this()
     return cmd._run(argv, opts)
   }
+  static async load() { return this }
 
   config: Config.IConfig
   flags: { [name: string]: any } = {}
@@ -67,9 +64,7 @@ export default abstract class Command {
    */
   abstract async run(): Promise<void>
 
-  load() { return this }
-
-  protected async _run(argv: string[], opts: Options) {
+  protected async _run(argv: string[], opts: Config.ICommandOptions) {
     try {
       await this.init(argv, opts)
       await this.run()
@@ -80,11 +75,10 @@ export default abstract class Command {
       }
       deps.cli.error(err)
     }
-    return this
   }
 
-  protected async init(argv: string[], {root}: {root?: string} = {}) {
-    this.config = await Config.read({root: root || parentModule!})
+  protected async init(argv: string[], opts: Config.ICommandOptions) {
+    this.config = opts.config || await Config.read({root: opts.root || parentModule!})
     global['http-call'] = global['http-call'] || {}
     global['http-call']!.userAgent = this.config.userAgent
     this.debug = require('debug')(`cli:command:${this.ctor.id || this.config.name}`)
