@@ -73,13 +73,10 @@ export default abstract class Command {
       await this.run()
       await this.done()
     } catch (err) {
-      // throw HelpErr to allow the CLI to do something with it
-      switch (err.code) {
-        case 'EEXIT': break
-        case 'EHELP': throw err
-        default:
-          deps.cli.error(err)
+      if (this.config && this.config.engine) {
+        await this.config.engine.runHook('error', err)
       }
+      deps.cli.error(err)
     }
     return this
   }
