@@ -1,3 +1,11 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/dxcli/command/compare/9c9cecf61278ad5b8d863ddc68c76c24a6768c97...v0.1.4) (2018-01-19)
+
+
+### Bug Fixes
+
+* always raise errors ([5a11723](https://github.com/dxcli/command/commit/5a11723))
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/dxcli/command/compare/619726d7c841e6c3534d658ee558fb9c2797f4c7...v0.1.3) (2018-01-19)
 
