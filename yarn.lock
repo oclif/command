@@ -106,11 +106,10 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.1.tgz#fdc6851d0c5a3fe8301a8585f2b9824997c501ab"
+"@dxcli/config@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.6.tgz#c5787c1d21a150e03c6e3fcf2113cc0efb647a79"
   dependencies:
-    cli-ux "^2.0.21"
     debug "^3.1.0"
     fs-extra "^5.0.0"
     load-json-file "^4.0.0"
@@ -326,9 +325,9 @@
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
 
-"@types/read-pkg-up@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/read-pkg-up/-/read-pkg-up-3.0.0.tgz#d8ef96f335f505e1d38c2eda92f097565e7da168"
+"@types/read-pkg-up@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/read-pkg-up/-/read-pkg-up-3.0.1.tgz#05911057c3be1aade38bfecbb9a8554dbd0582be"
   dependencies:
     "@types/normalize-package-data" "*"
 
@@ -2087,9 +2086,9 @@ hosted-git-info@^2.1.4, hosted-git-info@^2.4.2:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
 
-http-call@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/http-call/-/http-call-5.0.0.tgz#1c7b70601bf091b44ca999cf54cbe7957864d5c7"
+http-call@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/http-call/-/http-call-5.0.1.tgz#161544092420c9189808ef05dd51df72b8789b46"
   dependencies:
     content-type "^1.0.4"
     debug "^3.1.0"
@@ -2933,9 +2932,9 @@ mocha-junit-reporter@^1.15.0:
     mkdirp "~0.5.1"
     xml "^1.0.0"
 
-mocha@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-4.1.0.tgz#7d86cfbcf35cb829e2754c32e17355ec05338794"
+mocha@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.0.tgz#cccac988b0bc5477119cba0e43de7af6d6ad8f4e"
   dependencies:
     browser-stdout "1.3.0"
     commander "2.11.0"
