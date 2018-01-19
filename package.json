@@ -1,7 +1,7 @@
 {
   "name": "@dxcli/command",
   "description": "dxcli base command",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/dxcli/command/issues",
   "dependencies": {

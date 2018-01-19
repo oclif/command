@@ -1,3 +1,11 @@
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/dxcli/command/compare/1aeeb6191eb81f8addc9bbad185a67a93d745937...v0.1.6) (2018-01-19)
+
+
+### Bug Fixes
+
+* make compatible with ICommand ([72798f5](https://github.com/dxcli/command/commit/72798f5))
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/dxcli/command/compare/5a1172301bd5b9cb2c6c5d8acdd55de70169e87c...v0.1.5) (2018-01-19)
 
