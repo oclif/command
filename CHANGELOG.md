@@ -1,3 +1,11 @@
+<a name="0.1.9"></a>
+## [0.1.9](https://github.com/dxcli/command/compare/30e1b12a1a6d2359fb2c99391970f6ae44ae171c...v0.1.9) (2018-01-19)
+
+
+### Bug Fixes
+
+* hide EEXIT ([2184233](https://github.com/dxcli/command/commit/2184233))
+
 <a name="0.1.8"></a>
 ## [0.1.8](https://github.com/dxcli/command/compare/5a790b9b3e3fb2a498e2a86043c2ea5f39ffec8f...v0.1.8) (2018-01-19)
 
