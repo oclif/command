@@ -67,6 +67,8 @@ export default abstract class Command {
    */
   abstract async run(): Promise<void>
 
+  load() { return this }
+
   protected async _run(argv: string[], opts: Options) {
     try {
       await this.init(argv, opts)
