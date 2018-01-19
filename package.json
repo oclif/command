@@ -18,7 +18,7 @@
     "@dxcli/dev-test": "^0.2.1",
     "@dxcli/dev-tslint": "^0.0.15",
     "@types/node": "^9.3.0",
-    "@types/read-pkg-up": "^3.0.1",
+    "@types/read-pkg": "^3.0.0",
     "@types/semver": "^5.4.0",
     "eslint": "^4.15.0",
     "eslint-config-dxcli": "^1.1.4",
