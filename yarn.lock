@@ -998,9 +998,9 @@ cli-ux@^2.0.21:
     supports-color "^5.1.0"
     ts-lodash "^4.0.8"
 
-cli-ux@^3.1.0, cli-ux@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.1.1.tgz#9d0d78bff1d7bb6065f0a3b7e4cd1c259a5a4d5f"
+cli-ux@^3.1.0, cli-ux@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.1.2.tgz#4a273fbb24ad2390d653f1a12c047c4f39deb810"
   dependencies:
     "@dxcli/screen" "^0.0.0"
     "@heroku/linewrap" "^1.0.0"
@@ -1009,7 +1009,7 @@ cli-ux@^3.1.0, cli-ux@^3.1.1:
     chalk "^2.3.0"
     fs-extra "^5.0.0"
     lodash "^4.17.4"
-    password-prompt "^1.0.3"
+    password-prompt "^1.0.4"
     semver "^5.5.0"
     strip-ansi "^4.0.0"
     supports-color "^5.1.0"
@@ -3421,7 +3421,7 @@ pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
 
-password-prompt@^1.0.3:
+password-prompt@^1.0.3, password-prompt@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/password-prompt/-/password-prompt-1.0.4.tgz#933bac8db3528fcb27e9fdbc0a6592adcbdb5ed9"
   dependencies:
