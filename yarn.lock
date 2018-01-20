@@ -223,6 +223,14 @@
     lodash "^4.17.4"
     rwlockfile "^2.0.20"
 
+"@dxcli/parser@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.0.3.tgz#be08ac4b3809685b3351978ae702b1e14cae47fd"
+  dependencies:
+    "@dxcli/screen" "^0.0.0"
+    chalk "^2.3.0"
+    lodash "^4.17.4"
+
 "@dxcli/parser@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.0.2.tgz#a60b1642626853c6e41014b78e6b2ea18cefa5db"
