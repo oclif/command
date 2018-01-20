@@ -3,4 +3,5 @@
 --require source-map-support/register
 --watch-extensions ts
 --recursive
---reporter list
+--reporter spec
+--timeout 5000
