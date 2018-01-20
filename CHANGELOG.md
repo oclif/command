@@ -1,3 +1,11 @@
+<a name="0.1.13"></a>
+## [0.1.13](https://github.com/dxcli/command/compare/db0b54a6eccda027295b2d1d1449423d34cd7933...v0.1.13) (2018-01-20)
+
+
+### Bug Fixes
+
+* remove http-call type ([9aac526](https://github.com/dxcli/command/commit/9aac526))
+
 <a name="0.1.12"></a>
 ## [0.1.12](https://github.com/dxcli/command/compare/2f11d05476ba4be77aac0ceaf12c3e0893278c8c...v0.1.12) (2018-01-20)
 
