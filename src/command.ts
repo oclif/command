@@ -1,6 +1,7 @@
 const pjson = require('../package.json')
 import * as Config from '@dxcli/config'
 import {args} from '@dxcli/parser'
+import cli from 'cli-ux'
 import {HTTP} from 'http-call'
 
 import deps from './deps'
@@ -74,7 +75,7 @@ export default abstract class Command {
       if (this.config && this.config.engine) {
         await this.config.engine.runHook('error', err)
       }
-      deps.cli.error(err)
+      cli.error(err)
     }
   }
 
@@ -84,7 +85,7 @@ export default abstract class Command {
     global['http-call']!.userAgent = this.config.userAgent
     this.debug = require('debug')(`cli:command:${this.ctor.id || this.config.name}`)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
-    deps.cli.config.errlog = this.config.errlog
+    cli.config.errlog = this.config.errlog
     try {
       const parse = await deps.Parser.parse({
         argv,
@@ -105,9 +106,9 @@ export default abstract class Command {
 
   protected async done() {
     try {
-      await deps.cli.done()
+      await cli.done()
     } catch (err) {
-      deps.cli.warn(err)
+      cli.warn(err)
     }
   }
 }
