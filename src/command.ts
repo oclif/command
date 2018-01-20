@@ -2,7 +2,6 @@ const pjson = require('../package.json')
 import * as Config from '@dxcli/config'
 import {args} from '@dxcli/parser'
 import cli from 'cli-ux'
-import {HTTP} from 'http-call'
 
 import deps from './deps'
 import * as flags from './flags'
@@ -58,7 +57,7 @@ export default abstract class Command {
     return this.constructor as typeof Command
   }
 
-  get http(): typeof HTTP { return require('http-call').HTTP }
+  get http() { return require('http-call').HTTP }
 
   /**
    * actual command run code goes here
