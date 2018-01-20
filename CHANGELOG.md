@@ -1,3 +1,11 @@
+<a name="0.1.12"></a>
+## [0.1.12](https://github.com/dxcli/command/compare/2f11d05476ba4be77aac0ceaf12c3e0893278c8c...v0.1.12) (2018-01-20)
+
+
+### Bug Fixes
+
+* updated deps ([db0b54a](https://github.com/dxcli/command/commit/db0b54a))
+
 <a name="0.1.11"></a>
 ## [0.1.11](https://github.com/dxcli/command/compare/345a27b45287810bec0796ab00c89348095e196f...v0.1.11) (2018-01-20)
 
