@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@dxcli/command</title>
+	<title>ICommandClass | @dxcli/command</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@dxcli/command</a>
+					<a href="../index.html" class="title">@dxcli/command</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,77 +51,148 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="icommandclass.html">ICommandClass</a>
 				</li>
 			</ul>
-			<h1> @dxcli/command</h1>
+			<h1>Interface ICommandClass&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="-dxcli-command">@dxcli/command</h1>
-				<p>dxcli base command</p>
-				<p><a href="https://npmjs.org/package/@dxcli/command"><img src="https://img.shields.io/npm/v/@dxcli/command.svg" alt="Version"></a>
-					<a href="https://circleci.com/gh/dxcli/command/tree/master"><img src="https://circleci.com/gh/dxcli/command/tree/master.svg?style=svg" alt="CircleCI"></a>
-					<a href="https://ci.appveyor.com/project/heroku/command/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/dxcli/command?branch=master&amp;svg=true" alt="Appveyor CI"></a>
-					<a href="https://codecov.io/gh/dxcli/command"><img src="https://codecov.io/gh/dxcli/command/branch/master/graph/badge.svg" alt="Codecov"></a>
-					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/dxcli/command.svg" alt="Greenkeeper"></a>
-					<a href="https://snyk.io/test/npm/@dxcli/command"><img src="https://snyk.io/test/npm/@dxcli/command/badge.svg" alt="Known Vulnerabilities"></a>
-					<a href="https://npmjs.org/package/@dxcli/command"><img src="https://img.shields.io/npm/dw/@dxcli/command.svg" alt="Downloads/week"></a>
-				<a href="https://github.com/dxcli/command/blob/master/package.json"><img src="https://img.shields.io/npm/l/@dxcli/command.svg" alt="License"></a></p>
-			</div>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T<span class="tsd-signature-symbol">: </span><a href="../classes/command.html" class="tsd-signature-type">Command</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ICommandClass</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-interface tsd-is-external"><a href="icommandclass.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icommandclass.html#run" class="tsd-kind-icon">run</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-interface tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new ICommand<wbr>Class<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dxcli/command/blob/b9d36be/src/command.ts#L12">command.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="run" class="tsd-anchor"></a>
+					<h3>run</h3>
+					<div class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">:</span> <a href="../globals.html#commandrunfn" class="tsd-signature-type">CommandRunFn</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dxcli/command/blob/b9d36be/src/command.ts#L12">command.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/command.html" class="tsd-kind-icon">Command</a>
+						<a href="../classes/command.html" class="tsd-kind-icon">Command</a>
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/helperr.html" class="tsd-kind-icon">Help<wbr>Err</a>
+						<a href="../classes/helperr.html" class="tsd-kind-icon">Help<wbr>Err</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="icommandclass.html" class="tsd-kind-icon">ICommand<wbr>Class</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-interface tsd-is-external">
+								<a href="icommandclass.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="icommandclass.html#run" class="tsd-kind-icon">run</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="icompletion.html" class="tsd-kind-icon">ICompletion</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="icompletioncontext.html" class="tsd-kind-icon">ICompletion<wbr>Context</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/icommandclass.html" class="tsd-kind-icon">ICommand<wbr>Class</a>
+						<a href="ioptionflag.html" class="tsd-kind-icon">IOption<wbr>Flag</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icompletion.html" class="tsd-kind-icon">ICompletion</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icompletioncontext.html" class="tsd-kind-icon">ICompletion<wbr>Context</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/ioptionflag.html" class="tsd-kind-icon">IOption<wbr>Flag</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/input.html" class="tsd-kind-icon">Input</a>
+						<a href="input.html" class="tsd-kind-icon">Input</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#commandrunfn" class="tsd-kind-icon">Command<wbr>Run<wbr>Fn</a>
+						<a href="../globals.html#commandrunfn" class="tsd-kind-icon">Command<wbr>Run<wbr>Fn</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#definition" class="tsd-kind-icon">Definition</a>
+						<a href="../globals.html#definition" class="tsd-kind-icon">Definition</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#iflag" class="tsd-kind-icon">IFlag</a>
+						<a href="../globals.html#iflag" class="tsd-kind-icon">IFlag</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#option" class="tsd-kind-icon">option</a>
+						<a href="../globals.html#option" class="tsd-kind-icon">option</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#string" class="tsd-kind-icon">string</a>
+						<a href="../globals.html#string" class="tsd-kind-icon">string</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-is-external">
-						<a href="globals.html#deps" class="tsd-kind-icon">deps</a>
+						<a href="../globals.html#deps" class="tsd-kind-icon">deps</a>
 					</li>
 				</ul>
 			</nav>
@@ -191,7 +262,7 @@
 	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
