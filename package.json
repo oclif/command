@@ -11,10 +11,12 @@
     "debug": "^3.1.0"
   },
   "devDependencies": {
+    "@dxcli/dev-nyc-config": "^0.0.3",
     "@dxcli/dev-semantic-release": "^0.1.0",
     "@dxcli/dev-test": "^0.9.2",
     "@dxcli/dev-tslint": "^0.0.15",
     "@types/chai": "^4.1.2",
+    "@types/lodash": "^4.14.96",
     "@types/mocha": "^2.2.47",
     "@types/nock": "^9.1.2",
     "@types/node": "^9.3.0",

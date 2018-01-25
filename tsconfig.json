@@ -7,13 +7,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./lib",
-    "rootDir": "./src",
-    "strict": true,
-    "strictFunctionTypes": false,
+    "rootDirs": [
+      "./src"
+    ],
     "sourceMap": true,
+    "strict": true,
     "target": "es2017"
   },
   "include": [
-    "src/**/*"
+    "./src/**/*"
   ]
 }

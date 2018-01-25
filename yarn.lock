@@ -121,6 +121,10 @@
     commitizen "^2.9.6"
     cz-conventional-changelog "^2.1.0"
 
+"@dxcli/dev-nyc-config@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev-nyc-config/-/dev-nyc-config-0.0.3.tgz#3ff59cf561663710f025a41f64d608d2977a3d3b"
+
 "@dxcli/dev-semantic-release@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@dxcli/dev-semantic-release/-/dev-semantic-release-0.1.0.tgz#adc88f1eaee862b73ae824496d4076f3fcc5c7c9"
@@ -287,6 +291,10 @@
 "@types/lodash@4.14.74":
   version "4.14.74"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.74.tgz#ac3bd8db988e7f7038e5d22bd76a7ba13f876168"
+
+"@types/lodash@^4.14.96":
+  version "4.14.96"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.96.tgz#49a402bb6984af7dd9a48cea3781744a3774bff1"
 
 "@types/marked@0.3.0":
   version "0.3.0"

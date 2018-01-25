@@ -13,6 +13,8 @@ export interface ICommandClass<T extends Command> {
   new (): T
 }
 
+const g = global as any
+
 const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
 export default abstract class Command {
@@ -80,8 +82,8 @@ export default abstract class Command {
 
   protected async init(argv: string[], opts: Config.ICommandOptions) {
     this.config = opts.config || await Config.read({root: opts.root || parentModule!})
-    global['http-call'] = global['http-call'] || {}
-    global['http-call']!.userAgent = this.config.userAgent
+    g['http-call'] = g['http-call'] || {}
+    g['http-call']!.userAgent = this.config.userAgent
     this.debug = require('debug')(`cli:command:${this.ctor.id || this.config.name}`)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.errlog = this.config.errlog
