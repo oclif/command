@@ -1,3 +1,11 @@
+<a name="0.1.15"></a>
+## [0.1.15](https://github.com/dxcli/command/compare/92abb155388dbf367b6bf42c10b5d79ee84a8667...v0.1.15) (2018-01-25)
+
+
+### Bug Fixes
+
+* updated config ([c81025c](https://github.com/dxcli/command/commit/c81025c))
+
 <a name="0.1.14"></a>
 ## [0.1.14](https://github.com/dxcli/command/compare/9aac5264aa8f23b514295390afa8ecc1fb5e8142...v0.1.14) (2018-01-25)
 
