@@ -102,9 +102,9 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.23":
-  version "0.1.23"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.23.tgz#ac15c08276e3ea54cd9a1a76a11e5d1b4319a08d"
+"@dxcli/config@^0.1.24":
+  version "0.1.24"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.24.tgz#fc6d14f7c91b742bf3d0ca7c2974565a959471ae"
   dependencies:
     debug "^3.1.0"
     fs-extra "^5.0.0"
