@@ -1,3 +1,13 @@
+<a name="0.1.14"></a>
+## [0.1.14](https://github.com/dxcli/command/compare/9aac5264aa8f23b514295390afa8ecc1fb5e8142...v0.1.14) (2018-01-25)
+
+
+### Bug Fixes
+
+* added typedoc ([036950b](https://github.com/dxcli/command/commit/036950b))
+* ran generator ([92abb15](https://github.com/dxcli/command/commit/92abb15))
+* updated deps ([3e18992](https://github.com/dxcli/command/commit/3e18992))
+
 <a name="0.1.13"></a>
 ## [0.1.13](https://github.com/dxcli/command/compare/db0b54a6eccda027295b2d1d1449423d34cd7933...v0.1.13) (2018-01-20)
 
