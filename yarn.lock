@@ -102,9 +102,9 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.24":
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.24.tgz#fc6d14f7c91b742bf3d0ca7c2974565a959471ae"
+"@dxcli/config@^0.1.26":
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.26.tgz#36458424cb8cc9c1499659bbff3676fa7b0292da"
   dependencies:
     debug "^3.1.0"
     fs-extra "^5.0.0"
@@ -136,9 +136,9 @@
     "@semantic-release/npm" "^2.6.4"
     semantic-release "^12.2.2"
 
-"@dxcli/dev-tslint@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev-tslint/-/dev-tslint-0.0.15.tgz#54dbd49deccaaaf9dc590d83894415e3fab0b0ac"
+"@dxcli/dev-tslint@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev-tslint/-/dev-tslint-0.0.16.tgz#84aa077d5f0c92f770b2b7eb091588c8553b4c9f"
   dependencies:
     tslint "^5.9.1"
     tslint-xo "^0.5.0"
@@ -875,9 +875,9 @@ cli-table@^0.3.1:
   dependencies:
     colors "1.0.3"
 
-cli-ux@^3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.1.5.tgz#c6d3ed628a54067ad2084dd465ea015ca26488c9"
+cli-ux@^3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.1.6.tgz#e1190fcc429ae6a101dbaf24640027485b9b3506"
   dependencies:
     "@dxcli/screen" "^0.0.1"
     "@heroku/linewrap" "^1.0.0"
