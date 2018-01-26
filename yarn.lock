@@ -150,9 +150,9 @@
     tslint "^5.9.1"
     tslint-xo "^0.5.0"
 
-"@dxcli/parser@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.0.4.tgz#dfef02cd90f252f0b772f99b13a1e13255ff9eda"
+"@dxcli/parser@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.0.5.tgz#51daf8133e8cec6ff21bfa464c4d58cd46b5ed99"
   dependencies:
     "@dxcli/screen" "^0.0.1"
     chalk "^2.3.0"
