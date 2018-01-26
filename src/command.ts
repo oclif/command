@@ -86,6 +86,7 @@ export default abstract class Command {
     g['http-call']!.userAgent = this.config.userAgent
     this.debug = require('debug')(`cli:command:${this.ctor.id || this.config.name}`)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
+    cli.config.debug = !!this.config.debug
     cli.config.errlog = this.config.errlog
     try {
       const parse = await deps.Parser.parse({
