@@ -1,3 +1,11 @@
+<a name="0.1.18"></a>
+## [0.1.18](https://github.com/dxcli/command/compare/493ec082ec7062ee2f1235a7911a4b732d9de0d1...v0.1.18) (2018-01-26)
+
+
+### Bug Fixes
+
+* updated config and cli-ux ([060534e](https://github.com/dxcli/command/commit/060534e))
+
 <a name="0.1.17"></a>
 ## [0.1.17](https://github.com/dxcli/command/compare/b5904ceaa65551648ff8dfc29d6fb58f5207aa8d...v0.1.17) (2018-01-26)
 
