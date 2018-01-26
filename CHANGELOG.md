@@ -1,3 +1,11 @@
+<a name="0.1.17"></a>
+## [0.1.17](https://github.com/dxcli/command/compare/b5904ceaa65551648ff8dfc29d6fb58f5207aa8d...v0.1.17) (2018-01-26)
+
+
+### Bug Fixes
+
+* set debug ([493ec08](https://github.com/dxcli/command/commit/493ec08))
+
 <a name="0.1.16"></a>
 ## [0.1.16](https://github.com/dxcli/command/compare/c81025c21e9e96f0c6317d3e57c72d1bfde78f07...v0.1.16) (2018-01-26)
 
