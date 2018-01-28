@@ -1,10 +1,11 @@
-import Command from './command'
+import Command, {convertToCached} from './command'
 import * as flags from './flags'
 
 export * from './errors'
 
 export default Command
 export {
+  convertToCached,
   Command,
   flags,
 }
