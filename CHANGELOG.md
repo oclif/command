@@ -1,3 +1,11 @@
+<a name="0.1.21"></a>
+## [0.1.21](https://github.com/dxcli/command/compare/4a852311f70505a4deb22dac27cf1e6fb6afbc92...v0.1.21) (2018-01-28)
+
+
+### Bug Fixes
+
+* export convertToCachedCommand ([9bc563c](https://github.com/dxcli/command/commit/9bc563c))
+
 <a name="0.1.20"></a>
 ## [0.1.20](https://github.com/dxcli/command/compare/6430b695c01a5611a15b351a53609b38a7748018...v0.1.20) (2018-01-28)
 
