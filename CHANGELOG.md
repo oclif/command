@@ -1,3 +1,11 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/dxcli/command/compare/77fae3aa9b41282d7ea803ee7004e5831d9cce49...v0.2.3) (2018-01-28)
+
+
+### Bug Fixes
+
+* trap hook error ([a0f770c](https://github.com/dxcli/command/commit/a0f770c))
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/dxcli/command/compare/e747712c9c5ff0dd4ac160840b965d79c22270e2...v0.2.2) (2018-01-28)
 
