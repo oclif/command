@@ -949,9 +949,9 @@ cli-table@^0.3.1:
   dependencies:
     colors "1.0.3"
 
-cli-ux@^3.3.6:
-  version "3.3.6"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.6.tgz#99b8ef6965d03786d9396eb29d413a5dc14f0cef"
+cli-ux@^3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.7.tgz#523531287fce59726371724a00fd47e1cc6ef64c"
   dependencies:
     "@dxcli/screen" "^0.0.1"
     "@heroku/linewrap" "^1.0.0"
