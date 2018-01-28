@@ -1,3 +1,11 @@
+<a name="0.1.23"></a>
+## [0.1.23](https://github.com/dxcli/command/compare/6b15af19cc146a9e7c7d9308dcc3f65ab4c38b0a...v0.1.23) (2018-01-28)
+
+
+### Bug Fixes
+
+* move [@dxcli](https://github.com/dxcli)/parser into dependencies ([d70edaf](https://github.com/dxcli/command/commit/d70edaf))
+
 <a name="0.1.22"></a>
 ## [0.1.22](https://github.com/dxcli/command/compare/9bc563c8f6e8f6647b32c1e0c52695634564b494...v0.1.22) (2018-01-28)
 
