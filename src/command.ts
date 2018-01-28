@@ -17,6 +17,20 @@ const g = global as any
 
 const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
+export function convertToCached(c: Config.ICommand): Config.ICachedCommand {
+  return {
+    _base: c._base,
+    id: c.id,
+    description: c.description,
+    usage: c.usage,
+    plugin: c.plugin!,
+    hidden: c.hidden,
+    aliases: c.aliases || [],
+    help: c.help,
+    load: async () => c,
+  }
+}
+
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
   static id: string
@@ -38,6 +52,10 @@ export default abstract class Command {
     return cmd._run(argv, opts)
   }
   static async load() { return this }
+
+  static convertToCached(): Config.ICachedCommand {
+    return convertToCached(this)
+  }
 
   config: Config.IConfig
   flags: { [name: string]: any } = {}

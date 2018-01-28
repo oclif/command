@@ -1,24 +1,25 @@
 import * as Config from '@dxcli/config'
 import cli from 'cli-ux'
-import {expect, fancy} from 'fancy-mocha'
+import {expect, fancy} from 'fancy-test'
 
 import Base from '../src'
 
 class Command extends Base {
+  static description = 'test command'
   async run() {
     cli.log('foo')
   }
 }
 
 describe('run', () => {
-  fancy()
+  fancy
   .stdout()
-  .run(() => Command.run([]))
-  .run(output => expect(output.stdout).to.equal('foo\n'))
-  .end('logs to stdout')
+  .do(() => Command.run([]))
+  .do(output => expect(output.stdout).to.equal('foo\n'))
+  .it('logs to stdout')
 
-  fancy()
-  .run(() => {
+  fancy
+  .do(() => {
     const Command: Config.ICommand = class extends Base {
       async run() {
         throw new Error('new x error')
@@ -28,11 +29,11 @@ describe('run', () => {
     return Command.run([])
   })
   .catch(/new x error/)
-  .end('errors out')
+  .it('errors out')
 
-  fancy()
+  fancy
   .stdout()
-  .run(() => {
+  .do(() => {
     const Command: Config.ICommand = class extends Base {
       async run() {
         cli.exit(0)
@@ -41,19 +42,28 @@ describe('run', () => {
     return Command.run([])
   })
   .catch(/EEXIT: 0/)
-  .end('exits with 0')
+  .it('exits with 0')
 
   describe('help error', () => {
     ['-h', '--help', 'help'].forEach(arg => {
-      fancy()
-      .run(() => Command.run([arg]))
+      fancy
+      .do(() => Command.run([arg]))
       .catch((err: any) => expect(err.code).to.equal('EHELP'))
-      .end(`throws help error when passed "${arg}"`)
+      .it(`throws help error when passed "${arg}"`)
     })
 
-    fancy()
-    .run(() => Command.run(['foo']))
+    fancy
+    .do(() => Command.run(['foo']))
     .catch((err: any) => expect(err.code).not.to.equal('EHELP'))
-    .end('does not throw help error when passed "foo"')
+    .it('does not throw help error when passed "foo"')
+  })
+
+  describe('convertToCached', () => {
+    fancy
+    .do(() => {
+      const c = Command.convertToCached()
+      expect(c.description).to.equal('test command')
+    })
+    .it('converts to cached')
   })
 })
