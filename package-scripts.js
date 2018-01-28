@@ -17,28 +17,35 @@ const linters = {
   tslint: script('tslint -p test', 'lint ts files'),
 }
 
-const scripts = {
-  ...linters,
-  lint: concurrent(linters),
-  test: script(concurrent.nps(...Object.keys(linters), 'mocha'), 'lint and run all tests'),
-  mocha: script('mocha --forbid-only "test/**/*.test.ts"', 'run all mocha tests'),
-}
-
+let test = 'mocha --forbid-only "test/**/*.test.ts"'
 if (process.env.CI) {
   if (process.env.CIRCLECI) {
-    scripts.test.script = series(mkdirp('reports'), scripts.test.script)
     // add mocha junit reporter
-    scripts.mocha.script = crossEnv(`MOCHA_FILE=reports/mocha.xml ${scripts.mocha.script} --reporter mocha-junit-reporter`)
+    test = crossEnv(`MOCHA_FILE=reports/mocha.xml ${test} --reporter mocha-junit-reporter`)
     // add eslint reporter
-    scripts.eslint.script = `${scripts.eslint.script} --format junit --output-file reports/eslint.xml`
+    linters.eslint.script = `${linters.eslint.script} --format junit --output-file reports/eslint.xml`
     // add tslint reporter
-    scripts.tslint.script = `${scripts.tslint.script} --format junit > reports/tslint.xml`
-    scripts.release = 'semantic-release -e @dxcli/dev-semantic-release'
+    linters.tslint.script = `${linters.tslint.script} --format junit > reports/tslint.xml`
   }
   // add code coverage reporting with nyc
-  const nyc = 'nyc --nycrc-path node_modules/@dxcli/dev-nyc-config/.nycrc'
+  const nyc = 'nyc --nycrc-path node_modules/@dxcli/nyc-config/.nycrc'
   const nycReport = `${nyc} report --reporter text-lcov > coverage.lcov`
-  scripts.mocha.script = series(`${nyc} ${scripts.mocha.script}`, nycReport)
+  test = series(`${nyc} ${test}`, nycReport)
 }
 
-module.exports = {scripts}
+test = concurrent({
+  ...linters,
+  test: series('nps build', test),
+})
+
+if (process.env.CI) test = series(mkdirp('reports'), test)
+
+module.exports = {
+  scripts: {
+    ...linters,
+    build: series('rm -rf lib', 'tsc'),
+    lint: concurrent(linters),
+    test,
+    release: 'semantic-release -e @dxcli/semantic-release',
+  },
+}

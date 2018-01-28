@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@commitlint/cli@^6.0.1":
+"@commitlint/cli@^6.0.1", "@commitlint/cli@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-6.0.2.tgz#378d37e92c4d97346e84c3a3d6677a62e9471d66"
   dependencies:
@@ -17,6 +17,10 @@
 "@commitlint/config-conventional@^5.2.3":
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-5.2.3.tgz#63671b32b65cb68e7b238405403194b558ff559a"
+
+"@commitlint/config-conventional@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-6.0.2.tgz#8ef87a6facb75b3377b2760b0e91097f8ec64db4"
 
 "@commitlint/core@^6.0.2":
   version "6.0.2"
@@ -121,10 +125,6 @@
     commitizen "^2.9.6"
     cz-conventional-changelog "^2.1.0"
 
-"@dxcli/dev-nyc-config@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev-nyc-config/-/dev-nyc-config-0.0.3.tgz#3ff59cf561663710f025a41f64d608d2977a3d3b"
-
 "@dxcli/dev-semantic-release@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@dxcli/dev-semantic-release/-/dev-semantic-release-0.2.0.tgz#a749272f0d8809ff4aa687b097924b43ce315ce2"
@@ -138,19 +138,11 @@
     semantic-release "^12.2.5"
     shelljs "^0.8.1"
 
-"@dxcli/dev-tslint@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev-tslint/-/dev-tslint-0.0.17.tgz#f20767b72188a0695e4b34ba50976e11502d3891"
+"@dxcli/dev@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.12.tgz#027bcaf96d6c67eb730aa077a1625fdf4e079379"
   dependencies:
-    tslint "^5.9.1"
-    tslint-xo "^0.5.0"
-
-"@dxcli/dev@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.6.tgz#5e8064afbb85d5f553bc86436f879311743ccb6a"
-  dependencies:
-    "@dxcli/dev-nyc-config" "^0.0.3"
-    "@dxcli/dev-tslint" "^0.0.17"
+    "@dxcli/nyc-config" "^0.0.4"
     "@types/ansi-styles" "^2.0.30"
     "@types/chai" "^4.1.2"
     "@types/lodash" "^4.14.97"
@@ -161,10 +153,13 @@
     "@types/read-pkg" "^3.0.0"
     "@types/strip-ansi" "^3.0.0"
     "@types/supports-color" "^3.1.0"
-    eslint-config-dxcli "^1.1.5"
-    mocha-junit-reporter "^1.17.0"
+    eslint-config-dxcli "^1.1.6"
+    nps-utils "^1.5.0"
     nyc "^11.4.1"
-    ts-node "^4.1.0"
+
+"@dxcli/nyc-config@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@dxcli/nyc-config/-/nyc-config-0.0.4.tgz#bd60c089aaa6d5da34e415bab6bc527d8c35a210"
 
 "@dxcli/parser@^0.0.5":
   version "0.0.5"
@@ -177,6 +172,27 @@
 "@dxcli/screen@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@dxcli/screen/-/screen-0.0.1.tgz#9af4e8d0e5a9475e9e4b5f2da775b0447ff72fc2"
+
+"@dxcli/semantic-release@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@dxcli/semantic-release/-/semantic-release-0.3.3.tgz#b3e058935a9064b51defcbc16766b346df5904f0"
+  dependencies:
+    "@commitlint/cli" "^6.0.2"
+    "@commitlint/config-conventional" "^6.0.2"
+    "@semantic-release/changelog" "^1.0.0"
+    "@semantic-release/exec" "^1.0.2"
+    "@semantic-release/git" "^2.0.3"
+    "@semantic-release/github" "^3.0.3"
+    "@semantic-release/npm" "^2.6.4"
+    execa "^0.9.0"
+    semantic-release "^12.2.5"
+
+"@dxcli/tslint@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@dxcli/tslint/-/tslint-0.0.24.tgz#32c19a574828d643bcb446cbfc0b2dbbbf1c1da0"
+  dependencies:
+    tslint "^5.9.1"
+    tslint-xo "^0.5.0"
 
 "@heroku/linewrap@^1.0.0":
   version "1.0.0"
@@ -1478,9 +1494,9 @@ eslint-ast-utils@^1.0.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-dxcli@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/eslint-config-dxcli/-/eslint-config-dxcli-1.1.5.tgz#ac7bf9acaef94bbeb34bb57ff4ffbcbc71ea475a"
+eslint-config-dxcli@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/eslint-config-dxcli/-/eslint-config-dxcli-1.1.6.tgz#f14d8bd748108dd57725a052f627524dedee8f4c"
   dependencies:
     eslint-config-xo-space "^0.17.0"
     eslint-plugin-node "^5.2.1"
@@ -1740,9 +1756,9 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
 
-fancy-test@^0.5.5:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-0.5.5.tgz#e87b189a853af335c76bbcb98704db5ec8380c27"
+fancy-test@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-0.6.3.tgz#cbcdb3bd2e969245e9885fda9d23c5874ef199e3"
   dependencies:
     lodash "^4.17.4"
     stdout-stderr "^0.1.4"
