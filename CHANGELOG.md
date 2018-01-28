@@ -1,3 +1,11 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/dxcli/command/compare/e747712c9c5ff0dd4ac160840b965d79c22270e2...v0.2.2) (2018-01-28)
+
+
+### Bug Fixes
+
+* limit plugin types required ([77fae3a](https://github.com/dxcli/command/commit/77fae3a))
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/dxcli/command/compare/6ab4397a4dae0c266e1f562fc7b22f52ad4260e5...v0.2.1) (2018-01-28)
 
