@@ -101,14 +101,9 @@ export default abstract class Command {
 
   protected async init(argv: string[], opts: Config.ICommandOptions) {
     this.config = opts.config || await Config.read({root: opts.root || parentModule!})
-    g['http-call'] = g['http-call'] || {}
-    g['http-call']!.userAgent = this.config.userAgent
-    this.debug = require('debug')(`cli:command:${this.ctor.id || this.config.name}`)
+    this.initDebug()
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
-    cli.config.context.version = this.config.userAgent
-    cli.config.debug = !!this.config.debug
-    cli.config.errlog = this.config.errlog
     try {
       const parse = await deps.Parser.parse({
         argv,
@@ -125,6 +120,15 @@ export default abstract class Command {
       }
       throw err
     }
+  }
+
+  protected initDebug() {
+    g['http-call'] = g['http-call'] || {}
+    g['http-call']!.userAgent = this.config.userAgent
+    this.debug = require('debug')(`@dxcli/command:${this.ctor.id || this.config.name}`)
+    cli.config.context.version = this.config.userAgent
+    if (this.config.debug) cli.config.debug = true
+    cli.config.errlog = this.config.errlog
   }
 
   protected async done() {
