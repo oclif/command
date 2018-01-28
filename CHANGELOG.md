@@ -1,3 +1,11 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/dxcli/command/compare/6ab4397a4dae0c266e1f562fc7b22f52ad4260e5...v0.2.1) (2018-01-28)
+
+
+### Bug Fixes
+
+* expose initDebug() ([e747712](https://github.com/dxcli/command/commit/e747712))
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/dxcli/command/compare/d70edafbc75e0c03d313acc559c2b6c214e9752c...v0.2.0) (2018-01-28)
 
