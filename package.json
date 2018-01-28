@@ -5,14 +5,15 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/dxcli/command/issues",
   "dependencies": {
-    "@dxcli/config": "^0.1.26",
+    "@dxcli/config": "^0.1.27",
     "@dxcli/parser": "^0.0.5",
     "cli-ux": "^3.2.2",
     "debug": "^3.1.0",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@dxcli/dev": "^2.0.5",
+    "@dxcli/dev": "^2.0.6",
+    "@dxcli/dev-semantic-release": "^0.2.0",
     "chai": "^4.1.2",
     "eslint": "^4.16.0",
     "fancy-test": "^0.5.5",
@@ -39,9 +40,9 @@
   "repository": "dxcli/command",
   "scripts": {
     "commitmsg": "dxcli-dev-commitmsg",
-    "precommit": "nps lint",
-    "prepare": "nps build",
-    "test": "nps test"
+    "precommit": "nps lint -l warn",
+    "prepare": "rm -rf lib && tsc",
+    "test": "nps test -l warn"
   },
   "types": "lib/index.d.ts"
 }
