@@ -18,23 +18,18 @@ const g = global as any
 
 const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
-export function convertToCached(c: Config.ICommand): Config.ICachedCommand {
-  let plugin
-  if (c.plugin) {
-    plugin = {
-      name: c.plugin.name,
-      version: c.plugin.version,
-      type: c.plugin.type,
-      tag: c.plugin.tag,
-      root: c.plugin.root,
-    }
-  }
+export interface ConvertToCachedOptions {
+  id?: string
+  plugin?: Config.IPlugin
+}
+
+export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
   return {
     _base: c._base,
-    id: c.id,
+    id: c.id || opts.id!,
     description: c.description,
     usage: c.usage,
-    plugin,
+    pluginName: opts.plugin && opts.plugin.name,
     hidden: c.hidden,
     aliases: c.aliases || [],
     help: c.help,
@@ -64,8 +59,8 @@ export default abstract class Command {
   }
   static async load() { return this }
 
-  static convertToCached(): Config.ICachedCommand {
-    return convertToCached(this)
+  static convertToCached(opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
+    return convertToCached(this, opts)
   }
 
   config: Config.IConfig

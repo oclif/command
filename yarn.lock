@@ -106,10 +106,11 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.29":
-  version "0.1.29"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.29.tgz#33aca8d9af141af84da15d22f67fb642459466cb"
+"@dxcli/config@^0.1.32":
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.32.tgz#b07b33cc9f91031ff795983bacf8a84f60294ecb"
   dependencies:
+    cli-ux "^3.3.8"
     debug "^3.1.0"
     fs-extra "^5.0.0"
     load-json-file "^4.0.0"
@@ -138,9 +139,9 @@
     semantic-release "^12.2.5"
     shelljs "^0.8.1"
 
-"@dxcli/dev@^2.0.14":
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.14.tgz#44834aa54dc60a11737e583a1716405207ab81a2"
+"@dxcli/dev@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.15.tgz#2984dabb5e8069515ed328cb59d920a00bee7483"
   dependencies:
     "@dxcli/nyc-config" "^0.0.4"
     "@types/ansi-styles" "^2.0.30"
@@ -186,9 +187,9 @@
     execa "^0.9.0"
     semantic-release "^12.2.5"
 
-"@dxcli/tslint@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@dxcli/tslint/-/tslint-0.1.2.tgz#943c36b2faef36a3ca2eed760267da0c859c89b3"
+"@dxcli/tslint@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@dxcli/tslint/-/tslint-0.1.3.tgz#9a7334bab9fd442e8de3d8dcbec8cc1d8d13333e"
   dependencies:
     tslint "^5.9.1"
     tslint-xo "^0.5.0"
