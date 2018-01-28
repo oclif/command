@@ -1,3 +1,11 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/dxcli/command/compare/d70edafbc75e0c03d313acc559c2b6c214e9752c...v0.2.0) (2018-01-28)
+
+
+### Features
+
+* add error context ([6ab4397](https://github.com/dxcli/command/commit/6ab4397))
+
 <a name="0.1.23"></a>
 ## [0.1.23](https://github.com/dxcli/command/compare/6b15af19cc146a9e7c7d9308dcc3f65ab4c38b0a...v0.1.23) (2018-01-28)
 
