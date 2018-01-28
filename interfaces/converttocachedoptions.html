@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ICompletion | @dxcli/command</title>
+	<title>ConvertToCachedOptions | @dxcli/command</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="icompletion.html">ICompletion</a>
+					<a href="converttocachedoptions.html">ConvertToCachedOptions</a>
 				</li>
 			</ul>
-			<h1>Interface ICompletion</h1>
+			<h1>Interface ConvertToCachedOptions</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ICompletion</span>
+						<span class="target">ConvertToCachedOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -79,15 +79,8 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icompletion.html#cacheduration" class="tsd-kind-icon">cache<wbr>Duration</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="icompletion.html#skipcache" class="tsd-kind-icon">skip<wbr>Cache</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-external">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="icompletion.html#cachekey" class="tsd-kind-icon">cache<wbr>Key</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="icompletion.html#options" class="tsd-kind-icon">options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="converttocachedoptions.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="converttocachedoptions.html#plugin" class="tsd-kind-icon">plugin</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,73 +89,24 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="cacheduration" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cache<wbr>Duration</h3>
-					<div class="tsd-signature tsd-kind-icon">cache<wbr>Duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dxcli/command/blob/e47a6be/src/flags.ts#L15">flags.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/dxcli/command/blob/e47a6be/src/command.ts#L22">command.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="skipcache" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> skip<wbr>Cache</h3>
-					<div class="tsd-signature tsd-kind-icon">skip<wbr>Cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+					<a name="plugin" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> plugin</h3>
+					<div class="tsd-signature tsd-kind-icon">plugin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Config.IPlugin</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dxcli/command/blob/e47a6be/src/flags.ts#L14">flags.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/dxcli/command/blob/e47a6be/src/command.ts#L23">command.ts:23</a></li>
 						</ul>
 					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<a name="cachekey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cache<wbr>Key</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">cache<wbr>Key<span class="tsd-signature-symbol">(</span>ctx<span class="tsd-signature-symbol">: </span><a href="icompletioncontext.html" class="tsd-signature-type">ICompletionContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dxcli/command/blob/e47a6be/src/flags.ts#L16">flags.ts:16</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>ctx: <a href="icompletioncontext.html" class="tsd-signature-type">ICompletionContext</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<a name="options" class="tsd-anchor"></a>
-					<h3>options</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">(</span>ctx<span class="tsd-signature-symbol">: </span><a href="icompletioncontext.html" class="tsd-signature-type">ICompletionContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dxcli/command/blob/e47a6be/src/flags.ts#L17">flags.ts:17</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>ctx: <a href="icompletioncontext.html" class="tsd-signature-type">ICompletionContext</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -182,33 +126,27 @@
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="../classes/helperr.html" class="tsd-kind-icon">Help<wbr>Err</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="converttocachedoptions.html" class="tsd-kind-icon">Convert<wbr>ToCached<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="icommandclass.html" class="tsd-kind-icon">ICommand<wbr>Class</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-external">
-						<a href="icompletion.html" class="tsd-kind-icon">ICompletion</a>
+						<a href="converttocachedoptions.html" class="tsd-kind-icon">Convert<wbr>ToCached<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="icompletion.html#cacheduration" class="tsd-kind-icon">cache<wbr>Duration</a>
+								<a href="converttocachedoptions.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="icompletion.html#skipcache" class="tsd-kind-icon">skip<wbr>Cache</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-								<a href="icompletion.html#cachekey" class="tsd-kind-icon">cache<wbr>Key</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-								<a href="icompletion.html#options" class="tsd-kind-icon">options</a>
+								<a href="converttocachedoptions.html#plugin" class="tsd-kind-icon">plugin</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="icommandclass.html" class="tsd-kind-icon">ICommand<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="icompletion.html" class="tsd-kind-icon">ICompletion</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="icompletioncontext.html" class="tsd-kind-icon">ICompletion<wbr>Context</a>
 					</li>
