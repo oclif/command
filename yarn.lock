@@ -138,9 +138,9 @@
     semantic-release "^12.2.5"
     shelljs "^0.8.1"
 
-"@dxcli/dev@^2.0.13":
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.13.tgz#b564d56df2bea15ef9a6943ad2903a1116a92765"
+"@dxcli/dev@^2.0.14":
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.14.tgz#44834aa54dc60a11737e583a1716405207ab81a2"
   dependencies:
     "@dxcli/nyc-config" "^0.0.4"
     "@types/ansi-styles" "^2.0.30"
@@ -153,7 +153,7 @@
     "@types/read-pkg" "^3.0.0"
     "@types/strip-ansi" "^3.0.0"
     "@types/supports-color" "^3.1.0"
-    eslint-config-dxcli "^1.1.7"
+    eslint-config-dxcli "^1.2.0"
     nyc "^11.4.1"
 
 "@dxcli/nyc-config@^0.0.4":
@@ -186,9 +186,9 @@
     execa "^0.9.0"
     semantic-release "^12.2.5"
 
-"@dxcli/tslint@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@dxcli/tslint/-/tslint-0.0.24.tgz#32c19a574828d643bcb446cbfc0b2dbbbf1c1da0"
+"@dxcli/tslint@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@dxcli/tslint/-/tslint-0.1.2.tgz#943c36b2faef36a3ca2eed760267da0c859c89b3"
   dependencies:
     tslint "^5.9.1"
     tslint-xo "^0.5.0"
@@ -927,7 +927,7 @@ clean-regexp@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
-clean-stack@^1.0.0:
+clean-stack@^1.0.0, clean-stack@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz#9e821501ae979986c46b1d66d2d432db2fd4ae31"
 
@@ -949,16 +949,19 @@ cli-table@^0.3.1:
   dependencies:
     colors "1.0.3"
 
-cli-ux@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.2.2.tgz#7836bdca210cd8d70f6d26adb7c2fb5b3e4842fc"
+cli-ux@^3.3.6:
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.6.tgz#99b8ef6965d03786d9396eb29d413a5dc14f0cef"
   dependencies:
     "@dxcli/screen" "^0.0.1"
     "@heroku/linewrap" "^1.0.0"
     ansi-styles "^3.2.0"
     cardinal "^1.0.0"
     chalk "^2.3.0"
+    clean-stack "^1.3.0"
+    extract-stack "^1.0.0"
     fs-extra "^5.0.0"
+    indent-string "^3.2.0"
     lodash "^4.17.4"
     node-notifier "^5.2.1"
     password-prompt "^1.0.4"
@@ -1493,9 +1496,9 @@ eslint-ast-utils@^1.0.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-dxcli@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/eslint-config-dxcli/-/eslint-config-dxcli-1.1.7.tgz#c3cd73bfe21259fd5a77de04199f49f1f89ec5a4"
+eslint-config-dxcli@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-dxcli/-/eslint-config-dxcli-1.2.1.tgz#8e65ee698fa77e9485462c788fa466edffccc13d"
   dependencies:
     eslint-config-xo-space "^0.17.0"
     eslint-plugin-node "^5.2.1"
@@ -1747,6 +1750,10 @@ extglob@^2.0.2:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+extract-stack@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/extract-stack/-/extract-stack-1.0.0.tgz#b97acaf9441eea2332529624b732fc5a1c8165fa"
+
 extsprintf@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"
@@ -1755,9 +1762,9 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
 
-fancy-test@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-0.6.3.tgz#cbcdb3bd2e969245e9885fda9d23c5874ef199e3"
+fancy-test@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-0.6.4.tgz#3104b64348f93983827beec614cc89c084a8118c"
   dependencies:
     lodash "^4.17.4"
     stdout-stderr "^0.1.4"
@@ -2025,8 +2032,8 @@ git-up@^2.0.0:
     parse-url "^1.3.0"
 
 git-url-parse@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-8.0.0.tgz#249430c84e6b11ebae630136f50d7993eb03e211"
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-8.0.1.tgz#eb3fa427e294d214d9abbeb59637cc8646279c00"
   dependencies:
     git-up "^2.0.0"
 
@@ -2319,7 +2326,7 @@ indent-string@^2.1.0:
   dependencies:
     repeating "^2.0.0"
 
-indent-string@^3.0.0:
+indent-string@^3.0.0, indent-string@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
 

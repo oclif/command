@@ -2,6 +2,7 @@ const pjson = require('../package.json')
 import * as Config from '@dxcli/config'
 import {args} from '@dxcli/parser'
 import cli from 'cli-ux'
+import * as _ from 'lodash'
 
 import deps from './deps'
 import * as flags from './flags'
@@ -104,6 +105,8 @@ export default abstract class Command {
     g['http-call']!.userAgent = this.config.userAgent
     this.debug = require('debug')(`cli:command:${this.ctor.id || this.config.name}`)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
+    cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
+    cli.config.context.version = this.config.userAgent
     cli.config.debug = !!this.config.debug
     cli.config.errlog = this.config.errlog
     try {
