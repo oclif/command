@@ -106,9 +106,9 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.27":
-  version "0.1.27"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.27.tgz#639d82e555d2a09cffeff065324279988df02e1f"
+"@dxcli/config@^0.1.28":
+  version "0.1.28"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.28.tgz#76131f25b1725eba3ebf9609d4552cd5372147b8"
   dependencies:
     debug "^3.1.0"
     fs-extra "^5.0.0"
@@ -138,9 +138,9 @@
     semantic-release "^12.2.5"
     shelljs "^0.8.1"
 
-"@dxcli/dev@^2.0.12":
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.12.tgz#027bcaf96d6c67eb730aa077a1625fdf4e079379"
+"@dxcli/dev@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev/-/dev-2.0.13.tgz#b564d56df2bea15ef9a6943ad2903a1116a92765"
   dependencies:
     "@dxcli/nyc-config" "^0.0.4"
     "@types/ansi-styles" "^2.0.30"
@@ -153,8 +153,7 @@
     "@types/read-pkg" "^3.0.0"
     "@types/strip-ansi" "^3.0.0"
     "@types/supports-color" "^3.1.0"
-    eslint-config-dxcli "^1.1.6"
-    nps-utils "^1.5.0"
+    eslint-config-dxcli "^1.1.7"
     nyc "^11.4.1"
 
 "@dxcli/nyc-config@^0.0.4":
@@ -1494,9 +1493,9 @@ eslint-ast-utils@^1.0.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-dxcli@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/eslint-config-dxcli/-/eslint-config-dxcli-1.1.6.tgz#f14d8bd748108dd57725a052f627524dedee8f4c"
+eslint-config-dxcli@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/eslint-config-dxcli/-/eslint-config-dxcli-1.1.7.tgz#c3cd73bfe21259fd5a77de04199f49f1f89ec5a4"
   dependencies:
     eslint-config-xo-space "^0.17.0"
     eslint-plugin-node "^5.2.1"
