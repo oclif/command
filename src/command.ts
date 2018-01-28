@@ -19,12 +19,22 @@ const g = global as any
 const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
 export function convertToCached(c: Config.ICommand): Config.ICachedCommand {
+  let plugin
+  if (c.plugin) {
+    plugin = {
+      name: c.plugin.name,
+      version: c.plugin.version,
+      type: c.plugin.type,
+      tag: c.plugin.tag,
+      root: c.plugin.root,
+    }
+  }
   return {
     _base: c._base,
     id: c.id,
     description: c.description,
     usage: c.usage,
-    plugin: c.plugin!,
+    plugin,
     hidden: c.hidden,
     aliases: c.aliases || [],
     help: c.help,
