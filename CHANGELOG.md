@@ -1,3 +1,11 @@
+<a name="0.1.22"></a>
+## [0.1.22](https://github.com/dxcli/command/compare/9bc563c8f6e8f6647b32c1e0c52695634564b494...v0.1.22) (2018-01-28)
+
+
+### Bug Fixes
+
+* add peerDependencies ([6b15af1](https://github.com/dxcli/command/commit/6b15af1))
+
 <a name="0.1.21"></a>
 ## [0.1.21](https://github.com/dxcli/command/compare/4a852311f70505a4deb22dac27cf1e6fb6afbc92...v0.1.21) (2018-01-28)
 
