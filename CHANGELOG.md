@@ -1,3 +1,11 @@
+<a name="0.2.5"></a>
+## [0.2.5](https://github.com/dxcli/command/compare/e47a6be653ee59c25cb038f1bbe3774b3918d0fd...v0.2.5) (2018-01-29)
+
+
+### Bug Fixes
+
+* added help properties ([16908c9](https://github.com/dxcli/command/commit/16908c9))
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/dxcli/command/compare/a0f770ce3863a449bdbfac98201f48c404c5968d...v0.2.4) (2018-01-28)
 
