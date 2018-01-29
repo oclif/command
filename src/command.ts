@@ -33,6 +33,33 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
     hidden: c.hidden,
     aliases: c.aliases || [],
     help: c.help,
+    flags: _.mapValues(c.flags, flag => {
+      if (flag.type === 'boolean') {
+        return {
+          type: flag.type,
+          char: flag.char,
+          description: flag.description,
+          hidden: flag.hidden,
+          name: flag.name,
+          required: flag.required,
+        }
+      }
+      return {
+        type: flag.type,
+        char: flag.char,
+        description: flag.description,
+        hidden: flag.hidden,
+        name: flag.name,
+        required: flag.required,
+      }
+    }),
+    args: c.args.map(a => ({
+      name: a.name,
+      description: a.description,
+      required: a.required,
+      // default: a.default && a.default(),
+      hidden: a.hidden,
+    })),
     load: async () => c,
   }
 }
@@ -110,7 +137,7 @@ export default abstract class Command {
 
   protected async init(argv: string[], opts: Config.ICommandOptions) {
     this.config = opts.config || await Config.read({root: opts.root || parentModule!})
-    this.initDebug()
+    this.initDebug(this.config)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
     try {
@@ -131,13 +158,13 @@ export default abstract class Command {
     }
   }
 
-  protected initDebug() {
+  protected initDebug(config: Config.IConfig) {
     g['http-call'] = g['http-call'] || {}
-    g['http-call']!.userAgent = this.config.userAgent
-    this.debug = require('debug')(`@dxcli/command:${this.ctor.id || this.config.name}`)
-    cli.config.context.version = this.config.userAgent
-    if (this.config.debug) cli.config.debug = true
-    cli.config.errlog = this.config.errlog
+    g['http-call']!.userAgent = config.userAgent
+    this.debug = require('debug')(`@dxcli/command:${this.ctor.id || config.name}`)
+    cli.config.context.version = config.userAgent
+    if (config.debug) cli.config.debug = true
+    cli.config.errlog = config.errlog
   }
 
   protected async done() {

@@ -11,8 +11,8 @@
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@dxcli/config": "^0.1.32",
-    "@dxcli/dev": "^2.0.15",
+    "@dxcli/config": "^0.1.37",
+    "@dxcli/dev": "^2.0.16",
     "@dxcli/dev-semantic-release": "^0.2.0",
     "@dxcli/semantic-release": "^0.3.3",
     "@dxcli/tslint": "^0.1.3",
