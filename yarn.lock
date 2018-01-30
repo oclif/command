@@ -102,9 +102,9 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/config@^0.1.39":
-  version "0.1.39"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.39.tgz#b6d688b69d00a0bd5ce1089ab645ea436b4cccc3"
+"@dxcli/config@^0.1.40":
+  version "0.1.40"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.40.tgz#bc4e57be522e2882ff19d81586065a4f6b6a0cb1"
   dependencies:
     cli-ux "^3.3.8"
     debug "^3.1.0"
@@ -134,9 +134,9 @@
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@dxcli/nyc-config/-/nyc-config-0.0.4.tgz#bd60c089aaa6d5da34e415bab6bc527d8c35a210"
 
-"@dxcli/parser@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.0.6.tgz#eece8abbe0cdf33ecd7e817d5df8ad7e934a097c"
+"@dxcli/parser@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.1.1.tgz#df9283a03b9764e5df333b2e34ba50edeab61f65"
   dependencies:
     "@dxcli/screen" "^0.0.2"
     chalk "^2.3.0"
