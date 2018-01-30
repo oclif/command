@@ -82,13 +82,6 @@ export default abstract class Command {
       await this.done()
     } catch (err) {
       if (err.code === 'EEXIT') throw err
-      if (this.config && this.config.engine) {
-        try {
-          await this.config.engine.runHook('error', err)
-        } catch (err) {
-          cli.warn(err, {context: {description: 'error running hook'}})
-        }
-      }
       cli.error(err)
     }
   }
