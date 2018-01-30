@@ -1,3 +1,11 @@
+<a name="0.2.8"></a>
+## [0.2.8](https://github.com/dxcli/command/compare/a94774da85b4c2d1151433b977ac8a9cb563ba92...v0.2.8) (2018-01-30)
+
+
+### Bug Fixes
+
+* remove hook from this library ([a58e668](https://github.com/dxcli/command/commit/a58e668))
+
 <a name="0.2.7"></a>
 ## [0.2.7](https://github.com/dxcli/command/compare/f075793a01c259f380b0254d4d00615f4e08342b...v0.2.7) (2018-01-30)
 
