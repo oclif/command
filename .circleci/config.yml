@@ -44,6 +44,7 @@ jobs:
       - restore_cache: *restore_cache
       - run: .circleci/setup_git
       - run: .circleci/yarn
+      - run: yarn add -D @dxcli/semantic-release@1
       - run: yarn exec nps release
 
 workflows:

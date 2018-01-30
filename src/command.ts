@@ -4,6 +4,7 @@ import {args} from '@dxcli/parser'
 import cli from 'cli-ux'
 import * as _ from 'lodash'
 
+import {convertToCached, ConvertToCachedOptions} from './cache'
 import deps from './deps'
 import * as flags from './flags'
 
@@ -18,64 +19,20 @@ const g = global as any
 
 const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
-export interface ConvertToCachedOptions {
-  id?: string
-  plugin?: Config.IPlugin
-}
-
-export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
-  return {
-    _base: c._base,
-    id: c.id || opts.id!,
-    description: c.description,
-    usage: c.usage,
-    pluginName: opts.plugin && opts.plugin.name,
-    hidden: c.hidden,
-    aliases: c.aliases || [],
-    help: c.help,
-    flags: _.mapValues(c.flags, flag => {
-      if (flag.type === 'boolean') {
-        return {
-          type: flag.type,
-          char: flag.char,
-          description: flag.description,
-          hidden: flag.hidden,
-          name: flag.name,
-          required: flag.required,
-        }
-      }
-      return {
-        type: flag.type,
-        char: flag.char,
-        description: flag.description,
-        hidden: flag.hidden,
-        name: flag.name,
-        required: flag.required,
-      }
-    }),
-    args: c.args.map(a => ({
-      name: a.name,
-      description: a.description,
-      required: a.required,
-      // default: a.default && a.default(),
-      hidden: a.hidden,
-    })),
-    load: async () => c,
-  }
-}
-
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
   static id: string
+  static title: string | undefined
   static description: string | undefined
   static hidden: boolean
-  static usage: string | undefined
+  static usage: string | string[] | undefined
   static help: string | undefined
   static aliases: string[] = []
   static variableArgs = false
-  static flags: flags.Input
+  static flags: flags.Input<any>
   static args: args.IArg[] = []
   static plugin: Config.IPlugin | undefined
+  static examples: string[] | undefined
 
   /**
    * instantiate and run the command
@@ -84,6 +41,7 @@ export default abstract class Command {
     const cmd = new this()
     return cmd._run(argv, opts)
   }
+
   static async load() { return this }
 
   static convertToCached(opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
@@ -91,9 +49,9 @@ export default abstract class Command {
   }
 
   config: Config.IConfig
-  flags: { [name: string]: any } = {}
   argv: string[]
-  args: { [name: string]: string } = {}
+  flags: flags.Output
+  args: args.Output
 
   // prevent setting things that need to be static
   topic: null
@@ -147,7 +105,7 @@ export default abstract class Command {
         flags: this.ctor.flags || {},
         strict: !this.ctor.variableArgs,
       })
-      this.flags = parse.flags
+      this.flags = parse.flags as any
       this.argv = parse.argv
       this.args = parse.args
     } catch (err) {
@@ -174,4 +132,9 @@ export default abstract class Command {
       cli.warn(err)
     }
   }
+}
+
+export {
+  convertToCached,
+  ConvertToCachedOptions,
 }

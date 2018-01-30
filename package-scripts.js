@@ -19,11 +19,11 @@ const linters = {
   tslint: script('tslint -p test', 'lint ts files'),
 }
 
-let test = 'mocha --forbid-only "test/**/*.test.ts"'
+let mocha = 'mocha --forbid-only "test/**/*.test.ts"'
 if (process.env.CI) {
   if (process.env.CIRCLECI) {
     // add mocha junit reporter
-    test = crossEnv(`MOCHA_FILE=reports/mocha.xml ${test} --reporter mocha-junit-reporter`)
+    mocha = crossEnv(`MOCHA_FILE=reports/mocha.xml ${mocha} --reporter mocha-junit-reporter`)
     // add eslint reporter
     linters.eslint.script = `${linters.eslint.script} --format junit --output-file reports/eslint.xml`
     // add tslint reporter
@@ -32,12 +32,12 @@ if (process.env.CI) {
   // add code coverage reporting with nyc
   const nyc = 'nyc --nycrc-path node_modules/@dxcli/nyc-config/.nycrc'
   const nycReport = `${nyc} report --reporter text-lcov > coverage.lcov`
-  test = series(`${nyc} ${test}`, nycReport)
+  mocha = series(`${nyc} ${mocha}`, nycReport)
 }
 
-test = concurrent({
+let test = concurrent({
   ...linters,
-  test: series('nps build', test),
+  test: series('nps build', mocha),
 })
 
 if (process.env.CI) test = series(mkdirp('reports'), test)
@@ -48,6 +48,7 @@ module.exports = {
     build: series('rm -rf lib', 'tsc'),
     lint: concurrent(linters),
     test,
-    release: 'semantic-release -e @dxcli/semantic-release',
+    mocha,
+    release: 'dxcli-semantic-release -e @dxcli/semantic-release',
   },
 }

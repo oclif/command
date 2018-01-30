@@ -17,24 +17,27 @@ export interface ICompletion {
   options(ctx: ICompletionContext): Promise<string[]>
 }
 
-export interface IOptionFlag<T = string> extends flags.IOptionFlag<T> {
+export interface IOptionFlag<T> extends flags.IOptionFlag<T> {
   completion?: ICompletion
 }
 
-export type IFlag<T = string> = flags.IBooleanFlag | IOptionFlag<T>
+export type IFlag<T> = flags.IBooleanFlag<T> | IOptionFlag<T>
 
-export interface Input {
-  [k: string]: IFlag<any>
+export type Output = flags.Output
+export type Input<T extends flags.Output> = { [P in keyof T]: IFlag<T[P]> }
+
+export interface Definition<T> {
+  (options: {multiple: true} & Partial<IOptionFlag<T>>): IOptionFlag<T[]>
+  (options: {required: true} & Partial<IOptionFlag<T>>): IOptionFlag<T>
+  (options?: Partial<IOptionFlag<T>>): IOptionFlag<T | undefined>
 }
 
-export type Definition<T = string> = (options?: Partial<IOptionFlag<T>>) => IOptionFlag<T>
-
-export function option<T = string>(defaults: Partial<IOptionFlag<T>> = {}): Definition<T> {
-  return deps.Parser.flags.option<T>(defaults)
+export function build<T>(defaults: {parse: IOptionFlag<T>['parse']} & Partial<IOptionFlag<T>>): Definition<T>
+export function build(defaults: Partial<IOptionFlag<string>>): Definition<string>
+export function build<T>(defaults: Partial<IOptionFlag<T>>): Definition<T> {
+  return deps.Parser.flags.build<T>(defaults as any)
 }
 
-export function string(defaults: Partial<IOptionFlag> = {}): IOptionFlag {
-  return deps.Parser.flags.string(defaults)
-}
-
+const stringFlag = build({})
+export {stringFlag as string}
 export {boolean} from '@dxcli/parser/lib/flags'
