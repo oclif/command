@@ -126,6 +126,48 @@ describe('run', () => {
         ],
       })
     })
-    .it('converts to cached')
+    .it('converts to cached with everything set')
+
+    fancy
+    .do(async () => {
+      const c = class extends Command {
+      }.convertToCached()
+      expect(await c.load()).to.have.property('run')
+      delete c.load
+      expect(c).to.deep.equal({
+        _base: `@dxcli/command@${pjson.version}`,
+        id: undefined,
+        hidden: undefined,
+        pluginName: undefined,
+        description: 'test command',
+        aliases: [],
+        title: undefined,
+        usage: undefined,
+        flags: {},
+        args: [],
+      })
+    })
+
+    .it('adds plugin name')
+    fancy
+    .do(async () => {
+      const c = class extends Command {
+      }.convertToCached({plugin: {name: 'myplugin'} as any})
+      expect(await c.load()).to.have.property('run')
+      delete c.load
+      expect(c).to.deep.equal({
+        _base: `@dxcli/command@${pjson.version}`,
+        id: undefined,
+        hidden: undefined,
+        pluginName: 'myplugin',
+        description: 'test command',
+        aliases: [],
+        title: undefined,
+        usage: undefined,
+        flags: {},
+        args: [],
+      })
+    })
+    .it('converts to cached with nothing set')
   })
 })
