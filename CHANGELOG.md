@@ -1,3 +1,11 @@
+<a name="0.2.7"></a>
+## [0.2.7](https://github.com/dxcli/command/compare/f075793a01c259f380b0254d4d00615f4e08342b...v0.2.7) (2018-01-30)
+
+
+### Bug Fixes
+
+* add title to cache ([58bb7ab](https://github.com/dxcli/command/commit/58bb7ab))
+
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/dxcli/command/compare/16908c946e8c736ccffe0dd11d4064e427fbe4bc...v0.2.6) (2018-01-30)
 
