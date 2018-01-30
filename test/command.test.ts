@@ -62,7 +62,7 @@ describe('run', () => {
 
   describe('convertToCached', () => {
     fancy
-    .do(() => {
+    .do(async () => {
       const c = class extends Command {
         static title = 'cmd title'
         static usage = ['$ usage']
@@ -87,6 +87,7 @@ describe('run', () => {
           }
         ]
       }.convertToCached({id: 'foo:bar'})
+      expect(await c.load()).to.have.property('run')
       delete c.load
       expect(c).to.deep.equal({
         _base: `@dxcli/command@${pjson.version}`,
