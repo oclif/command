@@ -5,7 +5,7 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/dxcli/command/issues",
   "dependencies": {
-    "@dxcli/parser": "^0.0.6",
+    "@dxcli/parser": "^0.1.0",
     "debug": "^3.1.0",
     "lodash": "^4.17.4",
     "tslib": "^1.9.0"
