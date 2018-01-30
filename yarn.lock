@@ -134,9 +134,9 @@
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@dxcli/nyc-config/-/nyc-config-0.0.4.tgz#bd60c089aaa6d5da34e415bab6bc527d8c35a210"
 
-"@dxcli/parser@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.0.6.tgz#eece8abbe0cdf33ecd7e817d5df8ad7e934a097c"
+"@dxcli/parser@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@dxcli/parser/-/parser-0.1.0.tgz#d39032d12a1a4d84f9844d64e5bf95e0a0ed9665"
   dependencies:
     "@dxcli/screen" "^0.0.2"
     chalk "^2.3.0"
