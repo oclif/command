@@ -1,3 +1,11 @@
+<a name="0.2.6"></a>
+## [0.2.6](https://github.com/dxcli/command/compare/16908c946e8c736ccffe0dd11d4064e427fbe4bc...v0.2.6) (2018-01-30)
+
+
+### Bug Fixes
+
+* add new config help vars ([f075793](https://github.com/dxcli/command/commit/f075793))
+
 <a name="0.2.5"></a>
 ## [0.2.5](https://github.com/dxcli/command/compare/e47a6be653ee59c25cb038f1bbe3774b3918d0fd...v0.2.5) (2018-01-29)
 
