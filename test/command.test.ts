@@ -187,4 +187,15 @@ describe('run', () => {
       expect(ctx.stdout).to.equal('jdxcode\n')
     })
   })
+
+  describe('load', () => {
+    fancy
+    .it('returns self', async () => {
+      const cmd = class extends Base {
+        async run() {}
+      }
+
+      expect(await cmd.load()).to.equal(cmd)
+    })
+  })
 })
