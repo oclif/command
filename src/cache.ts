@@ -9,6 +9,7 @@ export interface ConvertToCachedOptions {
 export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
   return {
     _base: c._base,
+    title: c.title,
     id: c.id || opts.id!,
     description: c.description,
     usage: c.usage,
