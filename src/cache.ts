@@ -17,23 +17,23 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
     hidden: c.hidden,
     aliases: c.aliases || [],
     // help: c.help,
-    flags: _.mapValues(c.flags, flag => {
+    flags: _.mapValues(c.flags, (flag, name) => {
       if (flag.type === 'boolean') {
         return {
+          name,
           type: flag.type,
           char: flag.char,
           description: flag.description,
           hidden: flag.hidden,
-          name: flag.name,
           required: flag.required,
         }
       }
       return {
+        name,
         type: flag.type,
         char: flag.char,
         description: flag.description,
         hidden: flag.hidden,
-        name: flag.name,
         required: flag.required,
       }
     }),

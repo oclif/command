@@ -2,7 +2,9 @@ import * as Config from '@dxcli/config'
 import cli from 'cli-ux'
 import {expect, fancy} from 'fancy-test'
 
-import Base from '../src'
+import Base, {flags} from '../src'
+
+const pjson = require('../package.json')
 
 class Command extends Base {
   static description = 'test command'
@@ -61,8 +63,67 @@ describe('run', () => {
   describe('convertToCached', () => {
     fancy
     .do(() => {
-      const c = Command.convertToCached()
-      expect(c.description).to.equal('test command')
+      const c = class extends Command {
+        static title = 'cmd title'
+        static usage = ['$ usage']
+        static description = 'test command'
+        static aliases = ['alias1', 'alias2']
+        static hidden = true
+        static flags = {
+          flaga: flags.boolean(),
+          flagb: flags.string({
+            char: 'b',
+            hidden: true,
+            required: false,
+            description: 'flagb desc',
+          }),
+        }
+        static args = [
+          {
+            name: 'arg1',
+            description: 'arg1 desc',
+            required: true,
+            hidden: false,
+          }
+        ]
+      }.convertToCached({id: 'foo:bar'})
+      delete c.load
+      expect(c).to.deep.equal({
+        _base: `@dxcli/command@${pjson.version}`,
+        id: 'foo:bar',
+        hidden: true,
+        pluginName: undefined,
+        description: 'test command',
+        aliases: ['alias1', 'alias2'],
+        title: 'cmd title',
+        usage: ['$ usage'],
+        flags: {
+          flaga: {
+            char: undefined,
+            description: undefined,
+            name: 'flaga',
+            hidden: undefined,
+            required: undefined,
+            type: 'boolean',
+          },
+          flagb: {
+            char: 'b',
+            description: 'flagb desc',
+            name: 'flagb',
+            hidden: true,
+            required: false,
+            type: 'option',
+          }
+        },
+        args: [
+          {
+            description: 'arg1 desc',
+            name: 'arg1',
+            hidden: false,
+            required: true,
+          }
+        ],
+      })
     })
     .it('converts to cached')
   })
