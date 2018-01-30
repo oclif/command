@@ -170,4 +170,21 @@ describe('run', () => {
     })
     .it('converts to cached with nothing set')
   })
+
+  describe('http', () => {
+    fancy
+    .nock('https://api.github.com', nock => nock.get('/me').reply(200, {name: 'jdxcode'}))
+    .stdout()
+    .it('makes http call', async ctx => {
+      const cmd = class extends Base {
+        async run() {
+          let {body: user} = await this.http.get('https://api.github.com/me')
+          cli.log(user.name)
+        }
+      }
+
+      await cmd.run([])
+      expect(ctx.stdout).to.equal('jdxcode\n')
+    })
+  })
 })
