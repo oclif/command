@@ -90,7 +90,7 @@ export default abstract class Command {
         argv,
         args: this.ctor.args || [],
         flags: this.ctor.flags || {},
-        strict: this.ctor.strict || (this.ctor as any).variableArgs,
+        strict: this.ctor.strict || !(this.ctor as any).variableArgs,
       })
       this.flags = parse.flags as any
       this.argv = parse.argv
