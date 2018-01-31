@@ -8,7 +8,7 @@ import {convertToCached, ConvertToCachedOptions} from './cache'
 import deps from './deps'
 import * as flags from './flags'
 
-export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Config.IConfig | Config.ICommandOptions) => Promise<void>
+export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Config.ICommandOptions) => Promise<void>
 
 export interface ICommandClass<T extends Command> {
   run: CommandRunFn
@@ -38,11 +38,11 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: CommandRunFn = async function (argv: string[] = process.argv.slice(2), opts: Config.IConfig | Config.ICommandOptions = {}) {
+  static run: CommandRunFn = async function (argv: string[] = process.argv.slice(2), opts: Config.ICommandOptions = {}) {
     let cmd!: Command
     try {
       let config
-      if (Config.isIConfig(opts)) config = opts
+      if (opts.config && Config.isIConfig(opts.config)) config = opts.config
       else config = await Config.read({root: opts.root || parentModule!})
       cmd = new this(argv, config)
       return await cmd.run()
