@@ -11,7 +11,7 @@ export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: st
 
 export interface ICommandClass<T extends Command> {
   run: CommandRunFn
-  new (argv: string[], config: Config.IConfig): T
+  new (argv: string[], opts: Config.ICommandOptions & {config: Config.IConfig}): T
 }
 
 const g = global as any
@@ -42,7 +42,7 @@ export default abstract class Command {
       let config
       if (opts.config && Config.isIConfig(opts.config)) config = opts.config
       else config = await Config.read({root: opts.root || parentModule!})
-      cmd = new this(argv, config)
+      cmd = new this(argv, {...opts, config})
       return await cmd.run()
     } finally {
       if (cmd) await cmd.finally()
@@ -55,8 +55,7 @@ export default abstract class Command {
     return convertToCached(this, opts)
   }
 
-  flags!: flags.Output
-  args!: args.Output
+  config: Config.IConfig
 
   // prevent setting things that need to be static
   description!: null
@@ -69,15 +68,17 @@ export default abstract class Command {
 
   protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], public config: Config.IConfig) {
-    g['http-call'] = g['http-call'] || {}
-    g['http-call']!.userAgent = config.userAgent
-    this.debug = require('debug')(this.ctor.id ? `${config.bin}:${this.ctor.id}` : config.bin)
+  constructor(public argv: string[], public opts: Config.ICommandOptions & {config: Config.IConfig}) {
+    this.config = opts.config
+    this.debug = require('debug')(this.ctor.id ? `${this.config.bin}:${this.ctor.id}` : this.config.bin)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
-    cli.config.context.version = config.userAgent
-    if (config.debug) cli.config.debug = true
-    cli.config.errlog = config.errlog
+    cli.config.context.version = this.config.userAgent
+    if (this.config.debug) cli.config.debug = true
+    cli.config.errlog = this.config.errlog
+    g['http-call'] = g['http-call'] || {}
+    g['http-call']!.userAgent = this.config.userAgent
+    this.init()
   }
 
   get ctor(): typeof Command {
@@ -90,7 +91,7 @@ export default abstract class Command {
    * actual command run code goes here
    */
   abstract async run(): Promise<void>
-
+  protected init(): void {}
   protected async finally() {
     try {
       await cli.done()
