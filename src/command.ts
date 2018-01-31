@@ -56,6 +56,7 @@ export default abstract class Command {
     return convertToCached(this, opts)
   }
 
+  argv: string[]
   flags: flags.Output
   args: args.Output
 
@@ -70,7 +71,7 @@ export default abstract class Command {
 
   protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], public config: Config.IConfig) {
+  constructor(argv: string[], public config: Config.IConfig) {
     g['http-call'] = g['http-call'] || {}
     g['http-call']!.userAgent = config.userAgent
     this.debug = require('debug')(this.ctor.id ? `${config.bin}:${this.ctor.id}` : config.bin)
