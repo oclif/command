@@ -1,3 +1,11 @@
+<a name="0.2.19"></a>
+## [0.2.19](https://github.com/anycli/command/compare/e828b46723c8aaa2bbc0a860d5646437cb6aeb56...v0.2.19) (2018-01-31)
+
+
+### Bug Fixes
+
+* move peer deps into required ([3cc1798](https://github.com/anycli/command/commit/3cc1798))
+
 <a name="0.2.18"></a>
 ## [0.2.18](https://github.com/anycli/command/compare/a186b5f4dd55fb9767ddb2d9a5678af4a9221de0...v0.2.18) (2018-01-31)
 
