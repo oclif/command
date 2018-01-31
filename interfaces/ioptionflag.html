@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IOptionFlag | @dxcli/command</title>
+	<title>IOptionFlag | @anycli/command</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@dxcli/command</a>
+					<a href="../index.html" class="title">@anycli/command</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -96,10 +96,12 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ioptionflag.html#completion" class="tsd-kind-icon">completion</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#default" class="tsd-kind-icon">default</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#helpvalue" class="tsd-kind-icon">help<wbr>Value</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#hidden" class="tsd-kind-icon">hidden</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#input" class="tsd-kind-icon">input</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#multiple" class="tsd-kind-icon">multiple</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#optiontype" class="tsd-kind-icon">option<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#required" class="tsd-kind-icon">required</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="ioptionflag.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
@@ -122,7 +124,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IFlagBase.char</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:10</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:10</li>
 						</ul>
 					</aside>
 				</section>
@@ -132,7 +134,7 @@
 					<div class="tsd-signature tsd-kind-icon">completion<span class="tsd-signature-symbol">:</span> <a href="icompletion.html" class="tsd-signature-type">ICompletion</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dxcli/command/blob/a58e668/src/flags.ts#L21">flags.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/anycli/command/blob/f6d0558/src/flags.ts#L21">flags.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -143,7 +145,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IOptionFlag.default</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:22</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:24</li>
 						</ul>
 					</aside>
 				</section>
@@ -154,7 +156,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IFlagBase.description</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:11</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:11</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="helpvalue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> help<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">help<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from IOptionFlag.helpValue</p>
+						<ul>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:23</li>
 						</ul>
 					</aside>
 				</section>
@@ -165,7 +178,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IFlagBase.hidden</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:12</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:12</li>
 						</ul>
 					</aside>
 				</section>
@@ -176,7 +189,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IOptionFlag.input</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:24</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:26</li>
 						</ul>
 					</aside>
 				</section>
@@ -187,7 +200,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IOptionFlag.multiple</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:23</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:25</li>
 						</ul>
 					</aside>
 				</section>
@@ -198,7 +211,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IFlagBase.name</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:9</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:9</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="optiontype" class="tsd-anchor"></a>
+					<h3>option<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">option<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from IOptionFlag.optionType</p>
+						<ul>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:22</li>
 						</ul>
 					</aside>
 				</section>
@@ -209,7 +233,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IFlagBase.required</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:13</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:13</li>
 						</ul>
 					</aside>
 				</section>
@@ -220,7 +244,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from IOptionFlag.type</p>
 						<ul>
-							<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:21</li>
+							<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +262,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IFlagBase.parse</p>
 								<ul>
-									<li>Defined in /root/cli/node_modules/@dxcli/parser/lib/flags.d.ts:14</li>
+									<li>Defined in /root/cli/node_modules/@anycli/parser/lib/flags.d.ts:14</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -302,6 +326,9 @@
 								<a href="ioptionflag.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="ioptionflag.html#helpvalue" class="tsd-kind-icon">help<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="ioptionflag.html#hidden" class="tsd-kind-icon">hidden</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
@@ -312,6 +339,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="ioptionflag.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="ioptionflag.html#optiontype" class="tsd-kind-icon">option<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="ioptionflag.html#required" class="tsd-kind-icon">required</a>
