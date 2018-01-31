@@ -1,4 +1,4 @@
-import * as Config from '@dxcli/config'
+import * as Config from '@anycli/config'
 import cli from 'cli-ux'
 import {expect, fancy} from 'fancy-test'
 
@@ -90,7 +90,7 @@ describe('run', () => {
       expect(await c.load()).to.have.property('run')
       delete c.load
       expect(c).to.deep.equal({
-        _base: `@dxcli/command@${pjson.version}`,
+        _base: `@anycli/command@${pjson.version}`,
         id: 'foo:bar',
         hidden: true,
         pluginName: undefined,
@@ -135,7 +135,7 @@ describe('run', () => {
       expect(await c.load()).to.have.property('run')
       delete c.load
       expect(c).to.deep.equal({
-        _base: `@dxcli/command@${pjson.version}`,
+        _base: `@anycli/command@${pjson.version}`,
         id: undefined,
         hidden: undefined,
         pluginName: undefined,
@@ -156,7 +156,7 @@ describe('run', () => {
       expect(await c.load()).to.have.property('run')
       delete c.load
       expect(c).to.deep.equal({
-        _base: `@dxcli/command@${pjson.version}`,
+        _base: `@anycli/command@${pjson.version}`,
         id: undefined,
         hidden: undefined,
         pluginName: 'myplugin',

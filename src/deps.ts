@@ -1,10 +1,10 @@
-import Parser = require('@dxcli/parser')
+import Parser = require('@anycli/parser')
 
 import errors = require('./errors')
 
 export const deps = {
   // remote
-  get Parser(): typeof Parser { return fetch('@dxcli/parser') },
+  get Parser(): typeof Parser { return fetch('@anycli/parser') },
 
   // local
   get HelpErr(): typeof errors.HelpErr { return fetch('./errors').HelpErr },

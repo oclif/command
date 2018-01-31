@@ -1,5 +1,5 @@
-import {IConfig} from '@dxcli/config'
-import {flags} from '@dxcli/parser'
+import {IConfig} from '@anycli/config'
+import {flags} from '@anycli/parser'
 
 import deps from './deps'
 
@@ -40,4 +40,4 @@ export function build<T>(defaults: Partial<IOptionFlag<T>>): Definition<T> {
 
 const stringFlag = build({})
 export {stringFlag as string}
-export {boolean} from '@dxcli/parser/lib/flags'
+export {boolean} from '@anycli/parser/lib/flags'

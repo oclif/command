@@ -3,7 +3,7 @@
 import cli from 'cli-ux'
 import * as fs from 'fs'
 
-import Command, {flags} from '..' // use @dxcli/command outside this repo
+import Command, {flags} from '..' // use @anycli/command outside this repo
 
 class LS extends Command {
   static flags = {

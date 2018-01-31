@@ -1,4 +1,4 @@
-import * as Config from '@dxcli/config'
+import * as Config from '@anycli/config'
 import * as _ from 'lodash'
 
 export interface ConvertToCachedOptions {
