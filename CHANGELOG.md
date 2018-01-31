@@ -1,3 +1,11 @@
+<a name="0.2.15"></a>
+## [0.2.15](https://github.com/anycli/command/compare/324e5d9150558b444e38c74430ec1154182a3642...v0.2.15) (2018-01-31)
+
+
+### Bug Fixes
+
+* export parse function ([20bf6ff](https://github.com/anycli/command/commit/20bf6ff))
+
 <a name="0.2.14"></a>
 ## [0.2.14](https://github.com/anycli/command/compare/f8fd99b360583423d3c6123d69bdd08279635f0a...v0.2.14) (2018-01-31)
 
