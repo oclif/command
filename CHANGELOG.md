@@ -1,3 +1,16 @@
+<a name="0.2.10"></a>
+## [0.2.10](https://github.com/anycli/command/compare/f6d0558bb92ac09a29061a18cb1ac846f81c57f9...v0.2.10) (2018-01-31)
+
+
+### Bug Fixes
+
+* add constructor to make more ts 2.7 compatible ([89dd64c](https://github.com/anycli/command/commit/89dd64c))
+* added enum flag ([26265e3](https://github.com/anycli/command/commit/26265e3))
+* allow passing iconfig ([0b2bb37](https://github.com/anycli/command/commit/0b2bb37))
+* allow setting flag to skip parsing ([743ac50](https://github.com/anycli/command/commit/743ac50))
+* argv fixed ([afddb87](https://github.com/anycli/command/commit/afddb87))
+* remove typedoc for now ([d674fcf](https://github.com/anycli/command/commit/d674fcf))
+
 <a name="0.2.9"></a>
 ## [0.2.9](https://github.com/anycli/command/compare/b8ebf43fed7959ff8bb64a05a775a7a3ce300387...v0.2.9) (2018-01-31)
 
