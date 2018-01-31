@@ -57,7 +57,7 @@ export default abstract class Command {
 
   config: Config.IConfig
 
-  // prevent setting things that need to be static
+  // we disable these so that it's clear they need to be static not instance properties
   description!: null
   hidden!: null
   usage!: null

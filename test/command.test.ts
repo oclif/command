@@ -2,7 +2,7 @@ import * as Config from '@anycli/config'
 import cli from 'cli-ux'
 import {expect, fancy} from 'fancy-test'
 
-import Base, {flags} from '../src'
+import Base, {flags, parse} from '../src'
 
 const pjson = require('../package.json')
 
@@ -14,7 +14,7 @@ class Command extends Base {
   }
 }
 
-describe('run', () => {
+describe('command', () => {
   fancy
   .stdout()
   .do(() => Command.run([]))
@@ -183,6 +183,26 @@ describe('run', () => {
       }
 
       expect(await cmd.load()).to.equal(cmd)
+    })
+  })
+
+  describe('parse', () => {
+    fancy
+    .stdout()
+    .it('has a flag', async ctx => {
+      class CMD extends Base {
+        static flags = {
+          foo: flags.string()
+        }
+        options = parse(this.argv, CMD)
+
+        async run() {
+          cli.log(this.options.flags.foo)
+        }
+      }
+
+      await CMD.run(['--foo=bar'])
+      expect(ctx.stdout).to.equal('bar\n')
     })
   })
 })
