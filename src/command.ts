@@ -12,7 +12,7 @@ export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: st
 
 export interface ICommandClass<T extends Command> {
   run: CommandRunFn
-  new (): T
+  new (argv: string[], config: Config.IConfig): T
 }
 
 const g = global as any
@@ -37,9 +37,17 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: CommandRunFn = function (argv: string[] = process.argv.slice(2), opts: Config.ICommandOptions = {}) {
-    const cmd = new this()
-    return cmd._run(argv, opts)
+  static run: CommandRunFn = async function (argv: string[] = process.argv.slice(2), opts: Config.ICommandOptions = {}) {
+    let cmd!: Command
+    try {
+      let config
+      if (Config.isIConfig(opts)) config = opts
+      else config = await Config.read({root: opts.root || parentModule!})
+      cmd = new this(argv, config)
+      return await cmd.run()
+    } finally {
+      if (cmd) await cmd.finally()
+    }
   }
 
   static async load() { return this }
@@ -48,10 +56,8 @@ export default abstract class Command {
     return convertToCached(this, opts)
   }
 
-  config!: Config.IConfig
-  argv!: string[]
-  flags!: flags.Output
-  args!: args.Output
+  flags: flags.Output
+  args: args.Output
 
   // prevent setting things that need to be static
   description!: null
@@ -62,37 +68,16 @@ export default abstract class Command {
   variableArgs!: null
   examples!: null
 
-  protected debug!: (...args: any[]) => void
+  protected debug: (...args: any[]) => void
 
-  get ctor(): typeof Command {
-    return this.constructor as typeof Command
-  }
-
-  get http() { return require('http-call').HTTP }
-
-  /**
-   * actual command run code goes here
-   */
-  abstract async run(): Promise<void>
-
-  protected async _run(argv: string[], opts: Config.ICommandOptions) {
-    try {
-      await this.init(argv, opts)
-      await this.run()
-      await this.done()
-    } catch (err) {
-      if (err.code === 'EEXIT') throw err
-      cli.error(err)
-    }
-  }
-
-  protected async init(argv: string[], opts: Config.ICommandOptions) {
-    this.config = opts.config || await Config.read({root: opts.root || parentModule!})
-    this.initDebug(this.config)
+  constructor(public argv: string[], public config: Config.IConfig) {
+    g['http-call'] = g['http-call'] || {}
+    g['http-call']!.userAgent = config.userAgent
+    this.debug = require('debug')(this.ctor.id ? `${config.bin}:${this.ctor.id}` : config.bin)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
     try {
-      const parse = await deps.Parser.parse({
+      const parse = deps.Parser.parse({
         argv,
         args: this.ctor.args || [],
         flags: this.ctor.flags || {},
@@ -107,18 +92,23 @@ export default abstract class Command {
       }
       throw err
     }
-  }
-
-  protected initDebug(config: Config.IConfig) {
-    g['http-call'] = g['http-call'] || {}
-    g['http-call']!.userAgent = config.userAgent
-    this.debug = require('debug')(`@anycli/command:${this.ctor.id || config.name}`)
     cli.config.context.version = config.userAgent
     if (config.debug) cli.config.debug = true
     cli.config.errlog = config.errlog
   }
 
-  protected async done() {
+  get ctor(): typeof Command {
+    return this.constructor as typeof Command
+  }
+
+  get http() { return require('http-call').HTTP }
+
+  /**
+   * actual command run code goes here
+   */
+  abstract async run(): Promise<void>
+
+  protected async finally() {
     try {
       await cli.done()
     } catch (err) {
