@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@anycli/config@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.2.tgz#272e8bd8a442b7e582d3844699edfd2ac3e6abb0"
+"@anycli/config@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.3.tgz#2fc399d2d609c0efdf3108d240f0b557abad51dc"
   dependencies:
     cli-ux "^3.3.10"
     debug "^3.1.0"

@@ -7,11 +7,11 @@ import * as _ from 'lodash'
 import {convertToCached, ConvertToCachedOptions} from './cache'
 import * as flags from './flags'
 
-export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Config.ICommandOptions) => Promise<void>
+export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Partial<Config.ICommandOptions>) => Promise<void>
 
 export interface ICommandClass<T extends Command> {
   run: CommandRunFn
-  new (argv: string[], opts: Config.ICommandOptions & {config: Config.IConfig}): T
+  new (argv: string[], opts: Config.ICommandOptions): T
 }
 
 const g = global as any
@@ -36,7 +36,7 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: CommandRunFn = async function (argv: string[] = process.argv.slice(2), opts: Config.ICommandOptions = {}) {
+  static run: CommandRunFn = async function (argv = process.argv.slice(2), opts = {}) {
     let cmd!: Command
     try {
       let config
@@ -68,7 +68,7 @@ export default abstract class Command {
 
   protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], public opts: Config.ICommandOptions & {config: Config.IConfig}) {
+  constructor(public argv: string[], public opts: Config.ICommandOptions) {
     this.config = opts.config
     this.debug = require('debug')(this.ctor.id ? `${this.config.bin}:${this.ctor.id}` : this.config.bin)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)

@@ -11,7 +11,7 @@
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@anycli/config": "^0.2.2",
+    "@anycli/config": "^0.2.3",
     "@anycli/tslint": "^0.2.0",
     "@commitlint/cli": "^6.0.5",
     "@commitlint/config-conventional": "^6.0.4",
