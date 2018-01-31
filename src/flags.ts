@@ -38,6 +38,21 @@ export function build<T>(defaults: Partial<IOptionFlag<T>>): Definition<T> {
   return deps.Parser.flags.build<T>(defaults as any)
 }
 
+export function option<T>(options: {parse: IOptionFlag<T>['parse']} & Partial<IOptionFlag<T>>) {
+  return build<T>({optionType: 'custom', ...options})()
+}
+
+const _enum = <T = string>(opts: flags.EnumFlagOptions<T>) => build<T>({
+  parse(input) {
+    if (!opts.options.includes(input)) throw new Error(`Expected --${this.name}=${input} to be one of: ${opts.options.join(', ')}`)
+    return input
+  },
+  helpValue: `(${opts.options.join('|')})`,
+  ...opts as any,
+  optionType: 'enum',
+})
+export {_enum as enum}
+
 const stringFlag = build({})
 export {stringFlag as string}
 export {boolean} from '@anycli/parser/lib/flags'

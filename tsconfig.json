@@ -3,6 +3,7 @@
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "pretty": true,
     "module": "commonjs",
     "noUnusedLocals": true,
     "noUnusedParameters": true,

@@ -48,21 +48,21 @@ export default abstract class Command {
     return convertToCached(this, opts)
   }
 
-  config: Config.IConfig
-  argv: string[]
-  flags: flags.Output
-  args: args.Output
+  config!: Config.IConfig
+  argv!: string[]
+  flags!: flags.Output
+  args!: args.Output
 
   // prevent setting things that need to be static
-  topic: null
-  command: null
-  description: null
-  hidden: null
-  usage: null
-  help: null
-  aliases: null
+  description!: null
+  hidden!: null
+  usage!: null
+  aliases!: null
+  title!: null
+  variableArgs!: null
+  examples!: null
 
-  protected debug: (...args: any[]) => void
+  protected debug!: (...args: any[]) => void
 
   get ctor(): typeof Command {
     return this.constructor as typeof Command
