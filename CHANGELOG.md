@@ -1,3 +1,11 @@
+<a name="0.2.9"></a>
+## [0.2.9](https://github.com/anycli/command/compare/b8ebf43fed7959ff8bb64a05a775a7a3ce300387...v0.2.9) (2018-01-31)
+
+
+### Bug Fixes
+
+* anycli rename ([f6d0558](https://github.com/anycli/command/commit/f6d0558))
+
 <a name="0.2.8"></a>
 ## [0.2.8](https://github.com/dxcli/command/compare/a94774da85b4c2d1151433b977ac8a9cb563ba92...v0.2.8) (2018-01-30)
 
