@@ -35,7 +35,6 @@
     "nps": "^5.7.1",
     "nps-utils": "^1.5.0",
     "ts-node": "^4.1.0",
-    "typedoc": "^0.9.0",
     "typescript": "^2.7.1"
   },
   "engines": {
