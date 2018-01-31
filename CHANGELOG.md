@@ -1,3 +1,11 @@
+<a name="0.2.11"></a>
+## [0.2.11](https://github.com/anycli/command/compare/d674fcfab555c54203d79a8e1802e6b60ef691b2...v0.2.11) (2018-01-31)
+
+
+### Bug Fixes
+
+* dont slice arg ([1db83e9](https://github.com/anycli/command/commit/1db83e9))
+
 <a name="0.2.10"></a>
 ## [0.2.10](https://github.com/anycli/command/compare/f6d0558bb92ac09a29061a18cb1ac846f81c57f9...v0.2.10) (2018-01-31)
 
