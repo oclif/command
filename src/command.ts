@@ -28,7 +28,7 @@ export default abstract class Command {
   static usage: string | string[] | undefined
   static help: string | undefined
   static aliases: string[] = []
-  static variableArgs = false
+  static strict = false
   static flags: flags.Input<any>
   static args: args.IArg[] = []
   static plugin: Config.IPlugin | undefined
@@ -67,7 +67,7 @@ export default abstract class Command {
   usage!: null
   aliases!: null
   title!: null
-  variableArgs!: null
+  strict!: null
   examples!: null
 
   protected debug: (...args: any[]) => void
@@ -90,7 +90,7 @@ export default abstract class Command {
         argv,
         args: this.ctor.args || [],
         flags: this.ctor.flags || {},
-        strict: !this.ctor.variableArgs,
+        strict: this.ctor.strict || (this.ctor as any).variableArgs,
       })
       this.flags = parse.flags as any
       this.argv = parse.argv
