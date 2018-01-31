@@ -1,3 +1,11 @@
+<a name="0.2.14"></a>
+## [0.2.14](https://github.com/anycli/command/compare/f8fd99b360583423d3c6123d69bdd08279635f0a...v0.2.14) (2018-01-31)
+
+
+### Bug Fixes
+
+* variableArgs ([324e5d9](https://github.com/anycli/command/commit/324e5d9))
+
 <a name="0.2.13"></a>
 ## [0.2.13](https://github.com/anycli/command/compare/fd7103504d590f9eaa39728a22d100ed4c95e587...v0.2.13) (2018-01-31)
 
