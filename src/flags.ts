@@ -1,7 +1,5 @@
 import {IConfig} from '@anycli/config'
-import {flags} from '@anycli/parser'
-
-import deps from './deps'
+import * as Parser from '@anycli/parser'
 
 export interface ICompletionContext {
   args?: { [name: string]: string }
@@ -17,14 +15,14 @@ export interface ICompletion {
   options(ctx: ICompletionContext): Promise<string[]>
 }
 
-export interface IOptionFlag<T> extends flags.IOptionFlag<T> {
+export interface IOptionFlag<T> extends Parser.flags.IOptionFlag<T> {
   completion?: ICompletion
 }
 
-export type IFlag<T> = flags.IBooleanFlag<T> | IOptionFlag<T>
+export type IFlag<T> = Parser.flags.IBooleanFlag<T> | IOptionFlag<T>
 
-export type Output = flags.Output
-export type Input<T extends flags.Output> = { [P in keyof T]: IFlag<T[P]> }
+export type Output = Parser.flags.Output
+export type Input<T extends Parser.flags.Output> = { [P in keyof T]: IFlag<T[P]> }
 
 export interface Definition<T> {
   (options: {multiple: true} & Partial<IOptionFlag<T>>): IOptionFlag<T[]>
@@ -35,14 +33,14 @@ export interface Definition<T> {
 export function build<T>(defaults: {parse: IOptionFlag<T>['parse']} & Partial<IOptionFlag<T>>): Definition<T>
 export function build(defaults: Partial<IOptionFlag<string>>): Definition<string>
 export function build<T>(defaults: Partial<IOptionFlag<T>>): Definition<T> {
-  return deps.Parser.flags.build<T>(defaults as any)
+  return Parser.flags.build<T>(defaults as any)
 }
 
 export function option<T>(options: {parse: IOptionFlag<T>['parse']} & Partial<IOptionFlag<T>>) {
   return build<T>({optionType: 'custom', ...options})()
 }
 
-const _enum = <T = string>(opts: flags.EnumFlagOptions<T>) => build<T>({
+const _enum = <T = string>(opts: Parser.flags.EnumFlagOptions<T>) => build<T>({
   parse(input) {
     if (!opts.options.includes(input)) throw new Error(`Expected --${this.name}=${input} to be one of: ${opts.options.join(', ')}`)
     return input

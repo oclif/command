@@ -5,7 +5,6 @@ import cli from 'cli-ux'
 import * as _ from 'lodash'
 
 import {convertToCached, ConvertToCachedOptions} from './cache'
-import deps from './deps'
 import * as flags from './flags'
 
 export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Config.ICommandOptions) => Promise<void>
@@ -33,7 +32,6 @@ export default abstract class Command {
   static args: args.IArg[] = []
   static plugin: Config.IPlugin | undefined
   static examples: string[] | undefined
-  static parse: boolean = true
 
   /**
    * instantiate and run the command
@@ -57,7 +55,6 @@ export default abstract class Command {
     return convertToCached(this, opts)
   }
 
-  argv!: string[]
   flags!: flags.Output
   args!: args.Output
 
@@ -72,7 +69,7 @@ export default abstract class Command {
 
   protected debug: (...args: any[]) => void
 
-  constructor(argv: string[], public config: Config.IConfig) {
+  constructor(public argv: string[], public config: Config.IConfig) {
     g['http-call'] = g['http-call'] || {}
     g['http-call']!.userAgent = config.userAgent
     this.debug = require('debug')(this.ctor.id ? `${config.bin}:${this.ctor.id}` : config.bin)
@@ -81,26 +78,6 @@ export default abstract class Command {
     cli.config.context.version = config.userAgent
     if (config.debug) cli.config.debug = true
     cli.config.errlog = config.errlog
-    if (!this.ctor.parse) {
-      this.argv = argv
-      return
-    }
-    try {
-      const parse = deps.Parser.parse({
-        argv,
-        args: this.ctor.args || [],
-        flags: this.ctor.flags || {},
-        strict: this.ctor.strict || !(this.ctor as any).variableArgs,
-      })
-      this.flags = parse.flags as any
-      this.argv = parse.argv
-      this.args = parse.args
-    } catch (err) {
-      if (err.message.match(/^Unexpected argument: (-h|help|--help)/)) {
-        throw new deps.HelpErr(err.message)
-      }
-      throw err
-    }
   }
 
   get ctor(): typeof Command {

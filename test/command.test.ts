@@ -8,6 +8,7 @@ const pjson = require('../package.json')
 
 class Command extends Base {
   static description = 'test command'
+
   async run() {
     cli.log('foo')
   }
@@ -45,20 +46,6 @@ describe('run', () => {
   })
   .catch(/EEXIT: 0/)
   .it('exits with 0')
-
-  describe('help error', () => {
-    ['-h', '--help', 'help'].forEach(arg => {
-      fancy
-      .do(() => Command.run([arg]))
-      .catch((err: any) => expect(err.code).to.equal('EHELP'))
-      .it(`throws help error when passed "${arg}"`)
-    })
-
-    fancy
-    .do(() => Command.run(['foo']))
-    .catch((err: any) => expect(err.code).not.to.equal('EHELP'))
-    .it('does not throw help error when passed "foo"')
-  })
 
   describe('convertToCached', () => {
     fancy
