@@ -1,3 +1,11 @@
+<a name="0.2.17"></a>
+## [0.2.17](https://github.com/anycli/command/compare/029a620c04d2ae4fe763d55bb3632755541fbf0e...v0.2.17) (2018-01-31)
+
+
+### Bug Fixes
+
+* updated config with new command opts ([a186b5f](https://github.com/anycli/command/commit/a186b5f))
+
 <a name="0.2.16"></a>
 ## [0.2.16](https://github.com/anycli/command/compare/20bf6ffc4e4c2002534427aafd483dcafb52db0f...v0.2.16) (2018-01-31)
 

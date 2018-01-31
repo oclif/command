@@ -1,7 +1,7 @@
 {
   "name": "@anycli/command",
   "description": "anycli base command",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/anycli/command/issues",
   "dependencies": {
