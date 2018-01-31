@@ -1,3 +1,11 @@
+<a name="0.2.16"></a>
+## [0.2.16](https://github.com/anycli/command/compare/20bf6ffc4e4c2002534427aafd483dcafb52db0f...v0.2.16) (2018-01-31)
+
+
+### Bug Fixes
+
+* add init function ([029a620](https://github.com/anycli/command/commit/029a620))
+
 <a name="0.2.15"></a>
 ## [0.2.15](https://github.com/anycli/command/compare/324e5d9150558b444e38c74430ec1154182a3642...v0.2.15) (2018-01-31)
 
