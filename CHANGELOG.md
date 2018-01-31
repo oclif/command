@@ -1,3 +1,11 @@
+<a name="0.2.12"></a>
+## [0.2.12](https://github.com/anycli/command/compare/1db83e93450be1e08e9cda672e41fd3466c69836...v0.2.12) (2018-01-31)
+
+
+### Bug Fixes
+
+* fixed command options ([fd71035](https://github.com/anycli/command/commit/fd71035))
+
 <a name="0.2.11"></a>
 ## [0.2.11](https://github.com/anycli/command/compare/d674fcfab555c54203d79a8e1802e6b60ef691b2...v0.2.11) (2018-01-31)
 
