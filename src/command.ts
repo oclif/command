@@ -82,7 +82,7 @@ export default abstract class Command {
     if (config.debug) cli.config.debug = true
     cli.config.errlog = config.errlog
     if (!this.ctor.parse) {
-      this.argv = argv.slice(1)
+      this.argv = argv
       return
     }
     try {
