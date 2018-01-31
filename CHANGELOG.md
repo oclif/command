@@ -1,3 +1,11 @@
+<a name="0.2.13"></a>
+## [0.2.13](https://github.com/anycli/command/compare/fd7103504d590f9eaa39728a22d100ed4c95e587...v0.2.13) (2018-01-31)
+
+
+### Bug Fixes
+
+* allow passing this into parser ([f8fd99b](https://github.com/anycli/command/commit/f8fd99b))
+
 <a name="0.2.12"></a>
 ## [0.2.12](https://github.com/anycli/command/compare/1db83e93450be1e08e9cda672e41fd3466c69836...v0.2.12) (2018-01-31)
 
