@@ -33,6 +33,7 @@ export default abstract class Command {
   static args: args.IArg[] = []
   static plugin: Config.IPlugin | undefined
   static examples: string[] | undefined
+  static parse: boolean = true
 
   /**
    * instantiate and run the command
@@ -56,9 +57,9 @@ export default abstract class Command {
     return convertToCached(this, opts)
   }
 
-  argv: string[]
-  flags: flags.Output
-  args: args.Output
+  argv!: string[]
+  flags!: flags.Output
+  args!: args.Output
 
   // prevent setting things that need to be static
   description!: null
@@ -77,6 +78,13 @@ export default abstract class Command {
     this.debug = require('debug')(this.ctor.id ? `${config.bin}:${this.ctor.id}` : config.bin)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
+    cli.config.context.version = config.userAgent
+    if (config.debug) cli.config.debug = true
+    cli.config.errlog = config.errlog
+    if (!this.ctor.parse) {
+      this.argv = argv.slice(1)
+      return
+    }
     try {
       const parse = deps.Parser.parse({
         argv,
@@ -93,9 +101,6 @@ export default abstract class Command {
       }
       throw err
     }
-    cli.config.context.version = config.userAgent
-    if (config.debug) cli.config.debug = true
-    cli.config.errlog = config.errlog
   }
 
   get ctor(): typeof Command {
