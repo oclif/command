@@ -27,7 +27,7 @@ export default abstract class Command {
   static usage: string | string[] | undefined
   static help: string | undefined
   static aliases: string[] = []
-  static strict = false
+  static strict = true
   static flags: flags.Input<any>
   static args: args.IArg[] = []
   static plugin: Config.IPlugin | undefined
