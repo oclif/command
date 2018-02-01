@@ -1,3 +1,12 @@
+<a name="0.2.22"></a>
+## [0.2.22](https://github.com/anycli/command/compare/8670ce0d3c8c131a4d5afadda43bbab03aee8e6e...v0.2.22) (2018-02-01)
+
+
+### Bug Fixes
+
+* fixed enum flag ([327e4ed](https://github.com/anycli/command/commit/327e4ed))
+* set helpValue ([43478c8](https://github.com/anycli/command/commit/43478c8))
+
 <a name="0.2.21"></a>
 ## [0.2.21](https://github.com/anycli/command/compare/547cbdd8ba4bd710218b190b3af8987f937e02b1...v0.2.21) (2018-02-01)
 
