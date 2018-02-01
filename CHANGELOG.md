@@ -1,3 +1,11 @@
+<a name="0.3.3"></a>
+## [0.3.3](https://github.com/anycli/command/compare/d4d4bb12614a4057436667ca77c8cec2a1636cb0...v0.3.3) (2018-02-01)
+
+
+### Bug Fixes
+
+* pass empty object to default ([2186ab5](https://github.com/anycli/command/commit/2186ab5))
+
 <a name="0.3.2"></a>
 ## [0.3.2](https://github.com/anycli/command/compare/d51b5cff69fe56bd366a2a154f08154261d4b581...v0.3.2) (2018-02-01)
 
