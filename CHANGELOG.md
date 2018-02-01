@@ -1,3 +1,11 @@
+<a name="0.2.24"></a>
+## [0.2.24](https://github.com/anycli/command/compare/46c5dda5c4895381b561c222000feb4e3484f33a...v0.2.24) (2018-02-01)
+
+
+### Bug Fixes
+
+* add help values to cache ([2484d1e](https://github.com/anycli/command/commit/2484d1e))
+
 <a name="0.2.23"></a>
 ## [0.2.23](https://github.com/anycli/command/compare/43478c808804359269d3afcc6d7a07fb128c9272...v0.2.23) (2018-02-01)
 
