@@ -927,12 +927,12 @@ extract-stack@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/extract-stack/-/extract-stack-1.0.0.tgz#b97acaf9441eea2332529624b732fc5a1c8165fa"
 
-fancy-test@^0.6.5:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-0.6.5.tgz#80a9dfb348fa34003ea030c3297bccc6ce825be2"
+fancy-test@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-0.6.6.tgz#cda1afbf57ea2fb05291edbff34c0bbc2600d956"
   dependencies:
     lodash "^4.17.4"
-    stdout-stderr "^0.1.4"
+    stdout-stderr "^0.1.6"
 
 fast-deep-equal@^1.0.0:
   version "1.0.0"
@@ -2156,9 +2156,9 @@ starts-with@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/starts-with/-/starts-with-1.0.2.tgz#16793a729d89d4cf3d4fb2eda2f908ae357f196f"
 
-stdout-stderr@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/stdout-stderr/-/stdout-stderr-0.1.4.tgz#57aae28cf19bbc0faddcf75a7464389d813faa9f"
+stdout-stderr@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/stdout-stderr/-/stdout-stderr-0.1.6.tgz#82616602f639bf029c87ab1049b02640a39a18ba"
   dependencies:
     debug "*"
     strip-ansi "^4.0.0"
