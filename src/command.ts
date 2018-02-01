@@ -32,25 +32,29 @@ export default abstract class Command {
    * instantiate and run the command
    */
   static run: Config.ICommand['run'] = async function (this: Config.ICommand, argv = process.argv.slice(2), opts = {}) {
+    class HelpErr extends Error {code = 'EHELP'}
+    class VersionErr extends Error {code = 'EVERSION'}
+
+    let config
+    if (opts.config && Config.isIConfig(opts.config)) config = opts.config
+    else config = await Config.read({root: opts.root || parentModule!})
+
     g.anycli.command = {}
     let cmd!: Command
     try {
-      let config
-      if (opts.config && Config.isIConfig(opts.config)) config = opts.config
-      else config = await Config.read({root: opts.root || parentModule!})
       cmd = new this(argv, {...opts, config})
-      if (g.anycli.command.showVersion) {
+      if (g.anycli.command.showVersion) throw new VersionErr()
+      if (argv.includes('--help') || g.anycli.command.showHelp) throw new HelpErr()
+      return await cmd.run()
+    } catch (err) {
+      if (err instanceof VersionErr) {
         cli.info(config.userAgent)
-        return
-      }
-      if (argv.includes('--help') || g.anycli.command.showHelp) {
+      } else if (err instanceof HelpErr || err.message.match(/Unexpected argument: -h/)) {
         const Helper: typeof Help = require('@anycli/help').default
         const help = new Helper(config)
         help.command(this.convertToCached())
         cli.info(help.command(this.convertToCached()))
-        return
-      }
-      return await cmd.run()
+      } else throw err
     } finally {
       if (cmd) await cmd.finally()
     }
