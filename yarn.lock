@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@anycli/config@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.4.tgz#957e4f174cadd397d9bdd81d3552544a8214273e"
+"@anycli/config@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.6.tgz#d40709a61704907d4d6e7dcab6bbf124ab74e9ad"
   dependencies:
     cli-ux "^3.3.10"
     debug "^3.1.0"
@@ -13,9 +13,9 @@
     lodash "^4.17.4"
     read-pkg "^3.0.0"
 
-"@anycli/parser@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.1.tgz#24a2bca4abe1e1ffb91b0210b709b3ec15ee4ea4"
+"@anycli/parser@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.2.tgz#69af00b6b6f0cc6da4405cf44dc29b2d14d30c6e"
   dependencies:
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"

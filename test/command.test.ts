@@ -101,6 +101,7 @@ describe('command', () => {
             hidden: true,
             required: false,
             type: 'option',
+            helpValue: undefined,
           }
         },
         args: [

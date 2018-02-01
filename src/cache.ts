@@ -35,6 +35,7 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
         description: flag.description,
         hidden: flag.hidden,
         required: flag.required,
+        helpValue: flag.helpValue,
       }
     }),
     args: c.args.map(a => ({
