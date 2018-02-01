@@ -1,21 +1,23 @@
+// tslint:disable interface-over-type-literal
+
 import {IConfig} from '@anycli/config'
 import * as Parser from '@anycli/parser'
 
-export interface ICompletionContext {
+export type ICompletionContext = {
   args?: { [name: string]: string }
   flags?: { [name: string]: string }
   argv?: string[]
   config: IConfig
 }
 
-export interface ICompletion {
+export type ICompletion = {
   skipCache?: boolean
   cacheDuration?: number
   cacheKey?(ctx: ICompletionContext): Promise<string>
   options(ctx: ICompletionContext): Promise<string[]>
 }
 
-export interface IOptionFlag<T> extends Parser.flags.IOptionFlag<T> {
+export type IOptionFlag<T> = Parser.flags.IOptionFlag<T> & {
   completion?: ICompletion
 }
 
@@ -24,7 +26,7 @@ export type IFlag<T> = Parser.flags.IBooleanFlag<T> | IOptionFlag<T>
 export type Output = Parser.flags.Output
 export type Input<T extends Parser.flags.Output> = { [P in keyof T]: IFlag<T[P]> }
 
-export interface Definition<T> {
+export type Definition<T> = {
   (options: {multiple: true} & Partial<IOptionFlag<T>>): IOptionFlag<T[]>
   (options: {required: true} & Partial<IOptionFlag<T>>): IOptionFlag<T>
   (options?: Partial<IOptionFlag<T>>): IOptionFlag<T | undefined>
