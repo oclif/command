@@ -1,3 +1,11 @@
+<a name="0.2.21"></a>
+## [0.2.21](https://github.com/anycli/command/compare/547cbdd8ba4bd710218b190b3af8987f937e02b1...v0.2.21) (2018-02-01)
+
+
+### Bug Fixes
+
+* move config to dev ([8670ce0](https://github.com/anycli/command/commit/8670ce0))
+
 <a name="0.2.20"></a>
 ## [0.2.20](https://github.com/anycli/command/compare/3cc179867d389b090f568258b784a055501a4851...v0.2.20) (2018-02-01)
 
