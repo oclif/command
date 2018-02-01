@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@anycli/config@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.3.tgz#2fc399d2d609c0efdf3108d240f0b557abad51dc"
+"@anycli/config@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.4.tgz#957e4f174cadd397d9bdd81d3552544a8214273e"
   dependencies:
     cli-ux "^3.3.10"
     debug "^3.1.0"
@@ -25,9 +25,9 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@anycli/screen/-/screen-0.0.3.tgz#f0afd970c3ed725702948a45a874ede1fdd9362e"
 
-"@anycli/tslint@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@anycli/tslint/-/tslint-0.2.0.tgz#192a612e3664f7a18fe6ed693de94de6d4563882"
+"@anycli/tslint@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@anycli/tslint/-/tslint-0.2.1.tgz#17295a3a4c579884cd3aea7ed1d8c07d11ecc624"
   dependencies:
     tslint "^5.9.1"
     tslint-xo "^0.6.0"

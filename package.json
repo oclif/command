@@ -5,7 +5,6 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/anycli/command/issues",
   "dependencies": {
-    "@anycli/config": "^0.2.3",
     "@anycli/parser": "^3.0.1",
     "cli-ux": "^3.3.10",
     "debug": "^3.1.0",
@@ -13,7 +12,8 @@
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@anycli/tslint": "^0.2.0",
+    "@anycli/config": "^0.2.4",
+    "@anycli/tslint": "^0.2.1",
     "@commitlint/cli": "^6.0.5",
     "@commitlint/config-conventional": "^6.0.4",
     "@types/chai": "^4.1.2",
