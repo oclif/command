@@ -63,6 +63,8 @@ describe('command', () => {
             hidden: true,
             required: false,
             description: 'flagb desc',
+            options: ['a', 'b'],
+            default: () => 'mydefault',
           }),
         }
         static args = [
@@ -71,6 +73,8 @@ describe('command', () => {
             description: 'arg1 desc',
             required: true,
             hidden: false,
+            options: ['af', 'b'],
+            default: () => 'myadefault',
           }
         ]
       }.convertToCached({id: 'foo:bar'})
@@ -102,6 +106,8 @@ describe('command', () => {
             required: false,
             type: 'option',
             helpValue: undefined,
+            default: 'mydefault',
+            options: ['a', 'b'],
           }
         },
         args: [
@@ -110,6 +116,8 @@ describe('command', () => {
             name: 'arg1',
             hidden: false,
             required: true,
+            options: ['af', 'b'],
+            default: 'myadefault',
           }
         ],
       })

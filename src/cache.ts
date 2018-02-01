@@ -16,8 +16,7 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
     pluginName: opts.plugin && opts.plugin.name,
     hidden: c.hidden,
     aliases: c.aliases || [],
-    // help: c.help,
-    flags: _.mapValues(c.flags, (flag, name) => {
+    flags: _.mapValues(c.flags || {}, (flag, name) => {
       if (flag.type === 'boolean') {
         return {
           name,
@@ -36,15 +35,18 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
         hidden: flag.hidden,
         required: flag.required,
         helpValue: flag.helpValue,
+        options: flag.options,
+        default: _.isFunction(flag.default) ? flag.default() : flag.default,
       }
     }),
-    args: c.args.map(a => ({
+    args: c.args ? c.args.map(a => ({
       name: a.name,
       description: a.description,
       required: a.required,
-      // default: a.default && a.default(),
+      options: a.options,
+      default: _.isFunction(a.default) ? a.default() : a.default,
       hidden: a.hidden,
-    })),
+    })) : {} as Config.ICachedCommand['args'],
     load: async () => c,
   }
 }
