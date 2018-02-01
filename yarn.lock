@@ -13,9 +13,9 @@
     lodash "^4.17.4"
     read-pkg "^3.0.0"
 
-"@anycli/parser@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-1.0.0.tgz#0ae14d75c3f66904c962ad75361d8d628509348a"
+"@anycli/parser@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.0.tgz#aedccd02f829744f308c363fb3f997c6f0eb915f"
   dependencies:
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"
