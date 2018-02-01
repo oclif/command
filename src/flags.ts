@@ -58,3 +58,6 @@ export {_enum as enum}
 const stringFlag = build({})
 export {stringFlag as string}
 export {boolean} from '@anycli/parser/lib/flags'
+
+export const version = build({char: 'v', description: 'show CLI version'})
+export const help = build({char: 'h', description: 'show CLI help'})
