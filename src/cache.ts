@@ -36,7 +36,7 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
         required: flag.required,
         helpValue: flag.helpValue,
         options: flag.options,
-        default: _.isFunction(flag.default) ? flag.default() : flag.default,
+        default: _.isFunction(flag.default) ? flag.default({}) : flag.default,
       }
     }),
     args: c.args ? c.args.map(a => ({
@@ -44,7 +44,7 @@ export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions
       description: a.description,
       required: a.required,
       options: a.options,
-      default: _.isFunction(a.default) ? a.default() : a.default,
+      default: _.isFunction(a.default) ? a.default({}) : a.default,
       hidden: a.hidden,
     })) : {} as Config.ICachedCommand['args'],
     load: async () => c,
