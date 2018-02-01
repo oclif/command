@@ -1,3 +1,11 @@
+<a name="0.2.20"></a>
+## [0.2.20](https://github.com/anycli/command/compare/3cc179867d389b090f568258b784a055501a4851...v0.2.20) (2018-02-01)
+
+
+### Bug Fixes
+
+* use type aliases ([547cbdd](https://github.com/anycli/command/commit/547cbdd))
+
 <a name="0.2.19"></a>
 ## [0.2.19](https://github.com/anycli/command/compare/e828b46723c8aaa2bbc0a860d5646437cb6aeb56...v0.2.19) (2018-01-31)
 
