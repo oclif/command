@@ -60,7 +60,6 @@ export {stringFlag as string}
 export {boolean} from '@anycli/parser/lib/flags'
 
 const g = global as any
-g.anycli = g.anycli || {}
 
 export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
@@ -68,7 +67,7 @@ export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) 
     description: 'show CLI version',
     ...opts,
     parse: () => {
-      g.anycli.showVersion = true
+      g.anycli.command.showVersion = true
     },
   })
 }
@@ -78,7 +77,7 @@ export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => 
     description: 'show CLI help',
     ...opts,
     parse: () => {
-      g.anycli.showHelp = true
+      g.anycli.command.showHelp = true
     },
   })
 }

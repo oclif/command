@@ -220,13 +220,11 @@ describe('command', () => {
     .stdout()
     .it('shows version', async ctx => {
       const config = await Config.read()
-      try {
-        class CMD extends Command {
-          static flags = {version: flags.version()}
-          options = parse(this.argv, CMD)
-        }
-        await CMD.run(['--version'])
-      } catch {}
+      class CMD extends Command {
+        static flags = {version: flags.version()}
+        options = parse(this.argv, CMD)
+      }
+      await CMD.run(['--version'])
       expect(ctx.stdout).to.equal(`${config.userAgent}\n`)
     })
   })
@@ -234,17 +232,14 @@ describe('command', () => {
   describe('help', () => {
     fancy
     .stdout()
-    .skip()
     .it('shows help', async ctx => {
-      const config = await Config.read()
-      try {
-        class CMD extends Command {
-          static flags = {help: flags.help()}
-          options = parse(this.argv, CMD)
-        }
-        await CMD.run(['--help'])
-      } catch {}
-      expect(ctx.stdout).to.equal(`${config.userAgent}\n`)
+      class CMD extends Command {
+        static flags = {help: flags.help()}
+        options = parse(this.argv, CMD)
+      }
+      await CMD.run(['--help'])
+      expect(ctx.stdout).to.contain(`USAGE
+  $ @anycli/command [OPTIONS]`)
     })
   })
 })
