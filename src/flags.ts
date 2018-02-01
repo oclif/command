@@ -42,15 +42,17 @@ export function option<T>(options: {parse: IOptionFlag<T>['parse']} & Partial<IO
   return build<T>({optionType: 'custom', ...options})()
 }
 
-const _enum = <T = string>(opts: Parser.flags.EnumFlagOptions<T>) => build<T>({
-  parse(input) {
-    if (!opts.options.includes(input)) throw new Error(`Expected --${this.name}=${input} to be one of: ${opts.options.join(', ')}`)
-    return input
-  },
-  helpValue: `(${opts.options.join('|')})`,
-  ...opts as any,
-  optionType: 'enum',
-})
+const _enum = <T = string>(opts: Parser.flags.EnumFlagOptions<T>): IOptionFlag<T> => {
+  return build<T>({
+    parse(input) {
+      if (!opts.options.includes(input)) throw new Error(`Expected --${this.name}=${input} to be one of: ${opts.options.join(', ')}`)
+      return input
+    },
+    helpValue: `(${opts.options.join('|')})`,
+    ...opts as any,
+    optionType: 'enum',
+  })() as IOptionFlag<T>
+}
 export {_enum as enum}
 
 const stringFlag = build({})
