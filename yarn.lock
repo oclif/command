@@ -2,9 +2,19 @@
 # yarn lockfile v1
 
 
-"@anycli/config@^0.2.8":
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.8.tgz#db2884692252f2f64afaf1e89cc507c2d35a3226"
+"@anycli/command@^0.2.22":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@anycli/command/-/command-0.2.25.tgz#56d9424332e8defe457164615e8183b0333b4592"
+  dependencies:
+    "@anycli/parser" "^3.0.3"
+    cli-ux "^3.3.10"
+    debug "^3.1.0"
+    lodash "^4.17.4"
+    tslib "^1.9.0"
+
+"@anycli/config@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.2.10.tgz#17ec0e6f0ffff1f0d49e63dad6d3d09e625fe734"
   dependencies:
     cli-ux "^3.3.10"
     debug "^3.1.0"
@@ -13,9 +23,31 @@
     lodash "^4.17.4"
     read-pkg "^3.0.0"
 
+"@anycli/help@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@anycli/help/-/help-0.3.3.tgz#8aaa6b27dcf1e7a978b9dcd70a6f26c37247d359"
+  dependencies:
+    "@anycli/command" "^0.2.22"
+    "@anycli/screen" "^0.0.3"
+    chalk "^2.3.0"
+    cli-ux "^3.3.10"
+    indent-string "^3.2.0"
+    lodash "^4.17.4"
+    string-width "^2.1.1"
+    widest-line "^2.0.0"
+    wrap-ansi "^3.0.1"
+
 "@anycli/parser@^3.0.3":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.3.tgz#abc33c9098485d0ae2705eab859ff305aec6006f"
+  dependencies:
+    "@anycli/screen" "^0.0.3"
+    chalk "^2.3.0"
+    lodash "^4.17.4"
+
+"@anycli/parser@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.4.tgz#8714c4f73134625fe3781b9e2b5aa0ebb5685a82"
   dependencies:
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"
@@ -454,6 +486,26 @@ cli-cursor@^2.1.0:
 cli-ux@^3.3.10:
   version "3.3.10"
   resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.10.tgz#54fad2bc9e1fcb56cdbd7d41682373e0fb7ce447"
+  dependencies:
+    "@anycli/screen" "^0.0.3"
+    "@heroku/linewrap" "^1.0.0"
+    ansi-styles "^3.2.0"
+    cardinal "^1.0.0"
+    chalk "^2.3.0"
+    clean-stack "^1.3.0"
+    extract-stack "^1.0.0"
+    fs-extra "^5.0.0"
+    indent-string "^3.2.0"
+    lodash "^4.17.4"
+    node-notifier "^5.2.1"
+    password-prompt "^1.0.4"
+    semver "^5.5.0"
+    strip-ansi "^4.0.0"
+    supports-color "^5.1.0"
+
+cli-ux@^3.3.12:
+  version "3.3.12"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.12.tgz#9bd5a2ed5c682fc22027bd32c5eb20bbe6aa2571"
   dependencies:
     "@anycli/screen" "^0.0.3"
     "@heroku/linewrap" "^1.0.0"
@@ -2478,6 +2530,12 @@ which@^1.2.9, which@^1.3.0:
   dependencies:
     isexe "^2.0.0"
 
+widest-line@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/widest-line/-/widest-line-2.0.0.tgz#0142a4e8a243f8882c0233aa0e0281aa76152273"
+  dependencies:
+    string-width "^2.1.1"
+
 wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
@@ -2488,6 +2546,13 @@ wrap-ansi@^2.0.0:
   dependencies:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
+
+wrap-ansi@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-3.0.1.tgz#288a04d87eda5c286e060dfe8f135ce8d007f8ba"
+  dependencies:
+    string-width "^2.1.1"
+    strip-ansi "^4.0.0"
 
 wrappy@1:
   version "1.0.2"

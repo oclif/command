@@ -214,4 +214,37 @@ describe('command', () => {
       expect(ctx.stdout).to.equal('bar\n')
     })
   })
+
+  describe('version', () => {
+    fancy
+    .stdout()
+    .it('shows version', async ctx => {
+      const config = await Config.read()
+      try {
+        class CMD extends Command {
+          static flags = {version: flags.version()}
+          options = parse(this.argv, CMD)
+        }
+        await CMD.run(['--version'])
+      } catch {}
+      expect(ctx.stdout).to.equal(`${config.userAgent}\n`)
+    })
+  })
+
+  describe('help', () => {
+    fancy
+    .stdout()
+    .skip()
+    .it('shows help', async ctx => {
+      const config = await Config.read()
+      try {
+        class CMD extends Command {
+          static flags = {help: flags.help()}
+          options = parse(this.argv, CMD)
+        }
+        await CMD.run(['--help'])
+      } catch {}
+      expect(ctx.stdout).to.equal(`${config.userAgent}\n`)
+    })
+  })
 })

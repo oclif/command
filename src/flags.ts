@@ -59,5 +59,26 @@ const stringFlag = build({})
 export {stringFlag as string}
 export {boolean} from '@anycli/parser/lib/flags'
 
-export const version = build({char: 'v', description: 'show CLI version'})
-export const help = build({char: 'h', description: 'show CLI help'})
+const g = global as any
+g.anycli = g.anycli || {}
+
+export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
+  return Parser.flags.boolean({
+    char: 'v',
+    description: 'show CLI version',
+    ...opts,
+    parse: () => {
+      g.anycli.showVersion = true
+    },
+  })
+}
+export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
+  return Parser.flags.boolean({
+    char: 'h',
+    description: 'show CLI help',
+    ...opts,
+    parse: () => {
+      g.anycli.showHelp = true
+    },
+  })
+}

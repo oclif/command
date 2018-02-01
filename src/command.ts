@@ -1,18 +1,12 @@
 const pjson = require('../package.json')
 import * as Config from '@anycli/config'
+// import Help from '@anycli/help'
 import {args} from '@anycli/parser'
 import cli from 'cli-ux'
 import * as _ from 'lodash'
 
 import {convertToCached, ConvertToCachedOptions} from './cache'
 import * as flags from './flags'
-
-export type CommandRunFn = <T extends Command>(this: ICommandClass<T>, argv?: string[], opts?: Partial<Config.ICommandOptions>) => Promise<void>
-
-export interface ICommandClass<T extends Command> {
-  run: CommandRunFn
-  new (argv: string[], opts: Config.ICommandOptions): T
-}
 
 const g = global as any
 
@@ -36,13 +30,24 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: CommandRunFn = async function (argv = process.argv.slice(2), opts = {}) {
+  static run: Config.ICommand['run'] = async function (this: Config.ICommand, argv = process.argv.slice(2), opts = {}) {
     let cmd!: Command
     try {
       let config
       if (opts.config && Config.isIConfig(opts.config)) config = opts.config
       else config = await Config.read({root: opts.root || parentModule!})
       cmd = new this(argv, {...opts, config})
+      if (g.anycli.showVersion) {
+        cli.info(config.userAgent)
+        return
+      }
+      if (argv.includes('--help') || g.anycli.showHelp) {
+        // const Helper: typeof Help = require('@anycli/help').default
+        // const help = new Helper(config)
+        // help.co()
+        // cli.info(help.command(this.convertToCached()))
+        return
+      }
       return await cmd.run()
     } finally {
       if (cmd) await cmd.finally()
@@ -51,7 +56,7 @@ export default abstract class Command {
 
   static async load() { return this }
 
-  static convertToCached(opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
+  static convertToCached(this: Config.ICommand, opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
     return convertToCached(this, opts)
   }
 

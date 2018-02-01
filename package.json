@@ -5,14 +5,15 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/anycli/command/issues",
   "dependencies": {
-    "@anycli/parser": "^3.0.3",
-    "cli-ux": "^3.3.10",
+    "@anycli/parser": "^3.0.4",
+    "cli-ux": "^3.3.12",
     "debug": "^3.1.0",
     "lodash": "^4.17.4",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@anycli/config": "^0.2.8",
+    "@anycli/config": "^0.2.10",
+    "@anycli/help": "^0.3.3",
     "@anycli/tslint": "^0.2.1",
     "@commitlint/cli": "^6.0.5",
     "@commitlint/config-conventional": "^6.0.4",
