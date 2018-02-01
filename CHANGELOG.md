@@ -1,3 +1,11 @@
+<a name="0.3.2"></a>
+## [0.3.2](https://github.com/anycli/command/compare/d51b5cff69fe56bd366a2a154f08154261d4b581...v0.3.2) (2018-02-01)
+
+
+### Bug Fixes
+
+* show help for -h ([d4d4bb1](https://github.com/anycli/command/commit/d4d4bb1))
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/anycli/command/compare/087b248216686f4ac50c68782cda61312da26724...v0.3.1) (2018-02-01)
 
