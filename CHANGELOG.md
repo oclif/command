@@ -1,3 +1,11 @@
+<a name="0.2.25"></a>
+## [0.2.25](https://github.com/anycli/command/compare/2484d1ecae3b8bb1ef4aa2ae24995187edf46914...v0.2.25) (2018-02-01)
+
+
+### Bug Fixes
+
+* added version and help flags ([ab963a2](https://github.com/anycli/command/commit/ab963a2))
+
 <a name="0.2.24"></a>
 ## [0.2.24](https://github.com/anycli/command/compare/46c5dda5c4895381b561c222000feb4e3484f33a...v0.2.24) (2018-02-01)
 
