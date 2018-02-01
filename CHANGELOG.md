@@ -1,3 +1,11 @@
+<a name="0.2.23"></a>
+## [0.2.23](https://github.com/anycli/command/compare/43478c808804359269d3afcc6d7a07fb128c9272...v0.2.23) (2018-02-01)
+
+
+### Bug Fixes
+
+* strict by default ([46c5dda](https://github.com/anycli/command/commit/46c5dda))
+
 <a name="0.2.22"></a>
 ## [0.2.22](https://github.com/anycli/command/compare/8670ce0d3c8c131a4d5afadda43bbab03aee8e6e...v0.2.22) (2018-02-01)
 
