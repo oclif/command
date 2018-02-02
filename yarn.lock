@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@anycli/command@^0.3.7":
-  version "0.3.7"
-  resolved "https://registry.npmjs.org/@anycli/command/-/command-0.3.7.tgz#293c366ed8227fcdc675e278a46d8f93435526a5"
+"@anycli/command@^0.3.8":
+  version "0.3.8"
+  resolved "https://registry.npmjs.org/@anycli/command/-/command-0.3.8.tgz#25ab49db518b983501661e45d8094aad1f0d0760"
   dependencies:
     "@anycli/parser" "^3.0.4"
     cli-ux "^3.3.13"
@@ -31,11 +31,11 @@
     chalk "^2.3.0"
     lodash "^4.17.4"
 
-"@anycli/plugin-help@^0.4.6":
-  version "0.4.6"
-  resolved "https://registry.npmjs.org/@anycli/plugin-help/-/plugin-help-0.4.6.tgz#672a96550203968118b881fcdf8f2c685a784bf6"
+"@anycli/plugin-help@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.npmjs.org/@anycli/plugin-help/-/plugin-help-0.4.7.tgz#c101edcdcc157a81b5baa76aac3f42c4a4a530ec"
   dependencies:
-    "@anycli/command" "^0.3.7"
+    "@anycli/command" "^0.3.8"
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"
     cli-ux "^3.3.13"

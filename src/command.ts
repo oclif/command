@@ -52,8 +52,7 @@ export default abstract class Command {
       } else if (err instanceof HelpErr || err.message.match(/Unexpected argument: -h/)) {
         const Helper: typeof Help = require('@anycli/plugin-help').default
         const help = new Helper(config)
-        help.command(this.convertToCached())
-        cli.info(help.command(this.convertToCached()))
+        help.showHelp(this, argv)
       } else throw err
     } finally {
       if (cmd) await cmd.finally()
