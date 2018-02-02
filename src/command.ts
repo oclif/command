@@ -44,7 +44,7 @@ export default abstract class Command {
     try {
       cmd = new this(argv, {...opts, config})
       if (g.anycli.command.showVersion) throw new VersionErr()
-      if (argv.includes('--help') || g.anycli.command.showHelp) throw new HelpErr()
+      if (g.anycli.command.showHelp) throw new HelpErr()
       return await cmd.run()
     } catch (err) {
       if (err instanceof VersionErr) {
