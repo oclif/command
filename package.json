@@ -14,10 +14,7 @@
   "devDependencies": {
     "@anycli/config": "^0.2.11",
     "@anycli/help": "^0.3.5",
-    "@anycli/nyc-config": "0",
-    "@anycli/tslint": "^0.2.1",
-    "@commitlint/cli": "6",
-    "@commitlint/config-conventional": "6",
+    "@anycli/tslint": "^0.2.2",
     "@types/chai": "^4.1.2",
     "@types/lodash": "^4.14.100",
     "@types/mocha": "^2.2.48",
@@ -31,11 +28,8 @@
     "eslint-config-anycli": "^1.3.1",
     "fancy-test": "^0.6.6",
     "http-call": "^5.0.2",
-    "husky": "^0.14.3",
     "mocha": "^5.0.0",
-    "mocha-junit-reporter": "1",
     "nock": "^9.1.6",
-    "nyc": "11",
     "ts-node": "^4.1.0",
     "typescript": "^2.7.1"
   },

@@ -6,7 +6,6 @@ jobs:
       - image: node:latest
     working_directory: ~/cli
     environment:
-      DEPS: "nyc@11 @anycli/nyc-config@0 mocha-junit-reporter@1 @commitlint/cli@6 @commitlint/config-conventional@6"
       NYC: "yarn exec nyc -- --nycrc-path node_modules/@anycli/nyc-config/.nycrc"
       MOCHA_FILE: "reports/mocha.xml"
     steps:
@@ -16,7 +15,7 @@ jobs:
             - v0-yarn-{{checksum ".circleci/config.yml"}}-{{ checksum "yarn.lock"}}
             - v0-yarn-{{checksum ".circleci/config.yml"}}
       - run: .circleci/greenkeeper
-      - run: yarn add -D $DEPS
+      - run: yarn add -D nyc@11 @anycli/nyc-config@0 mocha-junit-reporter@1 @commitlint/cli@6 @commitlint/config-conventional@6
       - run: |
           mkdir -p reports
           $NYC yarn test --reporter mocha-junit-reporter
@@ -35,8 +34,8 @@ jobs:
       - add_ssh_keys
       - checkout
       - restore_cache: *restore_cache
-      - run: yarn add -D $DEPS
       - run: yarn global add @anycli/semantic-release@1 semantic-release@12
+      - run: yarn --frozen-lockfile
       - run: |
           export PATH=/usr/local/share/.config/yarn/global/node_modules/.bin:$PATH
           semantic-release -e @anycli/semantic-release
