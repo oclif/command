@@ -1,3 +1,11 @@
+<a name="0.3.8"></a>
+## [0.3.8](https://github.com/anycli/command/compare/a31190002da11a8b59883923f687091afb086060...v0.3.8) (2018-02-02)
+
+
+### Bug Fixes
+
+* add type to command ([dcea31b](https://github.com/anycli/command/commit/dcea31b))
+
 <a name="0.3.7"></a>
 ## [0.3.7](https://github.com/anycli/command/compare/a8a9b25444e57bd3e3bdbd18656416f76431d9f5...v0.3.7) (2018-02-02)
 
