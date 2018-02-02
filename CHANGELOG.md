@@ -1,3 +1,11 @@
+<a name="0.3.6"></a>
+## [0.3.6](https://github.com/anycli/command/compare/bebe38ae0a294662996e8cef5be29112929db941...v0.3.6) (2018-02-02)
+
+
+### Bug Fixes
+
+* use new plugin names ([a8a9b25](https://github.com/anycli/command/commit/a8a9b25))
+
 <a name="0.3.5"></a>
 ## [0.3.5](https://github.com/anycli/command/compare/e1fa5399d0b2b90fc0580e4af82ded1212be4cff...v0.3.5) (2018-02-02)
 
