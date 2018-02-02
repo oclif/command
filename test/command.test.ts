@@ -236,20 +236,11 @@ describe('command', () => {
   describe('help', () => {
     fancy
     .stdout()
-    .it('--helpflag', async ctx => {
+    .it('--help', async ctx => {
       class CMD extends Command {
-        static flags = {helpflag: flags.help()}
+        static flags = {help: flags.help()}
         options = parse(this.argv, CMD)
       }
-      await CMD.run(['--helpflag'])
-      expect(ctx.stdout).to.contain(`USAGE
-  $ @anycli/command [OPTIONS]`)
-    })
-
-    fancy
-    .stdout()
-    .it('--help', async ctx => {
-      class CMD extends Command {}
       await CMD.run(['--help'])
       expect(ctx.stdout).to.contain(`USAGE
   $ @anycli/command`)

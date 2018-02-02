@@ -1,20 +1,23 @@
 #!/usr/bin/env node
 
-const undefault = m => m.__esModule === true ? m.default : m
+require('ts-node/register')
 
-const fs = require('fs')
-const path = require('path')
-const dev = fs.existsSync(path.join(__dirname, '../tsconfig.json'))
-
-if (dev) require('ts-node/register')
-
-const Command = undefault(require(`../${dev ? 'src' : 'lib'}`))
+const {Command, flags, parse} = require('../src')
 
 class TestCommand extends Command {
+  constructor(argv, opts) {
+    super(argv, opts)
+    this.options = parse(argv, TestCommand)
+  }
+
   async run() {
     const {cli} = require('cli-ux')
     cli.info('running test command')
   }
+}
+TestCommand.flags = {
+  help: flags.help(),
+  version: flags.version(),
 }
 
 TestCommand.run()
