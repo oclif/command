@@ -1,7 +1,7 @@
 const pjson = require('../package.json')
 import * as Config from '@anycli/config'
-import Help from '@anycli/help'
 import {args} from '@anycli/parser'
+import Help from '@anycli/plugin-help'
 import cli from 'cli-ux'
 import * as _ from 'lodash'
 
@@ -50,7 +50,7 @@ export default abstract class Command {
       if (err instanceof VersionErr) {
         cli.info(config.userAgent)
       } else if (err instanceof HelpErr || err.message.match(/Unexpected argument: -h/)) {
-        const Helper: typeof Help = require('@anycli/help').default
+        const Helper: typeof Help = require('@anycli/plugin-help').default
         const help = new Helper(config)
         help.command(this.convertToCached())
         cli.info(help.command(this.convertToCached()))

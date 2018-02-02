@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@anycli/config": "^0.2.11",
-    "@anycli/help": "^0.3.5",
+    "@anycli/plugin-help": "^0.3.6",
     "@anycli/tslint": "^0.2.2",
     "@types/chai": "^4.1.2",
     "@types/lodash": "^4.14.100",

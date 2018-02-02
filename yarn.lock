@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@anycli/command@^0.3.1":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@anycli/command/-/command-0.3.3.tgz#38f2d56fee0c18ad528c3a42d90ae9c97b17d652"
+"@anycli/command@^0.3.4":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@anycli/command/-/command-0.3.5.tgz#1ae5d93151f00260f8ec576bb67b69d8b8c20999"
   dependencies:
     "@anycli/parser" "^3.0.4"
     cli-ux "^3.3.12"
@@ -23,11 +23,19 @@
     lodash "^4.17.4"
     read-pkg "^3.0.0"
 
-"@anycli/help@^0.3.5":
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/@anycli/help/-/help-0.3.5.tgz#5fc846214da0b2a760885fe42c133bfd2903d5ab"
+"@anycli/parser@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.4.tgz#8714c4f73134625fe3781b9e2b5aa0ebb5685a82"
   dependencies:
-    "@anycli/command" "^0.3.1"
+    "@anycli/screen" "^0.0.3"
+    chalk "^2.3.0"
+    lodash "^4.17.4"
+
+"@anycli/plugin-help@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@anycli/plugin-help/-/plugin-help-0.3.6.tgz#f7f8aac308c0a91dfb5f7f0ca79c91d4585bc4d7"
+  dependencies:
+    "@anycli/command" "^0.3.4"
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"
     cli-ux "^3.3.12"
@@ -36,14 +44,6 @@
     string-width "^2.1.1"
     widest-line "^2.0.0"
     wrap-ansi "^3.0.1"
-
-"@anycli/parser@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.0.4.tgz#8714c4f73134625fe3781b9e2b5aa0ebb5685a82"
-  dependencies:
-    "@anycli/screen" "^0.0.3"
-    chalk "^2.3.0"
-    lodash "^4.17.4"
 
 "@anycli/screen@^0.0.3":
   version "0.0.3"
