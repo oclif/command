@@ -1,3 +1,11 @@
+<a name="0.3.4"></a>
+## [0.3.4](https://github.com/anycli/command/compare/2186ab5a8731fc3a7bc521135dbda71c6d6bddb9...v0.3.4) (2018-02-02)
+
+
+### Bug Fixes
+
+* fixed default parameters ([e1fa539](https://github.com/anycli/command/commit/e1fa539))
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/anycli/command/compare/d4d4bb12614a4057436667ca77c8cec2a1636cb0...v0.3.3) (2018-02-01)
 
