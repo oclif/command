@@ -1,12 +1,11 @@
-import {parse} from '@anycli/parser'
+export {parse} from '@anycli/parser'
+export {convertToCached} from './cache'
 
-import Command, {convertToCached} from './command'
+import Command from './command'
 import * as flags from './flags'
 
 export default Command
 export {
-  convertToCached,
   Command,
   flags,
-  parse,
 }

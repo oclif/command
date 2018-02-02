@@ -5,7 +5,7 @@ import Help from '@anycli/plugin-help'
 import cli from 'cli-ux'
 import * as _ from 'lodash'
 
-import {convertToCached, ConvertToCachedOptions} from './cache'
+import {convertToCached} from './cache'
 import * as flags from './flags'
 
 const g = global as any
@@ -62,7 +62,7 @@ export default abstract class Command {
 
   static async load() { return this }
 
-  static convertToCached(this: Config.ICommand, opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
+  static convertToCached(this: Config.ICommand, opts: Config.IConvertToCachedOptions = {}): Config.ICachedCommand {
     return convertToCached(this, opts)
   }
 
@@ -110,9 +110,4 @@ export default abstract class Command {
       cli.warn(err)
     }
   }
-}
-
-export {
-  convertToCached,
-  ConvertToCachedOptions,
 }

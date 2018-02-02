@@ -6,14 +6,14 @@
   "bugs": "https://github.com/anycli/command/issues",
   "dependencies": {
     "@anycli/parser": "^3.0.4",
-    "cli-ux": "^3.3.12",
+    "cli-ux": "^3.3.13",
     "debug": "^3.1.0",
     "lodash": "^4.17.4",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@anycli/config": "^0.2.11",
-    "@anycli/plugin-help": "^0.3.6",
+    "@anycli/config": "^0.3.0",
+    "@anycli/plugin-help": "^0.3.7",
     "@anycli/tslint": "^0.2.2",
     "@types/chai": "^4.1.2",
     "@types/lodash": "^4.14.100",

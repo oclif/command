@@ -148,7 +148,7 @@ describe('command', () => {
     fancy
     .do(async () => {
       const c = class extends Command {
-      }.convertToCached({plugin: {name: 'myplugin'} as any})
+      }.convertToCached({pluginName: 'myplugin'})
       expect(await c.load()).to.have.property('run')
       delete c.load
       expect(c).to.deep.equal({

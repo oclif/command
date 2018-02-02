@@ -1,19 +1,14 @@
 import * as Config from '@anycli/config'
 import * as _ from 'lodash'
 
-export interface ConvertToCachedOptions {
-  id?: string
-  plugin?: Config.IPlugin
-}
-
-export function convertToCached(c: Config.ICommand, opts: ConvertToCachedOptions = {}): Config.ICachedCommand {
+export function convertToCached(c: Config.ICommand, opts: Config.IConvertToCachedOptions = {}): Config.ICachedCommand {
   return {
     _base: c._base,
     title: c.title,
     id: c.id || opts.id!,
     description: c.description,
     usage: c.usage,
-    pluginName: opts.plugin && opts.plugin.name,
+    pluginName: opts.pluginName,
     hidden: c.hidden,
     aliases: c.aliases || [],
     flags: _.mapValues(c.flags || {}, (flag, name) => {
