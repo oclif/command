@@ -1,3 +1,11 @@
+<a name="0.3.7"></a>
+## [0.3.7](https://github.com/anycli/command/compare/a8a9b25444e57bd3e3bdbd18656416f76431d9f5...v0.3.7) (2018-02-02)
+
+
+### Bug Fixes
+
+* config updates ([a311900](https://github.com/anycli/command/commit/a311900))
+
 <a name="0.3.6"></a>
 ## [0.3.6](https://github.com/anycli/command/compare/bebe38ae0a294662996e8cef5be29112929db941...v0.3.6) (2018-02-02)
 
