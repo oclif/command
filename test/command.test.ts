@@ -52,6 +52,7 @@ describe('command', () => {
     .do(async () => {
       const c = class extends Command {
         static title = 'cmd title'
+        static type = 'mytype'
         static usage = ['$ usage']
         static description = 'test command'
         static aliases = ['alias1', 'alias2']
@@ -83,6 +84,7 @@ describe('command', () => {
       expect(c).to.deep.equal({
         _base: `@anycli/command@${pjson.version}`,
         id: 'foo:bar',
+        type: 'mytype',
         hidden: true,
         pluginName: undefined,
         description: 'test command',
@@ -133,6 +135,7 @@ describe('command', () => {
       expect(c).to.deep.equal({
         _base: `@anycli/command@${pjson.version}`,
         id: undefined,
+        type: undefined,
         hidden: undefined,
         pluginName: undefined,
         description: 'test command',
@@ -153,6 +156,7 @@ describe('command', () => {
       delete c.load
       expect(c).to.deep.equal({
         _base: `@anycli/command@${pjson.version}`,
+        type: undefined,
         id: undefined,
         hidden: undefined,
         pluginName: 'myplugin',

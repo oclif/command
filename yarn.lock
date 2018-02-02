@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@anycli/command@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@anycli/command/-/command-0.3.6.tgz#02aadc38cee7bc4acb2069732cb1591dfc339c29"
+"@anycli/command@^0.3.7":
+  version "0.3.7"
+  resolved "https://registry.npmjs.org/@anycli/command/-/command-0.3.7.tgz#293c366ed8227fcdc675e278a46d8f93435526a5"
   dependencies:
     "@anycli/parser" "^3.0.4"
-    cli-ux "^3.3.12"
+    cli-ux "^3.3.13"
     debug "^3.1.0"
     lodash "^4.17.4"
     tslib "^1.9.0"
 
-"@anycli/config@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-0.3.0.tgz#a0938488e7afc507d69ec13a8e52c71aaecc08ea"
+"@anycli/config@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.npmjs.org/@anycli/config/-/config-0.3.1.tgz#3832c1da47682dd2ba0f9d46117bb5b6513196ef"
   dependencies:
-    cli-ux "^3.3.10"
+    cli-ux "^3.3.13"
     debug "^3.1.0"
     fs-extra "^5.0.0"
     load-json-file "^4.0.0"
@@ -31,14 +31,14 @@
     chalk "^2.3.0"
     lodash "^4.17.4"
 
-"@anycli/plugin-help@^0.3.7":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@anycli/plugin-help/-/plugin-help-0.3.7.tgz#aefde35b0b49b1598e893ed83910955bd24419ef"
+"@anycli/plugin-help@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.npmjs.org/@anycli/plugin-help/-/plugin-help-0.4.6.tgz#672a96550203968118b881fcdf8f2c685a784bf6"
   dependencies:
-    "@anycli/command" "^0.3.6"
+    "@anycli/command" "^0.3.7"
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"
-    cli-ux "^3.3.12"
+    cli-ux "^3.3.13"
     indent-string "^3.2.0"
     lodash "^4.17.4"
     string-width "^2.1.1"
@@ -309,46 +309,6 @@ cli-cursor@^2.1.0:
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
   dependencies:
     restore-cursor "^2.0.0"
-
-cli-ux@^3.3.10:
-  version "3.3.10"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.10.tgz#54fad2bc9e1fcb56cdbd7d41682373e0fb7ce447"
-  dependencies:
-    "@anycli/screen" "^0.0.3"
-    "@heroku/linewrap" "^1.0.0"
-    ansi-styles "^3.2.0"
-    cardinal "^1.0.0"
-    chalk "^2.3.0"
-    clean-stack "^1.3.0"
-    extract-stack "^1.0.0"
-    fs-extra "^5.0.0"
-    indent-string "^3.2.0"
-    lodash "^4.17.4"
-    node-notifier "^5.2.1"
-    password-prompt "^1.0.4"
-    semver "^5.5.0"
-    strip-ansi "^4.0.0"
-    supports-color "^5.1.0"
-
-cli-ux@^3.3.12:
-  version "3.3.12"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.12.tgz#9bd5a2ed5c682fc22027bd32c5eb20bbe6aa2571"
-  dependencies:
-    "@anycli/screen" "^0.0.3"
-    "@heroku/linewrap" "^1.0.0"
-    ansi-styles "^3.2.0"
-    cardinal "^1.0.0"
-    chalk "^2.3.0"
-    clean-stack "^1.3.0"
-    extract-stack "^1.0.0"
-    fs-extra "^5.0.0"
-    indent-string "^3.2.0"
-    lodash "^4.17.4"
-    node-notifier "^5.2.1"
-    password-prompt "^1.0.4"
-    semver "^5.5.0"
-    strip-ansi "^4.0.0"
-    supports-color "^5.1.0"
 
 cli-ux@^3.3.13:
   version "3.3.13"

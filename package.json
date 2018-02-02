@@ -12,8 +12,8 @@
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@anycli/config": "^0.3.0",
-    "@anycli/plugin-help": "^0.3.7",
+    "@anycli/config": "^0.3.1",
+    "@anycli/plugin-help": "^0.4.6",
     "@anycli/tslint": "^0.2.2",
     "@types/chai": "^4.1.2",
     "@types/lodash": "^4.14.100",

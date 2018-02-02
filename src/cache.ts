@@ -4,6 +4,7 @@ import * as _ from 'lodash'
 export function convertToCached(c: Config.ICommand, opts: Config.IConvertToCachedOptions = {}): Config.ICachedCommand {
   return {
     _base: c._base,
+    type: c.type,
     title: c.title,
     id: c.id || opts.id!,
     description: c.description,
