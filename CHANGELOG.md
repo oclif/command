@@ -1,3 +1,11 @@
+<a name="0.3.5"></a>
+## [0.3.5](https://github.com/anycli/command/compare/e1fa5399d0b2b90fc0580e4af82ded1212be4cff...v0.3.5) (2018-02-02)
+
+
+### Bug Fixes
+
+* ran generator ([bebe38a](https://github.com/anycli/command/commit/bebe38a))
+
 <a name="0.3.4"></a>
 ## [0.3.4](https://github.com/anycli/command/compare/2186ab5a8731fc3a7bc521135dbda71c6d6bddb9...v0.3.4) (2018-02-02)
 
