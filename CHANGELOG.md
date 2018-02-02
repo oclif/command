@@ -1,3 +1,12 @@
+<a name="0.3.10"></a>
+## [0.3.10](https://github.com/anycli/command/compare/c57e7aca63274505d09c801f7fa32fcf51142362...v0.3.10) (2018-02-02)
+
+
+### Bug Fixes
+
+* allow engine to grab --help ([f8689ea](https://github.com/anycli/command/commit/f8689ea))
+* fixed --help on test command ([57659f6](https://github.com/anycli/command/commit/57659f6))
+
 <a name="0.3.9"></a>
 ## [0.3.9](https://github.com/anycli/command/compare/dcea31b2ba2bfcb2fb2851750ff2a77f12d1419f...v0.3.9) (2018-02-02)
 
