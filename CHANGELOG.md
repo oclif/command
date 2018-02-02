@@ -1,3 +1,11 @@
+<a name="0.3.11"></a>
+## [0.3.11](https://github.com/anycli/command/compare/57659f6122fefe19ba41804633ac7edea5f007a2...v0.3.11) (2018-02-02)
+
+
+### Bug Fixes
+
+* use cli.error on errors ([f3a45a2](https://github.com/anycli/command/commit/f3a45a2))
+
 <a name="0.3.10"></a>
 ## [0.3.10](https://github.com/anycli/command/compare/c57e7aca63274505d09c801f7fa32fcf51142362...v0.3.10) (2018-02-02)
 
