@@ -53,7 +53,7 @@ export default abstract class Command {
         const Helper: typeof Help = require('@anycli/plugin-help').default
         const help = new Helper(config)
         help.showHelp(this, argv)
-      } else throw err
+      } else cli.error(err)
     } finally {
       if (cmd) await cmd.finally()
     }
