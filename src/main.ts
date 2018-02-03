@@ -2,7 +2,7 @@ import * as Config from '@anycli/config'
 
 import {Command} from '.'
 
-export default class Main extends Command {
+export class Main extends Command {
   static parserOptions = {'--': false, strict: false}
 
   static run(argv = process.argv.slice(2), opts?: Config.Options) {
