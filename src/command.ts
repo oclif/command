@@ -80,7 +80,7 @@ export default abstract class Command {
   protected debug: (...args: any[]) => void
 
   constructor(public argv: string[], options: Config.Options) {
-    this.config = Config.load(options || module.parent && module.parent.filename || __dirname)
+    this.config = Config.load(options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
     this.debug = require('debug')(this.ctor.id ? `${this.config.bin}:${this.ctor.id}` : this.config.bin)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
