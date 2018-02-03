@@ -4,6 +4,14 @@
   "version": "1.2.3",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/anycli/command/issues",
+  "anycli": {
+    "scope": "anycli",
+    "devPlugins": [
+      "@anycli/plugin-plugins",
+      "@anycli/plugin-not-found",
+      "@anycli/plugin-help"
+    ]
+  },
   "dependencies": {
     "@anycli/parser": "^3.2.2",
     "cli-ux": "^3.3.13",
@@ -13,8 +21,10 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@anycli/config": "^1.0.17",
-    "@anycli/plugin-help": "^0.5.0",
+    "@anycli/config": "^1.1.0",
+    "@anycli/plugin-help": "^0.6.0",
+    "@anycli/plugin-not-found": "^0.1.15",
+    "@anycli/plugin-plugins": "^0.2.10",
     "@anycli/tslint": "^0.2.5",
     "@types/chai": "^4.1.2",
     "@types/fs-extra": "^5.0.0",

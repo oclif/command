@@ -1,6 +1,7 @@
 const pjson = require('../package.json')
 import * as Config from '@anycli/config'
 import * as Parser from '@anycli/parser'
+import Help from '@anycli/plugin-help'
 import cli from 'cli-ux'
 import * as _ from 'lodash'
 
@@ -69,6 +70,7 @@ export default abstract class Command {
       await this.finally(err)
     }
   }
+
   /**
    * actual command run code goes here
    */
@@ -81,6 +83,8 @@ export default abstract class Command {
     cli.config.errlog = this.config.errlog
     global['http-call'] = global['http-call'] || {}
     global['http-call']!.userAgent = this.config.userAgent
+    await this.config.runHook('init', {id: this.id})
+    if (this._helpOverride()) return this._help()
   }
 
   protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
@@ -89,7 +93,11 @@ export default abstract class Command {
   }
 
   protected async catch(err: Error) {
-    cli.error(err)
+    if (err.message.match(/Unexpected arguments?: (-h|--help)(,|\n)/)) {
+      this._help()
+    } else if (err.message.match(/Unexpected arguments?: (-v|--version)(,|\n)/)) {
+      this._version()
+    } else cli.error(err)
   }
   protected async finally(_: Error | undefined) {
     try {
@@ -97,5 +105,26 @@ export default abstract class Command {
     } catch (err) {
       cli.warn(err)
     }
+  }
+
+  protected _help() {
+    const HHelp: typeof Help = require('@anycli/plugin-help').default
+    const help = new HHelp(this.config)
+    help.showHelp(this.argv)
+    cli.exit(0)
+  }
+
+  protected _helpOverride(): boolean {
+    if (this.argv[0] === '--version' || this.argv[0] === 'version') this._version()
+    for (let arg of this.argv) {
+      if (arg === '--help') return true
+      if (arg === '--') return false
+    }
+    return false
+  }
+
+  protected _version() {
+    cli.info(this.config.userAgent)
+    cli.exit(0)
   }
 }

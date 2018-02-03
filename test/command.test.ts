@@ -218,41 +218,67 @@ describe('command', () => {
   describe('version', () => {
     fancy
     .stdout()
-    .it('shows version', async ctx => {
-      const config = Config.load()
-      class CMD extends Command {
-        static flags = {version: flags.version()}
-
-        async run() {
-          this.parse(CMD)
-        }
-      }
-      await CMD.run(['--version'])
-      expect(ctx.stdout).to.equal(`${config.userAgent}\n`)
+    .add('config', () => Config.load())
+    .do(async () => {
+      await Command.run(['--version'])
+    })
+    .catch(/EEXIT: 0/)
+    .it('shows version', ctx => {
+      expect(ctx.stdout).to.equal(`${ctx.config.userAgent}\n`)
     })
   })
 
   describe('help', () => {
     fancy
-    .skip()
     .stdout()
-    .it('--help', async ctx => {
+    .do(() => {
       class CMD extends Command {
         static flags = {help: flags.help()}
       }
-      await CMD.run(['--help'])
-      expect(ctx.stdout).to.contain(`USAGE
-  $ @anycli/command`)
+      return CMD.run(['--help'])
+    })
+    .catch(/EEXIT: 0/)
+    .it('--help', ctx => {
+      expect(ctx.stdout).to.contain(`anycli base command
+
+USAGE
+  $ @anycli/command [COMMAND]
+
+DESCRIPTION
+  anycli base command
+
+COMMANDS
+  help               display help for @anycli/command
+  plugins
+  plugins:install
+  plugins:uninstall
+  plugins:update
+`)
     })
 
     fancy
-    .skip()
     .stdout()
-    .it('-h', async ctx => {
+    .do(async () => {
       class CMD extends Command {}
       await CMD.run(['-h'])
-      expect(ctx.stdout).to.contain(`USAGE
-  $ @anycli/command`)
+    })
+    .catch(/EEXIT: 0/)
+    .it('-h', ctx => {
+      expect(ctx.stdout).to.contain(`anycli base command
+
+USAGE
+  $ @anycli/command [COMMAND]
+
+DESCRIPTION
+  anycli base command
+
+COMMANDS
+  help               display help for @anycli/command
+  plugins
+  plugins:install
+  plugins:uninstall
+  plugins:update
+`)
     })
   })
 })
