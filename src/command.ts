@@ -83,7 +83,7 @@ export default abstract class Command {
     cli.config.errlog = this.config.errlog
     global['http-call'] = global['http-call'] || {}
     global['http-call']!.userAgent = this.config.userAgent
-    await this.config.runHook('init', {id: this.id})
+    await this.config.runHook('init', {argv: this.argv})
     if (this._helpOverride()) return this._help()
   }
 

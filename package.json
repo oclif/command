@@ -21,10 +21,10 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@anycli/config": "^1.1.0",
+    "@anycli/config": "^1.1.2",
     "@anycli/plugin-help": "^0.6.0",
     "@anycli/plugin-not-found": "^0.1.15",
-    "@anycli/plugin-plugins": "^0.2.10",
+    "@anycli/plugin-plugins": "^0.2.11",
     "@anycli/tslint": "^0.2.5",
     "@types/chai": "^4.1.2",
     "@types/fs-extra": "^5.0.0",
