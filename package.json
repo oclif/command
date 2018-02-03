@@ -10,8 +10,7 @@
     "debug": "^3.1.0",
     "fs-extra": "^5.0.0",
     "load-json-file": "^4.0.0",
-    "lodash": "^4.17.4",
-    "tslib": "^1.9.0"
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "@anycli/config": "^1.0.3",
