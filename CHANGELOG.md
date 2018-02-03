@@ -1,3 +1,11 @@
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/anycli/command/compare/68158831718f70da1cc0b282e35b108791ee6c3a...v1.1.2) (2018-02-03)
+
+
+### Bug Fixes
+
+* add run function ([bbfc5f7](https://github.com/anycli/command/commit/bbfc5f7))
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/anycli/command/compare/a21563609a404cd274942b55e1cf41ac0724a014...v1.1.1) (2018-02-03)
 
