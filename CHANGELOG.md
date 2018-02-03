@@ -1,3 +1,18 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/anycli/command/compare/f3a45a20a89a517d022c90990e96039995dd52b5...v1.0.0) (2018-02-03)
+
+
+### Features
+
+* simplify command with new config ([1599c40](https://github.com/anycli/command/commit/1599c40))
+
+
+### BREAKING CHANGES
+
+* This is preparation for using the new config object that will not
+require the engine. It is likely incompatible with any anycli version
+before it
+
 <a name="0.3.11"></a>
 ## [0.3.11](https://github.com/anycli/command/compare/57659f6122fefe19ba41804633ac7edea5f007a2...v0.3.11) (2018-02-02)
 
