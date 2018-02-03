@@ -5,7 +5,7 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/anycli/command/issues",
   "dependencies": {
-    "@anycli/parser": "^3.2.1",
+    "@anycli/parser": "^3.2.2",
     "cli-ux": "^3.3.13",
     "debug": "^3.1.0",
     "fs-extra": "^5.0.0",
@@ -13,7 +13,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@anycli/config": "^1.0.16",
+    "@anycli/config": "^1.0.17",
     "@anycli/plugin-help": "^0.5.0",
     "@anycli/tslint": "^0.2.5",
     "@types/chai": "^4.1.2",

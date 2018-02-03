@@ -12,9 +12,9 @@
     lodash "^4.17.4"
     tslib "^1.9.0"
 
-"@anycli/config@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-1.0.16.tgz#dc21f8487655fee9b225acfbda65cd2939f997cf"
+"@anycli/config@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-1.0.17.tgz#b8452ac8d584d3c6b32b62be663d81d3a409149d"
   dependencies:
     cli-ux "^3.3.13"
     debug "^3.1.0"
@@ -33,9 +33,9 @@
     chalk "^2.3.0"
     lodash "^4.17.4"
 
-"@anycli/parser@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.2.1.tgz#89fe1c37f8792d6c1cba7d1c4ec2fb42b290ce05"
+"@anycli/parser@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.2.2.tgz#ee2616e889e7dd78bc269638b7eee3f3096e2c91"
   dependencies:
     "@anycli/screen" "^0.0.3"
     chalk "^2.3.0"
