@@ -1,3 +1,11 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/anycli/command/compare/209d4fff5eeca27768ef5fba96512408d2817cc4...v1.1.0) (2018-02-03)
+
+
+### Features
+
+* added main command for multi CLI projects ([a215636](https://github.com/anycli/command/commit/a215636))
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/anycli/command/compare/1599c40ed9f935cff4ae4c3b3cce8ff9f7b3969e...v1.0.1) (2018-02-03)
 
