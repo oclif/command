@@ -1,3 +1,11 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/anycli/command/compare/1599c40ed9f935cff4ae4c3b3cce8ff9f7b3969e...v1.0.1) (2018-02-03)
+
+
+### Bug Fixes
+
+* fixed parent module path ([209d4ff](https://github.com/anycli/command/commit/209d4ff))
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/anycli/command/compare/f3a45a20a89a517d022c90990e96039995dd52b5...v1.0.0) (2018-02-03)
 
