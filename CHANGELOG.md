@@ -1,3 +1,12 @@
+<a name="1.2.4"></a>
+## [1.2.4](https://github.com/anycli/command/compare/a002c7c2e3f54a0a0bd37b4844ceea5d815d69f6...v1.2.4) (2018-02-03)
+
+
+### Bug Fixes
+
+* fixed init hook arguments ([26895f7](https://github.com/anycli/command/commit/26895f7))
+* help improvements ([93b8f8d](https://github.com/anycli/command/commit/93b8f8d))
+
 <a name="1.2.3"></a>
 ## [1.2.3](https://github.com/anycli/command/compare/13a6193a1e2c577b3eaa49c6f38d2326eb40eea9...v1.2.3) (2018-02-03)
 
