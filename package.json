@@ -5,7 +5,7 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/anycli/command/issues",
   "dependencies": {
-    "@anycli/parser": "^3.1.1",
+    "@anycli/parser": "^3.2.0",
     "cli-ux": "^3.3.13",
     "debug": "^3.1.0",
     "fs-extra": "^5.0.0",

@@ -19,6 +19,7 @@ export default abstract class Command {
   static help: string | undefined
   static aliases: string[] = []
   static strict = true
+  static parse = true
   static flags: flags.Input<any> = {
     version: flags.version(),
     help: flags.help(),
@@ -26,6 +27,7 @@ export default abstract class Command {
   static args: Parser.args.IArg[] = []
   static plugin: Config.IPlugin | undefined
   static examples: string[] | undefined
+  static parserOptions = {}
 
   /**
    * instantiate and run the command
@@ -102,11 +104,13 @@ export default abstract class Command {
    */
   abstract async run(): Promise<any>
   protected async init() {
+    if (!this.ctor.parse) return
     const o = Parser.parse(this.argv, {
       flags: this.ctor.flags,
       args: this.ctor.args,
       strict: this.ctor.strict || !(this.ctor as any).variableArgs,
       context: this,
+      ...(this.ctor.parserOptions || {}),
     })
     this.flags = o.flags
     this.args = o.args
