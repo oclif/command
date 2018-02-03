@@ -12,7 +12,7 @@
     "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@anycli/config": "^0.3.1",
+    "@anycli/config": "^1.0.0",
     "@anycli/plugin-help": "^0.5.0",
     "@anycli/tslint": "^0.2.2",
     "@types/chai": "^4.1.2",
