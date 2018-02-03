@@ -1,3 +1,11 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/anycli/command/compare/bbfc5f72c5e304c8a32a21cd2fd3295c8c19a9eb...v1.2.0) (2018-02-03)
+
+
+### Features
+
+* added _run and parse functions ([8e90f26](https://github.com/anycli/command/commit/8e90f26))
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/anycli/command/compare/68158831718f70da1cc0b282e35b108791ee6c3a...v1.1.2) (2018-02-03)
 
