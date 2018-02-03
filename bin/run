@@ -1,23 +1,13 @@
 #!/usr/bin/env node
 
 require('ts-node/register')
-
+const {cli} = require('cli-ux')
 const {Command, flags, parse} = require('../src')
 
 class TestCommand extends Command {
-  constructor(argv, opts) {
-    super(argv, opts)
-    this.options = parse(argv, TestCommand)
-  }
-
   async run() {
-    const {cli} = require('cli-ux')
     cli.info('running test command')
   }
-}
-TestCommand.flags = {
-  help: flags.help(),
-  version: flags.version(),
 }
 
 TestCommand.run()

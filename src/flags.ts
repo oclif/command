@@ -1,7 +1,8 @@
-// tslint:disable interface-over-type-literal
-
 import {IConfig} from '@anycli/config'
 import * as Parser from '@anycli/parser'
+import cli from 'cli-ux'
+
+import {Command} from '.'
 
 export type ICompletionContext = {
   args?: { [name: string]: string }
@@ -59,15 +60,13 @@ const stringFlag = build({})
 export {stringFlag as string}
 export {boolean} from '@anycli/parser/lib/flags'
 
-const g = global as any
-
 export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
     char: 'v',
     description: 'show CLI version',
     ...opts,
-    parse: () => {
-      g.anycli.command.showVersion = true
+    parse: (_: any, cmd: Command) => {
+      cli.info(cmd.config.userAgent)
     },
   })
 }
@@ -76,8 +75,8 @@ export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => 
     char: 'h',
     description: 'show CLI help',
     ...opts,
-    parse: () => {
-      g.anycli.command.showHelp = true
+    parse: (_: any, cmd: Command) => {
+      cli.info(cmd)
     },
   })
 }

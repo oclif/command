@@ -1,17 +1,13 @@
 const pjson = require('../package.json')
 import * as Config from '@anycli/config'
-import {args} from '@anycli/parser'
-import Help from '@anycli/plugin-help'
+import * as Parser from '@anycli/parser'
 import cli from 'cli-ux'
 import * as _ from 'lodash'
 
-import {convertToCached} from './cache'
 import * as flags from './flags'
 
 const g = global as any
 g.anycli = g.anycli || {}
-
-const parentModule = module.parent && module.parent.parent && module.parent.parent.filename
 
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
@@ -23,49 +19,54 @@ export default abstract class Command {
   static help: string | undefined
   static aliases: string[] = []
   static strict = true
-  static flags: flags.Input<any>
-  static args: args.IArg[] = []
+  static flags: flags.Input<any> = {
+    version: flags.version(),
+    help: flags.help(),
+  }
+  static args: Parser.args.IArg[] = []
   static plugin: Config.IPlugin | undefined
   static examples: string[] | undefined
 
   /**
    * instantiate and run the command
    */
-  static run: Config.ICommand['run'] = async function (this: Config.ICommand, argv = process.argv.slice(2), opts = {}) {
-    class HelpErr extends Error {code = 'EHELP'}
-    class VersionErr extends Error {code = 'EVERSION'}
-
-    let config
-    if (opts.config && Config.isIConfig(opts.config)) config = opts.config
-    else config = await Config.read({root: opts.root || parentModule!})
-
-    g.anycli.command = {}
-    let cmd!: Command
+  static run: Config.Command.Full['run'] = async function (this: Config.Command.Full, argv = process.argv.slice(2), opts) {
+    let err: Error | undefined
+    let cmd: Command | undefined
     try {
-      cmd = new this(argv, {...opts, config})
-      if (g.anycli.command.showVersion) throw new VersionErr()
-      if (g.anycli.command.showHelp) throw new HelpErr()
-      return await cmd.run()
-    } catch (err) {
-      if (err instanceof VersionErr) {
-        cli.info(config.userAgent)
-      } else if (err instanceof HelpErr || err.message.match(/Unexpected argument: -h/)) {
-        const Helper: typeof Help = require('@anycli/plugin-help').default
-        const help = new Helper(config)
-        help.showHelp(this, argv)
-      } else cli.error(err)
+      cmd = new this<Command>(argv, opts)
+      await cmd.init()
+      await cmd.run()
+    } catch (e) {
+      err = e
+      if (cmd) await cmd.catch(e)
+      else cli.error(e)
     } finally {
-      if (cmd) await cmd.finally()
+      if (cmd) await cmd.finally(err)
     }
-  }
-
-  static async load() { return this }
-
-  static convertToCached(this: Config.ICommand, opts: Config.IConvertToCachedOptions = {}): Config.ICachedCommand {
-    return convertToCached(this, opts)
+    // g.anycli.command = {}
+    // let cmd!: Command
+    // try {
+    //   cmd = new this(argv, {...opts, config})
+    //   if (g.anycli.command.showVersion) throw new VersionErr()
+    //   if (g.anycli.command.showHelp) throw new HelpErr()
+    //   return await cmd.run()
+    // } catch (err) {
+    //   if (err instanceof VersionErr) {
+    //     cli.info(config.userAgent)
+    //   } else if (err instanceof HelpErr || err.message.match(/Unexpected argument: -h/)) {
+    //     const Helper: typeof Help = require('@anycli/plugin-help').default
+    //     const help = new Helper(config)
+    //     help.showHelp(this, argv)
+    //   } else cli.error(err)
+    // } finally {
+    //   if (cmd) await cmd.finally()
+    // }
   }
 
   config: Config.IConfig
+  flags!: {[name: string]: any}
+  args!: {[name: string]: any}
 
   // we disable these so that it's clear they need to be static not instance properties
   description!: null
@@ -78,8 +79,8 @@ export default abstract class Command {
 
   protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], public opts: Config.ICommandOptions) {
-    this.config = opts.config
+  constructor(public argv: string[], options: Config.Options) {
+    this.config = Config.load(options || module.parent && module.parent.filename || __dirname)
     this.debug = require('debug')(this.ctor.id ? `${this.config.bin}:${this.ctor.id}` : this.config.bin)
     this.debug('init version: %s argv: %o', this.ctor._base, argv)
     cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
@@ -88,7 +89,6 @@ export default abstract class Command {
     cli.config.errlog = this.config.errlog
     g['http-call'] = g['http-call'] || {}
     g['http-call']!.userAgent = this.config.userAgent
-    this.init()
   }
 
   get ctor(): typeof Command {
@@ -100,9 +100,23 @@ export default abstract class Command {
   /**
    * actual command run code goes here
    */
-  abstract async run(): Promise<void>
-  protected init(): void {}
-  protected async finally() {
+  abstract async run(): Promise<any>
+  protected async init() {
+    const o = Parser.parse(this.argv, {
+      flags: this.ctor.flags,
+      args: this.ctor.args,
+      strict: this.ctor.strict || !(this.ctor as any).variableArgs,
+      context: this,
+    })
+    this.flags = o.flags
+    this.args = o.args
+    this.argv = o.argv
+  }
+
+  protected async catch(err: Error) {
+    cli.error(err)
+  }
+  protected async finally(_: Error | undefined) {
     try {
       await cli.done()
     } catch (err) {
