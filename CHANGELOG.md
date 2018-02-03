@@ -1,3 +1,11 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/anycli/command/compare/13a6193a1e2c577b3eaa49c6f38d2326eb40eea9...v1.2.3) (2018-02-03)
+
+
+### Bug Fixes
+
+* bump parser ([a002c7c](https://github.com/anycli/command/commit/a002c7c))
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/anycli/command/compare/26e8568b8f8f778d5a74773decc92446b09d4618...v1.2.2) (2018-02-03)
 
