@@ -29,9 +29,9 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: Config.Command.Full['run'] = async function (this: Config.Command.Full, argv = process.argv.slice(2), opts) {
-    let cmd = new this<Command>(argv, opts)
-    await cmd._run()
+  static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv = process.argv.slice(2), opts) {
+    let cmd = new this(argv, opts)
+    await cmd._run(argv)
   }
 
   // we disable these so that it's clear they need to be static not instance properties
