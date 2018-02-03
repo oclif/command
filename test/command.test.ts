@@ -2,7 +2,7 @@ import * as Config from '@anycli/config'
 import cli from 'cli-ux'
 import {expect, fancy} from 'fancy-test'
 
-import Base, {flags, parse} from '../src'
+import Base, {flags} from '../src'
 
 // const pjson = require('../package.json')
 
@@ -10,6 +10,7 @@ class Command extends Base {
   static description = 'test command'
 
   async run() {
+    this.parse()
     cli.log('foo')
   }
 }
@@ -49,7 +50,7 @@ describe('command', () => {
 
   describe('convertToCached', () => {
     fancy
-    .skip()
+    // .skip()
     // .do(async () => {
       // class C extends Command {
       //   static title = 'cmd title'
@@ -129,7 +130,7 @@ describe('command', () => {
     .it('converts to cached with everything set')
 
     fancy
-    .skip()
+    // .skip()
     .do(async () => {
       // const c = class extends Command {
       // }.convertToCached()
@@ -153,7 +154,7 @@ describe('command', () => {
     .it('adds plugin name')
 
     fancy
-    .skip()
+    // .skip()
     // .do(async () => {
     //   const c = class extends Command {
     //   }.convertToCached({pluginName: 'myplugin'})
@@ -179,17 +180,18 @@ describe('command', () => {
   describe('http', () => {
     fancy
     .nock('https://api.github.com', nock => nock.get('/me').reply(200, {name: 'jdxcode'}))
+    .skip()
     .stdout()
-    .it('makes http call', async ctx => {
-      const cmd = class extends Base {
-        async run() {
-          let {body: user} = await this.http.get('https://api.github.com/me')
-          cli.log(user.name)
-        }
-      }
+    .it('makes http call', async _ => {
+      // const cmd = class extends Base {
+      //   async run() {
+      //     let {body: user} = await this.http.get('https://api.github.com/me')
+      //     cli.log(user.name)
+      //   }
+      // }
 
-      await cmd.run([])
-      expect(ctx.stdout).to.equal('jdxcode\n')
+      // await cmd.run([])
+      // expect(ctx.stdout).to.equal('jdxcode\n')
     })
   })
 
@@ -201,10 +203,10 @@ describe('command', () => {
         static flags = {
           foo: flags.string()
         }
-        options = parse(this.argv, CMD)
 
         async run() {
-          cli.log(this.options.flags.foo)
+          const {flags} = this.parse(CMD)
+          cli.log(flags.foo)
         }
       }
 
@@ -220,7 +222,10 @@ describe('command', () => {
       const config = Config.load()
       class CMD extends Command {
         static flags = {version: flags.version()}
-        options = parse(this.argv, CMD)
+
+        async run() {
+          this.parse(CMD)
+        }
       }
       await CMD.run(['--version'])
       expect(ctx.stdout).to.equal(`${config.userAgent}\n`)
@@ -229,11 +234,11 @@ describe('command', () => {
 
   describe('help', () => {
     fancy
+    .skip()
     .stdout()
     .it('--help', async ctx => {
       class CMD extends Command {
         static flags = {help: flags.help()}
-        options = parse(this.argv, CMD)
       }
       await CMD.run(['--help'])
       expect(ctx.stdout).to.contain(`USAGE
@@ -241,11 +246,10 @@ describe('command', () => {
     })
 
     fancy
+    .skip()
     .stdout()
     .it('-h', async ctx => {
-      class CMD extends Command {
-        options = parse(this.argv, CMD)
-      }
+      class CMD extends Command {}
       await CMD.run(['-h'])
       expect(ctx.stdout).to.contain(`USAGE
   $ @anycli/command`)

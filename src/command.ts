@@ -6,9 +6,6 @@ import * as _ from 'lodash'
 
 import * as flags from './flags'
 
-const g = global as any
-g.anycli = g.anycli || {}
-
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
   static id: string
@@ -33,42 +30,9 @@ export default abstract class Command {
    * instantiate and run the command
    */
   static run: Config.Command.Full['run'] = async function (this: Config.Command.Full, argv = process.argv.slice(2), opts) {
-    let err: Error | undefined
-    let cmd: Command | undefined
-    try {
-      cmd = new this<Command>(argv, opts)
-      await cmd.init()
-      await cmd.run()
-    } catch (e) {
-      err = e
-      if (cmd) await cmd.catch(e)
-      else cli.error(e)
-    } finally {
-      if (cmd) await cmd.finally(err)
-    }
-    // g.anycli.command = {}
-    // let cmd!: Command
-    // try {
-    //   cmd = new this(argv, {...opts, config})
-    //   if (g.anycli.command.showVersion) throw new VersionErr()
-    //   if (g.anycli.command.showHelp) throw new HelpErr()
-    //   return await cmd.run()
-    // } catch (err) {
-    //   if (err instanceof VersionErr) {
-    //     cli.info(config.userAgent)
-    //   } else if (err instanceof HelpErr || err.message.match(/Unexpected argument: -h/)) {
-    //     const Helper: typeof Help = require('@anycli/plugin-help').default
-    //     const help = new Helper(config)
-    //     help.showHelp(this, argv)
-    //   } else cli.error(err)
-    // } finally {
-    //   if (cmd) await cmd.finally()
-    // }
+    let cmd = new this<Command>(argv, opts)
+    await cmd._run()
   }
-
-  config: Config.IConfig
-  flags!: {[name: string]: any}
-  args!: {[name: string]: any}
 
   // we disable these so that it's clear they need to be static not instance properties
   description!: null
@@ -79,42 +43,49 @@ export default abstract class Command {
   strict!: null
   examples!: null
 
+  id: string | undefined
+  config: Config.IConfig
   protected debug: (...args: any[]) => void
 
   constructor(public argv: string[], options: Config.Options) {
+    this.id = this.ctor.id
     this.config = Config.load(options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
-    this.debug = require('debug')(this.ctor.id ? `${this.config.bin}:${this.ctor.id}` : this.config.bin)
-    this.debug('init version: %s argv: %o', this.ctor._base, argv)
-    cli.config.context.command = _.compact([this.ctor.id, ...argv]).join(' ')
-    cli.config.context.version = this.config.userAgent
-    if (this.config.debug) cli.config.debug = true
-    cli.config.errlog = this.config.errlog
-    g['http-call'] = g['http-call'] || {}
-    g['http-call']!.userAgent = this.config.userAgent
+    this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
   }
 
   get ctor(): typeof Command {
     return this.constructor as typeof Command
   }
 
-  get http() { return require('http-call').HTTP }
-
+  async _run(): Promise<void> {
+    let err: Error | undefined
+    try {
+      await this.init()
+      await this.run()
+    } catch (e) {
+      err = e
+      await this.catch(e)
+    } finally {
+      await this.finally(err)
+    }
+  }
   /**
    * actual command run code goes here
    */
   abstract async run(): Promise<any>
   protected async init() {
-    if (!this.ctor.parse) return
-    const o = Parser.parse(this.argv, {
-      flags: this.ctor.flags,
-      args: this.ctor.args,
-      strict: this.ctor.strict || !(this.ctor as any).variableArgs,
-      context: this,
-      ...(this.ctor.parserOptions || {}),
-    })
-    this.flags = o.flags
-    this.args = o.args
-    this.argv = o.argv
+    this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
+    cli.config.context.command = _.compact([this.id, ...this.argv]).join(' ')
+    cli.config.context.version = this.config.userAgent
+    if (this.config.debug) cli.config.debug = true
+    cli.config.errlog = this.config.errlog
+    global['http-call'] = global['http-call'] || {}
+    global['http-call']!.userAgent = this.config.userAgent
+  }
+
+  protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
+    if (!options) options = this.constructor as any
+    return Parser.parse(argv, {context: this, ...options})
   }
 
   protected async catch(err: Error) {
