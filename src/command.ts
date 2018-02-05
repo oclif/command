@@ -4,7 +4,6 @@ import * as Config from '@anycli/config'
 import * as Parser from '@anycli/parser'
 import Help from '@anycli/plugin-help'
 
-import {ExitError} from './exit'
 import * as flags from './flags'
 import {compact} from './util'
 
@@ -74,7 +73,7 @@ export default abstract class Command {
     }
   }
 
-  exit(code?: number) { throw new ExitError(code || 0) }
+  exit(code?: number) { throw new Config.ExitError(code || 0) }
 
   log(s?: string | undefined) {
     process.stdout.write((s || '') + '\n')
@@ -95,7 +94,6 @@ export default abstract class Command {
     }
     global['http-call'] = global['http-call'] || {}
     global['http-call']!.userAgent = this.config.userAgent
-    await this.config.runHook('init', {argv: this.argv})
     if (this._helpOverride()) return this._help()
   }
 

@@ -14,6 +14,7 @@ export class Main extends Command {
 
   async run() {
     let [id, ...argv] = this.argv
+    await this.config.runHook('init', {id, argv})
     this.parse({strict: false, '--': false, ...this.ctor as any})
     await this.config.runCommand(id, argv)
   }
