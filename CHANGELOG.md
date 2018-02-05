@@ -1,3 +1,11 @@
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/anycli/command/compare/26895f76a879a002cf01319aba3779ba4cad8ae9...v1.2.5) (2018-02-05)
+
+
+### Bug Fixes
+
+* reduce dependencies ([7b0acc6](https://github.com/anycli/command/commit/7b0acc6))
+
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/anycli/command/compare/a002c7c2e3f54a0a0bd37b4844ceea5d815d69f6...v1.2.4) (2018-02-03)
 
