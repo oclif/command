@@ -39,7 +39,7 @@
     "concurrently": "^3.5.1",
     "eslint": "^4.17.0",
     "eslint-config-anycli": "^1.3.2",
-    "fancy-test": "^0.6.10",
+    "fancy-test": "^1.0.0",
     "http-call": "^5.0.2",
     "mocha": "^5.0.0",
     "nock": "^9.1.6",
