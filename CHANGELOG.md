@@ -1,3 +1,11 @@
+<a name="1.2.8"></a>
+## [1.2.8](https://github.com/anycli/command/compare/dd18e9c08ece41f3cbb04b21080a52ffa102cadf...v1.2.8) (2018-02-05)
+
+
+### Bug Fixes
+
+* add error handler ([ce49022](https://github.com/anycli/command/commit/ce49022))
+
 <a name="1.2.7"></a>
 ## [1.2.7](https://github.com/anycli/command/compare/84a397ed21572b4276bfebed3f7adc9824243690...v1.2.7) (2018-02-05)
 
