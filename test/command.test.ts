@@ -44,9 +44,8 @@ describe('command', () => {
     }
     return Command.run([])
   })
-  .it('exits with 0', () => {
-    expect(process.exitCode).to.equal(0)
-  })
+  .catch(/EEXIT: 0/)
+  .it('exits with 0')
 
   describe('convertToCached', () => {
     fancy
@@ -204,8 +203,8 @@ describe('command', () => {
     .do(async () => {
       await Command.run(['--version'])
     })
+    .catch(/EEXIT: 0/)
     .it('shows version', ctx => {
-      expect(process.exitCode).to.equal(0)
       expect(ctx.stdout).to.equal(`${ctx.config.userAgent}\n`)
     })
   })
@@ -219,8 +218,8 @@ describe('command', () => {
       }
       return CMD.run(['--help'])
     })
+    .catch(/EEXIT: 0/)
     .it('--help', ctx => {
-      expect(process.exitCode).to.equal(0)
       expect(ctx.stdout).to.contain(`anycli base command
 
 USAGE

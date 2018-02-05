@@ -103,9 +103,7 @@ export default abstract class Command {
   }
 
   protected async catch(err: any) {
-    if (err && err['cli-ux'] && err['cli-ux'].exit !== undefined) {
-      process.exitCode = err['cli-ux'].exit
-    } else if (err.message.match(/Unexpected arguments?: (-h|--help)(,|\n)/)) {
+    if (err.message.match(/Unexpected arguments?: (-h|--help)(,|\n)/)) {
       this._help()
     } else if (err.message.match(/Unexpected arguments?: (-v|--version)(,|\n)/)) {
       this._version()

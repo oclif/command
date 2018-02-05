@@ -16,7 +16,7 @@
     "@anycli/parser": "^3.2.4"
   },
   "devDependencies": {
-    "@anycli/config": "^1.2.3",
+    "@anycli/config": "^1.3.2",
     "@anycli/plugin-help": "^0.6.3",
     "@anycli/plugin-not-found": "^0.1.16",
     "@anycli/plugin-plugins": "^0.2.12",
