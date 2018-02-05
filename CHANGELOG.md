@@ -1,3 +1,11 @@
+<a name="1.2.7"></a>
+## [1.2.7](https://github.com/anycli/command/compare/84a397ed21572b4276bfebed3f7adc9824243690...v1.2.7) (2018-02-05)
+
+
+### Bug Fixes
+
+* updated plugins plugin ([dd18e9c](https://github.com/anycli/command/commit/dd18e9c))
+
 <a name="1.2.6"></a>
 ## [1.2.6](https://github.com/anycli/command/compare/7b0acc6f82620daebabbdc57838df055239b4edf...v1.2.6) (2018-02-05)
 
