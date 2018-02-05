@@ -1,3 +1,11 @@
+<a name="1.2.6"></a>
+## [1.2.6](https://github.com/anycli/command/compare/7b0acc6f82620daebabbdc57838df055239b4edf...v1.2.6) (2018-02-05)
+
+
+### Bug Fixes
+
+* move ExitError to config ([84a397e](https://github.com/anycli/command/commit/84a397e))
+
 <a name="1.2.5"></a>
 ## [1.2.5](https://github.com/anycli/command/compare/26895f76a879a002cf01319aba3779ba4cad8ae9...v1.2.5) (2018-02-05)
 
