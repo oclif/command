@@ -1,11 +1,12 @@
+// tslint:disable no-implicit-dependencies
 const pjson = require('../package.json')
 import * as Config from '@anycli/config'
 import * as Parser from '@anycli/parser'
 import Help from '@anycli/plugin-help'
-import cli from 'cli-ux'
-import * as _ from 'lodash'
 
+import {ExitError} from './exit'
 import * as flags from './flags'
+import {compact} from './util'
 
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
@@ -51,7 +52,9 @@ export default abstract class Command {
   constructor(public argv: string[], options: Config.Options) {
     this.id = this.ctor.id
     this.config = Config.load(options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
-    this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
+    try {
+      this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
+    } catch { this.debug = () => {} }
   }
 
   get ctor(): typeof Command {
@@ -71,16 +74,25 @@ export default abstract class Command {
     }
   }
 
+  exit(code?: number) { throw new ExitError(code || 0) }
+
+  log(s?: string | undefined) {
+    process.stdout.write((s || '') + '\n')
+  }
+
   /**
    * actual command run code goes here
    */
   abstract async run(): Promise<any>
   protected async init() {
     this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
-    cli.config.context.command = _.compact([this.id, ...this.argv]).join(' ')
-    cli.config.context.version = this.config.userAgent
-    if (this.config.debug) cli.config.debug = true
-    cli.config.errlog = this.config.errlog
+    global['cli-ux'] = global['cli-ux'] || {}
+    global['cli-ux'].debug = global['cli-ux'].debug || !!this.config.debug
+    global['cli-ux'].errlog = global['cli-ux'].errlog || this.config.errlog
+    global['cli-ux'].context = global['cli-ux'].context || {
+      command: compact([this.id, ...this.argv]).join(' '),
+      version: this.config.userAgent,
+    }
     global['http-call'] = global['http-call'] || {}
     global['http-call']!.userAgent = this.config.userAgent
     await this.config.runHook('init', {argv: this.argv})
@@ -89,29 +101,27 @@ export default abstract class Command {
 
   protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
     if (!options) options = this.constructor as any
-    return Parser.parse(argv, {context: this, ...options})
+    return require('@anycli/parser').parse(argv, {context: this, ...options})
   }
 
-  protected async catch(err: Error) {
-    if (err.message.match(/Unexpected arguments?: (-h|--help)(,|\n)/)) {
+  protected async catch(err: any) {
+    if (err && err['cli-ux'] && err['cli-ux'].exit !== undefined) {
+      process.exitCode = err['cli-ux'].exit
+    } else if (err.message.match(/Unexpected arguments?: (-h|--help)(,|\n)/)) {
       this._help()
     } else if (err.message.match(/Unexpected arguments?: (-v|--version)(,|\n)/)) {
       this._version()
-    } else cli.error(err)
+    } else throw err
   }
   protected async finally(_: Error | undefined) {
-    try {
-      await cli.done()
-    } catch (err) {
-      cli.warn(err)
-    }
+    try {await require('cli-ux').done()} catch {}
   }
 
   protected _help() {
     const HHelp: typeof Help = require('@anycli/plugin-help').default
     const help = new HHelp(this.config)
     help.showHelp(this.argv)
-    cli.exit(0)
+    this.exit(0)
   }
 
   protected _helpOverride(): boolean {
@@ -124,7 +134,7 @@ export default abstract class Command {
   }
 
   protected _version() {
-    cli.info(this.config.userAgent)
-    cli.exit(0)
+    this.log(this.config.userAgent)
+    this.exit(0)
   }
 }

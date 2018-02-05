@@ -1,6 +1,5 @@
 #!/usr/bin/env ts-node
 
-import cli from 'cli-ux'
 import * as fs from 'fs'
 
 import Command, {flags} from '..' // use @anycli/command outside this repo
@@ -17,7 +16,7 @@ class LS extends Command {
   async run() {
     let files = fs.readdirSync(this.flags.dir)
     for (let f of files) {
-      cli.log(f)
+      this.log(f)
     }
   }
 }

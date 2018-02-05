@@ -1,7 +1,6 @@
 import {IConfig} from '@anycli/config'
 import * as Parser from '@anycli/parser'
 import Help from '@anycli/plugin-help'
-import cli from 'cli-ux'
 
 import {Command} from '.'
 
@@ -67,8 +66,8 @@ export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) 
     description: 'show CLI version',
     ...opts,
     parse: (_: any, cmd: Command) => {
-      cli.info(cmd.config.userAgent)
-      cli.exit(0)
+      cmd.log(cmd.config.userAgent)
+      cmd.exit(0)
     },
   })
 }
@@ -80,7 +79,8 @@ export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => 
     parse: (_: any, cmd: Command) => {
       const HHelp: typeof Help = require('@anycli/plugin-help').default
       const help = new HHelp(cmd.config)
-      cli.info(help)
+      help.showHelp(cmd.argv)
+      cmd.exit(0)
     },
   })
 }

@@ -3,12 +3,11 @@
 require('ts-node/register')
 require('../src').run()
 
-// const {cli} = require('cli-ux')
 // const {Command, flags, parse} = require('../src')
 
 // class TestCommand extends Command {
 //   async run() {
-//     cli.info('running test command')
+//     this.info('running test command')
 //   }
 // }
 

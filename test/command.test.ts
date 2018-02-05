@@ -1,5 +1,4 @@
 import * as Config from '@anycli/config'
-import cli from 'cli-ux'
 import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
@@ -11,7 +10,7 @@ class Command extends Base {
 
   async run() {
     this.parse()
-    cli.log('foo')
+    this.log('foo')
   }
 }
 
@@ -40,13 +39,14 @@ describe('command', () => {
   .do(() => {
     class Command extends Base {
       async run() {
-        cli.exit(0)
+        this.exit(0)
       }
     }
     return Command.run([])
   })
-  .catch(/EEXIT: 0/)
-  .it('exits with 0')
+  .it('exits with 0', () => {
+    expect(process.exitCode).to.equal(0)
+  })
 
   describe('convertToCached', () => {
     fancy
@@ -177,24 +177,6 @@ describe('command', () => {
     .it('converts to cached with nothing set')
   })
 
-  describe('http', () => {
-    fancy
-    .nock('https://api.github.com', nock => nock.get('/me').reply(200, {name: 'jdxcode'}))
-    .skip()
-    .stdout()
-    .it('makes http call', async _ => {
-      // const cmd = class extends Base {
-      //   async run() {
-      //     let {body: user} = await this.http.get('https://api.github.com/me')
-      //     cli.log(user.name)
-      //   }
-      // }
-
-      // await cmd.run([])
-      // expect(ctx.stdout).to.equal('jdxcode\n')
-    })
-  })
-
   describe('parse', () => {
     fancy
     .stdout()
@@ -206,7 +188,7 @@ describe('command', () => {
 
         async run() {
           const {flags} = this.parse(CMD)
-          cli.log(flags.foo)
+          this.log(flags.foo)
         }
       }
 
@@ -222,8 +204,8 @@ describe('command', () => {
     .do(async () => {
       await Command.run(['--version'])
     })
-    .catch(/EEXIT: 0/)
     .it('shows version', ctx => {
+      expect(process.exitCode).to.equal(0)
       expect(ctx.stdout).to.equal(`${ctx.config.userAgent}\n`)
     })
   })
@@ -237,8 +219,8 @@ describe('command', () => {
       }
       return CMD.run(['--help'])
     })
-    .catch(/EEXIT: 0/)
     .it('--help', ctx => {
+      expect(process.exitCode).to.equal(0)
       expect(ctx.stdout).to.contain(`anycli base command
 
 USAGE
@@ -264,6 +246,7 @@ COMMANDS
     })
     .catch(/EEXIT: 0/)
     .it('-h', ctx => {
+      // expect(process.exitCode).to.equal(0)
       expect(ctx.stdout).to.contain(`anycli base command
 
 USAGE
