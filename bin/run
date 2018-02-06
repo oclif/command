@@ -2,7 +2,7 @@
 
 require('ts-node/register')
 require('../src').run()
-.catch(require('../src/handle_error'))
+.catch(require('@anycli/errors/handle'))
 
 // const {Command, flags, parse} = require('../src')
 

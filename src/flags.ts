@@ -40,7 +40,7 @@ export function build<T>(defaults: Partial<IOptionFlag<T>>): Definition<T> {
 }
 
 export function option<T>(options: {parse: IOptionFlag<T>['parse']} & Partial<IOptionFlag<T>>) {
-  return build<T>({optionType: 'custom', ...options})()
+  return build<T>(options)()
 }
 
 const _enum = <T = string>(opts: Parser.flags.EnumFlagOptions<T>): IOptionFlag<T> => {

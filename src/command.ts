@@ -1,11 +1,12 @@
 // tslint:disable no-implicit-dependencies
 const pjson = require('../package.json')
 import * as Config from '@anycli/config'
+import * as Errors from '@anycli/errors'
 import * as Parser from '@anycli/parser'
 import Help from '@anycli/plugin-help'
+import {inspect} from 'util'
 
 import * as flags from './flags'
-import {compact} from './util'
 
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
@@ -73,10 +74,14 @@ export default abstract class Command {
     }
   }
 
-  exit(code?: number) { throw new Config.ExitError(code || 0) }
-
-  log(s?: string | undefined) {
-    process.stdout.write((s || '') + '\n')
+  exit(code = 0) { Errors.exit(code) }
+  warn(input: string | Error) { Errors.warn(input) }
+  error(input: string | Error, options: {code?: string, exit?: number} = {}) {
+    Errors.error(input, options)
+  }
+  log(message: any = '') {
+    message = typeof message === 'string' ? message : inspect(message)
+    process.stdout.write(message + '\n')
   }
 
   /**
@@ -85,13 +90,12 @@ export default abstract class Command {
   abstract async run(): Promise<any>
   protected async init() {
     this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
-    global['cli-ux'] = global['cli-ux'] || {}
-    global['cli-ux'].debug = global['cli-ux'].debug || !!this.config.debug
-    global['cli-ux'].errlog = global['cli-ux'].errlog || this.config.errlog
-    global['cli-ux'].context = global['cli-ux'].context || {
-      command: compact([this.id, ...this.argv]).join(' '),
-      version: this.config.userAgent,
-    }
+    if (this.config.debug) Errors.config.debug = true
+    if (this.config.errlog) Errors.config.errlog = this.config.errlog
+    // global['cli-ux'].context = global['cli-ux'].context || {
+    //   command: compact([this.id, ...this.argv]).join(' '),
+    //   version: this.config.userAgent,
+    // }
     global['http-call'] = global['http-call'] || {}
     global['http-call']!.userAgent = this.config.userAgent
     if (this._helpOverride()) return this._help()
