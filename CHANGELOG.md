@@ -1,3 +1,11 @@
+<a name="1.2.12"></a>
+## [1.2.12](https://github.com/anycli/command/compare/68b277c4502b5abf918501813ff939dce5bcbd3a...v1.2.12) (2018-02-06)
+
+
+### Bug Fixes
+
+* allow these types ([b4fd493](https://github.com/anycli/command/commit/b4fd493))
+
 <a name="1.2.11"></a>
 ## [1.2.11](https://github.com/anycli/command/compare/3afcea361a4af5b78743962e3793c4cfd6ceaa0f...v1.2.11) (2018-02-06)
 
