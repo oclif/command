@@ -1,3 +1,11 @@
+<a name="1.2.9"></a>
+## [1.2.9](https://github.com/anycli/command/compare/ce490223d1d5a23619712330b1919965d3d2e143...v1.2.9) (2018-02-06)
+
+
+### Bug Fixes
+
+* use [@anycli](https://github.com/anycli)/errors ([b9424dc](https://github.com/anycli/command/commit/b9424dc))
+
 <a name="1.2.8"></a>
 ## [1.2.8](https://github.com/anycli/command/compare/dd18e9c08ece41f3cbb04b21080a52ffa102cadf...v1.2.8) (2018-02-05)
 
