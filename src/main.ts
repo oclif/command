@@ -31,6 +31,6 @@ export class Main extends Command {
   }
 }
 
-export function run(argv = process.argv.slice(2), options?: Config.Options) {
+export function run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
   return Main.run(argv, options)
 }

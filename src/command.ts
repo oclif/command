@@ -40,7 +40,7 @@ export default abstract class Command {
   config: Config.IConfig
   protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], options: Config.Options) {
+  constructor(public argv: string[], options: Config.LoadOptions) {
     this.id = this.ctor.id
     this.config = Config.load(options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
     try {
