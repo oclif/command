@@ -8,7 +8,7 @@ export class Main extends Command {
     help: flags.help(),
   }
 
-  static run(argv = process.argv.slice(2), options?: Config.Options) {
+  static run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
     return super.run(argv, options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
   }
 

@@ -225,15 +225,10 @@ describe('command', () => {
 USAGE
   $ @anycli/command [COMMAND]
 
-DESCRIPTION
-  anycli base command
-
 COMMANDS
-  help               display help for @anycli/command
-  plugins
-  plugins:install
-  plugins:uninstall
-  plugins:update
+  help     display help for @anycli/command
+  plugins  list installed plugins
+
 `)
     })
 
@@ -246,20 +241,15 @@ COMMANDS
     .catch(/EEXIT: 0/)
     .it('-h', ctx => {
       // expect(process.exitCode).to.equal(0)
-      expect(ctx.stdout).to.contain(`anycli base command
+      expect(ctx.stdout).to.equal(`anycli base command
 
 USAGE
   $ @anycli/command [COMMAND]
 
-DESCRIPTION
-  anycli base command
-
 COMMANDS
-  help               display help for @anycli/command
-  plugins
-  plugins:install
-  plugins:uninstall
-  plugins:update
+  help     display help for @anycli/command
+  plugins  list installed plugins
+
 `)
     })
   })
