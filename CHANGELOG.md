@@ -1,3 +1,11 @@
+<a name="1.2.10"></a>
+## [1.2.10](https://github.com/anycli/command/compare/b9424dcd68c774605f5956962571fda2c6e86eef...v1.2.10) (2018-02-06)
+
+
+### Bug Fixes
+
+* updated parser ([3afcea3](https://github.com/anycli/command/commit/3afcea3))
+
 <a name="1.2.9"></a>
 ## [1.2.9](https://github.com/anycli/command/compare/ce490223d1d5a23619712330b1919965d3d2e143...v1.2.9) (2018-02-06)
 
