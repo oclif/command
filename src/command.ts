@@ -36,15 +36,6 @@ export default abstract class Command {
     await cmd._run(argv)
   }
 
-  // we disable these so that it's clear they need to be static not instance properties
-  description!: null
-  hidden!: null
-  usage!: null
-  aliases!: null
-  title!: null
-  strict!: null
-  examples!: null
-
   id: string | undefined
   config: Config.IConfig
   protected debug: (...args: any[]) => void
