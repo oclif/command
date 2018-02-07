@@ -105,7 +105,7 @@ export default abstract class Command {
     } else throw err
   }
   protected async finally(_: Error | undefined) {
-    try {await require('cli-ux').done()} catch {}
+    try {await require('@anycli/errors').config.errorLogger.flush() } catch {}
   }
 
   protected _help() {
