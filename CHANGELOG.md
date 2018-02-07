@@ -1,3 +1,12 @@
+<a name="1.2.16"></a>
+## [1.2.16](https://github.com/anycli/command/compare/daed294d10995de317517ea0d3e3d66a65971411...v1.2.16) (2018-02-07)
+
+
+### Bug Fixes
+
+* async ([d79cd60](https://github.com/anycli/command/commit/d79cd60))
+* async ([3831268](https://github.com/anycli/command/commit/3831268))
+
 <a name="1.2.15"></a>
 ## [1.2.15](https://github.com/anycli/command/compare/19b1b4f33f26be64ab90fe2fcbec7ed72ba71e7a...v1.2.15) (2018-02-07)
 
