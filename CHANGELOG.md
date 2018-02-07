@@ -1,3 +1,11 @@
+<a name="1.2.15"></a>
+## [1.2.15](https://github.com/anycli/command/compare/19b1b4f33f26be64ab90fe2fcbec7ed72ba71e7a...v1.2.15) (2018-02-07)
+
+
+### Performance Improvements
+
+* flush errors not cli-ux ([daed294](https://github.com/anycli/command/commit/daed294))
+
 <a name="1.2.14"></a>
 ## [1.2.14](https://github.com/anycli/command/compare/b880aa378b7e38b7f933f38c465c87567995eb1c...v1.2.14) (2018-02-07)
 
