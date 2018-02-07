@@ -104,7 +104,10 @@ export default abstract class Command {
     } else throw err
   }
   protected async finally(_: Error | undefined) {
-    try {await require('@anycli/errors').config.errorLogger.flush() } catch {}
+    try {
+      await require('@anycli/errors').config.errorLogger.flush()
+      // tslint:disable-next-line no-console
+    } catch (err) { console.error(err) }
   }
 
   protected _help() {
