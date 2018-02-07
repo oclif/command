@@ -32,16 +32,19 @@ export default abstract class Command {
    * instantiate and run the command
    */
   static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv = process.argv.slice(2), opts) {
-    let cmd = new this(argv, opts)
+    const config = await Config.load(opts || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
+    let cmd = new this(argv, config)
     await cmd._run(argv)
   }
 
   id: string | undefined
-  config!: Config.IConfig
-  protected debug!: (...args: any[]) => void
+  protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], public _options: Config.LoadOptions) {
+  constructor(public argv: string[], public config: Config.IConfig) {
     this.id = this.ctor.id
+    try {
+      this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
+    } catch { this.debug = () => {} }
   }
 
   get ctor(): typeof Command {
@@ -76,10 +79,6 @@ export default abstract class Command {
    */
   abstract async run(): Promise<any>
   protected async init() {
-    this.config = await Config.load(this._options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
-    try {
-      this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
-    } catch { this.debug = () => {} }
     this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
     if (this.config.debug) Errors.config.debug = true
     if (this.config.errlog) Errors.config.errlog = this.config.errlog
