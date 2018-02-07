@@ -1,3 +1,11 @@
+<a name="1.2.18"></a>
+## [1.2.18](https://github.com/anycli/command/compare/a9f79525c45e18d2d0a761a502bd19174d1af748...v1.2.18) (2018-02-07)
+
+
+### Bug Fixes
+
+* async ([2040de0](https://github.com/anycli/command/commit/2040de0))
+
 <a name="1.2.17"></a>
 ## [1.2.17](https://github.com/anycli/command/compare/d79cd606fdbe62b2d80b9f91f627783b42d59747...v1.2.17) (2018-02-07)
 
