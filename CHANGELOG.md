@@ -1,3 +1,11 @@
+<a name="1.2.19"></a>
+## [1.2.19](https://github.com/anycli/command/compare/2040de0747060f289ec4092e2a619a7bb4d115ab...v1.2.19) (2018-02-07)
+
+
+### Bug Fixes
+
+* fixed error flushing ([de02208](https://github.com/anycli/command/commit/de02208))
+
 <a name="1.2.18"></a>
 ## [1.2.18](https://github.com/anycli/command/compare/a9f79525c45e18d2d0a761a502bd19174d1af748...v1.2.18) (2018-02-07)
 
