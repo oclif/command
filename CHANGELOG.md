@@ -1,3 +1,11 @@
+<a name="1.2.14"></a>
+## [1.2.14](https://github.com/anycli/command/compare/b880aa378b7e38b7f933f38c465c87567995eb1c...v1.2.14) (2018-02-07)
+
+
+### Bug Fixes
+
+* updated config ([19b1b4f](https://github.com/anycli/command/commit/19b1b4f))
+
 <a name="1.2.12"></a>
 ## [1.2.12](https://github.com/anycli/command/compare/68b277c4502b5abf918501813ff939dce5bcbd3a...v1.2.12) (2018-02-06)
 
