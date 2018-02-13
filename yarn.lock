@@ -39,9 +39,9 @@
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.2.8.tgz#2b2e35b5c075d200d70950923acd64e258c5ae1d"
 
-"@oclif/plugin-help@^0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-0.7.4.tgz#1b7903ad303bc9c2816e1f8a8275da051b2361f7"
+"@oclif/plugin-help@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.0.tgz#1a343922214bf62016ae57a89b2023e2f87e545a"
   dependencies:
     "@oclif/command" "^1.2.20"
     chalk "^2.3.1"
@@ -51,9 +51,9 @@
     widest-line "^2.0.0"
     wrap-ansi "^3.0.1"
 
-"@oclif/plugin-plugins@^0.2.18":
-  version "0.2.18"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-0.2.18.tgz#b182b3f8e7893c3141734e0cedb60e8bfbf0310a"
+"@oclif/plugin-plugins@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.0.0.tgz#2ae58b5bc3b9ada8138c298c8e7299fbba62666e"
   dependencies:
     "@heroku-cli/color" "^1.1.3"
     "@oclif/command" "^1.2.21"
@@ -72,11 +72,10 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.1.tgz#2e67c95911977a5badfff9b500e6e00dae40869c"
 
-"@oclif/tslint@^0.2.7":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@oclif/tslint/-/tslint-0.2.9.tgz#804c64b4ed92fa4087276295cdafbcdc78485f3a"
+"@oclif/tslint@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@oclif/tslint/-/tslint-0.2.10.tgz#39b8ed295a1f4e3f597c1c1ca2167eaa0bbc5b38"
   dependencies:
-    tslint "^5.9.1"
     tslint-xo "^0.6.0"
 
 "@types/chai@^4.1.2":
