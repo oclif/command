@@ -8,35 +8,9 @@
   dependencies:
     "@anycli/parser" "^3.2.6"
 
-"@anycli/config@^1.3.45":
-  version "1.3.45"
-  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-1.3.45.tgz#c92c96bab9fcb5b1347d85ef1dbeb93324f31182"
-
-"@anycli/errors@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@anycli/errors/-/errors-0.2.2.tgz#1e9c8716a2164a52053dae23d7659b23dcb5e143"
-  dependencies:
-    clean-stack "^1.3.0"
-    fs-extra "^5.0.0"
-    indent-string "^3.2.0"
-    strip-ansi "^4.0.0"
-    wrap-ansi "^3.0.1"
-
 "@anycli/parser@^3.2.6":
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.2.6.tgz#bbd119a80709099179a9f11af0dc44b68c54575b"
-
-"@anycli/plugin-help@^0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@anycli/plugin-help/-/plugin-help-0.7.2.tgz#8bf8aad477c358c0a13f29301d9cee062c7602e2"
-  dependencies:
-    "@anycli/command" "^1.2.18"
-    chalk "^2.3.0"
-    indent-string "^3.2.0"
-    lodash.template "^4.4.0"
-    string-width "^2.1.1"
-    widest-line "^2.0.0"
-    wrap-ansi "^3.0.1"
 
 "@anycli/plugin-not-found@^0.1.19":
   version "0.1.20"
@@ -76,9 +50,15 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@heroku/linewrap/-/linewrap-1.0.0.tgz#a9d4e99f0a3e423a899b775f5f3d6747a1ff15c6"
 
-"@oclif/config@^1.3.43":
-  version "1.3.46"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.46.tgz#47fcf0a89e8e9955304e880b34c48a77bc08559e"
+"@oclif/command@^1.2.19":
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.2.19.tgz#369204c0abf0621c19fa883f31118f6cdb9666a5"
+  dependencies:
+    "@oclif/parser" "^3.2.6"
+
+"@oclif/config@^1.3.47":
+  version "1.3.47"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.47.tgz#7e7cf7ab0634edd60bd1675260ac588e6f6521fe"
 
 "@oclif/errors@^1.0.1":
   version "1.0.1"
@@ -90,9 +70,21 @@
     strip-ansi "^4.0.0"
     wrap-ansi "^3.0.1"
 
-"@oclif/parser@^3.2.6":
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.2.7.tgz#c1c53f3b5f959bea2c449328a6498fb195e7d567"
+"@oclif/parser@^3.2.6", "@oclif/parser@^3.2.8":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.2.8.tgz#2b2e35b5c075d200d70950923acd64e258c5ae1d"
+
+"@oclif/plugin-help@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-0.7.2.tgz#1d0ca82c786f6f8f9e7aeb38b52ad6279347f685"
+  dependencies:
+    "@oclif/command" "^1.2.19"
+    chalk "^2.3.1"
+    indent-string "^3.2.0"
+    lodash.template "^4.4.0"
+    string-width "^2.1.1"
+    widest-line "^2.0.0"
+    wrap-ansi "^3.0.1"
 
 "@oclif/screen@^1.0.0":
   version "1.0.1"
@@ -238,7 +230,7 @@ chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.3.0:
+chalk@^2.3.0, chalk@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.1.tgz#523fe2678aec7b04e8041909292fe8b17059b796"
   dependencies:

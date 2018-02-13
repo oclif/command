@@ -3,7 +3,7 @@ const pjson = require('../package.json')
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
-import Help from '@anycli/plugin-help'
+import Help from '@oclif/plugin-help'
 import {inspect} from 'util'
 
 import * as flags from './flags'
@@ -111,7 +111,7 @@ export default abstract class Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('@anycli/plugin-help').default
+    const HHelp: typeof Help = require('@oclif/plugin-help').default
     const help = new HHelp(this.config)
     help.showHelp(this.argv)
     this.exit(0)

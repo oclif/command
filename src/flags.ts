@@ -1,6 +1,6 @@
 import {IConfig} from '@oclif/config'
 import * as Parser from '@oclif/parser'
-import Help from '@anycli/plugin-help'
+import Help from '@oclif/plugin-help'
 
 import {Command} from '.'
 
@@ -77,7 +77,7 @@ export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => 
     description: 'show CLI help',
     ...opts,
     parse: (_: any, cmd: Command) => {
-      const HHelp: typeof Help = require('@anycli/plugin-help').default
+      const HHelp: typeof Help = require('@oclif/plugin-help').default
       const help = new HHelp(cmd.config)
       help.showHelp(cmd.argv)
       cmd.exit(0)
