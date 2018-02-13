@@ -1,3 +1,11 @@
+<a name="1.2.22"></a>
+## [1.2.22](https://github.com/oclif/command/compare/45b34a88a796a79d3c0d20124a7a9919b12edec8...v1.2.22) (2018-02-13)
+
+
+### Bug Fixes
+
+* updated plugin-plugins ([0d3f94a](https://github.com/oclif/command/commit/0d3f94a))
+
 <a name="1.2.21"></a>
 ## [1.2.21](https://github.com/oclif/command/compare/v1.2.20...v1.2.21) (2018-02-13)
 
