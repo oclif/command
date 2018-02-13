@@ -2,33 +2,6 @@
 # yarn lockfile v1
 
 
-"@anycli/command@^1.2.18":
-  version "1.2.19"
-  resolved "https://registry.yarnpkg.com/@anycli/command/-/command-1.2.19.tgz#11a2f35a2438c4ae96026d28d4974ea8947d59b3"
-  dependencies:
-    "@anycli/parser" "^3.2.6"
-
-"@anycli/parser@^3.2.6":
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/@anycli/parser/-/parser-3.2.6.tgz#bbd119a80709099179a9f11af0dc44b68c54575b"
-
-"@anycli/plugin-plugins@^0.2.15":
-  version "0.2.16"
-  resolved "https://registry.yarnpkg.com/@anycli/plugin-plugins/-/plugin-plugins-0.2.16.tgz#9d84ec822abff725d9af412320238ccfdd4d415b"
-  dependencies:
-    "@anycli/command" "^1.2.18"
-    "@heroku-cli/color" "^1.1.3"
-    chalk "^2.3.0"
-    cli-ux "^3.3.18"
-    debug "^3.1.0"
-    fs-extra "^5.0.0"
-    http-call "^5.0.2"
-    load-json-file "^4.0.0"
-    npm-run-path "^2.0.2"
-    semver "^5.5.0"
-    tslib "^1.9.0"
-    yarn "^1.3.2"
-
 "@heroku-cli/color@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@heroku-cli/color/-/color-1.1.3.tgz#f5f3bb043c3c5c78888135a89633227cfca04b2b"
@@ -42,7 +15,7 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@heroku/linewrap/-/linewrap-1.0.0.tgz#a9d4e99f0a3e423a899b775f5f3d6747a1ff15c6"
 
-"@oclif/command@^1.2.20":
+"@oclif/command@^1.2.19", "@oclif/command@^1.2.20":
   version "1.2.20"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.2.20.tgz#1330834cae3147c3319d91fba89f24576e493e5f"
   dependencies:
@@ -66,9 +39,9 @@
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.2.8.tgz#2b2e35b5c075d200d70950923acd64e258c5ae1d"
 
-"@oclif/plugin-help@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-0.7.3.tgz#eb551780c0cc6da5b7e0ae5fd1b298160b20df6d"
+"@oclif/plugin-help@^0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-0.7.4.tgz#1b7903ad303bc9c2816e1f8a8275da051b2361f7"
   dependencies:
     "@oclif/command" "^1.2.20"
     chalk "^2.3.1"
@@ -78,13 +51,22 @@
     widest-line "^2.0.0"
     wrap-ansi "^3.0.1"
 
-"@oclif/plugin-not-found@^0.1.19":
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-0.1.20.tgz#9a99acea53a30a98d90198f315ff9985e5f58383"
+"@oclif/plugin-plugins@^0.2.17":
+  version "0.2.17"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-0.2.17.tgz#634819e7629de36806ff17081ec817b420a7ac15"
   dependencies:
     "@heroku-cli/color" "^1.1.3"
-    "@oclif/command" "^1.2.20"
-    string-similarity "^1.2.0"
+    "@oclif/command" "^1.2.19"
+    chalk "^2.3.1"
+    cli-ux "^3.3.19"
+    debug "^3.1.0"
+    fs-extra "^5.0.0"
+    http-call "^5.0.2"
+    load-json-file "^4.0.0"
+    npm-run-path "^2.0.2"
+    semver "^5.5.0"
+    tslib "^1.9.0"
+    yarn "^1.3.2"
 
 "@oclif/screen@^1.0.0":
   version "1.0.1"
@@ -246,7 +228,7 @@ clean-stack@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz#9e821501ae979986c46b1d66d2d432db2fd4ae31"
 
-cli-ux@^3.3.18:
+cli-ux@^3.3.19:
   version "3.3.19"
   resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.19.tgz#e303faa923f061b91fb2c458f362ccfc7965a6b5"
   dependencies:
@@ -550,7 +532,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash@^4.13.1, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.5.1:
+lodash@^4.17.4, lodash@^4.17.5, lodash@^4.5.1:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
@@ -715,12 +697,6 @@ stdout-stderr@^0.1.6:
   resolved "https://registry.yarnpkg.com/stdout-stderr/-/stdout-stderr-0.1.7.tgz#f3f69391f3e721c2c52aa92fbfa18b8a6e9ce3df"
   dependencies:
     strip-ansi "^4.0.0"
-
-string-similarity@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/string-similarity/-/string-similarity-1.2.0.tgz#d75153cb383846318b7a39a8d9292bb4db4e9c30"
-  dependencies:
-    lodash "^4.13.1"
 
 string-width@^2.1.1:
   version "2.1.1"
