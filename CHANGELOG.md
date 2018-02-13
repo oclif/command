@@ -1,3 +1,12 @@
+<a name="1.2.21"></a>
+## [1.2.21](https://github.com/oclif/command/compare/v1.2.20...v1.2.21) (2018-02-13)
+
+
+### Bug Fixes
+
+* oclif rename ([45b34a8](https://github.com/oclif/command/commit/45b34a8))
+* oclif rename ([bc6169b](https://github.com/oclif/command/commit/bc6169b))
+
 <a name="1.2.19"></a>
 ## [1.2.19](https://github.com/anycli/command/compare/2040de0747060f289ec4092e2a619a7bb4d115ab...v1.2.19) (2018-02-07)
 
