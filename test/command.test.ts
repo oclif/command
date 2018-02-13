@@ -1,4 +1,4 @@
-import * as Config from '@anycli/config'
+import * as Config from '@oclif/config'
 import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
@@ -84,7 +84,7 @@ describe('command', () => {
       // expect(await c.load()).to.have.property('run')
       // delete c.load
       // expect(c).to.deep.equal({
-      //   _base: `@anycli/command@${pjson.version}`,
+      //   _base: `@oclif/command@${pjson.version}`,
       //   id: 'foo:bar',
       //   type: 'mytype',
       //   hidden: true,
@@ -136,7 +136,7 @@ describe('command', () => {
       // expect(await c.load()).to.have.property('run')
       // delete c.load
       // expect(c).to.deep.equal({
-      //   _base: `@anycli/command@${pjson.version}`,
+      //   _base: `@oclif/command@${pjson.version}`,
       //   id: undefined,
       //   type: undefined,
       //   hidden: undefined,
@@ -160,7 +160,7 @@ describe('command', () => {
     //   expect(await c.load()).to.have.property('run')
     //   delete c.load
     //   expect(c).to.deep.equal({
-    //     _base: `@anycli/command@${pjson.version}`,
+    //     _base: `@oclif/command@${pjson.version}`,
     //     type: undefined,
     //     id: undefined,
     //     hidden: undefined,
@@ -220,13 +220,13 @@ describe('command', () => {
     })
     .catch(/EEXIT: 0/)
     .it('--help', ctx => {
-      expect(ctx.stdout).to.contain(`anycli base command
+      expect(ctx.stdout).to.contain(`oclif base command
 
 USAGE
-  $ @anycli/command [COMMAND]
+  $ @oclif/command [COMMAND]
 
 COMMANDS
-  help     display help for @anycli/command
+  help     display help for @oclif/command
   plugins  list installed plugins
 
 `)
@@ -241,13 +241,13 @@ COMMANDS
     .catch(/EEXIT: 0/)
     .it('-h', ctx => {
       // expect(process.exitCode).to.equal(0)
-      expect(ctx.stdout).to.equal(`anycli base command
+      expect(ctx.stdout).to.equal(`oclif base command
 
 USAGE
-  $ @anycli/command [COMMAND]
+  $ @oclif/command [COMMAND]
 
 COMMANDS
-  help     display help for @anycli/command
+  help     display help for @oclif/command
   plugins  list installed plugins
 
 `)

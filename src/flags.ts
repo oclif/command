@@ -1,5 +1,5 @@
-import {IConfig} from '@anycli/config'
-import * as Parser from '@anycli/parser'
+import {IConfig} from '@oclif/config'
+import * as Parser from '@oclif/parser'
 import Help from '@anycli/plugin-help'
 
 import {Command} from '.'
@@ -58,7 +58,7 @@ export {_enum as enum}
 
 const stringFlag = build({})
 export {stringFlag as string}
-export {boolean} from '@anycli/parser/lib/flags'
+export {boolean} from '@oclif/parser/lib/flags'
 
 export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({

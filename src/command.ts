@@ -1,8 +1,8 @@
 // tslint:disable no-implicit-dependencies
 const pjson = require('../package.json')
-import * as Config from '@anycli/config'
-import * as Errors from '@anycli/errors'
-import * as Parser from '@anycli/parser'
+import * as Config from '@oclif/config'
+import * as Errors from '@oclif/errors'
+import * as Parser from '@oclif/parser'
 import Help from '@anycli/plugin-help'
 import {inspect} from 'util'
 
@@ -93,7 +93,7 @@ export default abstract class Command {
 
   protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
     if (!options) options = this.constructor as any
-    return require('@anycli/parser').parse(argv, {context: this, ...options})
+    return require('@oclif/parser').parse(argv, {context: this, ...options})
   }
 
   protected async catch(err: any) {
@@ -105,7 +105,7 @@ export default abstract class Command {
   }
   protected async finally(_: Error | undefined) {
     try {
-      await require('@anycli/errors').config.errorLogger.flush()
+      await require('@oclif/errors').config.errorLogger.flush()
       // tslint:disable-next-line no-console
     } catch (err) { console.error(err) }
   }
