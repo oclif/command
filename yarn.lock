@@ -8,6 +8,10 @@
   dependencies:
     "@anycli/parser" "^3.2.6"
 
+"@anycli/config@^1.3.45":
+  version "1.3.45"
+  resolved "https://registry.yarnpkg.com/@anycli/config/-/config-1.3.45.tgz#c92c96bab9fcb5b1347d85ef1dbeb93324f31182"
+
 "@anycli/errors@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@anycli/errors/-/errors-0.2.2.tgz#1e9c8716a2164a52053dae23d7659b23dcb5e143"
