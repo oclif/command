@@ -18,7 +18,7 @@
     "@oclif/errors": "^1.0.1",
     "@oclif/plugin-help": "^1.0.0",
     "@oclif/plugin-plugins": "^1.0.0",
-    "@oclif/tslint": "^0.2.10",
+    "@oclif/tslint": "^1.0.0",
     "@types/chai": "^4.1.2",
     "@types/mocha": "^2.2.48",
     "@types/node": "^9.4.1",
