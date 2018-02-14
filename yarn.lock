@@ -15,15 +15,21 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@heroku/linewrap/-/linewrap-1.0.0.tgz#a9d4e99f0a3e423a899b775f5f3d6747a1ff15c6"
 
-"@oclif/command@^1.2.20", "@oclif/command@^1.2.21":
+"@oclif/command@^1.2.21":
   version "1.2.21"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.2.21.tgz#73bd84fd2207df2ad414dcf91e3eebe7f944a95a"
   dependencies:
     "@oclif/parser" "^3.2.8"
 
-"@oclif/config@^1.3.47":
-  version "1.3.47"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.47.tgz#7e7cf7ab0634edd60bd1675260ac588e6f6521fe"
+"@oclif/command@^1.2.23":
+  version "1.2.23"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.2.23.tgz#12bd96c3b4839a712f364d9aa36e463ba870d906"
+  dependencies:
+    "@oclif/parser" "^3.2.8"
+
+"@oclif/config@^1.3.52":
+  version "1.3.52"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.52.tgz#505711fdaecee880131c2fcec4d2b54d7c0b93c8"
 
 "@oclif/errors@^1.0.1":
   version "1.0.1"
@@ -39,11 +45,11 @@
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.2.8.tgz#2b2e35b5c075d200d70950923acd64e258c5ae1d"
 
-"@oclif/plugin-help@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.0.tgz#1a343922214bf62016ae57a89b2023e2f87e545a"
+"@oclif/plugin-help@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.1.tgz#1421438edfade7fa6aed4ae9b4aa6a8ff2d226d3"
   dependencies:
-    "@oclif/command" "^1.2.20"
+    "@oclif/command" "^1.2.23"
     chalk "^2.3.1"
     indent-string "^3.2.0"
     lodash.template "^4.4.0"
@@ -72,9 +78,9 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.1.tgz#2e67c95911977a5badfff9b500e6e00dae40869c"
 
-"@oclif/tslint@^0.2.10":
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/@oclif/tslint/-/tslint-0.2.10.tgz#39b8ed295a1f4e3f597c1c1ca2167eaa0bbc5b38"
+"@oclif/tslint@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/tslint/-/tslint-1.0.1.tgz#ef68459638548e3a3a06fd6da60025fe33f4bcb8"
   dependencies:
     tslint-xo "^0.6.0"
 
@@ -86,9 +92,9 @@
   version "2.2.48"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.48.tgz#3523b126a0b049482e1c3c11877460f76622ffab"
 
-"@types/node@^9.4.1":
-  version "9.4.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.5.tgz#d2a90c634208173d1b1a0a6ba9f1df3de62edcf5"
+"@types/node@^9.4.6":
+  version "9.4.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.6.tgz#d8176d864ee48753d053783e4e463aec86b8d82e"
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
@@ -566,9 +572,9 @@ mkdirp@0.5.1, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.0.tgz#cccac988b0bc5477119cba0e43de7af6d6ad8f4e"
+mocha@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.1.tgz#759b62c836b0732382a62b6b1fb245ec1bc943ac"
   dependencies:
     browser-stdout "1.3.0"
     commander "2.11.0"
