@@ -1,3 +1,11 @@
+<a name="1.2.25"></a>
+## [1.2.25](https://github.com/oclif/command/compare/69e75098a816aac75be6c8fbabee275516523471...v1.2.25) (2018-02-14)
+
+
+### Bug Fixes
+
+* updated deps ([b643478](https://github.com/oclif/command/commit/b643478))
+
 <a name="1.2.23"></a>
 ## [1.2.23](https://github.com/oclif/command/compare/0d3f94a8d41a5903c34a5cfd3625bb42b4d4062c...v1.2.23) (2018-02-13)
 
