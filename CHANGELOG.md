@@ -1,3 +1,11 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/oclif/command/compare/v1.2.24...v1.3.0) (2018-02-15)
+
+
+### Features
+
+* added node version check ([d672877](https://github.com/oclif/command/commit/d672877))
+
 <a name="1.2.25"></a>
 ## [1.2.25](https://github.com/oclif/command/compare/69e75098a816aac75be6c8fbabee275516523471...v1.2.25) (2018-02-14)
 
