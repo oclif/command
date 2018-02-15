@@ -31,9 +31,9 @@
   version "1.3.52"
   resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.52.tgz#505711fdaecee880131c2fcec4d2b54d7c0b93c8"
 
-"@oclif/errors@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.0.1.tgz#a660007a7d8b4a9573e2163d93359d510fbf05a1"
+"@oclif/errors@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.0.2.tgz#0a3f773d673a3ccd8dc26bf2e3c49580afcbe30e"
   dependencies:
     clean-stack "^1.3.0"
     fs-extra "^5.0.0"
@@ -51,9 +51,9 @@
   dependencies:
     "@heroku/linewrap" "^1.0.0"
 
-"@oclif/plugin-help@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.1.tgz#1421438edfade7fa6aed4ae9b4aa6a8ff2d226d3"
+"@oclif/plugin-help@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.2.tgz#d2cf4a32b0cec44e44745e3800816384cb4684aa"
   dependencies:
     "@oclif/command" "^1.2.23"
     chalk "^2.3.1"
