@@ -1,4 +1,5 @@
 import * as Config from '@oclif/config'
+import Help from '@oclif/plugin-help'
 
 import {Command, flags} from '.'
 
@@ -28,6 +29,13 @@ export class Main extends Command {
       if (arg === '--') return false
     }
     return false
+  }
+
+  protected _help() {
+    const HHelp: typeof Help = require('@oclif/plugin-help').default
+    const help = new HHelp(this.config)
+    help.showHelp(this.argv)
+    this.exit(0)
   }
 }
 

@@ -91,7 +91,13 @@ $ ./myscript --dir foobar
 $ ./myscript --version
 myscript/0.0.0 darwin-x64 node-v9.5.0
 $ ./myscript --help
-TODO: put help here
+USAGE
+  $ @oclif/command
+
+OPTIONS
+  -d, --dir=dir  [default: /Users/jdickey/src/github.com/oclif/command]
+  --help         show CLI help
+  --version      show CLI version
 ```
 
 See the [generator](https://github.com/oclif/oclif) for all the options you can pass to the command.

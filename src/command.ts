@@ -19,11 +19,8 @@ export default abstract class Command {
   static aliases: string[] = []
   static strict = true
   static parse = true
-  static flags: flags.Input<any> = {
-    version: flags.version(),
-    help: flags.help(),
-  }
-  static args: Parser.args.IArg[] = []
+  static flags?: flags.Input<any>
+  static args?: Parser.args.IArg[]
   static plugin: Config.IPlugin | undefined
   static examples: string[] | undefined
   static parserOptions = {}
@@ -114,7 +111,9 @@ export default abstract class Command {
   protected _help() {
     const HHelp: typeof Help = require('@oclif/plugin-help').default
     const help = new HHelp(this.config)
-    help.showHelp(this.argv)
+    let title = this.ctor.description && help.render(this.ctor.description).split('\n')[0]
+    if (title) this.log(title + '\n')
+    this.log(help.command(Config.Command.toCached(this.ctor as any as Config.Command.Class)))
     this.exit(0)
   }
 
