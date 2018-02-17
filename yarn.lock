@@ -22,9 +22,9 @@
     "@oclif/parser" "^3.2.9"
     semver "^5.5.0"
 
-"@oclif/config@^1.3.54":
-  version "1.3.54"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.54.tgz#707691f24eb07a29073033b4e428fc4eb44f77bc"
+"@oclif/config@^1.3.55":
+  version "1.3.55"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.55.tgz#f7417eb5c0eaea7c738c4fa65361b7c12935b615"
 
 "@oclif/errors@^1.0.2":
   version "1.0.2"
@@ -42,9 +42,9 @@
   dependencies:
     "@heroku/linewrap" "^1.0.0"
 
-"@oclif/plugin-help@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.3.tgz#eba065d51401a9935202278ecd5987599e9a7a5c"
+"@oclif/plugin-help@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.0.4.tgz#cdfae67c36c7088e263dd67b47eb7d28daaa9ff8"
   dependencies:
     "@oclif/command" "^1.3.0"
     chalk "^2.3.1"

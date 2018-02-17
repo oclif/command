@@ -220,15 +220,13 @@ describe('command', () => {
     })
     .catch(/EEXIT: 0/)
     .it('--help', ctx => {
-      expect(ctx.stdout).to.contain(`oclif base command
+      expect(ctx.stdout).to.equal(`test command
 
 USAGE
-  $ @oclif/command [COMMAND]
+  $ @oclif/command
 
-COMMANDS
-  help     display help for @oclif/command
-  plugins  list installed plugins
-
+OPTIONS
+  --help  show CLI help
 `)
     })
 
@@ -241,15 +239,10 @@ COMMANDS
     .catch(/EEXIT: 0/)
     .it('-h', ctx => {
       // expect(process.exitCode).to.equal(0)
-      expect(ctx.stdout).to.equal(`oclif base command
+      expect(ctx.stdout).to.equal(`test command
 
 USAGE
-  $ @oclif/command [COMMAND]
-
-COMMANDS
-  help     display help for @oclif/command
-  plugins  list installed plugins
-
+  $ @oclif/command
 `)
     })
   })
