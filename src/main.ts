@@ -26,7 +26,7 @@ export class Main extends Command {
 
   protected _helpOverride(): boolean {
     if (['-v', '--version', 'version'].includes(this.argv[0])) return this._version() as any
-    if (this.argv[0] === '-h') return true
+    if (['-h', 'help'].includes(this.argv[0])) return true
     if (this.argv.length === 0) return true
     for (let arg of this.argv) {
       if (arg === '--help') return true
