@@ -17,6 +17,10 @@ export class Main extends Command {
     let [id, ...argv] = this.argv
     await this.config.runHook('init', {id, argv})
     this.parse({strict: false, '--': false, ...this.ctor as any})
+    if (!this.config.findCommand(id)) {
+      let topic = this.config.findTopic(id)
+      if (topic) return this._help()
+    }
     await this.config.runCommand(id, argv)
   }
 
