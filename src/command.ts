@@ -31,7 +31,8 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv = process.argv.slice(2), opts) {
+  static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv?: string[], opts?) {
+    if (!argv) argv = process.argv.slice(2)
     const config = await Config.load(opts || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
     let cmd = new this(argv, config)
     await cmd._run(argv)

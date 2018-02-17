@@ -6,6 +6,8 @@ import Command, {flags} from '..' // use @oclif/command outside this repo
 
 class LS extends Command {
   static flags = {
+    version: flags.version(),
+    help: flags.help(),
     // run with --dir= or -d=
     dir: flags.string({
       char: 'd',
@@ -14,7 +16,8 @@ class LS extends Command {
   }
 
   async run() {
-    let files = fs.readdirSync(this.flags.dir)
+    const {flags} = this.parse(LS)
+    let files = fs.readdirSync(flags.dir)
     for (let f of files) {
       this.log(f)
     }
@@ -22,3 +25,4 @@ class LS extends Command {
 }
 
 LS.run()
+.catch(require('@oclif/errors/handle'))
