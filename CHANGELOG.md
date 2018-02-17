@@ -1,3 +1,12 @@
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/oclif/command/compare/d67287709694b6e16a940e445378e419e0312f66...v1.3.1) (2018-02-17)
+
+
+### Bug Fixes
+
+* fixed single command help ([efe7409](https://github.com/oclif/command/commit/efe7409))
+* updated help ([48235ab](https://github.com/oclif/command/commit/48235ab))
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/oclif/command/compare/v1.2.24...v1.3.0) (2018-02-15)
 
