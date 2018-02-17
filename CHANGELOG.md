@@ -1,3 +1,11 @@
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/oclif/command/compare/48235ab91b184b761232905d3b6c49ceeedc6441...v1.3.2) (2018-02-17)
+
+
+### Bug Fixes
+
+* show topic if command not found but topic exists ([efd58a6](https://github.com/oclif/command/commit/efd58a6))
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/oclif/command/compare/d67287709694b6e16a940e445378e419e0312f66...v1.3.1) (2018-02-17)
 
