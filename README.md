@@ -24,8 +24,7 @@ Without the generator, you can create a simple CLI like this:
 #!/usr/bin/env ts-node
 
 import * as fs from 'fs'
-
-import Command, {flags} from '@oclif/command'
+import {Command, flags} from '@oclif/command'
 
 class LS extends Command {
   static flags = {
@@ -55,9 +54,8 @@ LS.run()
 ```js
 #!/usr/bin/env node
 
-import * as fs from 'fs'
-
-import Command, {flags} from '@oclif/command'
+const fs = require('fs')
+const {Command, flags} = require('@oclif/command')
 
 class LS extends Command {
   async run() {
