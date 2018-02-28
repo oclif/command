@@ -1,3 +1,11 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/oclif/command/compare/785f4f485397ee5485e391c3ac4342959c140dcc...v1.4.0) (2018-02-28)
+
+
+### Features
+
+* return value from command ([0651ef0](https://github.com/oclif/command/commit/0651ef0))
+
 <a name="1.3.3"></a>
 ## [1.3.3](https://github.com/oclif/command/compare/efd58a604e350a0e24773dad2a6779842211d7ce...v1.3.3) (2018-02-17)
 
