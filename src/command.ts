@@ -32,7 +32,7 @@ export default abstract class Command {
     if (!argv) argv = process.argv.slice(2)
     const config = await Config.load(opts || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
     let cmd = new this(argv, config)
-    await cmd._run(argv)
+    return cmd._run(argv)
   }
 
   id: string | undefined

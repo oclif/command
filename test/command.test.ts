@@ -22,6 +22,20 @@ describe('command', () => {
   .it('logs to stdout')
 
   fancy
+  .do(async () => {
+    class Command extends Base {
+      static description = 'test command'
+
+      async run() {
+        return 101
+      }
+    }
+
+    expect(await Command.run([])).to.equal(101)
+  })
+  .it('returns value')
+
+  fancy
   .do(() => {
     class Command extends Base {
       async run() {
