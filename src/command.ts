@@ -53,7 +53,7 @@ export default abstract class Command {
     let err: Error | undefined
     try {
       await this.init()
-      await this.run()
+      return await this.run()
     } catch (e) {
       err = e
       await this.catch(e)
