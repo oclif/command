@@ -1,3 +1,11 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/oclif/command/compare/0651ef054e01f9eb6e54cfff598d8b126f8aefe5...v1.4.1) (2018-02-28)
+
+
+### Bug Fixes
+
+* fixed return value ([15212c3](https://github.com/oclif/command/commit/15212c3))
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/oclif/command/compare/785f4f485397ee5485e391c3ac4342959c140dcc...v1.4.0) (2018-02-28)
 
