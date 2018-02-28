@@ -49,7 +49,7 @@ export default abstract class Command {
     return this.constructor as typeof Command
   }
 
-  async _run(): Promise<void> {
+  async _run<T>(): Promise<T | undefined> {
     let err: Error | undefined
     try {
       await this.init()
