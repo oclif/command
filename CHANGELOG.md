@@ -1,3 +1,11 @@
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/oclif/command/compare/15212c3025cdc62433ec305a919b65487a53d8b0...v1.4.2) (2018-02-28)
+
+
+### Bug Fixes
+
+* add return type ([8808788](https://github.com/oclif/command/commit/8808788))
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/oclif/command/compare/0651ef054e01f9eb6e54cfff598d8b126f8aefe5...v1.4.1) (2018-02-28)
 
