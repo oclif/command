@@ -21,7 +21,7 @@
     "@oclif/plugin-plugins": "^1.0.3",
     "@oclif/tslint": "^1.0.2",
     "@types/chai": "^4.1.2",
-    "@types/mocha": "^2.2.48",
+    "@types/mocha": "^5.0.0",
     "@types/node": "^9.4.6",
     "@types/semver": "^5.5.0",
     "chai": "^4.1.2",
