@@ -15,13 +15,12 @@ jobs:
             - v0-yarn-{{checksum ".circleci/config.yml"}}-{{ checksum "yarn.lock"}}
             - v0-yarn-{{checksum ".circleci/config.yml"}}
       - run: .circleci/greenkeeper
-      - run: yarn add -D nyc@11 @oclif/nyc-config@0 mocha-junit-reporter@1 @commitlint/cli@6 @commitlint/config-conventional@6
+      - run: yarn add -D nyc@11 @oclif/nyc-config@0 mocha-junit-reporter@1
       - run: |
           mkdir -p reports
           $NYC yarn test --reporter mocha-junit-reporter
           $NYC report --reporter text-lcov > coverage.lcov
           curl -s https://codecov.io/bash | bash
-      - run: yarn exec commitlint -- -x @commitlint/config-conventional --from origin/master
       - store_test_results: &store_test_results
           path: ~/cli/reports
   node-8:
@@ -34,7 +33,7 @@ jobs:
       - add_ssh_keys
       - checkout
       - restore_cache: *restore_cache
-      - run: yarn global add @oclif/semantic-release@1 semantic-release@12
+      - run: yarn global add @oclif/semantic-release@2 semantic-release@15
       - run: yarn --frozen-lockfile
       - run: |
           export PATH=/usr/local/share/.config/yarn/global/node_modules/.bin:$PATH
