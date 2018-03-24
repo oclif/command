@@ -1,3 +1,11 @@
+<a name="1.4.5"></a>
+## [1.4.5](https://github.com/oclif/command/compare/v1.4.4...v1.4.5) (2018-03-24)
+
+
+### Bug Fixes
+
+* use new semantic-release ([336d6a3](https://github.com/oclif/command/commit/336d6a3))
+
 <a name="1.4.4"></a>
 ## [1.4.4](https://github.com/oclif/command/compare/b2d0790b00cab77c53abdfa35970f99753713116...v1.4.4) (2018-03-24)
 
