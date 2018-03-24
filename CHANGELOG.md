@@ -1,3 +1,11 @@
+<a name="1.4.4"></a>
+## [1.4.4](https://github.com/oclif/command/compare/b2d0790b00cab77c53abdfa35970f99753713116...v1.4.4) (2018-03-24)
+
+
+### Bug Fixes
+
+* add debug dependency ([300bbb7](https://github.com/oclif/command/commit/300bbb7))
+
 <a name="1.4.3"></a>
 ## [1.4.3](https://github.com/oclif/command/compare/8808788e3f6c494606d1e2662382eeede0e0a254...v1.4.3) (2018-03-24)
 
