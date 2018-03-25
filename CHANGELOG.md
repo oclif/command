@@ -1,3 +1,11 @@
+<a name="1.4.6"></a>
+## [1.4.6](https://github.com/oclif/command/compare/v1.4.5...v1.4.6) (2018-03-25)
+
+
+### Bug Fixes
+
+* run init before all multi commands ([47be866](https://github.com/oclif/command/commit/47be866))
+
 <a name="1.4.5"></a>
 ## [1.4.5](https://github.com/oclif/command/compare/v1.4.4...v1.4.5) (2018-03-24)
 
