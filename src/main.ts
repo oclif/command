@@ -13,9 +13,14 @@ export class Main extends Command {
     return super.run(argv, options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
   }
 
-  async run() {
+  async init() {
     let [id, ...argv] = this.argv
     await this.config.runHook('init', {id, argv})
+    await super.init()
+  }
+
+  async run() {
+    let [id, ...argv] = this.argv
     this.parse({strict: false, '--': false, ...this.ctor as any})
     if (!this.config.findCommand(id)) {
       let topic = this.config.findTopic(id)
