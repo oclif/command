@@ -40,15 +40,15 @@
     debug "^3.1.0"
     semver "^5.5.0"
 
-"@oclif/config@^1.3.60":
-  version "1.3.60"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.60.tgz#e5e1b1cf14d68dd55c489bc5f76594073dec0568"
+"@oclif/config@^1.3.61":
+  version "1.3.61"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.61.tgz#1d2293d1c78dc9d88e408afd35dea9a6dccecf84"
   dependencies:
     debug "^3.1.0"
 
-"@oclif/errors@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.0.2.tgz#0a3f773d673a3ccd8dc26bf2e3c49580afcbe30e"
+"@oclif/errors@^1.0.2", "@oclif/errors@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.0.3.tgz#f23c024075855c7d116d041ee158f99bd51175af"
   dependencies:
     clean-stack "^1.3.0"
     fs-extra "^5.0.0"
@@ -448,14 +448,14 @@ he@1.1.1:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
 http-call@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/http-call/-/http-call-5.0.2.tgz#21bec3655f1631de128c0cdaa470777b1fbbc365"
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/http-call/-/http-call-5.1.0.tgz#699847d9bcd635eb4e3fdfe3084456a9c89d716d"
   dependencies:
     content-type "^1.0.4"
     debug "^3.1.0"
     is-retry-allowed "^1.1.0"
     is-stream "^1.1.0"
-    tslib "^1.8.1"
+    tslib "^1.9.0"
     tunnel-agent "^0.6.0"
 
 indent-string@^3.2.0:
