@@ -4,7 +4,7 @@ import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
 import Help from '@oclif/plugin-help'
-import {inspect} from 'util'
+import {format, inspect} from 'util'
 
 import * as flags from './flags'
 
@@ -67,9 +67,10 @@ export default abstract class Command {
   error(input: string | Error, options: {code?: string, exit?: number} = {}) {
     Errors.error(input, options)
   }
-  log(message: any = '') {
+  log(message = '', ...args: any[]) {
+    // tslint:disable-next-line strict-type-predicates
     message = typeof message === 'string' ? message : inspect(message)
-    process.stdout.write(message + '\n')
+    process.stdout.write(format(message, ...args) + '\n')
   }
 
   /**

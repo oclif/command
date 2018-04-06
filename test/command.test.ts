@@ -260,4 +260,17 @@ USAGE
 `)
     })
   })
+
+  describe('.log()', () => {
+    fancy
+    .stdout()
+    .do(async () => {
+      class CMD extends Command {
+        async run() { this.log('json output: %j', {a: 'foobar'}) }
+      }
+      await CMD.run([])
+    })
+    .do(ctx => expect(ctx.stdout).to.equal('json output: {"a":"foobar"}\n'))
+    .it('uses util.format()')
+  })
 })
