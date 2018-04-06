@@ -1,3 +1,11 @@
+<a name="1.4.7"></a>
+## [1.4.7](https://github.com/oclif/command/compare/v1.4.6...v1.4.7) (2018-04-06)
+
+
+### Bug Fixes
+
+* make this.log() behave more like console.log() ([7d145e1](https://github.com/oclif/command/commit/7d145e1))
+
 <a name="1.4.6"></a>
 ## [1.4.6](https://github.com/oclif/command/compare/v1.4.5...v1.4.6) (2018-03-25)
 
