@@ -40,9 +40,18 @@
     debug "^3.1.0"
     semver "^5.5.0"
 
-"@oclif/config@^1.3.61":
-  version "1.3.61"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.61.tgz#1d2293d1c78dc9d88e408afd35dea9a6dccecf84"
+"@oclif/command@^1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.4.6.tgz#6de7789cfc6ae6cdf177566fbfbb742d5cb8f320"
+  dependencies:
+    "@oclif/errors" "^1.0.3"
+    "@oclif/parser" "^3.2.9"
+    debug "^3.1.0"
+    semver "^5.5.0"
+
+"@oclif/config@^1.3.62":
+  version "1.3.62"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.3.62.tgz#b703d97588a78141222dedb53ccb15277dfe9e45"
   dependencies:
     debug "^3.1.0"
 
@@ -62,11 +71,11 @@
   dependencies:
     "@heroku/linewrap" "^1.0.0"
 
-"@oclif/plugin-help@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.2.1.tgz#5537779e5a1cfb812d54333111c861d06771c18f"
+"@oclif/plugin-help@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.2.2.tgz#7a4846b71a6d47720b628218fdb4bafa71155de3"
   dependencies:
-    "@oclif/command" "^1.4.4"
+    "@oclif/command" "^1.4.6"
     chalk "^2.3.2"
     indent-string "^3.2.0"
     lodash.template "^4.4.0"
@@ -109,9 +118,9 @@
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.0.0.tgz#a3014921991066193f6c8e47290d4d598dfd19e6"
 
-"@types/node@^9.6.0":
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.0.tgz#d3480ee666df9784b1001a1872a2f6ccefb6c2d7"
+"@types/node@^9.6.2":
+  version "9.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.2.tgz#e49ac1adb458835e95ca6487bc20f916b37aff23"
 
 "@types/semver@^5.5.0":
   version "5.5.0"
@@ -857,9 +866,9 @@ type-detect@^4.0.0:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
 
-typescript@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
+typescript@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.1.tgz#6160e4f8f195d5ba81d4876f9c0cc1fbc0820624"
 
 universalify@^0.1.0:
   version "0.1.1"
