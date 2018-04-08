@@ -77,10 +77,7 @@ export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => 
     description: 'show CLI help',
     ...opts,
     parse: (_: any, cmd: Command) => {
-      const HHelp: typeof Help = require('@oclif/plugin-help').default
-      const help = new HHelp(cmd.config)
-      help.showHelp(cmd.argv)
-      cmd.exit(0)
+      (cmd as any)._help()
     },
   })
 }
