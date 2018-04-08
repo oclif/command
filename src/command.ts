@@ -96,6 +96,7 @@ export default abstract class Command {
   }
 
   protected async catch(err: any) {
+    if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
       this._help()
     } else if (err.message.match(/Unexpected arguments?: (-v|--version|version)(,|\n)/)) {
