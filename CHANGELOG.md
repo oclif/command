@@ -1,3 +1,12 @@
+<a name="1.4.9"></a>
+## [1.4.9](https://github.com/oclif/command/compare/v1.4.8...v1.4.9) (2018-04-08)
+
+
+### Bug Fixes
+
+* https://github.com/oclif/oclif/issues/95 ([a8d4d93](https://github.com/oclif/command/commit/a8d4d93))
+* updated deps and fixed linter ([bda888a](https://github.com/oclif/command/commit/bda888a))
+
 <a name="1.4.8"></a>
 ## [1.4.8](https://github.com/oclif/command/compare/v1.4.7...v1.4.8) (2018-04-08)
 
