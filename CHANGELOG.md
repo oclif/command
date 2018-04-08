@@ -1,3 +1,11 @@
+<a name="1.4.8"></a>
+## [1.4.8](https://github.com/oclif/command/compare/v1.4.7...v1.4.8) (2018-04-08)
+
+
+### Bug Fixes
+
+* throw error if no message ([c1ed043](https://github.com/oclif/command/commit/c1ed043))
+
 <a name="1.4.7"></a>
 ## [1.4.7](https://github.com/oclif/command/compare/v1.4.6...v1.4.7) (2018-04-06)
 
