@@ -1,6 +1,5 @@
 import {IConfig} from '@oclif/config'
 import * as Parser from '@oclif/parser'
-import Help from '@oclif/plugin-help'
 
 import {Command} from '.'
 
