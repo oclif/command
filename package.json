@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@oclif/errors": "^1.0.4",
-    "@oclif/parser": "^3.3.0",
+    "@oclif/parser": "^3.3.1",
     "debug": "^3.1.0",
     "semver": "^5.5.0"
   },
