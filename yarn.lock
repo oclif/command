@@ -85,9 +85,9 @@
   dependencies:
     "@heroku/linewrap" "^1.0.0"
 
-"@oclif/parser@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.3.1.tgz#b6ec567bbac5b712094eeedbde1f0f2cf3aa9b5b"
+"@oclif/parser@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.3.2.tgz#81af56d4f97beae376abb59e461005489abd9e19"
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     chalk "^2.3.2"
