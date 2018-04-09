@@ -1,3 +1,11 @@
+<a name="1.4.13"></a>
+## [1.4.13](https://github.com/oclif/command/compare/v1.4.12...v1.4.13) (2018-04-09)
+
+
+### Bug Fixes
+
+* updated parser ([45e2108](https://github.com/oclif/command/commit/45e2108))
+
 <a name="1.4.12"></a>
 ## [1.4.12](https://github.com/oclif/command/compare/v1.4.11...v1.4.12) (2018-04-09)
 
