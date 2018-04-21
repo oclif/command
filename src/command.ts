@@ -101,7 +101,14 @@ export default abstract class Command {
       this._help()
     } else if (err.message.match(/Unexpected arguments?: (-v|--version|version)(,|\n)/)) {
       this._version()
-    } else throw err
+    } else {
+      try {
+        const {cli} = require('cli-ux')
+        const chalk = require('chalk')
+        cli.action.stop(chalk.bold.red('!'))
+      } catch {}
+      throw err
+    }
   }
   protected async finally(_: Error | undefined) {
     try {
