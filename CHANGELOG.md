@@ -1,3 +1,11 @@
+<a name="1.4.14"></a>
+## [1.4.14](https://github.com/oclif/command/compare/v1.4.13...v1.4.14) (2018-04-21)
+
+
+### Bug Fixes
+
+* stop cli-ux action on error ([cd7e1e1](https://github.com/oclif/command/commit/cd7e1e1))
+
 <a name="1.4.13"></a>
 ## [1.4.13](https://github.com/oclif/command/compare/v1.4.12...v1.4.13) (2018-04-09)
 
