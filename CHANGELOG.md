@@ -1,3 +1,12 @@
+<a name="1.4.15"></a>
+## [1.4.15](https://github.com/oclif/command/compare/v1.4.14...v1.4.15) (2018-04-22)
+
+
+### Bug Fixes
+
+* add check for cwd ([afa6e01](https://github.com/oclif/command/commit/afa6e01))
+* updated deps ([afa28ee](https://github.com/oclif/command/commit/afa28ee))
+
 <a name="1.4.14"></a>
 ## [1.4.14](https://github.com/oclif/command/compare/v1.4.13...v1.4.14) (2018-04-21)
 
