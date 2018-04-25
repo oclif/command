@@ -1,3 +1,11 @@
+<a name="1.4.16"></a>
+## [1.4.16](https://github.com/oclif/command/compare/v1.4.15...v1.4.16) (2018-04-25)
+
+
+### Bug Fixes
+
+* allow specifying --version flag on commands ([4db8ccd](https://github.com/oclif/command/commit/4db8ccd))
+
 <a name="1.4.15"></a>
 ## [1.4.15](https://github.com/oclif/command/compare/v1.4.14...v1.4.15) (2018-04-22)
 
