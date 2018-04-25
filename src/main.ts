@@ -1,14 +1,9 @@
 import * as Config from '@oclif/config'
 import Help from '@oclif/plugin-help'
 
-import {Command, flags} from '.'
+import {Command} from '.'
 
 export class Main extends Command {
-  static flags = {
-    version: flags.version(),
-    help: flags.help(),
-  }
-
   static run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
     return super.run(argv, options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
   }
