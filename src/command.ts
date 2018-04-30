@@ -127,7 +127,6 @@ export default abstract class Command {
   }
 
   protected _helpOverride(): boolean {
-    if (this.argv[0] === '--version' || this.argv[0] === 'version') this._version()
     for (let arg of this.argv) {
       if (arg === '--help') return true
       if (arg === '--') return false
