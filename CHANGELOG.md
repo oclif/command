@@ -1,3 +1,11 @@
+<a name="1.4.17"></a>
+## [1.4.17](https://github.com/oclif/command/compare/v1.4.16...v1.4.17) (2018-04-30)
+
+
+### Bug Fixes
+
+* allow --version as first argument to command ([2a27613](https://github.com/oclif/command/commit/2a27613))
+
 <a name="1.4.16"></a>
 ## [1.4.16](https://github.com/oclif/command/compare/v1.4.15...v1.4.16) (2018-04-25)
 
