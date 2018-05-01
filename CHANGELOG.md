@@ -1,3 +1,11 @@
+<a name="1.4.18"></a>
+## [1.4.18](https://github.com/oclif/command/compare/v1.4.17...v1.4.18) (2018-05-01)
+
+
+### Bug Fixes
+
+* export integer flag ([11a14b1](https://github.com/oclif/command/commit/11a14b1))
+
 <a name="1.4.17"></a>
 ## [1.4.17](https://github.com/oclif/command/compare/v1.4.16...v1.4.17) (2018-04-30)
 
