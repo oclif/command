@@ -57,7 +57,7 @@ export {_enum as enum}
 
 const stringFlag = build({})
 export {stringFlag as string}
-export {boolean} from '@oclif/parser/lib/flags'
+export {boolean, integer} from '@oclif/parser/lib/flags'
 
 export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
