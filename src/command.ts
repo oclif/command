@@ -52,6 +52,9 @@ export default abstract class Command {
   async _run<T>(): Promise<T | undefined> {
     let err: Error | undefined
     try {
+      // remove redirected env var to allow subsessions to run autoupdated client
+      delete process.env[this.config.scopedEnvVarKey('REDIRECTED')]
+
       await this.init()
       return await this.run()
     } catch (e) {
