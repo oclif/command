@@ -1,3 +1,11 @@
+<a name="1.4.19"></a>
+## [1.4.19](https://github.com/oclif/command/compare/v1.4.18...v1.4.19) (2018-05-02)
+
+
+### Bug Fixes
+
+* allow subsessions to run redirected CLI ([42c4bc3](https://github.com/oclif/command/commit/42c4bc3))
+
 <a name="1.4.18"></a>
 ## [1.4.18](https://github.com/oclif/command/compare/v1.4.17...v1.4.18) (2018-05-01)
 
