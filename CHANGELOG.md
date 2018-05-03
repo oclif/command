@@ -1,3 +1,11 @@
+<a name="1.4.20"></a>
+## [1.4.20](https://github.com/oclif/command/compare/v1.4.19...v1.4.20) (2018-05-03)
+
+
+### Bug Fixes
+
+* updated errors plugin ([39f04d8](https://github.com/oclif/command/commit/39f04d8))
+
 <a name="1.4.19"></a>
 ## [1.4.19](https://github.com/oclif/command/compare/v1.4.18...v1.4.19) (2018-05-02)
 
