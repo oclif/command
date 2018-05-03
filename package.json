@@ -11,19 +11,19 @@
     ]
   },
   "dependencies": {
-    "@oclif/errors": "^1.0.6",
+    "@oclif/errors": "^1.0.8",
     "@oclif/parser": "^3.3.3",
     "debug": "^3.1.0",
     "semver": "^5.5.0"
   },
   "devDependencies": {
-    "@oclif/config": "^1.6.16",
-    "@oclif/plugin-help": "^1.2.6",
-    "@oclif/plugin-plugins": "^1.1.5",
+    "@oclif/config": "^1.6.17",
+    "@oclif/plugin-help": "^1.2.8",
+    "@oclif/plugin-plugins": "^1.1.6",
     "@oclif/tslint": "^1.1.0",
     "@types/chai": "^4.1.3",
     "@types/mocha": "^5.2.0",
-    "@types/node": "^10.0.2",
+    "@types/node": "^10.0.3",
     "@types/semver": "^5.5.0",
     "chai": "^4.1.2",
     "fancy-test": "^1.0.6",

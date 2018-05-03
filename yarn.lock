@@ -27,18 +27,18 @@
     strip-ansi "^4.0.0"
     supports-color "^5.1.0"
 
-"@oclif/command@^1.4.16", "@oclif/command@^1.4.17":
-  version "1.4.18"
-  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.4.18.tgz#1095bab6917287a5e87eb7529d4d39d7fc53d362"
+"@oclif/command@^1.4.18", "@oclif/command@^1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.4.19.tgz#7158eec97d9b4c4a109181e6a71bd83d34757254"
   dependencies:
     "@oclif/errors" "^1.0.6"
     "@oclif/parser" "^3.3.3"
     debug "^3.1.0"
     semver "^5.5.0"
 
-"@oclif/config@^1.6.16":
-  version "1.6.16"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.6.16.tgz#6bcb03bf30ee54eeafa788777d965bf47bb5047d"
+"@oclif/config@^1.6.17":
+  version "1.6.17"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.6.17.tgz#e9608f56e5acd49fcaf3bbfcc3e8818d81b1ba12"
   dependencies:
     debug "^3.1.0"
 
@@ -48,6 +48,16 @@
   dependencies:
     clean-stack "^1.3.0"
     fs-extra "^5.0.0"
+    indent-string "^3.2.0"
+    strip-ansi "^4.0.0"
+    wrap-ansi "^3.0.1"
+
+"@oclif/errors@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.0.8.tgz#2f8239267506bb7c3f5fd776144c2686e5b7fff7"
+  dependencies:
+    clean-stack "^1.3.0"
+    fs-extra "^6.0.0"
     indent-string "^3.2.0"
     strip-ansi "^4.0.0"
     wrap-ansi "^3.0.1"
@@ -63,11 +73,11 @@
     "@oclif/linewrap" "^1.0.0"
     chalk "^2.4.0"
 
-"@oclif/plugin-help@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.2.6.tgz#b5613b854711cce2f784dbb8c10072dd0bdeb2a9"
+"@oclif/plugin-help@^1.2.8":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-1.2.8.tgz#35c3edd97d192d5bd741f95cc9e3642dfa6d9902"
   dependencies:
-    "@oclif/command" "^1.4.17"
+    "@oclif/command" "^1.4.19"
     chalk "^2.4.1"
     indent-string "^3.2.0"
     lodash.template "^4.4.0"
@@ -75,16 +85,16 @@
     widest-line "^2.0.0"
     wrap-ansi "^3.0.1"
 
-"@oclif/plugin-plugins@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.1.5.tgz#cf483541caf1944d9e266b16377403423de7ff69"
+"@oclif/plugin-plugins@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.1.6.tgz#4e2e89297bfe5e66acbb2b579a3a2904a6c3aab7"
   dependencies:
     "@heroku-cli/color" "^1.1.3"
-    "@oclif/command" "^1.4.16"
+    "@oclif/command" "^1.4.18"
     chalk "^2.4.1"
     cli-ux "^3.4.1"
     debug "^3.1.0"
-    fs-extra "^5.0.0"
+    fs-extra "^6.0.0"
     http-call "^5.1.1"
     load-json-file "^4.0.0"
     npm-run-path "^2.0.2"
@@ -110,9 +120,9 @@
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.0.tgz#b3c8e69f038835db1a7fdc0b3d879fc50506e29e"
 
-"@types/node@^10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.0.2.tgz#180046ebbc37de8b64777765c2486ebecb59448e"
+"@types/node@^10.0.3":
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.0.3.tgz#1f89840c7aac2406cc43a2ecad98fc02a8e130e4"
 
 "@types/semver@^5.5.0":
   version "5.5.0"
@@ -353,6 +363,14 @@ fancy-test@^1.0.6:
 fs-extra@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-6.0.0.tgz#0f0afb290bb3deb87978da816fcd3c7797f3a817"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
