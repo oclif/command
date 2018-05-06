@@ -65,10 +65,10 @@ export default abstract class Command {
     }
   }
 
-  exit(code = 0) { Errors.exit(code) }
+  exit(code = 0) { return Errors.exit(code) }
   warn(input: string | Error) { Errors.warn(input) }
   error(input: string | Error, options: {code?: string, exit?: number} = {}) {
-    Errors.error(input, options)
+    return Errors.error(input, options)
   }
   log(message = '', ...args: any[]) {
     // tslint:disable-next-line strict-type-predicates
@@ -101,9 +101,9 @@ export default abstract class Command {
   protected async catch(err: any) {
     if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
-      this._help()
+      return this._help()
     } else if (err.message.match(/Unexpected arguments?: (-v|--version|version)(,|\n)/)) {
-      this._version()
+      return this._version()
     } else {
       try {
         const {cli} = require('cli-ux')
@@ -126,7 +126,7 @@ export default abstract class Command {
     let title = this.ctor.description && help.render(this.ctor.description).split('\n')[0]
     if (title) this.log(title + '\n')
     this.log(help.command(Config.Command.toCached(this.ctor as any as Config.Command.Class)))
-    this.exit(0)
+    return this.exit(0)
   }
 
   protected _helpOverride(): boolean {
@@ -139,6 +139,6 @@ export default abstract class Command {
 
   protected _version() {
     this.log(this.config.userAgent)
-    this.exit(0)
+    return this.exit(0)
   }
 }

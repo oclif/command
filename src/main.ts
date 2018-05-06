@@ -11,7 +11,7 @@ export class Main extends Command {
   async init() {
     let [id, ...argv] = this.argv
     await this.config.runHook('init', {id, argv})
-    await super.init()
+    return super.init()
   }
 
   async run() {
@@ -39,7 +39,7 @@ export class Main extends Command {
     const HHelp: typeof Help = require('@oclif/plugin-help').default
     const help = new HHelp(this.config)
     help.showHelp(this.argv)
-    this.exit(0)
+    return this.exit(0)
   }
 }
 
