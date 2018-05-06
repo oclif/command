@@ -1,3 +1,11 @@
+<a name="1.4.21"></a>
+## [1.4.21](https://github.com/oclif/command/compare/v1.4.20...v1.4.21) (2018-05-06)
+
+
+### Bug Fixes
+
+* return types of error/exit methods ([19ff4de](https://github.com/oclif/command/commit/19ff4de))
+
 <a name="1.4.20"></a>
 ## [1.4.20](https://github.com/oclif/command/compare/v1.4.19...v1.4.20) (2018-05-03)
 
