@@ -1,3 +1,13 @@
+<a name="1.4.22"></a>
+## [1.4.22](https://github.com/oclif/command/compare/v1.4.21...v1.4.22) (2018-05-12)
+
+
+### Bug Fixes
+
+* remove yarn check from CI ([b836340](https://github.com/oclif/command/commit/b836340))
+* typing for this.error() ([af70aed](https://github.com/oclif/command/commit/af70aed))
+* typing for this.error() ([3a7ec33](https://github.com/oclif/command/commit/3a7ec33))
+
 <a name="1.4.21"></a>
 ## [1.4.21](https://github.com/oclif/command/compare/v1.4.20...v1.4.21) (2018-05-06)
 
