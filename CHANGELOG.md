@@ -1,3 +1,11 @@
+<a name="1.4.23"></a>
+## [1.4.23](https://github.com/oclif/command/compare/v1.4.22...v1.4.23) (2018-05-12)
+
+
+### Bug Fixes
+
+* typing for this.error() ([1c7e03c](https://github.com/oclif/command/commit/1c7e03c))
+
 <a name="1.4.22"></a>
 ## [1.4.22](https://github.com/oclif/command/compare/v1.4.21...v1.4.22) (2018-05-12)
 
