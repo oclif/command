@@ -67,8 +67,10 @@ export default abstract class Command {
 
   exit(code = 0) { return Errors.exit(code) }
   warn(input: string | Error) { Errors.warn(input) }
-  error(input: string | Error, options: {code?: string, exit?: number} = {}) {
-    return Errors.error(input, options)
+  error(input: string | Error, options: {code?: string, exit: false}): void
+  error(input: string | Error, options: {code?: string, exit?: number}): never
+  error(input: string | Error, options: {code?: string, exit?: number | false} = {}) {
+    return Errors.error(input, options as any)
   }
   log(message = '', ...args: any[]) {
     // tslint:disable-next-line strict-type-predicates
