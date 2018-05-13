@@ -1,3 +1,11 @@
+<a name="1.4.25"></a>
+## [1.4.25](https://github.com/oclif/command/compare/v1.4.24...v1.4.25) (2018-05-13)
+
+
+### Bug Fixes
+
+* only flush stdout when no error ([ed0f5b7](https://github.com/oclif/command/commit/ed0f5b7))
+
 <a name="1.4.24"></a>
 ## [1.4.24](https://github.com/oclif/command/compare/v1.4.23...v1.4.24) (2018-05-13)
 
