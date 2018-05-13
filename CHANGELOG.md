@@ -1,3 +1,11 @@
+<a name="1.4.24"></a>
+## [1.4.24](https://github.com/oclif/command/compare/v1.4.23...v1.4.24) (2018-05-13)
+
+
+### Bug Fixes
+
+* flush stdout on exit ([8b38347](https://github.com/oclif/command/commit/8b38347))
+
 <a name="1.4.23"></a>
 ## [1.4.23](https://github.com/oclif/command/compare/v1.4.22...v1.4.23) (2018-05-12)
 
