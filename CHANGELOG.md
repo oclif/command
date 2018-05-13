@@ -1,3 +1,11 @@
+<a name="1.4.27"></a>
+## [1.4.27](https://github.com/oclif/command/compare/v1.4.26...v1.4.27) (2018-05-13)
+
+
+### Bug Fixes
+
+* linting issue ([a3408cb](https://github.com/oclif/command/commit/a3408cb))
+
 <a name="1.4.25"></a>
 ## [1.4.25](https://github.com/oclif/command/compare/v1.4.24...v1.4.25) (2018-05-13)
 
