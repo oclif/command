@@ -1,3 +1,11 @@
+<a name="1.4.28"></a>
+## [1.4.28](https://github.com/oclif/command/compare/v1.4.27...v1.4.28) (2018-05-13)
+
+
+### Bug Fixes
+
+* move flush to top-level ([6b7af6a](https://github.com/oclif/command/commit/6b7af6a))
+
 <a name="1.4.27"></a>
 ## [1.4.27](https://github.com/oclif/command/compare/v1.4.26...v1.4.27) (2018-05-13)
 
