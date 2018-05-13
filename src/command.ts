@@ -56,7 +56,12 @@ export default abstract class Command {
       delete process.env[this.config.scopedEnvVarKey('REDIRECTED')]
 
       await this.init()
-      return await this.run()
+      const retVal = await this.run()
+      try {
+        const {ux} = require('cli-ux')
+        await ux.flush()
+      } catch {}
+      return retVal
     } catch (e) {
       err = e
       await this.catch(e)
@@ -118,10 +123,6 @@ export default abstract class Command {
   protected async finally(_: Error | undefined) {
     try {
       await require('@oclif/errors').config.errorLogger.flush()
-      try {
-        const {ux} = require('cli-ux')
-        await ux.flush()
-      } catch {}
       // tslint:disable-next-line no-console
     } catch (err) { console.error(err) }
   }
