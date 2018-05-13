@@ -1,3 +1,11 @@
+<a name="1.4.29"></a>
+## [1.4.29](https://github.com/oclif/command/compare/v1.4.28...v1.4.29) (2018-05-13)
+
+
+### Bug Fixes
+
+* allow subclasses to return any promise type ([aa89f1e](https://github.com/oclif/command/commit/aa89f1e))
+
 <a name="1.4.28"></a>
 ## [1.4.28](https://github.com/oclif/command/compare/v1.4.27...v1.4.28) (2018-05-13)
 
