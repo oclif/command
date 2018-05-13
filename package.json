@@ -26,6 +26,7 @@
     "@types/node": "^10.0.8",
     "@types/semver": "^5.5.0",
     "chai": "^4.1.2",
+    "cli-ux": "^4.3.0",
     "fancy-test": "^1.0.8",
     "globby": "^8.0.1",
     "mocha": "^5.1.1",
