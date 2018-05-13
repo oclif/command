@@ -56,12 +56,7 @@ export default abstract class Command {
       delete process.env[this.config.scopedEnvVarKey('REDIRECTED')]
 
       await this.init()
-      const retVal = await this.run()
-      try {
-        const {ux} = require('cli-ux')
-        await ux.flush()
-      } catch {}
-      return retVal
+      return await this.run()
     } catch (e) {
       err = e
       await this.catch(e)
