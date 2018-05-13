@@ -82,7 +82,7 @@ export default abstract class Command {
    * actual command run code goes here
    */
   abstract async run(): Promise<any>
-  protected async init() {
+  protected async init(): Promise<any> {
     this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
     if (this.config.debug) Errors.config.debug = true
     if (this.config.errlog) Errors.config.errlog = this.config.errlog
@@ -100,7 +100,7 @@ export default abstract class Command {
     return require('@oclif/parser').parse(argv, {context: this, ...options})
   }
 
-  protected async catch(err: any) {
+  protected async catch(err: any): Promise<any> {
     if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
       return this._help()
@@ -115,7 +115,7 @@ export default abstract class Command {
       throw err
     }
   }
-  protected async finally(_: Error | undefined) {
+  protected async finally(_: Error | undefined): Promise<any> {
     try {
       await require('@oclif/errors').config.errorLogger.flush()
       // tslint:disable-next-line no-console
