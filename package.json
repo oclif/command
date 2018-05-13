@@ -38,6 +38,7 @@
     "node": ">=8.0.0"
   },
   "files": [
+    "/flush.js",
     "/lib"
   ],
   "homepage": "https://github.com/oclif/command",
