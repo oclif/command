@@ -1,3 +1,11 @@
+<a name="1.4.30"></a>
+## [1.4.30](https://github.com/oclif/command/compare/v1.4.29...v1.4.30) (2018-05-15)
+
+
+### Bug Fixes
+
+* use node 8 compatible syntax ([085369c](https://github.com/oclif/command/commit/085369c))
+
 <a name="1.4.29"></a>
 ## [1.4.29](https://github.com/oclif/command/compare/v1.4.28...v1.4.29) (2018-05-13)
 
