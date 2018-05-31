@@ -1,3 +1,11 @@
+<a name="1.4.31"></a>
+## [1.4.31](https://github.com/oclif/command/compare/v1.4.30...v1.4.31) (2018-05-31)
+
+
+### Bug Fixes
+
+* typescript 2.9 ([91499c9](https://github.com/oclif/command/commit/91499c9))
+
 <a name="1.4.30"></a>
 ## [1.4.30](https://github.com/oclif/command/compare/v1.4.29...v1.4.30) (2018-05-15)
 
