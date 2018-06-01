@@ -4,8 +4,6 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "module": "commonjs",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
     "outDir": "./lib",
     "pretty": true,
     "rootDirs": [
