@@ -1,3 +1,11 @@
+<a name="1.4.32"></a>
+## [1.4.32](https://github.com/oclif/command/compare/v1.4.31...v1.4.32) (2018-06-01)
+
+
+### Bug Fixes
+
+* imports ([4bf98c4](https://github.com/oclif/command/commit/4bf98c4))
+
 <a name="1.4.31"></a>
 ## [1.4.31](https://github.com/oclif/command/compare/v1.4.30...v1.4.31) (2018-05-31)
 
