@@ -81,9 +81,9 @@
     "@oclif/linewrap" "^1.0.0"
     chalk "^2.4.1"
 
-"@oclif/parser@^3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.4.1.tgz#83942276f3cf9406a1a3dcf3eb917183d6333e1d"
+"@oclif/parser@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.5.1.tgz#2f60ac9773565786b6e1afff967b36a6399defcc"
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     chalk "^2.4.1"
