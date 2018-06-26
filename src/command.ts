@@ -90,8 +90,9 @@ export default abstract class Command {
     //   command: compact([this.id, ...this.argv]).join(' '),
     //   version: this.config.userAgent,
     // }
-    global['http-call'] = global['http-call'] || {}
-    global['http-call']!.userAgent = this.config.userAgent
+    const g: any = global
+    g['http-call'] = g['http-call'] || {}
+    g['http-call']!.userAgent = this.config.userAgent
     if (this._helpOverride()) return this._help()
   }
 
