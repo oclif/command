@@ -1,3 +1,11 @@
+<a name="1.4.34"></a>
+## [1.4.34](https://github.com/oclif/command/compare/v1.4.33...v1.4.34) (2018-06-26)
+
+
+### Bug Fixes
+
+* globals in ts 2.9.2 ([8769c6b](https://github.com/oclif/command/commit/8769c6b))
+
 <a name="1.4.33"></a>
 ## [1.4.33](https://github.com/oclif/command/compare/v1.4.32...v1.4.33) (2018-06-09)
 
