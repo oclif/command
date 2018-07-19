@@ -118,7 +118,8 @@ export default abstract class Command {
   }
   protected async finally(_: Error | undefined): Promise<any> {
     try {
-      await require('@oclif/errors').config.errorLogger.flush()
+      const config = require('@oclif/errors').config
+      if (config.errorLogger) await config.errorLogger.flush()
       // tslint:disable-next-line no-console
     } catch (err) { console.error(err) }
   }
