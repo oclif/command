@@ -1,3 +1,11 @@
+<a name="1.4.35"></a>
+## [1.4.35](https://github.com/oclif/command/compare/v1.4.34...v1.4.35) (2018-07-19)
+
+
+### Bug Fixes
+
+* only flush if errorLogger present ([#41](https://github.com/oclif/command/issues/41)) ([f183916](https://github.com/oclif/command/commit/f183916))
+
 <a name="1.4.34"></a>
 ## [1.4.34](https://github.com/oclif/command/compare/v1.4.33...v1.4.34) (2018-06-26)
 
