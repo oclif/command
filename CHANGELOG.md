@@ -1,3 +1,11 @@
+<a name="1.4.36"></a>
+## [1.4.36](https://github.com/oclif/command/compare/v1.4.35...v1.4.36) (2018-07-25)
+
+
+### Bug Fixes
+
+* Trim description before printing first line since there could be leading `\n` from multi-line template strings. ([#40](https://github.com/oclif/command/issues/40)) ([7be154c](https://github.com/oclif/command/commit/7be154c))
+
 <a name="1.4.35"></a>
 ## [1.4.35](https://github.com/oclif/command/compare/v1.4.34...v1.4.35) (2018-07-19)
 
