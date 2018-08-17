@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/oclif/command/compare/v1.4.36...v1.5.0) (2018-08-17)
+
+
+### Features
+
+* typescript 3 ([fc6a991](https://github.com/oclif/command/commit/fc6a991))
+
 <a name="1.4.36"></a>
 ## [1.4.36](https://github.com/oclif/command/compare/v1.4.35...v1.4.36) (2018-07-25)
 
