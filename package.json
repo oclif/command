@@ -11,28 +11,28 @@
     ]
   },
   "dependencies": {
-    "@oclif/errors": "^1.1.2",
-    "@oclif/parser": "^3.6.0",
+    "@oclif/errors": "^1.2.0",
+    "@oclif/parser": "^3.6.1",
     "debug": "^3.1.0",
-    "semver": "^5.5.0"
+    "semver": "^5.5.1"
   },
   "devDependencies": {
-    "@oclif/config": "^1.7.0",
-    "@oclif/plugin-help": "^2.0.5",
-    "@oclif/plugin-plugins": "^1.5.4",
+    "@oclif/config": "^1.7.3",
+    "@oclif/plugin-help": "^2.1.0",
+    "@oclif/plugin-plugins": "^1.6.2",
     "@oclif/tslint": "^2.0.0",
     "@types/chai": "^4.1.4",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.7.1",
+    "@types/node": "^10.9.4",
     "@types/semver": "^5.5.0",
     "chai": "^4.1.2",
-    "cli-ux": "^4.7.3",
-    "fancy-test": "^1.2.0",
+    "cli-ux": "^4.8.1",
+    "fancy-test": "^1.4.0",
     "globby": "^8.0.1",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.3"
   },
   "engines": {
     "node": ">=8.0.0"
