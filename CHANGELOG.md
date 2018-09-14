@@ -1,3 +1,11 @@
+## [1.5.1](https://github.com/oclif/command/compare/v1.5.0...v1.5.1) (2018-09-14)
+
+
+### Bug Fixes
+
+* lint issues ([d561bbf](https://github.com/oclif/command/commit/d561bbf))
+* updated deps ([809f184](https://github.com/oclif/command/commit/809f184))
+
 # [1.5.0](https://github.com/oclif/command/compare/v1.4.36...v1.5.0) (2018-08-17)
 
 
