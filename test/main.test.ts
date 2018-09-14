@@ -7,23 +7,23 @@ const version = `@oclif/command/${pjson.version} ${process.platform}-${process.a
 
 describe('main', () => {
   fancy
-  .stdout()
-  .do(() => Main.run(['plugins']))
-  .do(output => expect(output.stdout).to.equal('no plugins installed\n'))
-  .it('runs plugins')
+    .stdout()
+    .do(() => Main.run(['plugins']))
+    .do(output => expect(output.stdout).to.equal('no plugins installed\n'))
+    .it('runs plugins')
 
   fancy
-  .stdout()
-  .do(() => Main.run(['-v']))
-  .catch('EEXIT: 0')
-  .do(output => expect(output.stdout).to.equal(version + '\n'))
-  .it('runs -v')
+    .stdout()
+    .do(() => Main.run(['-v']))
+    .catch('EEXIT: 0')
+    .do(output => expect(output.stdout).to.equal(version + '\n'))
+    .it('runs -v')
 
   fancy
-  .stdout()
-  .do(() => Main.run(['-h']))
-  .catch('EEXIT: 0')
-  .do(output => expect(output.stdout).to.equal(`oclif base command
+    .stdout()
+    .do(() => Main.run(['-h']))
+    .catch('EEXIT: 0')
+    .do(output => expect(output.stdout).to.equal(`oclif base command
 
 VERSION
   ${version}
@@ -36,5 +36,5 @@ COMMANDS
   plugins  list installed plugins
 
 `))
-  .it('runs -h')
+    .it('runs -h')
 })
