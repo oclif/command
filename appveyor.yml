@@ -1,5 +1,5 @@
 environment:
-  nodejs_version: "9"
+  nodejs_version: "10"
 cache:
   - '%LOCALAPPDATA%\Yarn -> appveyor.yml'
   - node_modules -> yarn.lock
@@ -17,4 +17,4 @@ after_test:
       bash codecov.sh
 
 build: off
-
+skip_branch_with_pr: true
