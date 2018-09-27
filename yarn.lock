@@ -139,6 +139,10 @@
   version "10.9.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.4.tgz#0f4cb2dc7c1de6096055357f70179043c33e9897"
 
+"@types/node@^10.11.1":
+  version "10.11.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.11.1.tgz#adc48781dd50b2635a8a7854d99c759a26ede840"
+
 "@types/semver@^5.5.0":
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-5.5.0.tgz#146c2a29ee7d3bae4bf2fcb274636e264c813c45"
