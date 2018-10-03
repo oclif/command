@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/oclif/command/compare/v1.5.1...v1.5.2) (2018-10-03)
+
+
+### Bug Fixes
+
+* updated deps ([bb0df38](https://github.com/oclif/command/commit/bb0df38))
+
 ## [1.5.1](https://github.com/oclif/command/compare/v1.5.0...v1.5.1) (2018-09-14)
 
 
