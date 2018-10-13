@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/oclif/command/compare/v1.5.2...v1.5.3) (2018-10-13)
+
+
+### Bug Fixes
+
+* return promiselike ([#47](https://github.com/oclif/command/issues/47)) ([2eb6b60](https://github.com/oclif/command/commit/2eb6b60))
+
 ## [1.5.2](https://github.com/oclif/command/compare/v1.5.1...v1.5.2) (2018-10-03)
 
 
