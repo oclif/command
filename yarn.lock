@@ -43,7 +43,7 @@
     supports-color "^5.4.0"
     tslib "^1"
 
-"@oclif/command@^1.5.0", "@oclif/command@^1.5.1":
+"@oclif/command@^1.5.0":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.2.tgz#9c3fc042be785f8cec3f8f9c5d7768ebe80bb625"
   integrity sha512-xNGfzij9l56nkh5fxoHyzI9MpwISp6ZBP3OAZ/SEQyHgPRe4ZrhNHtmoky4X4oZmxzgf317W4c1rUDUCNWWBjQ==
@@ -53,12 +53,22 @@
     debug "^4.0.1"
     semver "^5.5.1"
 
-"@oclif/config@^1.8.6":
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.8.6.tgz#97c6526e82cf0aa362aeb8201bb0d53423ecca3b"
-  integrity sha512-ucSR89AZJ0v48d0ZWBXAWJAGe2uiGBNMnnqzE0fbc3/tDiUokgGleL990JFO3KEWrGYF1e+Sb+YMVIcPxaBKiw==
+"@oclif/command@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.3.tgz#adf4b2057418b3285d98acdc71dccc10524e870f"
+  integrity sha512-sg3FqA9TTOF8lFGCZOXGvXGMcjvY+sioUXZF+zC36pcz+v9Kx7M7yQyrOFCR6GskWZWofp+Jcjn3EzxW2iRFBg==
   dependencies:
-    debug "^4.0.1"
+    "@oclif/errors" "^1.2.1"
+    "@oclif/parser" "^3.6.1"
+    debug "^4.1.0"
+    semver "^5.6.0"
+
+"@oclif/config@^1.8.7":
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.8.7.tgz#b42cf0a2b5eaee14fb2eb80a26a903c747f5421f"
+  integrity sha512-2pMMOC4gL/vkxXskhqFwoS7Cs3qZ5yXgrUd6GGQ3kkaJiz+8Y8bM80CTBiC2SuraZYPO/1GWtqUQzkXn9I0khg==
+  dependencies:
+    debug "^4.1.0"
     tslib "^1.9.3"
 
 "@oclif/errors@^1.2.0", "@oclif/errors@^1.2.1":
@@ -70,6 +80,17 @@
     fs-extra "^7.0.0"
     indent-string "^3.2.0"
     strip-ansi "^4.0.0"
+    wrap-ansi "^4.0.0"
+
+"@oclif/errors@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz#9d8f269b15f13d70aa93316fed7bebc24688edc2"
+  integrity sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==
+  dependencies:
+    clean-stack "^1.3.0"
+    fs-extra "^7.0.0"
+    indent-string "^3.2.0"
+    strip-ansi "^5.0.0"
     wrap-ansi "^4.0.0"
 
 "@oclif/linewrap@^1.0.0":
@@ -100,21 +121,21 @@
     widest-line "^2.0.0"
     wrap-ansi "^4.0.0"
 
-"@oclif/plugin-plugins@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.7.1.tgz#3dd1c1c3127173fea3b76e6e1c9bbbe3b9f7602f"
-  integrity sha512-5ZmRPNLOfTJgN7kYFIW4uCfRxa2TJJERSvrAsCLA8iqFn8C6j1mqFzd2/DkYhYzLXkicSicMo3gfQvvMoJJopQ==
+"@oclif/plugin-plugins@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.7.2.tgz#5b0eb8260186fec9037be4be29cf1b85e93ce0b5"
+  integrity sha512-cmYu9GA4/MGGzfAb4w56xHnXusnkLTzmORSTHKgpRsf5rVCXk1hA7EE4+SxBWAl44GDyBuUlU+lqk0pK+WveYQ==
   dependencies:
     "@oclif/color" "^0.0.0"
-    "@oclif/command" "^1.5.1"
+    "@oclif/command" "^1.5.3"
     chalk "^2.4.1"
-    cli-ux "^4.8.2"
-    debug "^4.0.1"
+    cli-ux "^4.9.0"
+    debug "^4.1.0"
     fs-extra "^7.0.0"
     http-call "^5.2.2"
     load-json-file "^5.1.0"
     npm-run-path "^2.0.2"
-    semver "^5.5.1"
+    semver "^5.6.0"
     tslib "^1.9.3"
     yarn "^1.10.1"
 
@@ -182,6 +203,11 @@ ansi-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
   integrity sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
+
+ansi-regex@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
+  integrity sha512-iB5Dda8t/UqpPI/IjsejXu5jOGDrzn41wJyljwPH65VCIbk6+1BzFIMJGFwTNrYXT1CrD+B4l19U7awiQ8rk7w==
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -405,7 +431,7 @@ clean-stack@^1.3.0:
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz#9e821501ae979986c46b1d66d2d432db2fd4ae31"
   integrity sha1-noIVAa6XmYbEax1m0tQy2y/UrjE=
 
-cli-ux@^4.8.2, cli-ux@^4.9.0:
+cli-ux@^4.9.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-4.9.0.tgz#03e235c63c81614811f2400bb46ba140575b27c2"
   integrity sha512-ab0RqYAX4mj3y2byircP+t8SsUdmwAa2lH4N6mN/UbjEBj/7A4cp/G3GKy3qU8q1HIndhf3OdgqaoWGozf13hA==
@@ -1562,6 +1588,13 @@ strip-ansi@^4.0.0:
   integrity sha1-qEeQIusaw2iocTibY1JixQXuNo8=
   dependencies:
     ansi-regex "^3.0.0"
+
+strip-ansi@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.0.0.tgz#f78f68b5d0866c20b2c9b8c61b5298508dc8756f"
+  integrity sha512-Uu7gQyZI7J7gn5qLn1Np3G9vcYGTVqB+lFTytnDJv83dd8T22aGH451P3jueT2/QemInJDfxHB5Tde5OzgG1Ow==
+  dependencies:
+    ansi-regex "^4.0.0"
 
 strip-bom@^3.0.0:
   version "3.0.0"
