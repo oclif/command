@@ -43,22 +43,22 @@
     supports-color "^5.4.0"
     tslib "^1"
 
-"@oclif/command@^1.5.0":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.2.tgz#9c3fc042be785f8cec3f8f9c5d7768ebe80bb625"
-  integrity sha512-xNGfzij9l56nkh5fxoHyzI9MpwISp6ZBP3OAZ/SEQyHgPRe4ZrhNHtmoky4X4oZmxzgf317W4c1rUDUCNWWBjQ==
-  dependencies:
-    "@oclif/errors" "^1.2.1"
-    "@oclif/parser" "^3.6.1"
-    debug "^4.0.1"
-    semver "^5.5.1"
-
 "@oclif/command@^1.5.3":
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.3.tgz#adf4b2057418b3285d98acdc71dccc10524e870f"
   integrity sha512-sg3FqA9TTOF8lFGCZOXGvXGMcjvY+sioUXZF+zC36pcz+v9Kx7M7yQyrOFCR6GskWZWofp+Jcjn3EzxW2iRFBg==
   dependencies:
     "@oclif/errors" "^1.2.1"
+    "@oclif/parser" "^3.6.1"
+    debug "^4.1.0"
+    semver "^5.6.0"
+
+"@oclif/command@^1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.4.tgz#659456def965454e1c0115e8265533980eefb200"
+  integrity sha512-R76o9r2nMYLmpiRyEGDyIlwWIs5n+7aL6TncnqHCtjk990bN4ax5GyKf1S/+vw+2GswwOzNJ/wvxy5gbB3QZbg==
+  dependencies:
+    "@oclif/errors" "^1.2.2"
     "@oclif/parser" "^3.6.1"
     debug "^4.1.0"
     semver "^5.6.0"
@@ -107,18 +107,18 @@
     chalk "^2.4.1"
     tslib "^1.9.3"
 
-"@oclif/plugin-help@^2.1.2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.1.2.tgz#b6639e95157f563225a29b4329ce62e2e162afe9"
-  integrity sha512-T7ZtKDdPldLY/7CttNvi1FkDusO+Vl8QmomeLlDjZzZH0Jf1OSisyf6ei3rCCzP6AqQxt4vGMku8dJq+bQizrA==
+"@oclif/plugin-help@2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.1.4.tgz#b530fa3147d5ae91ba9c84d085f53a829b2914dc"
+  integrity sha512-wG4eR/UxYangQlyn4XvslVV4wpBNQrEC/PvRibQq+0jNop/7zfK3jdWuK5PVB0mxZfhPwBSMZzV/3ur6DN+Bbg==
   dependencies:
-    "@oclif/command" "^1.5.0"
+    "@oclif/command" "^1.5.4"
     chalk "^2.4.1"
     indent-string "^3.2.0"
     lodash.template "^4.4.0"
     string-width "^2.1.1"
-    strip-ansi "^4.0.0"
-    widest-line "^2.0.0"
+    strip-ansi "^5.0.0"
+    widest-line "^2.0.1"
     wrap-ansi "^4.0.0"
 
 "@oclif/plugin-plugins@^1.7.2":
@@ -539,7 +539,7 @@ debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.1, debug@^4.1.0:
+debug@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.0.tgz#373687bffa678b38b1cd91f861b63850035ddc87"
   integrity sha512-heNPJUJIqC+xB6ayLAMHaIrmN9HKa7aQO8MGqKpvCA+uJYVcvR6l5kgdrhRuwPFHU7P5/A1w0BjByPHwpfTDKg==
@@ -1812,10 +1812,10 @@ which@^1.2.9:
   dependencies:
     isexe "^2.0.0"
 
-widest-line@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/widest-line/-/widest-line-2.0.0.tgz#0142a4e8a243f8882c0233aa0e0281aa76152273"
-  integrity sha1-AUKk6KJD+IgsAjOqDgKBqnYVInM=
+widest-line@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/widest-line/-/widest-line-2.0.1.tgz#7438764730ec7ef4381ce4df82fb98a53142a3fc"
+  integrity sha512-Ba5m9/Fa4Xt9eb2ELXt77JxVDV8w7qQrH0zS/TWSJdLyAwQjWoOzpzj5lwVftDz6n/EOu3tNACS84v509qwnJA==
   dependencies:
     string-width "^2.1.1"
 

@@ -229,6 +229,7 @@ describe('command', () => {
       .do(() => {
         class CMD extends Command {
           static flags = {help: flags.help()}
+          static id = 'foo'
         }
         return CMD.run(['--help'])
       })
@@ -237,17 +238,20 @@ describe('command', () => {
         expect(ctx.stdout).to.equal(`test command
 
 USAGE
-  $ @oclif/command
+  $ @oclif/command foo
 
 OPTIONS
   --help  show CLI help
+
 `)
       })
 
     fancy
       .stdout()
       .do(async () => {
-        class CMD extends Command {}
+        class CMD extends Command {
+          static id = 'foo'
+        }
         await CMD.run(['-h'])
       })
       .catch(/EEXIT: 0/)
@@ -256,7 +260,8 @@ OPTIONS
         expect(ctx.stdout).to.equal(`test command
 
 USAGE
-  $ @oclif/command
+  $ @oclif/command foo
+
 `)
       })
   })
