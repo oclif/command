@@ -127,9 +127,7 @@ export default abstract class Command {
   protected _help() {
     const HHelp: typeof Help = require('@oclif/plugin-help').default
     const help = new HHelp(this.config)
-    let title = this.ctor.description && help.render(this.ctor.description.trim()).split('\n')[0]
-    if (title) this.log(title + '\n')
-    this.log(help.command(Config.Command.toCached(this.ctor as any as Config.Command.Class)))
+    help.showCommandHelp(Config.Command.toCached(this.ctor as any as Config.Command.Class), this.config.topics)
     return this.exit(0)
   }
 
