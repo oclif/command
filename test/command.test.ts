@@ -242,6 +242,7 @@ USAGE
 
 OPTIONS
   --help  show CLI help
+
 `)
       })
 
@@ -260,6 +261,7 @@ OPTIONS
 
 USAGE
   $ @oclif/command foo
+
 `)
       })
   })
