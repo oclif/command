@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/oclif/command/compare/v1.5.4...v1.5.5) (2018-11-12)
+
+
+### Bug Fixes
+
+* construct full help message for known Command ([#50](https://github.com/oclif/command/issues/50)) ([5ef4e3c](https://github.com/oclif/command/commit/5ef4e3c))
+
 ## [1.5.4](https://github.com/oclif/command/compare/v1.5.3...v1.5.4) (2018-10-13)
 
 
