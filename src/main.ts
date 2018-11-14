@@ -15,13 +15,32 @@ export class Main extends Command {
   }
 
   async run() {
-    let [id, ...argv] = this.argv
+    const {id, argv} = this.splitArgv()
     this.parse({strict: false, '--': false, ...this.ctor as any})
     if (!this.config.findCommand(id)) {
       let topic = this.config.findTopic(id)
       if (topic) return this._help()
     }
     await this.config.runCommand(id, argv)
+  }
+
+  splitArgv() {
+    // For example, if this.argv is ['user', 'add', 'Peter'] and this.config.commandIDs
+    // contain the 'user add' command, this function returns {id: 'user add', argv: ['Peter']}
+    let argvIndex = 0
+    let id = ''
+    let idCandidate = this.argv[argvIndex]
+
+    while (this.config.commandIDs.includes(idCandidate)) {
+      id = idCandidate
+      argvIndex++
+      idCandidate += ` ${this.argv[argvIndex]}`
+    }
+
+    return {
+      id,
+      argv: this.argv.slice(argvIndex),
+    }
   }
 
   protected _helpOverride(): boolean {
