@@ -32,7 +32,7 @@ export class Main extends Command {
     let idCandidate = this.argv[argvIndex]
     const {commandIDs} = this.config // avoid expensive getter in the loop
 
-    while (commandIDs.includes(idCandidate)) {
+    while (commandIDs.some(commandID => commandID.startsWith(idCandidate))) {
       id = idCandidate
       argvIndex++
       idCandidate += ` ${this.argv[argvIndex]}`
