@@ -30,8 +30,9 @@ export class Main extends Command {
     let argvIndex = 0
     let id = ''
     let idCandidate = this.argv[argvIndex]
+    const {commandIDs} = this.config // avoid expensive getter in the loop
 
-    while (this.config.commandIDs.includes(idCandidate)) {
+    while (commandIDs.includes(idCandidate)) {
       id = idCandidate
       argvIndex++
       idCandidate += ` ${this.argv[argvIndex]}`
