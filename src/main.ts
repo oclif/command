@@ -2,6 +2,7 @@ import * as Config from '@oclif/config'
 import Help from '@oclif/plugin-help'
 
 import {Command} from '.'
+import {splitArgv} from './util'
 
 export class Main extends Command {
   static run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
@@ -15,33 +16,13 @@ export class Main extends Command {
   }
 
   async run() {
-    const {id, argv} = this.splitArgv()
+    const {id, argv} = splitArgv(this.argv, this.config.commandIDs)
     this.parse({strict: false, '--': false, ...this.ctor as any})
     if (!this.config.findCommand(id)) {
       let topic = this.config.findTopic(id)
       if (topic) return this._help()
     }
     await this.config.runCommand(id, argv)
-  }
-
-  splitArgv() {
-    // For example, if this.argv is ['user', 'add', 'Peter'] and this.config.commandIDs
-    // contain the 'user add' command, this function returns {id: 'user add', argv: ['Peter']}
-    let argvIndex = 0
-    let id = ''
-    let idCandidate = this.argv[argvIndex]
-    const {commandIDs} = this.config // avoid expensive getter in the loop
-
-    while (commandIDs.some(commandID => commandID.startsWith(idCandidate))) {
-      id = idCandidate
-      argvIndex++
-      idCandidate += ` ${this.argv[argvIndex]}`
-    }
-
-    return {
-      id,
-      argv: this.argv.slice(argvIndex),
-    }
   }
 
   protected _helpOverride(): boolean {
