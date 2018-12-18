@@ -4,35 +4,30 @@
   "version": "1.5.6",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/oclif/command/issues",
-  "oclif": {
-    "devPlugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
-    ]
-  },
   "dependencies": {
     "@oclif/errors": "^1.2.2",
-    "@oclif/parser": "^3.7.0",
+    "@oclif/parser": "^3.7.2",
     "debug": "^4.1.0",
     "semver": "^5.6.0"
   },
   "devDependencies": {
-    "@oclif/config": "^1.9.0",
+    "@oclif/config": "^1.10.2",
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-plugins": "^1.7.3",
     "@oclif/tslint": "^3.1.1",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.6",
+    "@types/node": "^10.12.15",
     "@types/semver": "^5.5.0",
     "chai": "^4.2.0",
     "cli-ux": "^4.9.3",
+    "conventional-changelog-cli": "^2.0.11",
     "fancy-test": "^1.4.1",
     "globby": "^8.0.1",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.2"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -47,13 +42,20 @@
   ],
   "license": "MIT",
   "main": "lib/index.js",
+  "oclif": {
+    "devPlugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ]
+  },
   "repository": "oclif/command",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "lint": "tsc -p test --noEmit && tslint -p test -t stylish",
     "posttest": "yarn run lint",
     "prepublishOnly": "yarn run build",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\""
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "types": "lib/index.d.ts"
 }
