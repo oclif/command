@@ -112,6 +112,7 @@ export default abstract class Command {
     const g: any = global
     g['http-call'] = g['http-call'] || {}
     g['http-call']!.userAgent = this.config.userAgent
+    this._swallowEPIPE()
     if (this._helpOverride()) return this._help()
   }
 
@@ -163,5 +164,16 @@ export default abstract class Command {
   protected _version() {
     this.log(this.config.userAgent)
     return this.exit(0)
+  }
+
+  /**
+   * swallows stdout epipe errors
+   * this occurs when stdout closes such as when piping to head
+   */
+  protected _swallowEPIPE() {
+    process.stdout.on('error', err => {
+      if (err && err.code === 'EPIPE') return
+      throw err
+    })
   }
 }
