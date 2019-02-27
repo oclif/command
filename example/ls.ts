@@ -12,6 +12,7 @@ class LS extends Command {
     dir: flags.string({
       char: 'd',
       default: process.cwd(),
+      required: true,
     }),
   }
 
@@ -25,4 +26,4 @@ class LS extends Command {
 }
 
 LS.run()
-.catch(require('@oclif/errors/handle'))
+  .then(() => {}, require('@oclif/errors/handle'))
