@@ -1,3 +1,12 @@
+## [1.5.11](https://github.com/oclif/command/compare/v1.5.10...v1.5.11) (2019-02-27)
+
+
+### Bug Fixes
+
+* handle epipe errors ([61d3a29](https://github.com/oclif/command/commit/61d3a29))
+
+
+
 ## [1.5.10](https://github.com/oclif/command/compare/v1.5.9...v1.5.10) (2019-02-11)
 
 
