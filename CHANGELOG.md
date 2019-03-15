@@ -1,3 +1,7 @@
+## [1.5.12](https://github.com/oclif/command/compare/v1.5.11...v1.5.12) (2019-03-15)
+
+
+
 ## [1.5.11](https://github.com/oclif/command/compare/v1.5.10...v1.5.11) (2019-02-27)
 
 
@@ -388,7 +392,7 @@
 
 ### Bug Fixes
 
-* add [@oclif](https://github.com/oclif)/errors to dependencies ([b2d0790](https://github.com/oclif/command/commit/b2d0790))
+* add @oclif/errors to dependencies ([b2d0790](https://github.com/oclif/command/commit/b2d0790))
 
 
 
@@ -597,7 +601,7 @@
 
 ### Bug Fixes
 
-* use [@anycli](https://github.com/anycli)/errors ([b9424dc](https://github.com/oclif/command/commit/b9424dc))
+* use @anycli/errors ([b9424dc](https://github.com/oclif/command/commit/b9424dc))
 
 
 
@@ -1090,7 +1094,7 @@ before it
 
 ### Bug Fixes
 
-* move [@dxcli](https://github.com/dxcli)/parser into dependencies ([d70edaf](https://github.com/oclif/command/commit/d70edaf))
+* move @dxcli/parser into dependencies ([d70edaf](https://github.com/oclif/command/commit/d70edaf))
 
 
 
