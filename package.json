@@ -6,28 +6,28 @@
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
     "@oclif/errors": "^1.2.2",
-    "@oclif/parser": "^3.7.2",
+    "@oclif/parser": "^3.7.3",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
   },
   "devDependencies": {
-    "@oclif/config": "^1.12.6",
+    "@oclif/config": "^1.12.10",
     "@oclif/plugin-help": "^2.1.6",
     "@oclif/plugin-plugins": "^1.7.7",
     "@oclif/tslint": "^3.1.1",
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
+    "@types/mocha": "^5.2.6",
     "@types/node": "^10.12.24",
     "@types/semver": "^5.5.0",
     "chai": "^4.2.0",
     "cli-ux": "^5.1.0",
-    "conventional-changelog-cli": "^2.0.11",
+    "conventional-changelog-cli": "^2.0.12",
     "fancy-test": "^1.4.3",
     "globby": "^9.0.0",
-    "mocha": "^5.2.0",
-    "ts-node": "^8.0.2",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
   },
   "engines": {
     "node": ">=8.0.0"
