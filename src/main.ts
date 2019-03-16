@@ -2,6 +2,7 @@ import * as Config from '@oclif/config'
 import Help from '@oclif/plugin-help'
 
 import {Command} from '.'
+import {splitArgv} from './util'
 
 export class Main extends Command {
   static run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
@@ -15,7 +16,7 @@ export class Main extends Command {
   }
 
   async run() {
-    let [id, ...argv] = this.argv
+    const {id, argv} = splitArgv(this.argv, this.config.commandIDs)
     this.parse({strict: false, '--': false, ...this.ctor as any})
     if (!this.config.findCommand(id)) {
       let topic = this.config.findTopic(id)
