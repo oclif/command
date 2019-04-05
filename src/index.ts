@@ -29,3 +29,5 @@ export {
   Command,
   flags,
 }
+
+export * from './decorators'
