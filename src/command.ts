@@ -5,6 +5,7 @@ import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
 import Help from '@oclif/plugin-help'
+import {sortBy, uniqBy} from '@oclif/plugin-help/lib/util'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
@@ -149,6 +150,10 @@ export default abstract class Command {
     const help = new HHelp(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
+    let topics = this.config.topics
+    topics = topics.filter(t => !t.hidden)
+    topics = sortBy(topics, t => t.name)
+    topics = uniqBy(topics, t => t.name)
     help.showCommandHelp(cmd, this.config.topics)
     return this.exit(0)
   }
