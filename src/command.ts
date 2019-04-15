@@ -8,6 +8,7 @@ import Help from '@oclif/plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
+import {sortBy, uniqBy} from './util'
 
 /**
  * An abstract class which acts as the base for each command
@@ -147,9 +148,13 @@ export default abstract class Command {
   protected _help() {
     const HHelp: typeof Help = require('@oclif/plugin-help').default
     const help = new HHelp(this.config)
-    let title = this.ctor.description && help.render(this.ctor.description.trim()).split('\n')[0]
-    if (title) this.log(title + '\n')
-    this.log(help.command(Config.Command.toCached(this.ctor as any as Config.Command.Class)))
+    const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
+    if (!cmd.id) cmd.id = ''
+    let topics = this.config.topics
+    topics = topics.filter((t: any) => !t.hidden)
+    topics = sortBy(topics, (t: any) => t.name)
+    topics = uniqBy(topics, (t: any) => t.name)
+    help.showCommandHelp(cmd, this.config.topics)
     return this.exit(0)
   }
 
