@@ -1,3 +1,12 @@
+## [1.5.13](https://github.com/oclif/command/compare/v1.5.12...v1.5.13) (2019-04-15)
+
+
+### Bug Fixes
+
+* use showCommandHelp to delegate topic help ([#58](https://github.com/oclif/command/issues/58)) ([3c0bafd](https://github.com/oclif/command/commit/3c0bafd))
+
+
+
 ## [1.5.12](https://github.com/oclif/command/compare/v1.5.11...v1.5.12) (2019-03-15)
 
 
