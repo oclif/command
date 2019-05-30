@@ -14,6 +14,12 @@ class Command extends Base {
   }
 }
 
+class CodeError extends Error {
+  constructor(private readonly code: string) {
+    super(code)
+  }
+}
+
 describe('command', () => {
   fancy
     .stdout()
@@ -274,5 +280,34 @@ USAGE
       })
       .do(ctx => expect(ctx.stdout).to.equal('json output: {"a":"foobar"}\n'))
       .it('uses util.format()')
+  })
+
+  describe('stdout err', () => {
+    fancy
+      .stdout()
+      .do(async () => {
+        class CMD extends Command {
+          async run() {
+            process.stdout.emit('error', new CodeError('dd'))
+          }
+        }
+        await CMD.run([])
+      })
+      .catch(/dd/)
+      .it('test stdout error throws')
+
+    fancy
+      .stdout()
+      .do(async () => {
+        class CMD extends Command {
+          async run() {
+            process.stdout.emit('error', new CodeError('EPIPE'))
+            this.log('json output: %j', {a: 'foobar'})
+          }
+        }
+        await CMD.run([])
+      })
+      .do(ctx => expect(ctx.stdout).to.equal('json output: {"a":"foobar"}\n'))
+      .it('test stdout EPIPE swallowed')
   })
 })
