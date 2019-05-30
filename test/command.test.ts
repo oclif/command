@@ -294,7 +294,7 @@ USAGE
         await CMD.run([])
       })
       .catch(/dd/)
-      .it('test epipe pass')
+      .it('test stdout error throws')
 
     fancy
       .stdout()
@@ -308,6 +308,6 @@ USAGE
         await CMD.run([])
       })
       .do(ctx => expect(ctx.stdout).to.equal('json output: {"a":"foobar"}\n'))
-      .it('test epipe pass')
+      .it('test stdout EPIPE swallowed')
   })
 })
