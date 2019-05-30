@@ -1,3 +1,12 @@
+## [1.5.14](https://github.com/oclif/command/compare/v1.5.13...v1.5.14) (2019-05-30)
+
+
+### Bug Fixes
+
+* remove stdout error listener as a member instance ([#65](https://github.com/oclif/command/issues/65)) ([5febe63](https://github.com/oclif/command/commit/5febe63))
+
+
+
 ## [1.5.13](https://github.com/oclif/command/compare/v1.5.12...v1.5.13) (2019-04-15)
 
 
