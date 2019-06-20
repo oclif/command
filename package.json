@@ -29,6 +29,9 @@
     "tslint": "^5.14.0",
     "typescript": "^3.3.3333"
   },
+  "peerDependencies": {
+    "@oclif/config": "^1"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
