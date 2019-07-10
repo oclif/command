@@ -30,7 +30,8 @@
     "typescript": "^3.3.3333"
   },
   "peerDependencies": {
-    "@oclif/config": "^1"
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2"
   },
   "engines": {
     "node": ">=8.0.0"
