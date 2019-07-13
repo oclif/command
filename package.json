@@ -6,7 +6,7 @@
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
     "@oclif/errors": "^1.2.2",
-    "@oclif/parser": "^3.7.3",
+    "@oclif/parser": "^3.8.3",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
   },
