@@ -28,7 +28,7 @@ export type Input<T extends Parser.flags.Output> = { [P in keyof T]: IFlag<T[P]>
 
 export type Definition<T> = {
   (options: {multiple: true} & Partial<IOptionFlag<T>>): IOptionFlag<T[]>
-  (options: {required: true} & Partial<IOptionFlag<T>>): IOptionFlag<T>
+  (options: ({required: true} | {default: Parser.flags.Default<T>}) & Partial<IOptionFlag<T>>): IOptionFlag<T>
   (options?: Partial<IOptionFlag<T>>): IOptionFlag<T | undefined>
 }
 
