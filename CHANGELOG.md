@@ -1,3 +1,12 @@
+## [1.5.17](https://github.com/oclif/command/compare/v1.5.16...v1.5.17) (2019-07-15)
+
+
+### Bug Fixes
+
+* sync types with @oclif/parser ([#67](https://github.com/oclif/command/issues/67)) ([2a5f0b5](https://github.com/oclif/command/commit/2a5f0b5))
+
+
+
 ## [1.5.16](https://github.com/oclif/command/compare/v1.5.15...v1.5.16) (2019-07-10)
 
 
