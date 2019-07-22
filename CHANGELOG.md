@@ -1,3 +1,7 @@
+## [1.5.18](https://github.com/oclif/command/compare/v1.5.17...v1.5.18) (2019-07-22)
+
+
+
 ## [1.5.17](https://github.com/oclif/command/compare/v1.5.16...v1.5.17) (2019-07-15)
 
 
