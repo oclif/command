@@ -5,8 +5,10 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
+    "@oclif/config": "^1",
     "@oclif/errors": "^1.2.2",
     "@oclif/parser": "^3.8.3",
+    "@oclif/plugin-help": "^2",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
   },
