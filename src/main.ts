@@ -15,19 +15,30 @@ export class Main extends Command {
   }
 
   async run() {
+    if (this.argv.length === 0) {
+      if (this._defaultCommandId) return this._runDefaultCommand()
+      return this._help()
+    }
     const [id, ...argv] = this.argv
     this.parse({strict: false, '--': false, ...this.ctor as any})
     if (!this.config.findCommand(id)) {
       const topic = this.config.findTopic(id)
       if (topic) return this._help()
+      if (this._defaultCommandId) return this._runDefaultCommand()
     }
     await this.config.runCommand(id, argv)
   }
 
+  protected _runDefaultCommand() {
+    return this.config.runCommand(this._defaultCommandId || '', [...this.argv], {isRunByDefault: true})
+  }
+
   protected _helpOverride(): boolean {
+    if (this.argv.length === 0) {
+      return !this._defaultCommandId
+    }
     if (['-v', '--version', 'version'].includes(this.argv[0])) return this._version() as any
     if (['-h', 'help'].includes(this.argv[0])) return true
-    if (this.argv.length === 0) return true
     for (const arg of this.argv) {
       if (arg === '--help') return true
       if (arg === '--') return false
