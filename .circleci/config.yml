@@ -15,11 +15,11 @@ jobs:
           $NYC yarn test
           $NYC report --reporter text-lcov > coverage.lcov
           curl -s https://codecov.io/bash | bash
-  node-10:
+  node-12:
     <<: *test
     docker:
       - image: node:10
-  node-8:
+  node-10:
     <<: *test
     docker:
       - image: node:8
@@ -29,5 +29,5 @@ workflows:
   "@oclif/command":
     jobs:
       - node-latest
+      - node-12
       - node-10
-      - node-8
