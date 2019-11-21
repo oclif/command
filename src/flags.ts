@@ -4,21 +4,21 @@ import * as Parser from '@oclif/parser'
 import {Command} from '.'
 
 export type ICompletionContext = {
-  args?: { [name: string]: string }
-  flags?: { [name: string]: string }
-  argv?: string[]
-  config: IConfig
+  args?: { [name: string]: string };
+  flags?: { [name: string]: string };
+  argv?: string[];
+  config: IConfig;
 }
 
 export type ICompletion = {
-  skipCache?: boolean
-  cacheDuration?: number
-  cacheKey?(ctx: ICompletionContext): Promise<string>
-  options(ctx: ICompletionContext): Promise<string[]>
+  skipCache?: boolean;
+  cacheDuration?: number;
+  cacheKey?(ctx: ICompletionContext): Promise<string>;
+  options(ctx: ICompletionContext): Promise<string[]>;
 }
 
 export type IOptionFlag<T> = Parser.flags.IOptionFlag<T> & {
-  completion?: ICompletion
+  completion?: ICompletion;
 }
 
 export type IFlag<T> = Parser.flags.IBooleanFlag<T> | IOptionFlag<T>
@@ -27,9 +27,9 @@ export type Output = Parser.flags.Output
 export type Input<T extends Parser.flags.Output> = { [P in keyof T]: IFlag<T[P]> }
 
 export type Definition<T> = {
-  (options: {multiple: true} & Partial<IOptionFlag<T[]>>): IOptionFlag<T[]>
-  (options: ({required: true} | {default: Parser.flags.Default<T>}) & Partial<IOptionFlag<T>>): IOptionFlag<T>
-  (options?: Partial<IOptionFlag<T>>): IOptionFlag<T | undefined>
+  (options: {multiple: true} & Partial<IOptionFlag<T[]>>): IOptionFlag<T[]>;
+  (options: ({required: true} | {default: Parser.flags.Default<T>}) & Partial<IOptionFlag<T>>): IOptionFlag<T>;
+  (options?: Partial<IOptionFlag<T>>): IOptionFlag<T | undefined>;
 }
 
 export function build<T>(defaults: {parse: IOptionFlag<T>['parse']} & Partial<IOptionFlag<T>>): Definition<T>
