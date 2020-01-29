@@ -1,5 +1,3 @@
-// tslint:disable no-implicit-dependencies
-// tslint:disable no-single-line-block-comment
 const pjson = require('../package.json')
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
@@ -11,58 +9,88 @@ import * as flags from './flags'
 import {sortBy, uniqBy} from './util'
 
 /**
+ * swallows stdout epipe errors
+ * this occurs when stdout closes such as when piping to head
+ */
+process.stdout.on('error', err => {
+  if (err && err.code === 'EPIPE')
+    return
+  throw err
+})
+
+/**
  * An abstract class which acts as the base for each command
  * in your project.
  */
 
 export default abstract class Command {
   static _base = `${pjson.name}@${pjson.version}`
+
   /** A command ID, used mostly in error or verbose reporting */
   static id: string
-  // TODO: Confirm unused?
+
+  // to-do: Confirm unused?
   static title: string | undefined
+
   /**
    * The tweet-sized description for your class, used in a parent-commands
    * sub-command listing and as the header for the command help
    */
   static description: string | undefined
+
   /** hide the command from help? */
   static hidden: boolean
+
   /** An override string (or strings) for the default usage documentation */
   static usage: string | string[] | undefined
+
   static help: string | undefined
+
   /** An array of aliases for this command */
   static aliases: string[] = []
+
   /** When set to false, allows a variable amount of arguments */
   static strict = true
+
   static parse = true
+
   /** A hash of flags for the command */
   static flags?: flags.Input<any>
+
   /** An order-dependent array of arguments for the command */
   static args?: Parser.args.IArg[]
+
   static plugin: Config.IPlugin | undefined
+
   /** An array of example strings to show at the end of the command's help */
   static examples: string[] | undefined
+
   static parserOptions = {}
 
   /**
    * instantiate and run the command
+   * @param {Config.Command.Class} this Class
+   * @param {string[]} argv argv
+   * @param {Config.LoadOptions} opts options
    */
   static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv?: string[], opts?) {
     if (!argv) argv = process.argv.slice(2)
-    const config = await Config.load(opts || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
-    let cmd = new this(argv, config)
+    const config = await Config.load(opts || (module.parent && module.parent.parent && module.parent.parent.filename) || __dirname)
+    const cmd = new this(argv, config)
     return cmd._run(argv)
   }
 
   id: string | undefined
+
   protected debug: (...args: any[]) => void
 
   constructor(public argv: string[], public config: Config.IConfig) {
     this.id = this.ctor.id
     try {
       this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
-    } catch { this.debug = () => {} }
+    } catch {
+      this.debug = () => {}
+    }
   }
 
   get ctor(): typeof Command {
@@ -77,21 +105,30 @@ export default abstract class Command {
 
       await this.init()
       return await this.run()
-    } catch (e) {
-      err = e
-      await this.catch(e)
+    } catch (error) {
+      err = error
+      await this.catch(error)
     } finally {
       await this.finally(err)
     }
   }
 
-  exit(code = 0) { return Errors.exit(code) }
-  warn(input: string | Error) { Errors.warn(input) }
-  error(input: string | Error, options: {code?: string, exit: false}): void
-  error(input: string | Error, options?: {code?: string, exit?: number}): never
-  error(input: string | Error, options: {code?: string, exit?: number | false} = {}) {
+  exit(code = 0) {
+    return Errors.exit(code)
+  }
+
+  warn(input: string | Error) {
+    Errors.warn(input)
+  }
+
+  error(input: string | Error, options: {code?: string; exit: false}): void
+
+  error(input: string | Error, options?: {code?: string; exit?: number}): never
+
+  error(input: string | Error, options: {code?: string; exit?: number | false} = {}) {
     return Errors.error(input, options as any)
   }
+
   log(message = '', ...args: any[]) {
     // tslint:disable-next-line strict-type-predicates
     message = typeof message === 'string' ? message : inspect(message)
@@ -102,6 +139,7 @@ export default abstract class Command {
    * actual command run code goes here
    */
   abstract run(): PromiseLike<any>
+
   protected async init(): Promise<any> {
     this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
     if (this.config.debug) Errors.config.debug = true
@@ -113,7 +151,6 @@ export default abstract class Command {
     const g: any = global
     g['http-call'] = g['http-call'] || {}
     g['http-call']!.userAgent = this.config.userAgent
-    this._swallowEPIPE()
     if (this._helpOverride()) return this._help()
   }
 
@@ -126,23 +163,26 @@ export default abstract class Command {
     if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
       return this._help()
-    } else if (err.message.match(/Unexpected arguments?: (-v|--version|version)(,|\n)/)) {
-      return this._version()
-    } else {
-      try {
-        const {cli} = require('cli-ux')
-        const chalk = require('chalk')
-        cli.action.stop(chalk.bold.red('!'))
-      } catch {}
-      throw err
     }
+    if (err.message.match(/Unexpected arguments?: (-v|--version|version)(,|\n)/)) {
+      return this._version()
+    }
+    try {
+      const {cli} = require('cli-ux')
+      const chalk = require('chalk') // eslint-disable-line node/no-extraneous-require
+      cli.action.stop(chalk.bold.red('!'))
+    } catch {}
+    throw err
   }
+
   protected async finally(_: Error | undefined): Promise<any> {
     try {
       const config = require('@oclif/errors').config
       if (config.errorLogger) await config.errorLogger.flush()
       // tslint:disable-next-line no-console
-    } catch (err) { console.error(err) }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   protected _help() {
@@ -154,12 +194,12 @@ export default abstract class Command {
     topics = topics.filter((t: any) => !t.hidden)
     topics = sortBy(topics, (t: any) => t.name)
     topics = uniqBy(topics, (t: any) => t.name)
-    help.showCommandHelp(cmd, this.config.topics)
+    help.showCommandHelp(cmd, topics)
     return this.exit(0)
   }
 
   protected _helpOverride(): boolean {
-    for (let arg of this.argv) {
+    for (const arg of this.argv) {
       if (arg === '--help') return true
       if (arg === '--') return false
     }
@@ -169,16 +209,5 @@ export default abstract class Command {
   protected _version() {
     this.log(this.config.userAgent)
     return this.exit(0)
-  }
-
-  /**
-   * swallows stdout epipe errors
-   * this occurs when stdout closes such as when piping to head
-   */
-  protected _swallowEPIPE() {
-    process.stdout.on('error', err => {
-      if (err && err.code === 'EPIPE') return
-      throw err
-    })
   }
 }

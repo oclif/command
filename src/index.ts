@@ -4,8 +4,8 @@ import * as semver from 'semver'
 function checkCWD() {
   try {
     process.cwd()
-  } catch (err) {
-    if (err.code === 'ENOENT') {
+  } catch (error) {
+    if (error.code === 'ENOENT') {
       process.stderr.write('WARNING: current directory does not exist\n')
     }
   }

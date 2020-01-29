@@ -1,3 +1,42 @@
+## [1.5.19](https://github.com/oclif/command/compare/v1.5.18...v1.5.19) (2019-09-05)
+
+
+### Bug Fixes
+
+* `default` should be `T[]` when `multiple: true` ([#70](https://github.com/oclif/command/issues/70)) ([13da51c](https://github.com/oclif/command/commit/13da51c))
+
+
+
+## [1.5.18](https://github.com/oclif/command/compare/v1.5.17...v1.5.18) (2019-07-22)
+
+
+
+## [1.5.17](https://github.com/oclif/command/compare/v1.5.16...v1.5.17) (2019-07-15)
+
+
+### Bug Fixes
+
+* sync types with @oclif/parser ([#67](https://github.com/oclif/command/issues/67)) ([2a5f0b5](https://github.com/oclif/command/commit/2a5f0b5))
+
+
+
+## [1.5.16](https://github.com/oclif/command/compare/v1.5.15...v1.5.16) (2019-07-10)
+
+
+
+## [1.5.15](https://github.com/oclif/command/compare/v1.5.14...v1.5.15) (2019-06-20)
+
+
+
+## [1.5.14](https://github.com/oclif/command/compare/v1.5.13...v1.5.14) (2019-05-30)
+
+
+### Bug Fixes
+
+* remove stdout error listener as a member instance ([#65](https://github.com/oclif/command/issues/65)) ([5febe63](https://github.com/oclif/command/commit/5febe63))
+
+
+
 ## [1.5.13](https://github.com/oclif/command/compare/v1.5.12...v1.5.13) (2019-04-15)
 
 

@@ -18,12 +18,12 @@ class LS extends Command {
 
   async run() {
     const {flags} = this.parse(LS)
-    let files = fs.readdirSync(flags.dir)
-    for (let f of files) {
+    const files = fs.readdirSync(flags.dir)
+    for (const f of files) {
       this.log(f)
     }
   }
 }
 
 LS.run()
-  .then(() => {}, require('@oclif/errors/handle'))
+.then(() => {}, require('@oclif/errors/handle'))
