@@ -1,4 +1,5 @@
 const pjson = require('../package.json')
+
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
@@ -159,6 +160,28 @@ export default abstract class Command {
     return require('@oclif/parser').parse(argv, {context: this, ...options})
   }
 
+  protected get _versionCommandId() {
+    let commandId = (this.config.pjson.oclif as {
+      versionCommand?: string | null
+    }).versionCommand
+    if (commandId === undefined) {
+      commandId = 'version'
+    }
+    commandId = commandId || undefined
+    return commandId
+  }
+
+  protected get _helpCommandId() {
+    let commandId = (this.config.pjson.oclif as {
+      helpCommand?: string | null
+    }).helpCommand
+    if (commandId === undefined) {
+      commandId = 'help'
+    }
+    commandId = commandId || undefined
+    return commandId
+  }
+
   protected async catch(err: any): Promise<any> {
     if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
@@ -198,10 +221,16 @@ export default abstract class Command {
     return this.exit(0)
   }
 
+  protected get _helpOverrideArgs() {
+    return ['--help']
+  }
+
   protected _helpOverride(): boolean {
     for (const arg of this.argv) {
-      if (arg === '--help') return true
       if (arg === '--') return false
+      if (this._helpOverrideArgs.includes(arg)) {
+        return true
+      }
     }
     return false
   }

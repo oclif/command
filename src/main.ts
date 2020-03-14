@@ -24,15 +24,27 @@ export class Main extends Command {
     await this.config.runCommand(id, argv)
   }
 
-  protected _helpOverride(): boolean {
-    if (['-v', '--version', 'version'].includes(this.argv[0])) return this._version() as any
-    if (['-h', 'help'].includes(this.argv[0])) return true
-    if (this.argv.length === 0) return true
-    for (const arg of this.argv) {
-      if (arg === '--help') return true
-      if (arg === '--') return false
+  protected get _helpAliases() {
+    const helpAlias = ['-h', '-help', '--help']
+    if (this._helpCommandId) {
+      helpAlias.push(this._helpCommandId)
     }
-    return false
+    return helpAlias
+  }
+
+  protected get _versionAliases() {
+    const versionAlias = ['-v', '-version', '--version']
+    if (this._versionCommandId) {
+      versionAlias.push(this._versionCommandId)
+    }
+    return versionAlias
+  }
+
+  protected _helpOverride(): boolean {
+    if (this._versionAliases.includes(this.argv[0])) return this._version() as any
+    if (this._helpAliases.includes(this.argv[0])) return true
+    if (this.argv.length === 0) return true
+    return super._helpOverride()
   }
 
   protected _help() {
