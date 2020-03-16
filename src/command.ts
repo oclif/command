@@ -72,6 +72,7 @@ export default abstract class Command {
    * @param {Config.Command.Class} this Class
    * @param {string[]} argv argv
    * @param {Config.LoadOptions} opts options
+   * @param {Config.Command.RunOptions} runOptions run options
    */
   static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv?: string[], opts?,
       runOptions?: Config.Command.RunOptions) {
