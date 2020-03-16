@@ -30,7 +30,7 @@ export class Main extends Command {
   }
 
   protected _runDefaultCommand() {
-    return this.config.runCommand(this._defaultCommandId || '', [...this.argv], {isRunByDefault: true})
+    return this.config.runCommand(this._defaultCommandId || '', [...this.argv], {isBeingRunByDefault: true})
   }
 
   protected _helpOverride(): boolean {
