@@ -1,3 +1,5 @@
+import {Config} from '@oclif/config'
+
 export function compact<T>(a: (T | undefined)[]): T[] {
   return a.filter((a): a is T => Boolean(a))
 }
@@ -30,4 +32,18 @@ export function sortBy<T>(arr: T[], fn: (i: T) => sort.Types | sort.Types[]): T[
   }
 
   return arr.sort((a, b) => compare(fn(a), fn(b)))
+}
+
+export function getHelpPluginPackage(pjson: Config['pjson']): string {
+  const configuredHelpPlugin = pjson && pjson.oclif && pjson.oclif.helpPlugin
+  const defaultHelpPlugin = '@oclif/plugin-help'
+
+  if (configuredHelpPlugin) {
+    try {
+      require(configuredHelpPlugin)
+      return configuredHelpPlugin
+    } catch {}
+  }
+
+  return defaultHelpPlugin
 }

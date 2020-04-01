@@ -2,11 +2,11 @@ const pjson = require('../package.json')
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
-import Help from '@oclif/plugin-help'
+import {HelpBase} from '@oclif/plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
-import {sortBy, uniqBy} from './util'
+import {sortBy, uniqBy, getHelpPluginPackage} from './util'
 
 /**
  * swallows stdout epipe errors
@@ -186,8 +186,9 @@ export default abstract class Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('@oclif/plugin-help').default
-    const help = new HHelp(this.config)
+    const pluginPackage = getHelpPluginPackage(pjson)
+    const HHelp = require(pluginPackage).default
+    const help: HelpBase = new HHelp(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
     let topics = this.config.topics
