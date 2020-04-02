@@ -186,7 +186,7 @@ export default abstract class Command {
   }
 
   protected _help() {
-    const pluginPackage = getHelpPluginPackage(pjson)
+    const pluginPackage = getHelpPluginPackage(this.config.pjson)
     const HHelp = require(pluginPackage).default
     const help: HelpBase = new HHelp(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
