@@ -1,6 +1,8 @@
 import {expect, fancy} from 'fancy-test'
 
 import {Main} from '../src/main'
+import {TestHelpPluginConfig} from './helpers/test-help-plugin'
+import *  as Config from '@oclif/config'
 
 const pjson = require('../package.json')
 const version = `@oclif/command/${pjson.version} ${process.platform}-${process.arch} node-${process.version}`
@@ -37,4 +39,38 @@ COMMANDS
 
 `))
   .it('runs -h')
+})
+
+describe('with an alternative help plugin', async () => {
+  const getMainWithHelpPlugin = async () => {
+    const config: TestHelpPluginConfig = await Config.load()
+    config.pjson.oclif.helpPlugin = `${__dirname}/helpers/test-help-plugin`
+
+    class MainWithHelpPlugin extends Main {
+      config = config
+    }
+
+    return MainWithHelpPlugin
+  }
+
+  fancy
+  .stdout()
+  .do(async () => (await getMainWithHelpPlugin()).run(['-h']))
+  .catch('EEXIT: 0')
+  .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
+  .it('works with -h')
+
+  fancy
+  .stdout()
+  .do(async () => (await getMainWithHelpPlugin()).run(['--help']))
+  .catch('EEXIT: 0')
+  .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
+  .it('works with --help')
+
+  fancy
+  .stdout()
+  .do(async () => (await getMainWithHelpPlugin()).run(['help']))
+  .catch('EEXIT: 0')
+  .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
+  .it('works with help')
 })
