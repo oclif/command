@@ -2,6 +2,7 @@ import * as Config from '@oclif/config'
 import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
+import {TestHelpPluginConfig} from './helpers/test-help-plugin'
 
 // const pjson = require('../package.json')
 
@@ -266,6 +267,60 @@ USAGE
   $ @oclif/command
 
 `)
+    })
+
+    describe('from a help plugin', () => {
+      fancy
+      .stdout()
+      .add('config', async () => {
+        const config: TestHelpPluginConfig = await Config.load()
+        config.pjson.oclif.helpPlugin = `${__dirname}/helpers/test-help-plugin`
+        return config
+      })
+      .do(async ({config}) => {
+        class CMD extends Command {
+          static id = 'test-command-for-help-plugin'
+
+          config = config
+        }
+        await CMD.run(['-h'])
+      })
+      .catch(/EEXIT: 0/)
+      .it('-h', ctx => {
+        expect(ctx.stdout).to.equal('hello from test-help-plugin #showCommandHelp\n')
+        expect(ctx.config.showCommandHelpSpy!.getCalls().length).to.equal(1)
+        expect(ctx.config.showHelpSpy!.getCalls().length).to.equal(0)
+        const [Command, Topics] = ctx.config.showCommandHelpSpy!.firstCall.args
+        expect(Command.id).to.deep.equal('test-command-for-help-plugin')
+        expect(Topics).to.be.an('array')
+      })
+
+      fancy
+      .stdout()
+      .add('config', async () => {
+        const config: TestHelpPluginConfig = await Config.load()
+        config.pjson.oclif.helpPlugin = `${__dirname}/helpers/test-help-plugin`
+        return config
+      })
+      .do(async ({config}) => {
+        class CMD extends Command {
+          static id = 'test-command-for-help-plugin'
+
+          config = config
+
+          static flags = {help: flags.help()}
+        }
+        return CMD.run(['--help'])
+      })
+      .catch(/EEXIT: 0/)
+      .it('--help', ctx => {
+        expect(ctx.stdout).to.equal('hello from test-help-plugin #showCommandHelp\n')
+        expect(ctx.config.showCommandHelpSpy!.getCalls().length).to.equal(1)
+        expect(ctx.config.showHelpSpy!.getCalls().length).to.equal(0)
+        const [Command, Topics] = ctx.config.showCommandHelpSpy!.firstCall.args
+        expect(Command.id).to.deep.equal('test-command-for-help-plugin')
+        expect(Topics).to.be.an('array')
+      })
     })
   })
 
