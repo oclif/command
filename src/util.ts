@@ -34,16 +34,21 @@ export function sortBy<T>(arr: T[], fn: (i: T) => sort.Types | sort.Types[]): T[
   return arr.sort((a, b) => compare(fn(a), fn(b)))
 }
 
-export function getHelpPluginPackage(pjson: Config['pjson']): string {
-  const configuredHelpPlugin = pjson && pjson.oclif && pjson.oclif.helpPlugin
-  const defaultHelpPlugin = '@oclif/plugin-help'
+export function getHelpPluginPackage(pjson: Config['pjson'], defaultPlugin = '@oclif/plugin-help'): string {
+  const configuredPlugin = pjson.oclif.helpPlugin
 
-  if (configuredHelpPlugin) {
+  if (configuredPlugin) {
     try {
-      require(configuredHelpPlugin)
-      return configuredHelpPlugin
+      require(configuredPlugin)
+      return configuredPlugin
     } catch {}
   }
 
-  return defaultHelpPlugin
+  try {
+    require(defaultPlugin)
+    return defaultPlugin
+  } catch {}
+
+  if (configuredPlugin) throw new Error(`Unable to load configured help plugin "${configuredPlugin}" from package.json`)
+  throw new Error('Could not load a help plugin, consider installing the @oclif/plugin-help package')
 }
