@@ -3,6 +3,7 @@ import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
 import {TestHelpPluginConfig} from './helpers/test-help-plugin'
+import {getHelpPluginPackage} from '../src/util'
 
 // const pjson = require('../package.json')
 
@@ -268,6 +269,48 @@ USAGE
 
 `)
     })
+
+    fancy
+    .stdout()
+    .add('config', async () => {
+      const config: TestHelpPluginConfig = await Config.load()
+      config.pjson.oclif.helpPlugin = 'plugin-does-not-exist'
+      return config
+    })
+    .do(async ({config}) => {
+      class CMD extends Command {
+        config = config
+
+        _helpPlugin() {
+          return getHelpPluginPackage(this.config.pjson, '')
+        }
+      }
+
+      await CMD.run(['-h'])
+    })
+    .catch((error: Error) => expect(error.message).to.equal('Unable to load configured help plugin "plugin-does-not-exist" from package.json'))
+    .it('shows useful error message when configured help plugin cannot be loaded')
+
+    fancy
+    .stdout()
+    .add('config', async () => {
+      const config: TestHelpPluginConfig = await Config.load()
+      config.pjson.oclif.helpPlugin = undefined
+      return config
+    })
+    .do(async ({config}) => {
+      class CMD extends Command {
+        config = config
+
+        _helpPlugin() {
+          return getHelpPluginPackage(this.config.pjson, '')
+        }
+      }
+
+      await CMD.run(['-h'])
+    })
+    .catch((error: Error) => expect(error.message).to.equal('Could not load a help plugin, consider installing the @oclif/plugin-help package'))
+    .it('shows useful error message when no help plugin has been configured and the default cannot be loaded')
 
     describe('from a help plugin', () => {
       fancy
