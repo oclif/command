@@ -2,6 +2,7 @@ import * as Config from '@oclif/config'
 import {HelpBase} from '@oclif/plugin-help'
 
 import {Command} from '.'
+import {getHelpPlugin} from './util'
 
 export class Main extends Command {
   static run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
@@ -36,9 +37,8 @@ export class Main extends Command {
   }
 
   protected _help() {
-    const helpPlugin = this._helpPlugin()
-    const HHelp = require(helpPlugin).default
-    const help: HelpBase = new HHelp(this.config)
+    const HelpPlugin = getHelpPlugin(this.config)
+    const help: HelpBase = new HelpPlugin(this.config)
     help.showHelp(this.argv)
     return this.exit(0)
   }

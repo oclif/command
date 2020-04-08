@@ -18,4 +18,8 @@ export default class extends HelpBase {
   showHelp = spy(() => {
     console.log('hello showHelp')
   })
+
+  getCommandHelpForReadme(): string {
+    throw new Error('not needed for testing @oclif/command')
+  }
 }

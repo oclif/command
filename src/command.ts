@@ -6,7 +6,7 @@ import {HelpBase} from '@oclif/plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
-import {sortBy, uniqBy, getHelpPluginPackage} from './util'
+import {sortBy, uniqBy, getHelpPlugin} from './util'
 
 /**
  * swallows stdout epipe errors
@@ -185,14 +185,9 @@ export default abstract class Command {
     }
   }
 
-  protected _helpPlugin() {
-    return getHelpPluginPackage(this.config.pjson)
-  }
-
   protected _help() {
-    const helpPlugin = this._helpPlugin()
-    const HHelp = require(helpPlugin).default
-    const help: HelpBase = new HHelp(this.config)
+    const HelpPlugin = getHelpPlugin(this.config)
+    const help: HelpBase = new HelpPlugin(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
     let topics = this.config.topics

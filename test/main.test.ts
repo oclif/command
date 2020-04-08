@@ -1,11 +1,13 @@
 import {expect, fancy} from 'fancy-test'
 
 import {Main} from '../src/main'
-import {TestHelpPluginConfig} from './helpers/test-help-plugin'
-import *  as Config from '@oclif/config'
+import * as Util from '../src/util'
+import * as Config from '@oclif/config'
+import {TestHelpPluginConfig} from './helpers/test-help-in-src/src/test-help-plugin'
 
 const pjson = require('../package.json')
 const version = `@oclif/command/${pjson.version} ${process.platform}-${process.arch} node-${process.version}`
+const originalGetHelpPlugin = Util.getHelpPlugin
 
 describe('main', () => {
   fancy
@@ -39,38 +41,62 @@ COMMANDS
 
 `))
   .it('runs -h')
-})
 
-describe('with an alternative help plugin', async () => {
-  const getMainWithHelpPlugin = async () => {
-    const config: TestHelpPluginConfig = await Config.load()
-    config.pjson.oclif.helpPlugin = `${__dirname}/helpers/test-help-plugin`
+  describe('with an alternative help plugin', async () => {
+    const getMainWithHelpPlugin = async () => {
+      const config: TestHelpPluginConfig = await Config.load()
+      config.pjson.oclif.helpPlugin = './lib/test-help-plugin'
 
-    class MainWithHelpPlugin extends Main {
-      config = config
+      class MainWithHelpPlugin extends Main {
+        config = config
+      }
+
+      return MainWithHelpPlugin
     }
 
-    return MainWithHelpPlugin
-  }
+    fancy
+    .stdout()
+    .stub(Util, 'getHelpPlugin', function (config: Config.IConfig) {
+      const patchedConfig = {
+        ...config,
+        root: `${__dirname}/helpers/test-help-in-src/`,
+      }
 
-  fancy
-  .stdout()
-  .do(async () => (await getMainWithHelpPlugin()).run(['-h']))
-  .catch('EEXIT: 0')
-  .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
-  .it('works with -h')
+      return originalGetHelpPlugin(patchedConfig)
+    })
+    .do(async () => (await getMainWithHelpPlugin()).run(['-h']))
+    .catch('EEXIT: 0')
+    .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
+    .it('works with -h')
 
-  fancy
-  .stdout()
-  .do(async () => (await getMainWithHelpPlugin()).run(['--help']))
-  .catch('EEXIT: 0')
-  .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
-  .it('works with --help')
+    fancy
+    .stdout()
+    .stub(Util, 'getHelpPlugin', function (config: Config.IConfig) {
+      const patchedConfig = {
+        ...config,
+        root: `${__dirname}/helpers/test-help-in-src/`,
+      }
 
-  fancy
-  .stdout()
-  .do(async () => (await getMainWithHelpPlugin()).run(['help']))
-  .catch('EEXIT: 0')
-  .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
-  .it('works with help')
+      return originalGetHelpPlugin(patchedConfig)
+    })
+    .do(async () => (await getMainWithHelpPlugin()).run(['--help']))
+    .catch('EEXIT: 0')
+    .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
+    .it('works with --help')
+
+    fancy
+    .stdout()
+    .stub(Util, 'getHelpPlugin', function (config: Config.IConfig) {
+      const patchedConfig = {
+        ...config,
+        root: `${__dirname}/helpers/test-help-in-src/`,
+      }
+
+      return originalGetHelpPlugin(patchedConfig)
+    })
+    .do(async () => (await getMainWithHelpPlugin()).run(['help']))
+    .catch('EEXIT: 0')
+    .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
+    .it('works with help')
+  })
 })
