@@ -2,7 +2,7 @@ import {HelpBase} from '@oclif/plugin-help'
 import {spy, SinonSpy} from 'sinon'
 import {IConfig} from '@oclif/config'
 
-export type TestHelpPluginConfig = IConfig & { showCommandHelpSpy?: SinonSpy; showHelpSpy?: SinonSpy }
+export type TestHelpClassConfig = IConfig & { showCommandHelpSpy?: SinonSpy; showHelpSpy?: SinonSpy }
 
 export default class extends HelpBase {
   constructor(config: any, opts: any) {
