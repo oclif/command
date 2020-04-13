@@ -6,7 +6,8 @@ import {HelpBase} from '@oclif/plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
-import {sortBy, uniqBy, getHelpPlugin} from './util'
+import {sortBy, uniqBy} from './util'
+import {getHelpPlugin} from '@oclif/plugin-help'
 
 /**
  * swallows stdout epipe errors

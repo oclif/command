@@ -1,13 +1,13 @@
 import {expect, fancy} from 'fancy-test'
 
 import {Main} from '../src/main'
-import * as Util from '../src/util'
+import * as PluginHelp from '@oclif/plugin-help'
 import * as Config from '@oclif/config'
 import {TestHelpPluginConfig} from './helpers/test-help-in-src/src/test-help-plugin'
 
 const pjson = require('../package.json')
 const version = `@oclif/command/${pjson.version} ${process.platform}-${process.arch} node-${process.version}`
-const originalGetHelpPlugin = Util.getHelpPlugin
+const originalGetHelpPlugin = PluginHelp.getHelpPlugin
 
 describe('main', () => {
   fancy
@@ -56,7 +56,7 @@ COMMANDS
 
     fancy
     .stdout()
-    .stub(Util, 'getHelpPlugin', function (config: Config.IConfig) {
+    .stub(PluginHelp, 'getHelpPlugin', function (config: Config.IConfig) {
       const patchedConfig = {
         ...config,
         root: `${__dirname}/helpers/test-help-in-src/`,
@@ -71,7 +71,7 @@ COMMANDS
 
     fancy
     .stdout()
-    .stub(Util, 'getHelpPlugin', function (config: Config.IConfig) {
+    .stub(PluginHelp, 'getHelpPlugin', function (config: Config.IConfig) {
       const patchedConfig = {
         ...config,
         root: `${__dirname}/helpers/test-help-in-src/`,
@@ -86,7 +86,7 @@ COMMANDS
 
     fancy
     .stdout()
-    .stub(Util, 'getHelpPlugin', function (config: Config.IConfig) {
+    .stub(PluginHelp, 'getHelpPlugin', function (config: Config.IConfig) {
       const patchedConfig = {
         ...config,
         root: `${__dirname}/helpers/test-help-in-src/`,
