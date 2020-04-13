@@ -2,10 +2,10 @@ import * as Config from '@oclif/config'
 import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
-import {TestHelpPluginConfig} from './helpers/test-help-in-src/src/test-help-plugin'
+import {TestHelpClassConfig} from './helpers/test-help-in-src/src/test-help-plugin'
 import * as PluginHelp from '@oclif/plugin-help'
 
-const originalGetHelpPlugin = PluginHelp.getHelpPlugin
+const originalgetHelpClass = PluginHelp.getHelpClass
 
 // const pjson = require('../package.json')
 
@@ -275,8 +275,8 @@ USAGE
     fancy
     .stdout()
     .add('config', async () => {
-      const config: TestHelpPluginConfig = await Config.load()
-      config.pjson.oclif.helpPlugin = 'plugin-does-not-exist'
+      const config: TestHelpClassConfig = await Config.load()
+      config.pjson.oclif.helpClass = 'help-class-does-not-exist'
       return config
     })
     .do(async ({config}) => {
@@ -285,17 +285,17 @@ USAGE
       }
       await CMD.run(['-h'])
     })
-    .catch((error: Error) => expect(error.message).to.contain('Unable to load configured help plugin "plugin-does-not-exist" from package.json, failed with message:\n'))
-    .it('shows useful error message when configured help plugin cannot be loaded')
+    .catch((error: Error) => expect(error.message).to.contain('Unable to load configured help class "help-class-does-not-exist", failed with message:\n'))
+    .it('shows useful error message when configured help class cannot be loaded')
 
     fancy
     .stdout()
-    .stub(PluginHelp, 'getHelpPlugin', function (config: any) {
-      return originalGetHelpPlugin(config, '')
+    .stub(PluginHelp, 'getHelpClass', function (config: any) {
+      return originalgetHelpClass(config, '')
     })
     .add('config', async () => {
-      const config: TestHelpPluginConfig = await Config.load()
-      config.pjson.oclif.helpPlugin = undefined
+      const config: TestHelpClassConfig = await Config.load()
+      config.pjson.oclif.helpClass = undefined
       return config
     })
     .do(async ({config}) => {
@@ -304,23 +304,23 @@ USAGE
       }
       await CMD.run(['-h'])
     })
-    .catch((error: Error) => expect(error.message).to.contain('Could not load a help plugin, consider installing the @oclif/plugin-help package, failed with message:\n'))
-    .it('shows useful error message when no help plugin has been configured and the default cannot be loaded')
+    .catch((error: Error) => expect(error.message).to.contain('Could not load a help class, consider installing the @oclif/plugin-help package, failed with message:\n'))
+    .it('shows useful error message when no help class has been configured and the default cannot be loaded')
 
-    describe('from a help plugin', () => {
+    describe('from a help class', () => {
       fancy
       .stdout()
-      .stub(PluginHelp, 'getHelpPlugin', function (config: Config.IConfig) {
+      .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
         const patchedConfig = {
           ...config,
           root: `${__dirname}/helpers/test-help-in-lib/`,
         }
 
-        return originalGetHelpPlugin(patchedConfig)
+        return originalgetHelpClass(patchedConfig)
       })
       .add('config', async () => {
-        const config: TestHelpPluginConfig = await Config.load()
-        config.pjson.oclif.helpPlugin = './lib/test-help-plugin'
+        const config: TestHelpClassConfig = await Config.load()
+        config.pjson.oclif.helpClass = './lib/test-help-plugin'
         return config
       })
       .do(async ({config}) => {
@@ -343,17 +343,17 @@ USAGE
 
       fancy
       .stdout()
-      .stub(PluginHelp, 'getHelpPlugin', function (config: Config.IConfig) {
+      .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
         const patchedConfig = {
           ...config,
           root: `${__dirname}/helpers/test-help-in-src/`,
         }
 
-        return originalGetHelpPlugin(patchedConfig)
+        return originalgetHelpClass(patchedConfig)
       })
       .add('config', async () => {
-        const config: TestHelpPluginConfig = await Config.load()
-        config.pjson.oclif.helpPlugin = './lib/test-help-plugin'
+        const config: TestHelpClassConfig = await Config.load()
+        config.pjson.oclif.helpClass = './lib/test-help-plugin'
         return config
       })
       .do(async ({config}) => {
@@ -376,17 +376,17 @@ USAGE
 
       fancy
       .stdout()
-      .stub(PluginHelp, 'getHelpPlugin', function (config: Config.IConfig) {
+      .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
         const patchedConfig = {
           ...config,
           root: `${__dirname}/helpers/test-help-in-src/`,
         }
 
-        return originalGetHelpPlugin(patchedConfig)
+        return originalgetHelpClass(patchedConfig)
       })
       .add('config', async () => {
-        const config: TestHelpPluginConfig = await Config.load()
-        config.pjson.oclif.helpPlugin = './lib/test-help-plugin'
+        const config: TestHelpClassConfig = await Config.load()
+        config.pjson.oclif.helpClass = './lib/test-help-plugin'
         return config
       })
       .do(async ({config}) => {
