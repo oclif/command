@@ -35,6 +35,9 @@ VERSION
 USAGE
   $ @oclif/command [COMMAND]
 
+TOPICS
+  plugins  list installed plugins
+
 COMMANDS
   help     display help for @oclif/command
   plugins  list installed plugins
