@@ -1,3 +1,7 @@
+# [1.6.0-rc1.1](https://github.com/oclif/command/compare/v1.6.0-rc1...v1.6.0-rc1.1) (2020-04-22)
+
+
+
 # [1.6.0-rc1](https://github.com/oclif/command/compare/v1.5.19...v1.6.0-rc1) (2020-04-22)
 
 
