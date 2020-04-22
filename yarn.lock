@@ -118,10 +118,10 @@
     chalk "^2.4.2"
     tslib "^1.9.3"
 
-"@oclif/plugin-help@3.0.0-rc1.1":
-  version "3.0.0-rc1.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-3.0.0-rc1.1.tgz#255be1e4583bd1fc1a9425f83d47940528cfea52"
-  integrity sha512-Psu67XYJEy1amIrjmEnwpWUuwrU3rG8vJQyn6Lua+Sz276W67/0EBzDkjQyUbEwNINLCnY5jZL29r66QavF0Fg==
+"@oclif/plugin-help@3.0.0-rc1.2":
+  version "3.0.0-rc1.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-3.0.0-rc1.2.tgz#330842ac6e1799288a80025b8e15df30e3d0d21d"
+  integrity sha512-fGH2M9TuMeJfaP4aOlEpb4H1o6sRqXYQAj1x36xpPbjf28RuPtG5wr4U2t3U30mS3bekZf16YsaUYxJolgsD8Q==
   dependencies:
     "@oclif/command" "^1.5.20"
     "@oclif/config" "^1.15.1"
