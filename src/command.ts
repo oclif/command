@@ -58,7 +58,7 @@ export default abstract class Command {
   static flags?: flags.Input<any>
 
   /** An order-dependent array of arguments for the command */
-  static args?: Parser.args.IArg[]
+  static args?: Parser.args.Input
 
   static plugin: Config.IPlugin | undefined
 
