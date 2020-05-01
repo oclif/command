@@ -5,10 +5,10 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
-    "@oclif/config": "^1",
+    "@oclif/config": "^1.15.1",
     "@oclif/errors": "^1.2.2",
     "@oclif/parser": "^3.8.3",
-    "@oclif/plugin-help": "^2",
+    "@oclif/plugin-help": "^3",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
   },
@@ -27,12 +27,12 @@
     "fancy-test": "^1.4.3",
     "globby": "^9.0.0",
     "mocha": "^6.0.2",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333"
+    "sinon": "^9.0.1",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
-    "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2"
+    "@oclif/config": "^1"
   },
   "engines": {
     "node": ">=8.0.0"
