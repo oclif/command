@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/oclif/command/compare/v1.5.20...v1.6.0) (2020-05-01)
+
+
+### Features
+
+* add loading for alternative help classes ([#85](https://github.com/oclif/command/issues/85)) ([136e7d4](https://github.com/oclif/command/commit/136e7d4))
+
+
+
 ## [1.5.20](https://github.com/oclif/command/compare/v1.5.19...v1.5.20) (2020-04-20)
 
 
