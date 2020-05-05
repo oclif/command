@@ -1,3 +1,12 @@
+## [1.6.1](https://github.com/oclif/command/compare/v1.6.0...v1.6.1) (2020-05-05)
+
+
+### Bug Fixes
+
+* use args.Input to accept any type args ([#89](https://github.com/oclif/command/issues/89)) ([baf3576](https://github.com/oclif/command/commit/baf3576))
+
+
+
 # [1.6.0](https://github.com/oclif/command/compare/v1.5.20...v1.6.0) (2020-05-01)
 
 
