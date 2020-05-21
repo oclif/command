@@ -2,12 +2,11 @@ const pjson = require('../package.json')
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
-import {HelpBase} from '@oclif/plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
 import {sortBy, uniqBy} from './util'
-import {getHelpClass} from '@oclif/plugin-help'
+import {HelpBase, getHelpClass} from './help'
 
 /**
  * swallows stdout epipe errors

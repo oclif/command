@@ -1,4 +1,4 @@
-import {HelpBase} from '@oclif/plugin-help'
+import {HelpBase} from '../../../../src/help'
 import {spy, SinonSpy} from 'sinon'
 import {IConfig} from '@oclif/config'
 

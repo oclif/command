@@ -29,3 +29,9 @@ export {
   Command,
   flags,
 }
+
+export {
+  Help,
+  HelpBase,
+  getHelpClass,
+} from './help'

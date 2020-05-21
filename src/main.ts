@@ -1,8 +1,7 @@
 import * as Config from '@oclif/config'
-import {HelpBase} from '@oclif/plugin-help'
 
 import {Command} from '.'
-import {getHelpClass} from '@oclif/plugin-help'
+import {HelpBase, getHelpClass} from './help'
 
 export class Main extends Command {
   static run(argv = process.argv.slice(2), options?: Config.LoadOptions) {
