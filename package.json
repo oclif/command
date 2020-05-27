@@ -39,6 +39,7 @@
   },
   "files": [
     "/flush.js",
+    "/flush.d.ts",
     "/lib"
   ],
   "homepage": "https://github.com/oclif/command",
