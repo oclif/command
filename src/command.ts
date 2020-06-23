@@ -8,6 +8,7 @@ import {format, inspect} from 'util'
 import * as flags from './flags'
 import {sortBy, uniqBy} from './util'
 import {getHelpClass} from '@oclif/plugin-help'
+import {PrettyPrintableError} from '@oclif/errors/lib/errors/pretty-print'
 
 /**
  * swallows stdout epipe errors
@@ -122,11 +123,11 @@ export default abstract class Command {
     Errors.warn(input)
   }
 
-  error(input: string | Error, options: {code?: string; exit: false}): void
+  error(input: string | Error, options: {code?: string; exit: false} & PrettyPrintableError): void
 
-  error(input: string | Error, options?: {code?: string; exit?: number}): never
+  error(input: string | Error, options?: {code?: string; exit?: number} & PrettyPrintableError): never
 
-  error(input: string | Error, options: {code?: string; exit?: number | false} = {}) {
+  error(input: string | Error, options: {code?: string; exit?: number | false} & PrettyPrintableError = {}) {
     return Errors.error(input, options as any)
   }
 
