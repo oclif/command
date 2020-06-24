@@ -25,8 +25,12 @@ export class Main extends Command {
     await this.config.runCommand(id, argv)
   }
 
+  protected _versionOverride(): boolean {
+    if (['-v', '--version', 'version'].includes(this.argv[0])) return true
+    return false
+  }
+
   protected _helpOverride(): boolean {
-    if (['-v', '--version', 'version'].includes(this.argv[0])) return this._version() as any
     if (['-h', 'help'].includes(this.argv[0])) return true
     if (this.argv.length === 0) return true
     for (const arg of this.argv) {

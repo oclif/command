@@ -145,14 +145,11 @@ export default abstract class Command {
     this.debug('init version: %s argv: %o', this.ctor._base, this.argv)
     if (this.config.debug) Errors.config.debug = true
     if (this.config.errlog) Errors.config.errlog = this.config.errlog
-    // global['cli-ux'].context = global['cli-ux'].context || {
-    //   command: compact([this.id, ...this.argv]).join(' '),
-    //   version: this.config.userAgent,
-    // }
     const g: any = global
     g['http-call'] = g['http-call'] || {}
     g['http-call']!.userAgent = this.config.userAgent
     if (this._helpOverride()) return this._help()
+    if (this._versionOverride()) return this._version()
   }
 
   protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
@@ -190,6 +187,11 @@ export default abstract class Command {
     topics = uniqBy(topics, (t: any) => t.name)
     help.showCommandHelp(cmd, topics)
     return this.exit(0)
+  }
+
+  protected _versionOverride(): boolean {
+    if (['-v', '--version'].includes(this.argv[0])) return this._version() as any
+    return false
   }
 
   protected _helpOverride(): boolean {
