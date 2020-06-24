@@ -4,13 +4,3 @@ require('ts-node/register')
 require('../src').run()
 .then(require('../flush'))
 .catch(require('@oclif/errors/handle'))
-
-// const {Command, flags, parse} = require('../src')
-
-// class TestCommand extends Command {
-//   async run() {
-//     this.info('running test command')
-//   }
-// }
-
-// TestCommand.run()
