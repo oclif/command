@@ -161,13 +161,6 @@ export default abstract class Command {
   }
 
   protected async catch(err: any): Promise<any> {
-    if (!err.message) throw err
-    if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
-      return this._help()
-    }
-    if (err.message.match(/Unexpected arguments?: (-v|--version|version)(,|\n)/)) {
-      return this._version()
-    }
     try {
       const {cli} = require('cli-ux')
       const chalk = require('chalk') // eslint-disable-line node/no-extraneous-require
