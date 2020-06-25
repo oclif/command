@@ -8,7 +8,7 @@ import {format, inspect} from 'util'
 import * as flags from './flags'
 import {sortBy, uniqBy} from './util'
 import {getHelpClass} from '@oclif/plugin-help'
-import {PrettyPrintableError} from '@oclif/errors/lib/errors/pretty-print'
+import {PrettyPrintableError} from '@oclif/errors'
 
 /**
  * swallows stdout epipe errors
