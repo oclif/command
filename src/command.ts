@@ -190,15 +190,22 @@ export default abstract class Command {
   }
 
   protected _versionOverride(): boolean {
-    if (['-v', '--version'].includes(this.argv[0])) return this._version() as any
+    // if a version flag is found in argv before `--` separator
+    for (const arg of this.argv) {
+      if (['--version', '-v'].includes(arg)) return true
+      if (arg === '--') return false
+    }
+
     return false
   }
 
   protected _helpOverride(): boolean {
+    // if a help flag is found in argv before `--` separator
     for (const arg of this.argv) {
-      if (arg === '--help') return true
+      if (['--help', '-h'].includes(arg)) return true
       if (arg === '--') return false
     }
+
     return false
   }
 

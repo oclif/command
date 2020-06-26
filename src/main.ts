@@ -26,17 +26,34 @@ export class Main extends Command {
   }
 
   protected _versionOverride(): boolean {
-    if (['-v', '--version', 'version'].includes(this.argv[0])) return true
+    // first arg is version, show version
+    const firstArgIsVersion = this.argv[0] === 'version'
+    if (firstArgIsVersion) return true
+
+    // if a version flag is found in argv before `--` separator
+    for (const arg of this.argv) {
+      if (['--version', '-v'].includes(arg)) return true
+      if (arg === '--') return false
+    }
+
     return false
   }
 
   protected _helpOverride(): boolean {
-    if (['-h', 'help'].includes(this.argv[0])) return true
-    if (this.argv.length === 0) return true
+    // first arg is help, show help
+    const firstArgIsHelp = this.argv[0] === 'help'
+    if (firstArgIsHelp) return true
+
+    // no arguments, show help
+    const noArguments = this.argv.length === 0
+    if (noArguments) return true
+
+    // if help flag before `--` separator
     for (const arg of this.argv) {
-      if (arg === '--help') return true
+      if (['--help', '-h'].includes(arg)) return true
       if (arg === '--') return false
     }
+
     return false
   }
 

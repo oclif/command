@@ -1,8 +1,6 @@
 import {IConfig} from '@oclif/config'
 import * as Parser from '@oclif/parser'
 
-import {Command} from '.'
-
 export type ICompletionContext = {
   args?: { [name: string]: string };
   flags?: { [name: string]: string };
@@ -60,23 +58,14 @@ export {boolean, integer} from '@oclif/parser/lib/flags'
 
 export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
-    // char: 'v',
     description: 'show CLI version',
     ...opts,
-    parse: (_: any, cmd: Command) => {
-      cmd.log(cmd.config.userAgent)
-      cmd.exit(0)
-    },
   })
 }
 
 export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
-    // char: 'h',
     description: 'show CLI help',
     ...opts,
-    parse: (_: any, cmd: Command) => {
-      (cmd as any)._help()
-    },
   })
 }
