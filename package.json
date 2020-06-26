@@ -15,7 +15,7 @@
   "devDependencies": {
     "@oclif/plugin-plugins": "^1.7.7",
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.6",
+    "@types/mocha": "^7.0.2",
     "@types/node": "^10.12.24",
     "@types/semver": "^5.5.0",
     "chai": "^4.2.0",
