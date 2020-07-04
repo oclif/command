@@ -24,7 +24,7 @@ export type IOptionFlag<T> = Parser.flags.IOptionFlag<T> & {
 export type IFlag<T> = Parser.flags.IBooleanFlag<T> | IOptionFlag<T>
 
 export type Output = Parser.flags.Output
-export type Input<T extends Parser.flags.Output> = { [P in keyof T]: IFlag<T[P]> }
+export type Input<T extends Output> = { [P in keyof T]: IFlag<T[P]> }
 
 export type Definition<T> = {
   (options: {multiple: true} & Partial<IOptionFlag<T[]>>): IOptionFlag<T[]>;
@@ -46,11 +46,10 @@ const _enum = <T = string>(opts: Parser.flags.EnumFlagOptions<T>): IOptionFlag<T
   return build<T>({
     parse(input) {
       if (!opts.options.includes(input)) throw new Error(`Expected --${this.name}=${input} to be one of: ${opts.options.join(', ')}`)
-      return input
+      return input as unknown as T
     },
     helpValue: `(${opts.options.join('|')})`,
-    ...opts as any,
-    optionType: 'enum',
+    ...opts,
   })() as IOptionFlag<T>
 }
 export {_enum as enum}
@@ -70,6 +69,7 @@ export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) 
     },
   })
 }
+
 export const help = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
     // char: 'h',

@@ -2,11 +2,13 @@ const pjson = require('../package.json')
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
-import Help from '@oclif/plugin-help'
+import {HelpBase} from '@oclif/plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
 import {sortBy, uniqBy} from './util'
+import {getHelpClass} from '@oclif/plugin-help'
+import {PrettyPrintableError} from '@oclif/errors'
 
 /**
  * swallows stdout epipe errors
@@ -58,7 +60,7 @@ export default abstract class Command {
   static flags?: flags.Input<any>
 
   /** An order-dependent array of arguments for the command */
-  static args?: Parser.args.IArg[]
+  static args?: Parser.args.Input
 
   static plugin: Config.IPlugin | undefined
 
@@ -121,11 +123,11 @@ export default abstract class Command {
     Errors.warn(input)
   }
 
-  error(input: string | Error, options: {code?: string; exit: false}): void
+  error(input: string | Error, options: {code?: string; exit: false} & PrettyPrintableError): void
 
-  error(input: string | Error, options?: {code?: string; exit?: number}): never
+  error(input: string | Error, options?: {code?: string; exit?: number} & PrettyPrintableError): never
 
-  error(input: string | Error, options: {code?: string; exit?: number | false} = {}) {
+  error(input: string | Error, options: {code?: string; exit?: number | false} & PrettyPrintableError = {}) {
     return Errors.error(input, options as any)
   }
 
@@ -186,8 +188,8 @@ export default abstract class Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('@oclif/plugin-help').default
-    const help = new HHelp(this.config)
+    const HelpClass = getHelpClass(this.config)
+    const help: HelpBase = new HelpClass(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
     let topics = this.config.topics
