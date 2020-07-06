@@ -116,9 +116,9 @@
     wrap-ansi "^4.0.0"
 
 "@oclif/plugin-plugins@^1.7.7":
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.8.3.tgz#6ffec0f9348972dea9fd8f6eeee18b41b82f7914"
-  integrity sha512-vQQbqS0S7k4CnJaNRtdHBvXexWI1DCj2d1/a4hPO24T6E2PBZmTdGHYvzkjM1gvleV3fFyyb0Ogu0EB8ple0dQ==
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.9.0.tgz#f6098cc51646585bbf75480e180cef98b5437bc5"
+  integrity sha512-sq31nJk/n5pH5qGDioj2Z9x6MlRUrc/kkQrfCYKRPbQM80qewSP4RcPK3/gDvDSOAWD3wLAK9oMbDQO9lqImMA==
   dependencies:
     "@oclif/color" "^0.x"
     "@oclif/command" "^1.5.12"
