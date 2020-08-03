@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/oclif/command/compare/v1.7.0...v1.8.0) (2020-08-03)
+
+
+### Features
+
+* support src/command/index cmd ([#141](https://github.com/oclif/command/issues/141)) ([90ac072](https://github.com/oclif/command/commit/90ac07256b3d43577a8db7df0cfadb49e5925a4c))
+
+
+
 # [1.7.0](https://github.com/oclif/command/compare/v1.6.1...v1.7.0) (2020-06-29)
 
 
