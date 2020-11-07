@@ -10,6 +10,7 @@
     "@oclif/parser": "^3.8.3",
     "@oclif/plugin-help": "^3",
     "debug": "^4.1.1",
+    "pkg-dir": "^5.0.0",
     "semver": "^7.3.2"
   },
   "devDependencies": {
