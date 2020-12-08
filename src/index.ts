@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as semver from 'semver'
-
+import * as pkgDir from 'pkg-dir'
 function checkCWD() {
   try {
     process.cwd()
@@ -11,7 +11,7 @@ function checkCWD() {
   }
 }
 function checkNodeVersion() {
-  const root = path.join(__dirname, '..')
+  const root = pkgDir.sync(__dirname) || '..'
   const pjson = require(path.join(root, 'package.json'))
   if (!semver.satisfies(process.versions.node, pjson.engines.node)) {
     process.stderr.write(`WARNING\nWARNING Node version must be ${pjson.engines.node} to use this CLI\nWARNING Current node version: ${process.versions.node}\nWARNING\n`)
