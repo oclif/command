@@ -1,7 +1,7 @@
 import * as Config from '@oclif/config'
 import {HelpBase} from '@oclif/plugin-help'
 
-import {Command} from '.'
+import Command from './command'
 import {getHelpClass} from '@oclif/plugin-help'
 
 const ROOT_INDEX_CMD_ID = ''
