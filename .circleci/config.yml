@@ -11,10 +11,6 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn add -D nyc@13 @oclif/nyc-config@1
-      - run: |
-          $NYC yarn test
-          $NYC report --reporter text-lcov > coverage.lcov
-          curl -s https://codecov.io/bash | bash
   node-12:
     <<: *test
     docker:
