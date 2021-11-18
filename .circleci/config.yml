@@ -1,29 +1,34 @@
 ---
-version: 2
-jobs:
-  node-latest: &test
-    docker:
-      - image: node:latest
-    working_directory: ~/cli
-    environment:
-      NYC: "yarn exec nyc -- --nycrc-path node_modules/@oclif/nyc-config/.nycrc"
-    steps:
-      - checkout
-      - run: yarn
-      - run: yarn add -D nyc@13 @oclif/nyc-config@1
-  node-12:
-    <<: *test
-    docker:
-      - image: node:12
-  node-10:
-    <<: *test
-    docker:
-      - image: node:10
+version: 2.1
+
+orbs:
+  release-management: salesforce/npm-release-management@4
 
 workflows:
   version: 2
-  "@oclif/command":
+  test-and-release:
     jobs:
-      - node-latest
-      - node-12
-      - node-10
+      - release-management/test-package:
+          matrix:
+            parameters:
+              os:
+                - linux
+                # - windows
+              node_version:
+                - latest
+                - lts
+                - maintenance
+            exclude:
+              - os: windows
+                node_version: lts
+              - os: windows
+                node_version: maintenance
+      - release-management/release-package:
+          context: SF-CLI-RELEASE-PROCESS
+          filters:
+            branches:
+              only: master
+          github-release: true
+          requires:
+            - release-management/test-package
+          tag: latest
