@@ -74,6 +74,7 @@ export default abstract class Command {
    * @param {Config.Command.Class} this Class
    * @param {string[]} argv argv
    * @param {Config.LoadOptions} opts options
+   * @returns Promise<any>
    */
   static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv?: string[], opts?) {
     if (!argv) argv = process.argv.slice(2)

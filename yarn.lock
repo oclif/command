@@ -105,12 +105,23 @@
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/errors@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.3.5.tgz#a1e9694dbeccab10fe2fe15acb7113991bed636c"
+  integrity sha512-OivucXPH/eLLlOT7FkCMoZXiaVYf8I/w1eTAM1+gKzfhALwWTusxEx7wBmW0uzvkSg/9ovWLycPaBgJbM3LOCQ==
+  dependencies:
+    clean-stack "^3.0.0"
+    fs-extra "^8.1"
+    indent-string "^4.0.0"
+    strip-ansi "^6.0.0"
+    wrap-ansi "^7.0.0"
+
 "@oclif/linewrap@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@oclif/linewrap/-/linewrap-1.0.0.tgz#aedcb64b479d4db7be24196384897b5000901d91"
   integrity sha512-Ups2dShK52xXa8w6iBWLgcjPJWjais6KPJQq3gQ/88AY6BXoTX+MIGFPrWQO1KLMiQfoTpcLnUwloN4brrVUHw==
 
-"@oclif/parser@^3.8.0", "@oclif/parser@^3.8.3":
+"@oclif/parser@^3.8.0", "@oclif/parser@^3.8.3", "@oclif/parser@^3.8.5":
   version "3.8.5"
   resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.8.5.tgz#c5161766a1efca7343e1f25d769efbefe09f639b"
   integrity sha512-yojzeEfmSxjjkAvMRj0KzspXlMjCfBzNRPkWw8ZwOSoNWoJn+OCS/m/S+yfV6BvAM4u2lTzX9Y5rCbrFIgkJLg==
@@ -136,10 +147,26 @@
     widest-line "^3.1.0"
     wrap-ansi "^4.0.0"
 
-"@oclif/plugin-plugins@^1.7.7":
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.10.0.tgz#9cbf5373abdd38c764273cd409518ee16ccbace3"
-  integrity sha512-lfHNiuuCrCUtH9A912T/ztxRA9lS1lCZm+gcmVWksIJG/gwKH/fMn+GdLTbRzU2k6ojtMhBblYk1RWKxUEJuzA==
+"@oclif/plugin-help@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-3.2.4.tgz#100e0e09d806e20595096609f2220d009ee096e2"
+  integrity sha512-kMSfFbv11S7CKFlbWTKDdAe/gC7P2zCFZEDq6BAHjJdA0htHT8FvBhnyoppR0O2jOTjX80wHjU+ItPpjanfuag==
+  dependencies:
+    "@oclif/command" "^1.5.20"
+    "@oclif/config" "^1.15.1"
+    "@oclif/errors" "^1.2.2"
+    chalk "^4.1.0"
+    indent-string "^4.0.0"
+    lodash "^4.17.21"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    widest-line "^3.1.0"
+    wrap-ansi "^4.0.0"
+
+"@oclif/plugin-plugins@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.10.1.tgz#13666d7c2f591a77f7a16334feee59f9eb216eb1"
+  integrity sha512-JDUA3NtOa4OlH8ofUBXQMTFlpEkSmeE9BxoQTD6+BeUvMgqFuZThENucRvCD00sywhCmDngmIYN59gKcXpGJeQ==
   dependencies:
     "@oclif/color" "^0.x"
     "@oclif/command" "^1.5.12"
@@ -1993,7 +2020,7 @@ lodash.zip@^4.2.0:
   resolved "https://registry.yarnpkg.com/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
   integrity sha1-7GZi5IlkCO1KtsVCo5kLcswIACA=
 
-lodash@^4.17.11, lodash@^4.17.15:
+lodash@^4.17.11, lodash@^4.17.15, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
