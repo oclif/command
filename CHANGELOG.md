@@ -2,12 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.8.4](https://github.com/oclif/command/compare/v1.8.3...v1.8.4) (2021-11-23)
+### [1.8.5](https://github.com/oclif/command/compare/v1.8.4...v1.8.5) (2021-11-29)
+
+
+### Bug Fixes
+
+* remove lodash.template transitive dep ([#274](https://github.com/oclif/command/issues/274)) ([6211a83](https://github.com/oclif/command/commit/6211a834478620e20a388f90639b35052e612d24))
+
+## [1.8.4](https://github.com/oclif/command/compare/v1.8.3...v1.8.4) (2021-11-23)
 
 
 ### Bug Fixes
 
 * remove dep on lodash.template ([#271](https://github.com/oclif/command/issues/271)) ([2eb9002](https://github.com/oclif/command/commit/2eb900247cd026a5fc240bf0855f420ed48c775f))
+
+
 
 ## [1.8.3](https://github.com/oclif/command/compare/v1.8.0...v1.8.3) (2021-11-18)
 
