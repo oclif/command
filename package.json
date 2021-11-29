@@ -1,7 +1,7 @@
 {
   "name": "@oclif/command",
   "description": "oclif base command",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
