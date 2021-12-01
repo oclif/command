@@ -2,12 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.8.6](https://github.com/oclif/command/compare/v1.8.5...v1.8.6) (2021-11-29)
+### [1.8.7](https://github.com/oclif/command/compare/v1.8.6...v1.8.7) (2021-12-01)
+
+
+### Bug Fixes
+
+* bump deps ([#282](https://github.com/oclif/command/issues/282)) ([5504b70](https://github.com/oclif/command/commit/5504b700b7ac4b876fd966b647dd4143931d1a19))
+
+## [1.8.6](https://github.com/oclif/command/compare/v1.8.5...v1.8.6) (2021-11-29)
 
 
 ### Bug Fixes
 
 * bump once more ([#277](https://github.com/oclif/command/issues/277)) ([23ffce7](https://github.com/oclif/command/commit/23ffce74ce02285f664b2bbc02748411dbf1c7f1))
+
+
 
 ## [1.8.5](https://github.com/oclif/command/compare/v1.8.4...v1.8.5) (2021-11-29)
 
