@@ -21,7 +21,7 @@
     "chai": "^4.2.0",
     "cli-ux": "^5.6.5",
     "conventional-changelog-cli": "^2.0.12",
-    "eslint": "^7.3.1",
+    "eslint": "^8.4.0",
     "eslint-config-oclif": "^3.1.0",
     "eslint-config-oclif-typescript": "^0.2.0",
     "fancy-test": "^1.4.3",
