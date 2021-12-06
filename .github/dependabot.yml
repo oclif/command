@@ -12,3 +12,5 @@ updates:
     ignore:
       - dependency-name: "typescript"
       - dependency-name: "fs-extra"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
