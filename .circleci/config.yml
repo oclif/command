@@ -22,7 +22,7 @@ workflows:
           context: SF-CLI-RELEASE-PROCESS
           filters:
             branches:
-              only: master
+              only: main
           github-release: true
           requires:
             - release-management/test-package
