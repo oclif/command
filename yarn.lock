@@ -142,6 +142,18 @@
     debug "^4.1.1"
     semver "^7.3.2"
 
+"@oclif/command@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.9.tgz#9a3cf897b1b83ef9e116657577324987c2d7f063"
+  integrity sha512-lrtLau+rCXlVyE4LWaDyhs5cFOYcI8+PRCshlKoRUuI6bC3wd+gQ6j5SxXtnR9XxOR6eDXnGZg7/0LB3GGGTpw==
+  dependencies:
+    "@oclif/config" "^1.18.2"
+    "@oclif/errors" "^1.3.5"
+    "@oclif/parser" "^3.8.6"
+    "@oclif/plugin-help" "^3.2.13"
+    debug "^4.1.1"
+    semver "^7.3.2"
+
 "@oclif/config@^1.15.1":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.17.0.tgz#ba8639118633102a7e481760c50054623d09fcab"
@@ -236,6 +248,22 @@
     "@oclif/linewrap" "^1.0.0"
     chalk "^4.1.0"
     tslib "^2.0.0"
+
+"@oclif/plugin-help@3.2.14":
+  version "3.2.14"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-3.2.14.tgz#7149eb322d36abc6cbf09f205bad128141e7eba4"
+  integrity sha512-NP5qmE2YfcW3MmXjcrxiqKe9Hf3G0uK/qNc0zAMYKU4crFyIsWj7dBfQVFZSb28YXGioOOpjMzG1I7VMxKF38Q==
+  dependencies:
+    "@oclif/command" "^1.8.9"
+    "@oclif/config" "^1.18.2"
+    "@oclif/errors" "^1.3.5"
+    chalk "^4.1.2"
+    indent-string "^4.0.0"
+    lodash "^4.17.21"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    widest-line "^3.1.0"
+    wrap-ansi "^6.2.0"
 
 "@oclif/plugin-help@^3.2.10":
   version "3.2.10"
@@ -349,16 +377,16 @@
     widest-line "^3.1.0"
     wrap-ansi "^4.0.0"
 
-"@oclif/plugin-plugins@^1.10.8":
-  version "1.10.8"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.10.8.tgz#365f8850cd0bd7114ee41a13b6ca1d81f42d2b7f"
-  integrity sha512-ssL8+crcCXFVZDoM+yVx9CZiJbjw47AxsPShlpTeamkK8mfHG/yOM72QU8ungr2xfgnc2s7EU+JFXoM06NC1EQ==
+"@oclif/plugin-plugins@1.10.10":
+  version "1.10.10"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.10.10.tgz#1948b4625cdb5ae5d9f47d43ac55f4a6741bcacf"
+  integrity sha512-axEwF2LkXykhHMQLCfcNETAVr6vLjehwLmsECpU83lYQ3PSO6AA9wpZKTtZZkT98CMklJblSkLnR+TpX9Nxnhg==
   dependencies:
     "@oclif/color" "^0.1.2"
-    "@oclif/command" "^1.8.8"
+    "@oclif/command" "^1.8.9"
     "@oclif/errors" "^1.3.5"
     chalk "^4.1.2"
-    cli-ux "^5.6.5"
+    cli-ux "^5.6.6"
     debug "^4.3.3"
     fs-extra "^9.0"
     http-call "^5.3.0"
@@ -857,6 +885,38 @@ cli-ux@^5.6.5:
   integrity sha512-FjC69Z13a5iMuo6mNjXaA+/qNO1vdJvoHPAGKqULIMVAuhff6DMPU5hbk5ygHoIQWkU9RsgeAup9tV97pXJ7fQ==
   dependencies:
     "@oclif/command" "^1.8.7"
+    "@oclif/errors" "^1.3.5"
+    "@oclif/linewrap" "^1.0.0"
+    "@oclif/screen" "^1.0.4"
+    ansi-escapes "^4.3.0"
+    ansi-styles "^4.2.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.0"
+    clean-stack "^3.0.0"
+    cli-progress "^3.4.0"
+    extract-stack "^2.0.0"
+    fs-extra "^8.1"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.13.1"
+    lodash "^4.17.21"
+    natural-orderby "^2.0.1"
+    object-treeify "^1.1.4"
+    password-prompt "^1.1.2"
+    semver "^7.3.2"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    supports-color "^8.1.0"
+    supports-hyperlinks "^2.1.0"
+    tslib "^2.0.0"
+
+cli-ux@^5.6.6:
+  version "5.6.6"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-5.6.6.tgz#1424f5a9fbddcd796ad985b867a3de7f5a452090"
+  integrity sha512-4wUB34zoFklcZV0z5YiOM5IqVMMt9c3TK3QYRK3dqyk3XoRC0ybiWDWHfsMDjkKrzsVTw95rXn9NrzSHbae4pg==
+  dependencies:
+    "@oclif/command" "^1.8.9"
     "@oclif/errors" "^1.3.5"
     "@oclif/linewrap" "^1.0.0"
     "@oclif/screen" "^1.0.4"
