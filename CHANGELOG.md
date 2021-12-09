@@ -2,12 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.8.11](https://github.com/oclif/command/compare/v1.8.10...v1.8.11) (2021-12-09)
+### [1.8.12](https://github.com/oclif/command/compare/v1.8.11...v1.8.12) (2021-12-09)
+
+
+### Bug Fixes
+
+* bump plugin-help versions ([#297](https://github.com/oclif/command/issues/297)) ([1af07cd](https://github.com/oclif/command/commit/1af07cd6c9df6a3a962cf5200c9470a63de7a815))
+* bump version to 1.8.12 ([32d9d93](https://github.com/oclif/command/commit/32d9d93395dcea80cbed959e72a31522750f015e))
+
+## [1.8.12](https://github.com/oclif/command/compare/v1.8.11...v1.8.12) (2021-12-09)
+
+
+### Bug Fixes
+
+* bump plugin-help versions ([#297](https://github.com/oclif/command/issues/297)) ([1af07cd](https://github.com/oclif/command/commit/1af07cd6c9df6a3a962cf5200c9470a63de7a815))
+* bump version to 1.8.12 ([32d9d93](https://github.com/oclif/command/commit/32d9d93395dcea80cbed959e72a31522750f015e))
+
+
+
+## [1.8.11](https://github.com/oclif/command/compare/v1.8.10...v1.8.11) (2021-12-09)
 
 
 ### Bug Fixes
 
 * bump deps ([#296](https://github.com/oclif/command/issues/296)) ([9daa780](https://github.com/oclif/command/commit/9daa780cd6b8cb0ecae757c0fd84b830a748572d))
+
+
 
 ## [1.8.10](https://github.com/oclif/command/compare/v1.8.9...v1.8.10) (2021-12-08)
 
