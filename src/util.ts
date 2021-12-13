@@ -8,6 +8,7 @@ export function uniqBy<T>(arr: T[], fn: (cur: T) => any): T[] {
     return !arr.find((b, j) => j > i && fn(b) === aVal)
   })
 }
+
 export namespace sort {
   export type Types = string | number | undefined | boolean
 }

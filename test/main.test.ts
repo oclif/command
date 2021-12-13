@@ -1,13 +1,13 @@
 import {expect, fancy} from 'fancy-test'
 
 import {Main} from '../src/main'
-import * as PluginHelp from '@oclif/plugin-help'
+import * as OclifHelp from '@oclif/help'
 import * as Config from '@oclif/config'
 import {TestHelpClassConfig} from './helpers/test-help-in-src/src/test-help-plugin'
 
 const pjson = require('../package.json')
 const version = `@oclif/command/${pjson.version} ${process.platform}-${process.arch} node-${process.version}`
-const originalgetHelpClass = PluginHelp.getHelpClass
+const originalgetHelpClass = OclifHelp.getHelpClass
 
 describe('main', () => {
   fancy
@@ -39,7 +39,6 @@ TOPICS
   plugins  list installed plugins
 
 COMMANDS
-  help     display help for @oclif/command
   plugins  list installed plugins
 
 `))
@@ -59,7 +58,9 @@ COMMANDS
 
     fancy
     .stdout()
-    .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    .stub(OclifHelp, 'getHelpClass', function (config: Config.IConfig) {
       const patchedConfig = {
         ...config,
         root: `${__dirname}/helpers/test-help-in-src/`,
@@ -69,12 +70,16 @@ COMMANDS
     })
     .do(async () => (await getMainWithHelpClass()).run(['-h']))
     .catch('EEXIT: 0')
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
     .it('works with -h')
 
     fancy
     .stdout()
-    .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    .stub(OclifHelp, 'getHelpClass', function (config: Config.IConfig) {
       const patchedConfig = {
         ...config,
         root: `${__dirname}/helpers/test-help-in-src/`,
@@ -84,12 +89,16 @@ COMMANDS
     })
     .do(async () => (await getMainWithHelpClass()).run(['--help']))
     .catch('EEXIT: 0')
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
     .it('works with --help')
 
     fancy
     .stdout()
-    .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    .stub(OclifHelp, 'getHelpClass', function (config: Config.IConfig) {
       const patchedConfig = {
         ...config,
         root: `${__dirname}/helpers/test-help-in-src/`,
@@ -99,6 +108,8 @@ COMMANDS
     })
     .do(async () => (await getMainWithHelpClass()).run(['help']))
     .catch('EEXIT: 0')
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     .do(output => expect(output.stdout).to.equal('hello showHelp\n'))
     .it('works with help')
   })

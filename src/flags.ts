@@ -52,6 +52,7 @@ const _enum = <T = string>(opts: Parser.flags.EnumFlagOptions<T>): IOptionFlag<T
     ...opts,
   })() as IOptionFlag<T>
 }
+
 export {_enum as enum}
 
 const stringFlag = build({})

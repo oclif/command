@@ -3,9 +3,9 @@ import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
 import {TestHelpClassConfig} from './helpers/test-help-in-src/src/test-help-plugin'
-import * as PluginHelp from '@oclif/plugin-help'
+import * as OclifHelp from '@oclif/help'
 
-const originalgetHelpClass = PluginHelp.getHelpClass
+const originalgetHelpClass = OclifHelp.getHelpClass
 
 // const pjson = require('../package.json')
 
@@ -290,7 +290,9 @@ USAGE
 
     fancy
     .stdout()
-    .stub(PluginHelp, 'getHelpClass', function (config: any) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    .stub(OclifHelp, 'getHelpClass', function (config: any) {
       return originalgetHelpClass(config, '')
     })
     .add('config', async () => {
@@ -298,6 +300,8 @@ USAGE
       config.pjson.oclif.helpClass = undefined
       return config
     })
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     .do(async ({config}) => {
       class CMD extends Command {
         config = config
@@ -310,7 +314,9 @@ USAGE
     describe('from a help class', () => {
       fancy
       .stdout()
-      .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      .stub(OclifHelp, 'getHelpClass', function (config: Config.IConfig) {
         const patchedConfig = {
           ...config,
           root: `${__dirname}/helpers/test-help-in-lib/`,
@@ -323,6 +329,8 @@ USAGE
         config.pjson.oclif.helpClass = './lib/test-help-plugin'
         return config
       })
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
       .do(async ({config}) => {
         class CMD extends Command {
           static id = 'test-command-for-help-plugin'
@@ -332,6 +340,8 @@ USAGE
         await CMD.run(['-h'])
       })
       .catch(/EEXIT: 0/)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
       .it('-h via a plugin in lib dir (compiled to js)', ctx => {
         expect(ctx.stdout).to.equal('hello from test-help-plugin #showCommandHelp in the lib folder and in compiled javascript\n')
         expect(ctx.config.showCommandHelpSpy!.getCalls().length).to.equal(1)
@@ -343,7 +353,9 @@ USAGE
 
       fancy
       .stdout()
-      .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      .stub(OclifHelp, 'getHelpClass', function (config: Config.IConfig) {
         const patchedConfig = {
           ...config,
           root: `${__dirname}/helpers/test-help-in-src/`,
@@ -356,6 +368,8 @@ USAGE
         config.pjson.oclif.helpClass = './lib/test-help-plugin'
         return config
       })
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
       .do(async ({config}) => {
         class CMD extends Command {
           static id = 'test-command-for-help-plugin'
@@ -365,6 +379,8 @@ USAGE
         await CMD.run(['-h'])
       })
       .catch(/EEXIT: 0/)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
       .it('-h via a plugin in src dir (source in ts)', ctx => {
         expect(ctx.stdout).to.equal('hello from test-help-plugin #showCommandHelp\n')
         expect(ctx.config.showCommandHelpSpy!.getCalls().length).to.equal(1)
@@ -376,7 +392,9 @@ USAGE
 
       fancy
       .stdout()
-      .stub(PluginHelp, 'getHelpClass', function (config: Config.IConfig) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      .stub(OclifHelp, 'getHelpClass', function (config: Config.IConfig) {
         const patchedConfig = {
           ...config,
           root: `${__dirname}/helpers/test-help-in-src/`,
@@ -389,6 +407,8 @@ USAGE
         config.pjson.oclif.helpClass = './lib/test-help-plugin'
         return config
       })
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
       .do(async ({config}) => {
         class CMD extends Command {
           static id = 'test-command-for-help-plugin'
@@ -400,6 +420,8 @@ USAGE
         return CMD.run(['--help'])
       })
       .catch(/EEXIT: 0/)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
       .it('--help via a plugin in src dir (source in ts)', ctx => {
         expect(ctx.stdout).to.equal('hello from test-help-plugin #showCommandHelp\n')
         expect(ctx.config.showCommandHelpSpy!.getCalls().length).to.equal(1)
