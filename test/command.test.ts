@@ -308,7 +308,7 @@ USAGE
       }
       await CMD.run(['-h'])
     })
-    .catch((error: Error) => expect(error.message).to.contain('Could not load a help class, consider installing the @oclif/plugin-help package, failed with message:\n'))
+    .catch((error: Error) => expect(error.message).to.contain('Could not load a help class, consider installing the @oclif/help package, failed with message:\n'))
     .it('shows useful error message when no help class has been configured and the default cannot be loaded')
 
     describe('from a help class', () => {
