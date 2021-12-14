@@ -1,8 +1,7 @@
 import * as Config from '@oclif/config'
-import {HelpBase} from '@oclif/plugin-help'
+import {HelpBase, getHelpClass} from '@oclif/help'
 
 import Command from './command'
-import {getHelpClass} from '@oclif/plugin-help'
 
 const ROOT_INDEX_CMD_ID = ''
 
@@ -28,6 +27,7 @@ export class Main extends Command {
         argv = this.argv
       }
     }
+
     await this.config.runCommand(id, argv)
   }
 
@@ -39,6 +39,7 @@ export class Main extends Command {
       if (arg === '--help') return true
       if (arg === '--') return false
     }
+
     return false
   }
 
