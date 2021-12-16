@@ -3,7 +3,7 @@ version: 2.1
 
 orbs:
   release-management: salesforce/npm-release-management@4
-
+context: SF-CLI-RELEASE-PROCESS
 workflows:
   version: 2
   test-and-release:
@@ -37,4 +37,4 @@ workflows:
                 - main
     jobs:
       - release-management/dependabot-automerge
-        context: SF-CLI-RELEASE-PROCESS
+        
