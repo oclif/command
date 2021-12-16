@@ -36,5 +36,6 @@ workflows:
               only:
                 - main
     jobs:
-      - release-management/dependabot-automerge
+      - release-management/dependabot-automerge:
+          context: SF-CLI-RELEASE-PROCESS
         
