@@ -20,7 +20,7 @@
     "@types/semver": "^7.3.1",
     "chai": "^4.2.0",
     "cli-ux": "^5.6.6",
-    "conventional-changelog-cli": "^2.1.1",
+    "conventional-changelog-cli": "^2.2.2",
     "eslint": "^7.3.1",
     "eslint-config-oclif": "^3.1.0",
     "eslint-config-oclif-typescript": "^0.2.0",
