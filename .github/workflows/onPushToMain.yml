@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    uses: salesforcecli/github-workflows/.github/workflows/githubRelease.yml@main
+    uses: oclif/github-workflows/.github/workflows/githubRelease.yml@main
     secrets: inherit
 
   # most repos won't use this
