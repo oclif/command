@@ -1,4 +1,5 @@
 {
+  "testing": 1,
   "name": "@oclif/command",
   "description": "oclif base command",
   "version": "1.8.18",
