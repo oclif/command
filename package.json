@@ -14,11 +14,11 @@
   },
   "devDependencies": {
     "@oclif/plugin-plugins": "1.10.10",
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.3.4",
     "@types/mocha": "^8.0.0",
     "@types/node": "^14.18.33",
     "@types/semver": "^7.3.13",
-    "chai": "^4.2.0",
+    "chai": "^4.3.7",
     "cli-ux": "^5.6.6",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^7.3.1",
