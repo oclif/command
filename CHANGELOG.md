@@ -1,8 +1,69 @@
-# Changelog
+## [1.8.23](https://github.com/oclif/command/compare/1.8.22...1.8.23) (2023-04-15)
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.8.16](https://github.com/oclif/command/compare/v1.8.15...v1.8.16) (2021-12-17)
+### Bug Fixes
+
+* **deps:** bump semver from 7.3.8 to 7.4.0 ([84b05a5](https://github.com/oclif/command/commit/84b05a5db1ad3458b79d048853b007e82f0189e4))
+
+
+
+## [1.8.22](https://github.com/oclif/command/compare/1.8.21...1.8.22) (2023-01-28)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/parser from 3.8.9 to 3.8.10 ([62a4a05](https://github.com/oclif/command/commit/62a4a0599128490fff53b276da6269a469ee1f2a))
+
+
+
+## [1.8.21](https://github.com/oclif/command/compare/1.8.20...1.8.21) (2023-01-08)
+
+
+### Bug Fixes
+
+* **deps:** bump json5 from 2.2.0 to 2.2.3 ([29dda73](https://github.com/oclif/command/commit/29dda733e3926e9c7659515907ebbccb60045396))
+
+
+
+## [1.8.20](https://github.com/oclif/command/compare/1.8.19...1.8.20) (2022-11-05)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/parser from 3.8.8 to 3.8.9 ([5352853](https://github.com/oclif/command/commit/535285337a8192fc4d23ab98f587965f3ba5b64b))
+
+
+
+## [1.8.19](https://github.com/oclif/command/compare/1.8.18...1.8.19) (2022-10-29)
+
+
+### Bug Fixes
+
+* **deps:** bump semver and @types/semver ([6904df8](https://github.com/oclif/command/commit/6904df82f9aab7b43455f537b05a895b3295b775))
+
+
+
+## [1.8.18](https://github.com/oclif/command/compare/1.8.17...1.8.18) (2022-10-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/parser from 3.8.6 to 3.8.8 ([db059a8](https://github.com/oclif/command/commit/db059a86230509e635b1e76d62f5bf14d63efb10))
+
+
+
+## [1.8.17](https://github.com/oclif/command/compare/v1.8.16...1.8.17) (2022-10-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/errors from 1.3.5 to 1.3.6 ([24becba](https://github.com/oclif/command/commit/24becbad506d8339ae3185d19a8425ae39b64b12))
+
+
+
+## [1.8.16](https://github.com/oclif/command/compare/v1.8.15...v1.8.16) (2021-12-17)
+
+
 
 ## [1.8.15](https://github.com/oclif/command/compare/v1.8.14...v1.8.15) (2021-12-14)
 
@@ -1542,3 +1603,6 @@ before it
 
 
 # 0.0.0 (2018-01-14)
+
+
+
