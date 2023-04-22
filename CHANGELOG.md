@@ -1,3 +1,12 @@
+## [1.8.24](https://github.com/oclif/command/compare/1.8.23...1.8.24) (2023-04-22)
+
+
+### Bug Fixes
+
+* **deps:** bump semver from 7.4.0 to 7.5.0 ([7de2e78](https://github.com/oclif/command/commit/7de2e78bc404bc661306946bf722d3493044e4ca))
+
+
+
 ## [1.8.23](https://github.com/oclif/command/compare/1.8.22...1.8.23) (2023-04-15)
 
 
