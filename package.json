@@ -16,7 +16,7 @@
     "@oclif/plugin-plugins": "1.10.10",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^8.0.0",
-    "@types/node": "^14.18.42",
+    "@types/node": "^14.18.43",
     "@types/semver": "^7.3.13",
     "chai": "^4.3.7",
     "cli-ux": "^5.6.6",
