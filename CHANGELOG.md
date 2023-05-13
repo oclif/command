@@ -1,3 +1,12 @@
+## [1.8.25](https://github.com/oclif/command/compare/1.8.24...1.8.25) (2023-05-13)
+
+
+### Bug Fixes
+
+* **deps:** bump semver and @types/semver ([72c1cf6](https://github.com/oclif/command/commit/72c1cf65375bf1402c8145b12b50181adc2b640e))
+
+
+
 ## [1.8.24](https://github.com/oclif/command/compare/1.8.23...1.8.24) (2023-04-22)
 
 
