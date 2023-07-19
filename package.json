@@ -1,7 +1,7 @@
 {
   "name": "@oclif/command",
   "description": "oclif base command",
-  "version": "1.8.32",
+  "version": "1.8.33",
   "author": "Salesforce",
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
