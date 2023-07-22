@@ -349,10 +349,10 @@
   resolved "https://registry.npmjs.org/@oclif/linewrap/-/linewrap-1.0.0.tgz#aedcb64b479d4db7be24196384897b5000901d91"
   integrity sha512-Ups2dShK52xXa8w6iBWLgcjPJWjais6KPJQq3gQ/88AY6BXoTX+MIGFPrWQO1KLMiQfoTpcLnUwloN4brrVUHw==
 
-"@oclif/parser@^3.8.0", "@oclif/parser@^3.8.14", "@oclif/parser@^3.8.6":
-  version "3.8.14"
-  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.8.14.tgz#9ac2db5622400dddf4010c9efe14dd9c825d22ec"
-  integrity sha512-dGF3/Db+YZTxlR2f5cUbFcUXhrGxeVu9aT+Y/J7Wt6KMRiBJ6igIBChDHvRjjQVujR00OpdkS6fyLgBFI5meWQ==
+"@oclif/parser@^3.8.0", "@oclif/parser@^3.8.15", "@oclif/parser@^3.8.6":
+  version "3.8.15"
+  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.8.15.tgz#b5581c288543a4a7f59e61cb186109715819b1d0"
+  integrity sha512-M7ljUexkyJkR2efqG+PL31fAWyWDW1dczaMKoY+sOVqk78sm23iDMOJj/1vkfUrhO+W8dhseoPFnpSB6Hewfyw==
   dependencies:
     "@oclif/errors" "^1.3.6"
     "@oclif/linewrap" "^1.0.0"
