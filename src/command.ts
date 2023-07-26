@@ -103,7 +103,7 @@ export default abstract class Command {
     let err: Error | undefined
     try {
       // remove redirected env var to allow subsessions to run autoupdated client
-      delete process.env[this.config.scopedEnvVarKey('REDIRECTED')]
+      this.config.scopedEnvVarKeys('REDIRECTED').map(k => delete process.env[k])
 
       await this.init()
       return await this.run()
