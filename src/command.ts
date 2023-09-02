@@ -156,7 +156,7 @@ export default abstract class Command {
     if (this._helpOverride()) return this._help()
   }
 
-  protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
+  protected parse<F extends flags.Output, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
     if (!options) options = this.constructor as any
     return require('@oclif/parser').parse(argv, {context: this, ...options})
   }
