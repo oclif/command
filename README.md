@@ -50,6 +50,36 @@ LS.run()
 .catch(require('@oclif/errors/handle'))
 ```
 
+**TypeScript and Decorators**
+```js
+#!/usr/bin/env ts-node
+
+import * as fs from 'fs'
+import {Command, flags, Flags} from '@oclif/command'
+
+@Flags({
+  version: flags.version(),
+  help: flags.help(),
+  // run with --dir= or -d=
+  dir: flags.string({
+    char: 'd',
+    default: process.cwd(),
+  }),
+})
+class LS extends Command {
+  async run() {
+    const {flags} = this.parse(LS)
+    let files = fs.readdirSync(flags.dir)
+    for (let f of files) {
+      this.log(f)
+    }
+  }
+}
+
+LS.run()
+.catch(require('@oclif/errors/handle'))
+```
+
 **JavaScript**
 ```js
 #!/usr/bin/env node
@@ -76,6 +106,37 @@ LS.flags = {
     default: process.cwd(),
   }),
 }
+
+LS.run()
+.catch(require('@oclif/errors/handle'))
+```
+
+**JavaScript and Decorators**
+```js
+#!/usr/bin/env node
+
+const fs = require('fs')
+const {Command, flags, Flags} = require('@oclif/command')
+
+class LS extends Command {
+  async run() {
+    const {flags} = this.parse(LS)
+    let files = fs.readdirSync(flags.dir)
+    for (let f of files) {
+      this.log(f)
+    }
+  }
+}
+
+Flags({
+  version: flags.version(),
+  help: flags.help(),
+  // run with --dir= or -d=
+  dir: flags.string({
+    char: 'd',
+    default: process.cwd(),
+  }),
+})(LS)
 
 LS.run()
 .catch(require('@oclif/errors/handle'))
